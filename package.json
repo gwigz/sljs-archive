@@ -1,0 +1,36 @@
+{
+  "name": "sljs",
+  "version": "0.0.0",
+  "description": "A client for connecting to Linden Lab's virtual world \"Second Life\"",
+  "main": "./src/index",
+  "scripts": {
+    "test": "eslint src",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwigz/sljs.git"
+  },
+  "keywords": [
+    "secondlife",
+    "sl",
+    "api",
+    "bot",
+    "client",
+    "node"
+  ],
+  "author": "gwigz <git.sljs@gwi.gr>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gwigz/sljs/issues"
+  },
+  "homepage": "https://github.com/gwigz/sljs#readme",
+  "dependencies": {
+    "bl": "^1.2.0",
+    "long": "^3.2.0",
+    "xmlrpc": "^1.3.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
