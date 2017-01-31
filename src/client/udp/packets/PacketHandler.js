@@ -1,5 +1,4 @@
 const AcknowledgeQueueHandler = require('./AcknowledgeQueueHandler');
-const Constants = require('../../../utilities/Constants');
 const MessageFormats = require('./MessageFormats');
 const Packet = require('./Packet');
 const PKID = require('../../../utilities/Packets');
@@ -12,15 +11,15 @@ class PacketHandler {
     this.handlers = {};
 
     // Load in handlers, in a really lazy way...
-    for (let filename of require('fs').readdirSync(__dirname + '/handlers/')) {
-      this.register(PKID[filename.replace('.js', '')], require('./handlers/' + filename));
+    for (let filename of require('fs').readdirSync(`${__dirname}/handlers/`)) {
+      this.register(PKID[filename.replace('.js', '')], require(`./handlers/${filename}`));
     }
   }
 
   /**
    * Returns PacketFormat for known Packets.
-   * @param {Packet}
-   * @return {?PacketFormat}
+   * @param {Packet} packet Packet object to lookup by PKID
+   * @returns {?PacketFormat}
    */
   format(packet) {
     return this.formats[packet.id] || undefined;
@@ -28,8 +27,8 @@ class PacketHandler {
 
   /**
    * Returns String from PacketFormat that Packet ID value refers too.
-   * @param {Packet}
-   * @return {?string}
+   * @param {Packet} packet Packet object to lookup by PKID
+   * @returns {?string}
    */
   name(packet) {
     return this.formats[packet.id] ? this.formats[packet.id].name : 'UnknownPacket';
@@ -39,9 +38,8 @@ class PacketHandler {
     this.handlers[pkid] = new Handler(this.manager);
   }
 
-  process(buffer, info) {
+  process(buffer) {
     let packet = Packet.parse(this, buffer);
-    let format = this.format(packet);
 
     if (packet.reliable) {
       this.ack.queue(packet.number);
@@ -49,9 +47,9 @@ class PacketHandler {
 
     // TODO: Move this debugging somehow.
     if (typeof this.handlers[packet.id] === 'undefined') {
-      console.log('\x1b[31m\u276E\x1b[0m ' + this.name(packet) + ' \x1b[31munhandled\x1b[0m');
+      console.log(`\x1b[31m\u276E\x1b[0m ${this.name(packet)} \x1b[31munhandled\x1b[0m`);
     } else {
-      process.stdout.write('\x1b[33m\u276E\x1b[0m ' + this.name(packet));
+      process.stdout.write(`\x1b[33m\u276E\x1b[0m ${this.name(packet)}`);
 
       if (this.handlers[packet.id].handle(packet.parameters) === false) {
         process.stdout.write(' \x1b[33mignored\x1b[0m');

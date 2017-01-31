@@ -1,10 +1,7 @@
 const AbstractHandler = require('./AbstractHandler');
 
 class ScriptControlChange extends AbstractHandler {
-  handle(parameters) {
-    const data = parameters.data;
-    const agent = this.manager.client.agent;
-
+  handle() {
     // takeControls
     // controls
     // passToAgent

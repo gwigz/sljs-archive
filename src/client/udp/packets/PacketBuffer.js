@@ -1,4 +1,3 @@
-const Constants = require('../../../utilities/Constants');
 const Long = require('long');
 
 class PacketBuffer {
@@ -16,27 +15,27 @@ class PacketBuffer {
   }
 
   get frequency() {
-    if (this.buffer[6] != 0xFF) {
-      return 2; // high
-    } else if (this.buffer[7] != 0xFF) {
-      return 1; // medium
-    } else if (this.buffer[8] != 0xFF) {
-      return 0; // low
+    if (this.buffer[6] !== 0xFF) {
+      return 2;
+    } else if (this.buffer[7] !== 0xFF) {
+      return 1;
+    } else if (this.buffer[8] !== 0xFF) {
+      return 0;
     } else {
-      return 3; // fixed
+      return 3;
     }
   }
 
   get id() {
     // idk if there's a math thing to push a digit to the end of a number?
-    if (this.buffer[6] != 0xFF) {
-      return +(this.buffer[6] + '2'); // high
-    } else if (this.buffer[7] != 0xFF) {
-      return +(this.buffer[7] + '1'); // medium
-    } else if (this.buffer[8] != 0xFF) {
-      return +(this.buffer.readUInt16BE(8) + '0'); // low
+    if (this.buffer[6] !== 0xFF) {
+      return +`${this.buffer[6]}2`;
+    } else if (this.buffer[7] !== 0xFF) {
+      return +`${this.buffer[7]}1`;
+    } else if (this.buffer[8] !== 0xFF) {
+      return +`${this.buffer.readUInt16BE(8)}0`;
     } else {
-      return +(this.buffer[9] + '3'); // fixed
+      return +`${this.buffer[9]}3`;
     }
   }
 
@@ -62,7 +61,7 @@ class PacketBuffer {
 
     // Clean the rest.
     for (let i = position; i < length; i++) {
-      if (buffer[i] == 0x00) {
+      if (buffer[i] === 0x00) {
         for (let j = 0; j < buffer.readUInt8(i + 1); j++) {
           output[position++] = 0x00;
         }
@@ -82,16 +81,16 @@ class PacketBuffer {
 
     // Add additional length dependant on frequency.
     switch (this.frequency) {
-      case 3: // fixed
-      case 0: // low
+      case 3:
+      case 0:
         this.position += 4;
         break;
 
-      case 1: // medium
+      case 1:
         this.position += 2;
         break;
 
-      case 2: // high
+      case 2:
         this.position += 1;
         break;
     }
@@ -148,7 +147,8 @@ class PacketBuffer {
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32)];
 
       case 'LLVector3d':
-        console.error('UNHANDLED LLVector3d in ' + this.id);
+        // TODO: Implement LLVector3d type.
+        console.error(`UNHANDLED LLVector3d in ${this.id}`);
         return [];
 
       case 'LLVector4':
@@ -160,58 +160,55 @@ class PacketBuffer {
 
     console.log(type, typeof type);
 
-    if (typeof type == 'string' && type.indexOf('Fixed') == 0) {
+    // TODO: Implement Fixed type.
+    if (typeof type === 'string' && type.indexOf('Fixed') === 0) {
       this.position += parseInt(type.substr(5));
-
-      console.error('UNHANDLED ' + type + ' in ' + this.id);
-
-      return 'Unparsed';
     }
 
-    console.error('UNHANDLED ' + type + ' in ' + this.id);
+    console.error(`UNHANDLED ${type} in ${this.id}`);
 
-    return undefined;
+    return 'Unparsed';
   }
 
   integer(type, bits) {
     let position = this.position;
 
     // Push position forwards by X bytes.
-    this.position += (bits / 8);
+    this.position += bits / 8;
 
-    switch(bits) {
+    switch (bits) {
       case 8:
-        if (type == 'U') {
+        if (type === 'U') {
           return this.buffer.readUInt8(position);
-        } else if (type == 'S') {
+        } else if (type === 'S') {
           return this.buffer.readInt8(position);
         }
         break;
 
       case 16:
-        if (type == 'U') {
+        if (type === 'U') {
           return this.buffer.readUInt16LE(position);
-        } else if (type == 'S') {
+        } else if (type === 'S') {
           return this.buffer.readInt16LE(position);
         }
         break;
 
       case 32:
-        if (type == 'U') {
+        if (type === 'U') {
           return this.buffer.readUInt32LE(position);
-        } else if (type == 'S') {
+        } else if (type === 'S') {
           return this.buffer.readInt32LE(position);
-        } else if (type == 'F') {
+        } else if (type === 'F') {
           return this.buffer.readFloatLE(position);
         }
         break;
 
       case 64:
-        if (type == 'F') {
+        if (type === 'F') {
           return this.buffer.readDoubleLE(position);
-        } else if (type == 'U') {
-          let buffer = this.buffer.slice(position, position + 8),
-              value = [];
+        } else if (type === 'U') {
+          let buffer = this.buffer.slice(position, position + 8);
+          let value = [];
 
           // ntohl?
           for (let i = 7; i >= 0; i--) {
@@ -222,6 +219,8 @@ class PacketBuffer {
         }
         break;
     }
+
+    return 0;
   }
 
   uuid() {
@@ -231,7 +230,7 @@ class PacketBuffer {
       // Position is adjusted here, by integer method.
       output += PacketBuffer.fill(this.integer('U', 8).toString(16), 2);
 
-      if (c == 3 || c == 5 || c == 7 || c == 9) {
+      if (c === 3 || c === 5 || c === 7 || c === 9) {
         output += '-';
       }
     }
@@ -255,7 +254,7 @@ class PacketBuffer {
     do {
       byte = this.buffer[this.position++];
       bytes.push(byte);
-    } while (byte != 0x00);
+    } while (byte !== 0x00);
 
     bytes.pop();
 
@@ -265,11 +264,9 @@ class PacketBuffer {
   static fill(value, width) {
     width -= value.toString().length;
 
-    if (width > 0) {
-      return new Array(width + (/\./.test(value) ? 2 : 1)).join('0') + value
-    }
-
-    return value + ''
+    return width > 0
+      ? new Array(width + (/\./.test(value) ? 2 : 1)).join('0') + value
+      : `${value}`;
   }
 }
 

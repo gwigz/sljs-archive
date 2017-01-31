@@ -1,7 +1,6 @@
 const Constants = require('../../../utilities/Constants');
 const fs = require('fs');
 const Packet = require('./PacketFormat');
-const PacketFormat = require('./PacketFormat');
 const PKID = require('../../../utilities/Packets');
 
 const COMMENT_REGEX = / ?[\w+]?\/\/.*?$|^version.*$/gm;
@@ -17,10 +16,11 @@ class MessageFormats {
 
     // https://bitbucket.org/lindenlab/master-message-template/raw/tip/message_template.msg
     // https://bitbucket.org/lindenlab/master-message-template/raw/tip/message_template.msg.sha1
-    const messages = fs.readFileSync(__dirname + '/template/message_template.msg', 'utf8').replace(COMMENT_REGEX, '');
+    const template = `${__dirname}/template/message_template.msg`;
+    const messages = fs.readFileSync(template, 'utf8').replace(COMMENT_REGEX, '');
 
     // TODO: Store parsed result as JSON or better, don't do this every run.
-    messages.replace(MESSAGE_REGEX, (_, name, frequency, number, trusted, encoding, flag, blocks) => {
+    messages.replace(MESSAGE_REGEX, (s0, name, frequency, number, trusted, encoding, flag, blocks) => {
       let data = {
         name: name,
         number: +number,
@@ -32,10 +32,10 @@ class MessageFormats {
         format: []
       };
 
-      let key = +(data.number + '' + data.frequency);
+      let key = +`${data.number}${data.frequency}`;
 
       if (blocks) {
-        blocks.replace(BLOCK_REGEX, (_, label, type, quantity, parameters) => {
+        blocks.replace(BLOCK_REGEX, (s1, label, type, quantity, parameters) => {
           let block = {
             name: label.replace(/[a-z](ID)$/, find => find[0]).replace(/^FOV|^ID|\b\w/, find => find.toLowerCase()),
             quantity: Number(quantity) || (type === 'Single' ? 1 : undefined)
@@ -44,7 +44,7 @@ class MessageFormats {
           if (parameters) {
             block.parameters = [];
 
-            parameters.replace(BLOCK_PARAMETER_REGEX, (_, label, type) => {
+            parameters.replace(BLOCK_PARAMETER_REGEX, (s2, label, type) => {
               block.parameters.push({
                 name: label.replace(/[a-z](ID)$/, find => find[0]).replace(/^FOV|^ID|\b\w/, find => find.toLowerCase()),
                 type: type.replace(/\s+/, '')
@@ -57,13 +57,17 @@ class MessageFormats {
       }
 
       if (typeof PKID[name] === 'undefined') {
-        throw new Error(Constants.Errors.UNKNOWN_PACKET_ID + `${name}:${key}.`);
+        throw new Error(`${Constants.Errors.UNKNOWN_PACKET_ID}${name}:${key}.`);
       }
 
       formats[key] = new Packet(key, data);
     });
 
-    fs.writeFileSync(__dirname + '/template/message_template.json', JSON.stringify(Object.values(formats), null, 4), 'utf-8');
+    // fs.writeFileSync(
+    //   `${__dirname}/template/message_template.json`,
+    //   JSON.stringify(Object.values(formats), null, 4),
+    //   'utf-8'
+    // );
 
     return formats;
   }

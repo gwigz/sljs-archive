@@ -1,5 +1,4 @@
 const AbstractHandler = require('./AbstractHandler');
-const Agent = require('../../../../structures/Agent');
 
 class AgentDataUpdate extends AbstractHandler {
   handle(parameters) {
@@ -16,7 +15,7 @@ class AgentDataUpdate extends AbstractHandler {
       name: data.groupName,
       title: data.groupTitle,
       permissions: data.groupPowers
-    }
+    };
   }
 }
 

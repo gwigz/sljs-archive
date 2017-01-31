@@ -5,10 +5,10 @@ class AbstractHandler {
 
   /**
    * Handle given packet blocks.
-   * @param {Object} parameters
+   * @param {Object} parameters Packet block data
    */
-  handle(parameters) {
-    return parameters;
+  handle() {
+    // ...
   }
 }
 

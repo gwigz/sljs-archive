@@ -14,7 +14,8 @@ class AgentMovementComplete extends AbstractHandler {
     // TODO: Listen/callback of sorts for position updates.
     agent.position = data.position;
 
-    const throttle = 500 * 1024; // client.throttle/bandwidth?
+    // client.throttle/bandwidth?
+    const throttle = 500 * 1024;
 
     const resend = throttle * 0.1;
     const land = throttle * 0.1;
@@ -41,44 +42,45 @@ class AgentMovementComplete extends AbstractHandler {
     // various packets that we can safely handle without hitting the users
     // specified bandwidth limit.
     this.manager.send(PKID.AgentThrottle, {
-        agentData: {
-          agent: agent.id,
-          session: agent.session,
-          circuitCode: agent.circuit
-        },
-        throttle: {
-          genCounter: 0,
-          throttles: throttles // [resend. land. wind. cloud. task. texture. asset]
-        }
+      agentData: {
+        agent: agent.id,
+        session: agent.session,
+        circuitCode: agent.circuit
+      },
+      throttle: {
+        genCounter: 0,
+        throttles: throttles
+      }
     });
 
     // This sends the users field of vision value, which in this case we're
     // just saying "hey, give me everything, even stuff behind me".
     this.manager.send(PKID.AgentFOV, {
-        agentData: {
-          agent: agent.id,
-          session: agent.session,
-          circuitCode: agent.circuit
-        },
-        fovBlock: {
-          genCounter: 0,
-          verticalAngle: ((Math.PI * 2) - 0.05) // client.fov?
-        }
+      agentData: {
+        agent: agent.id,
+        session: agent.session,
+        circuitCode: agent.circuit
+      },
+      fovBlock: {
+        genCounter: 0,
+        // client.fov?
+        verticalAngle: ((Math.PI * 2) - 0.05)
+      }
     });
 
     // This sends the height and width of what would usually calculated via. 3D
     // display/window size.
     this.manager.send(PKID.AgentHeightWidth, {
-        agentData: {
-          agent: agent.id,
-          session: agent.session,
-          circuitCode: agent.circuit
-        },
-        heightWidthBlock: {
-          genCounter: 0,
-          height: 360,
-          width: 640
-        }
+      agentData: {
+        agent: agent.id,
+        session: agent.session,
+        circuitCode: agent.circuit
+      },
+      heightWidthBlock: {
+        genCounter: 0,
+        height: 360,
+        width: 640
+      }
     });
   }
 }

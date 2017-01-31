@@ -1,5 +1,3 @@
-const Constants = require('../../../utilities/Constants');
-
 class PacketFormat {
   constructor(id, data) {
     this.id = id;
