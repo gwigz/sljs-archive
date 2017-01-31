@@ -61,6 +61,7 @@
     "no-useless-escape": "error",
     "no-void": "error",
     "no-warning-comments": "warn",
+    "no-console": "warn",
     "wrap-iife": "error",
     "yoda": "error",
     "no-label-var": "error",
@@ -77,7 +78,7 @@
     {
       "allowSingleLine": true
     }],
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", "never"],
     "comma-spacing": "error",
     "comma-style": "error",
     "computed-property-spacing": "error",
@@ -127,7 +128,7 @@
     "no-whitespace-before-property": "error",
     "object-curly-spacing": ["error", "always"],
     "operator-assignment": "error",
-    "operator-linebreak": ["error", "after"],
+    "operator-linebreak": ["error", "before"],
     "padded-blocks": ["error", "never"],
     "quote-props": ["error", "as-needed"],
     "quotes": ["error", "single",

@@ -1,7 +1,7 @@
 const AbstractHandler = require('./AbstractHandler');
 
 class RegionHandshake extends AbstractHandler {
-  handle(parameters) {
+  handle() {
     return false;
   }
 }

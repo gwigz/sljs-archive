@@ -12,10 +12,7 @@ const XMLRPCAuthenticator = require('./xmlrpc/XMLRPCAuthenticator');
  * @extends {EventEmitter}
  */
 class Client extends EventEmitter {
-  /**
-   * @param {ClientOptions} [options] Options for the client
-   */
-  constructor(options = {}) {
+  constructor() {
     super();
 
     /**
@@ -79,7 +76,7 @@ class Client extends EventEmitter {
     // ...
   }
 
-  connect(username, password, options) {
+  connect(username, password) {
     if (typeof username !== 'string') {
       throw new Error(Constants.Errors.INVALID_LOGIN);
     }
@@ -91,60 +88,51 @@ class Client extends EventEmitter {
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',
-      win32: 'Win',
-    }
+      win32: 'Win'
+    };
 
     const system = {
-      filesystem: { id0: '00000000-0000-0000-0000-000000000000' }, // TODO!
+      // TODO: ...
+      filesystem: { id0: '00000000-0000-0000-0000-000000000000' },
       network: os.networkInterfaces().en0 || [{ mac: '00000000-0000-0000-0000-000000000000' }],
-      platform: platforms[os.platform()] || 'Lin',
-    }
+      platform: platforms[os.platform()] || 'Lin'
+    };
 
     var parameters = {
       first: username.split(' ')[0],
       last: username.split(' ')[1] || 'Resident',
-      passwd: '$1$' + crypto.createHash('md5').update(password).digest('hex'),
-      start: 'uri:Jersey Isle&216&196&1200', // first|last|uri:sim&x&y&z
+      passwd: `$1$${crypto.createHash('md5').update(password).digest('hex')}`,
+      // first|last|uri:sim&x&y&z
+      start: 'last',
       channel: Constants.Package.name,
       version: Constants.Package.version,
       platform: system.platform,
       mac: system.network[0].mac,
       id0: system.filesystem.id0,
-      agree_to_tos: true, // TODO: Move these to parameters?
-      read_critical: true, // TODO: Move these to parameters?
+      // TODO: Move these to parameters?
+      agree_to_tos: true,
+      read_critical: true,
       viewer_digest: crypto.createHash('md5').update(JSON.stringify(Constants.Package)).digest('hex'),
       options: [
         'inventory-root',
         'inventory-skeleton',
-        //'inventory-lib-root',
-        //'inventory-lib-owner',
-        //'inventory-skel-lib',
-        //'initial-outfit',
-        //'gestures',
-        //'event_categories',
-        //'event_notifications',
-        //'classified_categories',
+        // 'inventory-lib-root',
+        // 'inventory-lib-owner',
+        // 'inventory-skel-lib',
+        // 'initial-outfit',
+        // 'gestures',
+        // 'event_categories',
+        // 'event_notifications',
+        // 'classified_categories',
         'buddy-list',
-        //'ui-config',
-        //'login-flags',
-        //'global-textures',
-        'adult_compliant',
+        // 'ui-config',
+        // 'login-flags',
+        // 'global-textures',
+        'adult_compliant'
       ]
     };
 
     this.emit(Constants.Events.DEBUG, `Attempting login using username "${username}"...`);
-
-    // sim_ip
-    // sim_port
-
-    // agent_id
-    // session_id
-    // circuit_code
-
-    // UseCircuitCode
-    // CompleteAgentMovement
-    // AgentUpdate
-    // > AgentMovementComplete
 
     // TODO: Check if we are already logged in.
     return this.xmlrpc.login(parameters).then(this.connected.bind(this));
@@ -172,7 +160,7 @@ class Client extends EventEmitter {
 
       this.udp.handshake();
     } else {
-      // error
+      // TODO: Throw an error here...
     }
   }
 }

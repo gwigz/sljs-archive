@@ -1,4 +1,3 @@
-const Constants = require('../../../utilities/Constants');
 const BufferList = require('bl');
 
 class Packet {
@@ -8,7 +7,6 @@ class Packet {
 
   setup(data) {
     this.id = data.id;
-    //this.name = data.name || undefined;
     this.reliable = data.reliable || false;
     this.number = data.number || undefined;
     this.parameters = data.parameters || null;
@@ -68,26 +66,27 @@ class Packet {
       return;
     }
 
-    // Initiate buffer with packet header...
+    // Initiate buffer with packet header.
+    // http://wiki.secondlife.com/wiki/Packet_Layout
     const buffer = new BufferList(new Buffer([
-      0x00, // Packet flags, see: http://wiki.secondlife.com/wiki/Packet_Layout
-      number >> 24, // Packet sequence number, given to us by the UDP client.
+      0x00,
+      number >> 24,
       number >> 16,
       number >> 8,
       number,
-      0x00 // Extra header bytes, in this case it's always zero, for now?
+      0x00
     ]));
 
-    if (format.frequency != 2) { // high
+    if (format.frequency !== 2) {
       buffer.append(Buffer.from([0xFF]));
 
-      if (format.frequency != 1) { // medium
+      if (format.frequency !== 1) {
         buffer.append(Buffer.from([0xFF]));
       }
 
-      if (format.frequency == 0) { // low
+      if (format.frequency === 0) {
         buffer.append(Buffer.from([(format.number >> 8) & 0xFF]));
-      } else if (format.frequency == 3) { // fixed
+      } else if (format.frequency === 3) {
         buffer.append(Buffer.from([0xFF]));
       }
     }
@@ -96,7 +95,7 @@ class Packet {
 
     for (let block of format.requirements) {
       if (!parameters.hasOwnProperty(block.name)) {
-        console.error('Whoops, creating PKID ' + this.id + ' missing block ' + block.name);
+        console.error(`Whoops, creating PKID ${this.id} missing block ${block.name}`);
         return;
       }
 
@@ -104,10 +103,6 @@ class Packet {
       if (parameters[block.name].constructor !== Array) {
         parameters[block.name] = [parameters[block.name]];
       }
-
-      /*if (block.quantity && block.quantity != parameters[block.name].length) {
-        console.error('Whoops, incorrect number of parameters for block ' + block.name);
-      }*/
 
       // Append length of packet if quantity is variable.
       if (typeof block.quantity === 'undefined') {
@@ -121,12 +116,7 @@ class Packet {
       for (let input of parameters[block.name]) {
         for (let parameter of block.parameters) {
           if (!input.hasOwnProperty(parameter.name)) {
-            // Maybe try and fill the agentData block, if possible?
-            /*if (parameters.name === 'agentData') {
-              input.agentData = {};
-            } else {*/
-
-            console.error('Whoops, creating PKID ' + this.id + ' missing parameter ' + parameter.name);
+            console.error(`Whoops, creating PKID ${this.id} missing parameter ${parameter.name}`);
             return;
           }
 
@@ -140,7 +130,7 @@ class Packet {
             case 'F32':
               var bytes = Buffer.alloc(4);
               bytes.writeFloatLE(value, 0);
-              buffer.append(bytes); // BE?
+              buffer.append(bytes);
               break;
 
             case 'F64':
@@ -176,7 +166,7 @@ class Packet {
             case 'U16':
               var bytes = Buffer.alloc(2);
               bytes.writeUInt16LE(value, 0);
-              buffer.append(bytes); // BE?
+              buffer.append(bytes);
               break;
 
             case 'U32':
@@ -189,7 +179,7 @@ class Packet {
               var bytes = [];
               let octets = value.toOctetString(' ').split(' ');
 
-              for (i = 7; i >= 0; i--) {
+              for (let i = 7; i >= 0; i--) {
                 buffer[7 - i] = parseInt(octets[i], 16);
               }
 

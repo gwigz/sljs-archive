@@ -12,7 +12,7 @@ const UDPMethods = require('./UDPMethods');
  */
 class UDPManager {
   /**
-   * @param {Client} Client value for emiting processed messages back to
+   * @param {Client} client value for emiting processed messages back to
    */
   constructor(client) {
     /**
@@ -55,14 +55,13 @@ class UDPManager {
 
   /**
    * Creates our UDP socket
-   * @return {dgram} dgram socket
+   * @returns {dgram} dgram Socket
    */
   setup() {
     const socket = dgram.createSocket('udp4');
 
     socket.on('error', (error) => {
       this.emit('error', `dgram Error!\n${error.stack}`);
-      console.error(error);
     });
 
     socket.on('message', this.handle.bind(this));
@@ -80,9 +79,9 @@ class UDPManager {
 
   /**
    * Sends message to current Simulator over UDP socket.
-   * @param {Packet|Number} input Packet or PKID to be sent
+   * @param {Packet|number} input Packet or PKID to be sent
    * @param {Object} parameters Not required if sending Packet object
-   * @return {Promise}
+   * @returns {Promise}
    */
   send(input, parameters = undefined) {
     const number = this.packet++;
@@ -98,10 +97,10 @@ class UDPManager {
 
       this.udp.send(buffer, 0, buffer.length, this.simulator.port, this.simulator.ip, (error) => {
         // TODO: Remove this once debugging is finished.
-        console.log('\x1b[32m\u276F\x1b[0m ' + this.handler.name(packet));
+        console.log(`\x1b[32m\u276F\x1b[0m ${this.handler.name(packet)}`);
 
         if (error) {
-          this.client.emit('error', error);
+          reject(error);
         } else {
           resolve();
         }
@@ -111,25 +110,18 @@ class UDPManager {
 
   /**
    * Messages from dgram are recieved and processed here.
-   * @param {Buffer} message The raw message recieved
+   * @param {Buffer} buffer The raw message recieved
    * @param {Object} info Packet info such as; address, port and size
    */
   handle(buffer, info) {
-    return this.handler.process(new PacketBuffer(buffer), info);
+    this.handler.process(new PacketBuffer(buffer), info);
   }
 
   /**
    * Connects the client to a given circuit code.
+   * @returns {Promise}
    */
   handshake() {
-    /*if (typeof this.agent !== 'Agent') {
-      // ...
-    }
-
-    if (typeof this.simulator !== 'Simulator') {
-      // ...
-    }*/
-
     this.status = Constants.Status.CONNECTING;
     this.client.emit('debug', `Connecting to simulator ${this.simulator.ip}:${this.simulator.port}...`);
 

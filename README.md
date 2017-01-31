@@ -37,7 +37,7 @@ Second Life._
 This list is in order of how I'd like to tackle various things, and yes, it's
 extremely long!
 
-- [ ] Setup code validation
+- [x] Setup code validation
 - [ ] Setup project type hinting
 - [ ] Add basic testing, maybe?
   - [ ] Login, check status, check agent values, logout, check status

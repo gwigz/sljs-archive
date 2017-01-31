@@ -1,6 +1,4 @@
-const Constants = require('../../utilities/Constants');
 const PKID = require('../../utilities/Packets');
-const Packet = require('./packets/Packet')
 
 class UDPMethods {
   constructor(parent) {
