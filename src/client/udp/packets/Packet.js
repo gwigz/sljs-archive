@@ -165,6 +165,7 @@ class Packet {
               break;
 
             case 'LLVector3d':
+              buffer.append(this.vector3d(value));
               break;
 
             case 'LLVector4':
@@ -247,6 +248,16 @@ class Packet {
     bytes.writeFloatLE(value[0], 0);
     bytes.writeFloatLE(value[1], 4);
     bytes.writeFloatLE(value[2], 8);
+
+    return bytes;
+  }
+
+  vector3d(value) {
+    let bytes = Buffer.alloc(24);
+
+    bytes.writeDoubleLE(value[0], 0);
+    bytes.writeDoubleLE(value[1], 8);
+    bytes.writeDoubleLE(value[2], 16);
 
     return bytes;
   }
