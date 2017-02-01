@@ -147,9 +147,7 @@ class PacketBuffer {
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32)];
 
       case 'LLVector3d':
-        // TODO: Implement LLVector3d type.
-        console.error(`UNHANDLED LLVector3d in ${this.id}`);
-        return [];
+        return [this.integer('F', 64), this.integer('F', 64), this.integer('F', 64)];
 
       case 'LLVector4':
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32), this.integer('F', 32)];
