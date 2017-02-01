@@ -40,7 +40,7 @@ class PacketBuffer {
   }
 
   get sequence() {
-    return this.buffer[1] << 24 | this.buffer[2] << 16 | this.buffer[3] << 8 | this.buffer[4];
+    return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4];
   }
 
   clean() {
@@ -155,6 +155,7 @@ class PacketBuffer {
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32), this.integer('F', 32)];
 
       case 'LLQuaternion':
+        // TODO: This is probably wrong, probably needs converting first...
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32), 0];
     }
 
