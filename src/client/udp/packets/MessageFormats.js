@@ -4,7 +4,13 @@ const Packet = require('./PacketFormat');
 const PKID = require('../../../utilities/Packets');
 
 const COMMENT_REGEX = / ?[\w+]?\/\/.*?$|^version.*$/gm;
-const MESSAGE_REGEX = /{\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)[\s+]?(\w+)?\s+(({\s+(\w+\s+)+({\s+(\w+\s+(\d\s+)?){2,}}\s+)+}\s+)+)?}/g;
+
+// TODO: Make this shorter?
+const MESSAGE_REGEX = new RegExp(
+  /{\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)[\s+]?(\w+)?\s+(({\s+(\w+\s+)+({\s+(\w+\s+(\d\s+)?){2,}}\s+)+}\s+)+)?}/,
+  'g'
+);
+
 const BLOCK_REGEX = /{\s+(\w+)\s+(\w+)\s+?(\d)?((?:\s+{[\s\w]+})+)?\s+}/g;
 const BLOCK_PARAMETER_REGEX = /{\s+(\w+)\s+(\w+(?:\s+\d+)?)\s+}/g;
 
@@ -20,6 +26,7 @@ class MessageFormats {
     const messages = fs.readFileSync(template, 'utf8').replace(COMMENT_REGEX, '');
 
     // TODO: Store parsed result as JSON or better, don't do this every run.
+    // TODO: CLean this up, move handling into seperate methods or something.
     messages.replace(MESSAGE_REGEX, (s0, name, frequency, number, trusted, encoding, flag, blocks) => {
       let data = {
         name: name,
@@ -35,24 +42,24 @@ class MessageFormats {
       let key = +`${data.number}${data.frequency}`;
 
       if (blocks) {
-        blocks.replace(BLOCK_REGEX, (s1, label, type, quantity, parameters) => {
-          let block = {
+        blocks.replace(BLOCK_REGEX, (s1, label, prefix, quantity, parameters) => {
+          let format = {
             name: label.replace(/[a-z](ID)$/, find => find[0]).replace(/^FOV|^ID|\b\w/, find => find.toLowerCase()),
-            quantity: Number(quantity) || (type === 'Single' ? 1 : undefined)
+            quantity: Number(quantity) || (prefix === 'Single' ? 1 : undefined)
           };
 
           if (parameters) {
-            block.parameters = [];
+            format.parameters = [];
 
-            parameters.replace(BLOCK_PARAMETER_REGEX, (s2, label, type) => {
-              block.parameters.push({
-                name: label.replace(/[a-z](ID)$/, find => find[0]).replace(/^FOV|^ID|\b\w/, find => find.toLowerCase()),
+            parameters.replace(BLOCK_PARAMETER_REGEX, (s2, block, type) => {
+              format.parameters.push({
+                name: block.replace(/[a-z](ID)$/, find => find[0]).replace(/^FOV|^ID|\b\w/, find => find.toLowerCase()),
                 type: type.replace(/\s+/, '')
               });
             });
           }
 
-          data.format.push(block);
+          data.format.push(format);
         });
       }
 

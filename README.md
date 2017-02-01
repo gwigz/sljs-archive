@@ -2,11 +2,10 @@
   <p>
     <img src="https://cdn.rawgit.com/gwigz/sljs/master/sljs.svg" width="180" alt="sljs" />
   </p>
-  <p>
-    <a href="https://travis-ci.org/gwigz/sljs" title="Travis CI Build Status">
-      <img src="https://api.travis-ci.org/gwigz/sljs.svg?branch=master" title="Travis CI Build Status">
-    </a>
-  </p>
+  <br />
+  <a href="https://travis-ci.org/gwigz/sljs" title="Travis CI Build Status">
+    <img src="https://api.travis-ci.org/gwigz/sljs.svg?branch=master" title="Travis CI Build Status">
+  </a>
 </div>
 
 #
