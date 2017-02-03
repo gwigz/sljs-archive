@@ -4,11 +4,18 @@
   </p>
   <br />
   <a href="https://travis-ci.org/gwigz/sljs" title="Travis CI Build Status">
-    <img src="https://api.travis-ci.org/gwigz/sljs.svg?branch=master" title="Travis CI Build Status">
+    <img src="https://api.travis-ci.org/gwigz/sljs.svg?branch=master" alt="Travis CI Build Status">
+  </a>
+  <a href="https://www.codacy.com/app/gwigz/sljs" title="Codecy Project Certification">
+    <img src="https://api.codacy.com/project/badge/Grade/ea826f0f261e4e8db5a495f3b0b43133" alt="Codecy Project Certification">
+  </a>
+  <a href="https://github.com/ruddfawcett/reposs" alt="Repository Size">
+    <img src="https://reposs.herokuapp.com/?path=gwigz/sljs" alt="Repository Size">
   </a>
 </div>
-
-#
+<h1>
+  <!-- sljs -->
+</h1>
 
 #### Please note this library is a work in progress!
 
@@ -20,7 +27,7 @@ Furthermore, **please don't use this for anything serious,** yet!
 
 sljs is a node.js module that allows you to interact with the virtual world
 [Second Life](https://www.secondlife.com), utilizing the offical
-[Second Life protocol](http://wiki.secondlife.com/wiki/Protocol).
+[Second Life UDP protocol](http://wiki.secondlife.com/wiki/Protocol).
 
 sljs has been made possible thanks to these wonderful resources:
 
