@@ -148,6 +148,7 @@ class Manager {
       return this.methods.logoutRequest()
         .then(() => {
           this.status = Constants.Status.DISCONNECTED
+          this.udp.close();
         })
     }
 
