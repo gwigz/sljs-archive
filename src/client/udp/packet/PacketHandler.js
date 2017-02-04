@@ -1,4 +1,5 @@
 const AcknowledgeQueueHandler = require('./AcknowledgeQueueHandler');
+const Handlers = require('./handlers');
 const MessageFormats = require('./MessageFormats');
 const Packet = require('./Packet');
 const PKID = require('../../../utilities/Packets');
@@ -10,9 +11,8 @@ class PacketHandler {
     this.ack = new AcknowledgeQueueHandler(this);
     this.handlers = {};
 
-    // Load in handlers, in a really lazy way...
-    for (let filename of require('fs').readdirSync(`${__dirname}/handlers/`)) {
-      this.register(PKID[filename.replace('.js', '')], require(`./handlers/${filename}`));
+    for (const handler in Handlers) {
+      this.register(PKID[handler], Handlers[handler]);
     }
   }
 

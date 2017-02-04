@@ -1,11 +1,12 @@
-const Agent = require('../structures/Agent');
-const Constants = require('../utilities/Constants');
 const crypto = require('crypto');
 const EventEmitter = require('events').EventEmitter;
 const os = require('os');
-const Simulator = require('../structures/Simulator');
-const UDPManager = require('./udp/UDPManager');
-const XMLRPCAuthenticator = require('./xmlrpc/XMLRPCAuthenticator');
+
+const { Authenticator } = require('./xmlrpc');
+const { Manager } = require('./udp');
+
+const { Agent, Simulator } = require('../structures');
+const { Constants } = require('../utilities');
 
 /**
  * The starting point for the SLJS client.
@@ -16,18 +17,18 @@ class Client extends EventEmitter {
     super();
 
     /**
-     * The UDP manager.
-     * @type {UDPManager}
+     * The UDP Manager.
+     * @type {Manager}
      * @private
      */
-    this.udp = new UDPManager(this);
+    this.udp = new Manager(this);
 
     /**
-     * The REST manager.
-     * @type {XMLRPCAuthenticator}
+     * The XMLRPC Authenticator.
+     * @type {Authenticator}
      * @private
      */
-    this.xmlrpc = new XMLRPCAuthenticator(this);
+    this.xmlrpc = new Authenticator(this);
 
     /**
      * The Agent representing the logged in Client.

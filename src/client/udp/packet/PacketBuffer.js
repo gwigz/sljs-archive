@@ -157,8 +157,6 @@ class PacketBuffer {
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32), 0];
     }
 
-    console.log(type, typeof type);
-
     // TODO: Implement Fixed type.
     if (typeof type === 'string' && type.indexOf('Fixed') === 0) {
       this.position += parseInt(type.substr(5));

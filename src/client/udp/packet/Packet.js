@@ -191,6 +191,8 @@ class Packet {
         }
       }
     }
+
+    return buffer.copy();
   }
 
   integer(type, bits, value) {
