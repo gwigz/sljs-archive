@@ -74,7 +74,7 @@ extremely long!
 - [x] Handle responding to `AgentMovementComplete` with basic "viewer" settings
 - [x] Handle simulator ping check
 - [x] Handle receiving basic agent attributes `AgentDataUpdate` and `HealthMessage`
-- [ ] Add method for logout
+- [x] Add method for logout
 - [ ] Change status values when connecting, connected, disconnected
 - [ ] Emit ready message and status updates
 - [ ] Consider better method of creating `Variable1` and `Variable2` packet values

@@ -7,6 +7,7 @@ exports.Events = {
 
 exports.Errors = {
   BAD_LOGIN: 'Incorrect login details were provided.',
+  LOGIN_FAILED: 'Login failed, may be due to bad username or password, or external factors.',
   UNKNOWN_PACKET_ID: 'Unknown packet, needs to be defined within the packets utility file, and tested if nessecery: '
 };
 

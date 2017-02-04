@@ -137,6 +137,22 @@ class Manager {
         this.client.emit('error', error);
       });
   }
+
+  /**
+   * Connects the client to a given circuit code.
+   * @returns {?Promise}
+   */
+  disconnect() {
+    if (this.status <= Constants.Status.CONNECTING) {
+      // TODO: Maybe drop the socket, depends what happens on reconnecting.
+      return this.methods.logoutRequest()
+        .then(() => {
+          this.status = Constants.Status.DISCONNECTED;
+        });
+    }
+
+    return null;
+  }
 }
 
 module.exports = Manager;
