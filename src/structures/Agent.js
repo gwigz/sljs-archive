@@ -9,9 +9,9 @@ class Agent {
      * @type {Client}
      * @readonly
      */
-    Object.defineProperty(this, 'client', { value: client });
+    Object.defineProperty(this, 'client', { value: client })
 
-    this.setup(data);
+    this.setup(data)
   }
 
   setup(data) {
@@ -19,20 +19,20 @@ class Agent {
      * UUID of this Agent.
      * @type {string}
      */
-    this.id = data.id;
+    this.id = data.id
 
     /**
      * UUID of the session ID that Agent was given upon login.
      * @type {string}
      */
-    this.session = data.session;
+    this.session = data.session
 
     /**
      * UUID of the circuit code that Agent was given upon login.
      * @type {string}
      */
-    this.circuit = data.circuit;
+    this.circuit = data.circuit
   }
 }
 
-module.exports = Agent;
+module.exports = Agent

@@ -1,6 +1,6 @@
 class AbstractHandler {
   constructor(manager) {
-    this.manager = manager;
+    this.manager = manager
   }
 
   /**
@@ -12,4 +12,4 @@ class AbstractHandler {
   }
 }
 
-module.exports = AbstractHandler;
+module.exports = AbstractHandler

@@ -9,9 +9,9 @@ class Simulator {
      * @type {Client}
      * @readonly
      */
-    Object.defineProperty(this, 'client', { value: client });
+    Object.defineProperty(this, 'client', { value: client })
 
-    this.setup(data);
+    this.setup(data)
   }
 
   setup(data) {
@@ -19,32 +19,32 @@ class Simulator {
      * IP address of this Simulator.
      * @type {string}
      */
-    this.ip = data.ip;
+    this.ip = data.ip
 
     /**
      * Port of which we are able to send UDP packets through to this Simulator.
      * @type {number}
      */
-    this.port = data.port;
+    this.port = data.port
 
     /**
      * Circuit code we are currently using for this Simulator.
      * @type {number}
      */
-    this.circuit = data.circuit;
+    this.circuit = data.circuit
 
     /**
      * Capabilities URI for additional features.
      * @link http://wiki.secondlife.com/wiki/Capabilities
      * @type {?string}
      */
-    this.uri = data.uri || null;
+    this.uri = data.uri || null
 
     /**
      * Simulator channel and version number details.
      * @type {?string}
      */
-    this.channel = null;
+    this.channel = null
   }
 
   /*
@@ -143,4 +143,4 @@ class Simulator {
   */
 }
 
-module.exports = Simulator;
+module.exports = Simulator

@@ -6,4 +6,4 @@ module.exports = {
   RegionHandshake: require('./RegionHandshake'),
   ScriptControlChange: require('./ScriptControlChange'),
   StartPingCheck: require('./StartPingCheck')
-};
+}
