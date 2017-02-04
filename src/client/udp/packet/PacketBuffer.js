@@ -156,9 +156,8 @@ class PacketBuffer {
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32), 0]
     }
 
-    // TODO: Implement Fixed type.
     if (typeof type === 'string' && type.indexOf('Fixed') === 0) {
-      this.position += Number(type.substr(5))
+      return this.fixed(Number(type.substr(5)))
     }
 
     // TODO: Throw error instead?
@@ -236,6 +235,15 @@ class PacketBuffer {
 
   variable(length) {
     const bytes = this.integer('U', 8 * length)
+    const buffer = this.buffer.slice(this.position, this.position + bytes)
+
+    this.position += bytes
+
+    return buffer.toString('utf8', 0, buffer.length - 1)
+  }
+
+  fixed(length) {
+    const bytes = 8 * length
     const buffer = this.buffer.slice(this.position, this.position + bytes)
 
     this.position += bytes
