@@ -30,7 +30,7 @@ class MessageFormats {
     messages.replace(MESSAGE_REGEX, (s0, name, frequency, number, trusted, encoding, flag, blocks) => {
       let data = {
         name: name,
-        number: +number,
+        number: Number(number),
         frequency: FREQUENCY_LIST.indexOf(frequency),
         trusted: trusted === 'Trusted',
         compression: encoding === 'Zerocoded',
@@ -39,7 +39,7 @@ class MessageFormats {
         format: []
       };
 
-      let key = +`${data.number}${data.frequency}`;
+      let key = Number(`${data.number}${data.frequency}`);
 
       if (blocks) {
         blocks.replace(BLOCK_REGEX, (s1, label, prefix, quantity, parameters) => {
