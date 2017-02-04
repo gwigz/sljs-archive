@@ -45,6 +45,15 @@ class Methods {
       }
     });
   }
+
+  logoutRequest() {
+    return this.manager.send(PKID.LogoutRequest, {
+      agentData: {
+        agent: this.agent.id,
+        session: this.session
+      }
+    });
+  }
 }
 
 module.exports = Methods;

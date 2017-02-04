@@ -161,8 +161,13 @@ class Client extends EventEmitter {
 
       this.udp.handshake();
     } else {
-      // TODO: Throw an error here...
+      throw new Error(Constants.Errors.LOGIN_FAILED)
     }
+  }
+
+  disconnect() {
+    // TODO: Update status and such.
+    return this.udp.disconnect();
   }
 }
 
