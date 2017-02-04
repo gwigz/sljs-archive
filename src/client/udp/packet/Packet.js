@@ -251,7 +251,7 @@ class Packet {
 
   u64(value) {
     let bytes = []
-    let octets = value.toOctetString(' ').split(' ')
+    let octets = parseInt(value).toOctetString(' ').split(' ')
 
     for (let i = 7; i >= 0; i--) {
       bytes[7 - i] = parseInt(octets[i], 16)
@@ -317,12 +317,12 @@ class Packet {
   }
 
   variable(bytes, value) {
-    const bits = bytes * 2
+    const bits = 8 * bytes
     const max = 255 * bytes
     const buffer = Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
 
-    return [this.integer('U', bits, length), buffer.slice(0, length)]
+    return Buffer.concat([this.integer('U', bits, length), buffer.slice(0, length)])
   }
 }
 
