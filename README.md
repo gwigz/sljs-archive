@@ -77,7 +77,7 @@ extremely long!
 - [x] Add method for logout
 - [x] Change status values when connecting, connected, disconnected
 - [ ] Emit ready message and status updates
-- [ ] Consider better method of creating `Variable1` and `Variable2` packet values
+- [ ] Consider better sugar method creating `Variable` packets values, see `AgentThrottle`
 - [ ] Restructure folder layout, maybe combine `UDPManager` and `PacketHandler`
 - [ ] Move message template parsing into seperate method
   - [ ] Keep and use pre-parsed JSON version
