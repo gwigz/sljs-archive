@@ -42,23 +42,12 @@ class Client extends EventEmitter {
      */
     this.simulator = null;
 
-    /**
-     * The Region representing the current Region.
-     * @type {?Region}
-     */
-    this.region = null;
-
-    /**
-     * The Parcel representing the current Parcel.
-     * @type {?Parcel}
-     */
-    this.parcel = null;
-
     // appearance
     // state
     // uptime
-    // parcel
+    // region
     // estate
+    // parcel
     // - parcels?
     // - objects
     // - agents/avatars
@@ -75,6 +64,10 @@ class Client extends EventEmitter {
     // - group messages
     // - group notices
     // ...
+  }
+
+  get status() {
+    return this.udp.status;
   }
 
   connect(username, password) {
@@ -161,7 +154,7 @@ class Client extends EventEmitter {
 
       this.udp.handshake();
     } else {
-      throw new Error(Constants.Errors.LOGIN_FAILED)
+      throw new Error(Constants.Errors.LOGIN_FAILED);
     }
   }
 

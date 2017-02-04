@@ -75,7 +75,7 @@ extremely long!
 - [x] Handle simulator ping check
 - [x] Handle receiving basic agent attributes `AgentDataUpdate` and `HealthMessage`
 - [x] Add method for logout
-- [ ] Change status values when connecting, connected, disconnected
+- [x] Change status values when connecting, connected, disconnected
 - [ ] Emit ready message and status updates
 - [ ] Consider better method of creating `Variable1` and `Variable2` packet values
 - [ ] Restructure folder layout, maybe combine `UDPManager` and `PacketHandler`
