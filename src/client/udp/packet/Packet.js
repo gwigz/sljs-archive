@@ -23,32 +23,48 @@ class Packet {
     // Dezero if we need too, depending on the packets header flag.
     buffer.clean()
 
-    let packet = new Packet({
+    const packet = new Packet({
       id: buffer.id,
       number: buffer.sequence,
       reliable: buffer.reliable
     })
 
-    let format = handler.format(packet)
+    const format = handler.format(packet)
 
-    if (format
-      && format.requirements
-      && format.requirements.length
-    ) {
-      packet.parameters = {}
+    // If we have no format, don't attempt to parse any further.
+    if (!(format && format.requirements && format.requirements.length)) {
+      return packet
+    }
 
-      // Notify our buffer set our start position, this will be after the
-      // packet header.
-      buffer.restart()
+    packet.parameters = {}
 
-      for (let block of format.requirements) {
-        packet.parameters[block.name] = {}
+    // Notify our buffer set our start position, this will be after the
+    // packet header.
+    buffer.restart()
 
-        for (let parameter of block.parameters) {
-          // Read in type, buffer position is automatically adjusted here.
-          packet.parameters[block.name][parameter.name] = buffer.read(parameter.type)
+    // TODO: Handle this better.
+    try {
+      for (const block of format.requirements) {
+        const quantity = block.quantity ? block.quantity : buffer.read('U8')
+
+        // Prepare an array for containing block content.
+        packet.parameters[block.name] = []
+
+        // Loop through block dependant on quantity value.
+        for (let i = 0; i < quantity; i++) {
+          const parameters = {}
+
+          // Fetch block parameters.
+          for (const parameter of block.parameters) {
+            // Read in type, buffer position is automatically adjusted here.
+            parameters[parameter.name] = buffer.read(parameter.type)
+          }
+
+          packet.parameters[block.name].push(parameters)
         }
       }
+    } catch (error) {
+      console.error(error, `${packet.id} failed to process, whoops...`)
     }
 
     return packet
@@ -301,10 +317,10 @@ class Packet {
   }
 
   variable(bytes, value) {
-    const bits = bytes * 2;
-    const max = 255 * bytes;
-    const buffer = Buffer.from(value, 'utf-8');
-    const length = Math.min(max, buffer.length);
+    const bits = bytes * 2
+    const max = 255 * bytes
+    const buffer = Buffer.from(value, 'utf-8')
+    const length = Math.min(max, buffer.length)
 
     return [this.integer('U', bits, length), buffer.slice(0, length)]
   }

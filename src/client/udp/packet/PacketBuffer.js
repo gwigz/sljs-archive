@@ -27,7 +27,6 @@ class PacketBuffer {
   }
 
   get id() {
-    // idk if there's a math thing to push a digit to the end of a number?
     if (this.buffer[6] !== 0xFF) {
       return Number(`${this.buffer[6]}2`)
     } else if (this.buffer[7] !== 0xFF) {
@@ -162,9 +161,10 @@ class PacketBuffer {
       this.position += Number(type.substr(5))
     }
 
+    // TODO: Throw error instead?
     console.error(`UNHANDLED ${type} in ${this.id}`)
 
-    return 'Unparsed'
+    return null
   }
 
   integer(type, bits) {
@@ -207,7 +207,6 @@ class PacketBuffer {
           let buffer = this.buffer.slice(position, position + 8)
           let value = []
 
-          // ntohl?
           for (let i = 7; i >= 0; i--) {
             value.push(buffer[i])
           }
