@@ -181,11 +181,11 @@ class Packet {
               break
 
             case 'Variable1':
-              buffer.append(value)
+              buffer.append(this.variable(1, value))
               break
 
             case 'Variable2':
-              buffer.append(value)
+              buffer.append(this.variable(2, value))
               break
           }
         }
@@ -298,6 +298,15 @@ class Packet {
     bytes.writeFloatLE(value[3] || 0, 12)
 
     return bytes
+  }
+
+  variable(bytes, value) {
+    const bits = bytes * 2;
+    const max = 255 * bytes;
+    const buffer = Buffer.from(value, 'utf-8');
+    const length = Math.min(max, buffer.length);
+
+    return [this.integer('U', bits, length), buffer.slice(0, length)]
   }
 }
 
