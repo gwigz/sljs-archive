@@ -93,7 +93,7 @@ class Packet {
 
     buffer.append(Buffer.from([format.number & 0xFF]))
 
-    for (let block of format.requirements) {
+    for (const block of format.requirements) {
       if (!parameters.hasOwnProperty(block.name)) {
         console.error(`Whoops, creating PKID ${this.id} missing block ${block.name}`)
         return null
@@ -110,8 +110,8 @@ class Packet {
       }
 
       // Parse type, append value to buffer.
-      for (let input of parameters[block.name]) {
-        for (let parameter of block.parameters) {
+      for (const input of parameters[block.name]) {
+        for (const parameter of block.parameters) {
           if (!input.hasOwnProperty(parameter.name)) {
             console.error(`Whoops, creating PKID ${this.id} missing parameter ${parameter.name}`)
             return null
@@ -238,7 +238,7 @@ class Packet {
     let octets = value.toOctetString(' ').split(' ')
 
     for (let i = 7; i >= 0; i--) {
-      bytes[7 - i] = parseInt(octets[i], 16)
+      bytes[7 - i] = Number(octets[i], 16)
     }
 
     return Buffer.from(bytes)
@@ -279,9 +279,9 @@ class Packet {
     let bytes = []
     let parts = value.split('-')
 
-    for (let part of parts) {
+    for (const part of parts) {
       for (let c = 0; c < part.length; c += 2) {
-        bytes.push(parseInt(part.substr(c, 2), 16))
+        bytes.push(Number(part.substr(c, 2), 16))
       }
     }
 
