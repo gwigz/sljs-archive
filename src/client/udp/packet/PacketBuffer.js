@@ -29,13 +29,13 @@ class PacketBuffer {
   get id() {
     // idk if there's a math thing to push a digit to the end of a number?
     if (this.buffer[6] !== 0xFF) {
-      return +`${this.buffer[6]}2`;
+      return Number(`${this.buffer[6]}2`);
     } else if (this.buffer[7] !== 0xFF) {
-      return +`${this.buffer[7]}1`;
+      return Number(`${this.buffer[7]}1`);
     } else if (this.buffer[8] !== 0xFF) {
-      return +`${this.buffer.readUInt16BE(8)}0`;
+      return Number(`${this.buffer.readUInt16BE(8)}0`);
     } else {
-      return +`${this.buffer[9]}3`;
+      return Number(`${this.buffer[9]}3`);
     }
   }
 
@@ -159,7 +159,7 @@ class PacketBuffer {
 
     // TODO: Implement Fixed type.
     if (typeof type === 'string' && type.indexOf('Fixed') === 0) {
-      this.position += parseInt(type.substr(5));
+      this.position += Number(type.substr(5));
     }
 
     console.error(`UNHANDLED ${type} in ${this.id}`);
