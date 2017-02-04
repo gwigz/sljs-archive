@@ -254,7 +254,7 @@ class Packet {
     let octets = value.toOctetString(' ').split(' ')
 
     for (let i = 7; i >= 0; i--) {
-      bytes[7 - i] = Number(octets[i], 16)
+      bytes[7 - i] = parseInt(octets[i], 16)
     }
 
     return Buffer.from(bytes)
@@ -297,7 +297,7 @@ class Packet {
 
     for (const part of parts) {
       for (let c = 0; c < part.length; c += 2) {
-        bytes.push(Number(part.substr(c, 2), 16))
+        bytes.push(parseInt(part.substr(c, 2), 16))
       }
     }
 
