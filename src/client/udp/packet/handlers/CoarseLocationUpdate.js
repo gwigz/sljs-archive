@@ -1,9 +1,9 @@
-const AbstractHandler = require('./AbstractHandler');
+const AbstractHandler = require('./AbstractHandler')
 
 class CoarseLocationUpdate extends AbstractHandler {
   handle() {
-    return false;
+    return false
   }
 }
 
-module.exports = CoarseLocationUpdate;
+module.exports = CoarseLocationUpdate

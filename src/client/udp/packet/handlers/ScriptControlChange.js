@@ -1,4 +1,4 @@
-const AbstractHandler = require('./AbstractHandler');
+const AbstractHandler = require('./AbstractHandler')
 
 class ScriptControlChange extends AbstractHandler {
   handle() {
@@ -6,8 +6,8 @@ class ScriptControlChange extends AbstractHandler {
     // controls
     // passToAgent
 
-    return false;
+    return false
   }
 }
 
-module.exports = ScriptControlChange;
+module.exports = ScriptControlChange

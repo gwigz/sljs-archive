@@ -1,12 +1,12 @@
-const crypto = require('crypto');
-const EventEmitter = require('events').EventEmitter;
-const os = require('os');
+const crypto = require('crypto')
+const EventEmitter = require('events').EventEmitter
+const os = require('os')
 
-const { Authenticator } = require('./xmlrpc');
-const { Manager } = require('./udp');
+const { Authenticator } = require('./xmlrpc')
+const { Manager } = require('./udp')
 
-const { Agent, Simulator } = require('../structures');
-const { Constants } = require('../utilities');
+const { Agent, Simulator } = require('../structures')
+const { Constants } = require('../utilities')
 
 /**
  * The starting point for the SLJS client.
@@ -14,33 +14,33 @@ const { Constants } = require('../utilities');
  */
 class Client extends EventEmitter {
   constructor() {
-    super();
+    super()
 
     /**
      * The UDP Manager.
      * @type {Manager}
      * @private
      */
-    this.udp = new Manager(this);
+    this.udp = new Manager(this)
 
     /**
      * The XMLRPC Authenticator.
      * @type {Authenticator}
      * @private
      */
-    this.xmlrpc = new Authenticator(this);
+    this.xmlrpc = new Authenticator(this)
 
     /**
      * The Agent representing the logged in Client.
      * @type {?Agent}
      */
-    this.agent = null;
+    this.agent = null
 
     /**
      * The Simulator representing the current Simulator.
      * @type {?Simulator}
      */
-    this.simulator = null;
+    this.simulator = null
 
     // appearance
     // state
@@ -67,30 +67,30 @@ class Client extends EventEmitter {
   }
 
   get status() {
-    return this.udp.status;
+    return this.udp.status
   }
 
   connect(username, password) {
     if (typeof username !== 'string') {
-      throw new Error(Constants.Errors.INVALID_LOGIN);
+      throw new Error(Constants.Errors.INVALID_LOGIN)
     }
 
     if (typeof password !== 'string') {
-      throw new Error(Constants.Errors.INVALID_LOGIN);
+      throw new Error(Constants.Errors.INVALID_LOGIN)
     }
 
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',
       win32: 'Win'
-    };
+    }
 
     const system = {
       // TODO: ...
       filesystem: { id0: '00000000-0000-0000-0000-000000000000' },
       network: os.networkInterfaces().en0 || [{ mac: '00000000-0000-0000-0000-000000000000' }],
       platform: platforms[os.platform()] || 'Lin'
-    };
+    }
 
     var parameters = {
       first: username.split(' ')[0],
@@ -124,12 +124,12 @@ class Client extends EventEmitter {
         // 'global-textures',
         'adult_compliant'
       ]
-    };
+    }
 
-    this.emit(Constants.Events.DEBUG, `Attempting login using username "${username}"...`);
+    this.emit(Constants.Events.DEBUG, `Attempting login using username "${username}"...`)
 
     // TODO: Check if we are already logged in.
-    return this.xmlrpc.login(parameters).then(this.connected.bind(this));
+    return this.xmlrpc.login(parameters).then(this.connected.bind(this))
   }
 
   connected(response) {
@@ -143,28 +143,28 @@ class Client extends EventEmitter {
         id: response.agent_id,
         session: response.session_id,
         circuit: response.circuit_code
-      });
+      })
 
       this.simulator = new Simulator(this, {
         ip: response.sim_ip,
         port: response.sim_port,
         circuit: response.circuit_code,
         uri: response.seed_capability || null
-      });
+      })
 
-      this.udp.handshake();
+      this.udp.handshake()
     } else {
-      throw new Error(Constants.Errors.LOGIN_FAILED);
+      throw new Error(Constants.Errors.LOGIN_FAILED)
     }
   }
 
   disconnect() {
     // TODO: Update status and such.
-    return this.udp.disconnect();
+    return this.udp.disconnect()
   }
 }
 
-module.exports = Client;
+module.exports = Client
 
 /**
  * Emitted for general warnings.

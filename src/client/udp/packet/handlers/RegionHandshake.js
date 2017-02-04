@@ -1,9 +1,9 @@
-const AbstractHandler = require('./AbstractHandler');
+const AbstractHandler = require('./AbstractHandler')
 
 class RegionHandshake extends AbstractHandler {
   handle() {
-    return false;
+    return false
   }
 }
 
-module.exports = RegionHandshake;
+module.exports = RegionHandshake

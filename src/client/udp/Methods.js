@@ -1,29 +1,29 @@
-const PKID = require('../../utilities/Packets');
+const PKID = require('../../utilities/Packets')
 
 class Methods {
   constructor(parent) {
-    this.manager = parent;
-    this.client = parent.client;
+    this.manager = parent
+    this.client = parent.client
   }
 
   get handler() {
-    return this.manager.handler;
+    return this.manager.handler
   }
 
   get agent() {
-    return this.client.agent;
+    return this.client.agent
   }
 
   get session() {
-    return this.client.agent.session;
+    return this.client.agent.session
   }
 
   get simulator() {
-    return this.client.simulator;
+    return this.client.simulator
   }
 
   get circuit() {
-    return this.agent.circuit || this.simulator.circuit;
+    return this.agent.circuit || this.simulator.circuit
   }
 
   useCircuitCode() {
@@ -33,7 +33,7 @@ class Methods {
         session: this.session,
         id: this.agent.id
       }
-    });
+    })
   }
 
   completeAgentMovement() {
@@ -43,7 +43,7 @@ class Methods {
         session: this.session,
         circuitCode: this.circuit
       }
-    });
+    })
   }
 
   logoutRequest() {
@@ -52,8 +52,8 @@ class Methods {
         agent: this.agent.id,
         session: this.session
       }
-    });
+    })
   }
 }
 
-module.exports = Methods;
+module.exports = Methods
