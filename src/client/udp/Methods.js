@@ -1,6 +1,6 @@
 const PKID = require('../../utilities/Packets');
 
-class UDPMethods {
+class Methods {
   constructor(parent) {
     this.manager = parent;
     this.client = parent.client;
@@ -47,4 +47,4 @@ class UDPMethods {
   }
 }
 
-module.exports = UDPMethods;
+module.exports = Methods;

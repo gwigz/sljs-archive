@@ -64,7 +64,7 @@ class AgentMovementComplete extends AbstractHandler {
       fovBlock: {
         genCounter: 0,
         // client.fov?
-        verticalAngle: ((Math.PI * 2) - 0.05)
+        verticalAngle: (Math.PI * 2) - 0.05
       }
     });
 

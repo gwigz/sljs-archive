@@ -1,11 +1,11 @@
 const Constants = require('../../utilities/Constants');
 const xmlrpc = require('xmlrpc');
 
-class XMLRPCAuthenticator {
+class Authenticator {
   constructor() {
     /**
      * The XMLRPC connection to the gateway
-     * @type {?XMLRPC}
+     * @type {xmlrpc}
      */
     this.xmlrpc = xmlrpc.createSecureClient({
       url: Constants.Endpoints.login,
@@ -27,4 +27,4 @@ class XMLRPCAuthenticator {
   }
 }
 
-module.exports = XMLRPCAuthenticator;
+module.exports = Authenticator;

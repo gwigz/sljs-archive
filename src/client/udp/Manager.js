@@ -1,16 +1,16 @@
-const Constants = require('../../utilities/Constants');
 const dgram = require('dgram');
-const Packet = require('./packets/Packet');
-const PacketBuffer = require('./packets/PacketBuffer');
-const PacketHandler = require('./packets/PacketHandler');
-const UDPMethods = require('./UDPMethods');
+
+const { Constants } = require('../../utilities');
+const { Packet, PacketBuffer, PacketHandler } = require('./packet');
+
+const Methods = require('./Methods');
 
 /**
  * The UDPManager handles connecting to a Simulator, processing and sending
  * messages. It's basically 99% of the the networking behind Client.
  * @extends {EventEmitter}
  */
-class UDPManager {
+class Manager {
   /**
    * @param {Client} client value for emiting processed messages back to
    */
@@ -29,9 +29,9 @@ class UDPManager {
 
     /**
      * Method helper, for sending UDP packets.
-     * @type {UDPMethods}
+     * @type {Methods}
      */
-    this.methods = new UDPMethods(this);
+    this.methods = new Methods(this);
 
     /**
      * The UDP connection/socket.
@@ -83,7 +83,7 @@ class UDPManager {
    * @param {Object} parameters Not required if sending Packet object
    * @returns {Promise}
    */
-  send(input, parameters = undefined) {
+  send(input, parameters) {
     const number = this.packet++;
 
     // TODO: Check we are still connected.
@@ -139,4 +139,4 @@ class UDPManager {
   }
 }
 
-module.exports = UDPManager;
+module.exports = Manager;

@@ -4,8 +4,9 @@
   "description": "A client for connecting to Linden Lab's virtual world \"Second Life\"",
   "main": "./src/index",
   "scripts": {
-    "test": "eslint src",
-    "lint": "eslint src"
+    "test": "npm run lint",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "repository": {
     "type": "git",
