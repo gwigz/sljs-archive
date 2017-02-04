@@ -63,7 +63,7 @@ class Packet {
 
     if (typeof format === 'undefined') {
       // Throw error or something?
-      return;
+      return null;
     }
 
     // Initiate buffer with packet header.
@@ -96,7 +96,7 @@ class Packet {
     for (let block of format.requirements) {
       if (!parameters.hasOwnProperty(block.name)) {
         console.error(`Whoops, creating PKID ${this.id} missing block ${block.name}`);
-        return;
+        return null;
       }
 
       // Hack for single blocks.
@@ -114,7 +114,7 @@ class Packet {
         for (let parameter of block.parameters) {
           if (!input.hasOwnProperty(parameter.name)) {
             console.error(`Whoops, creating PKID ${this.id} missing parameter ${parameter.name}`);
-            return;
+            return null;
           }
 
           const value = input[parameter.name];
