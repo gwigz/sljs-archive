@@ -3,6 +3,9 @@
     <img src="https://cdn.rawgit.com/gwigz/sljs/master/sljs.svg" width="180" alt="sljs" />
   </p>
   <br />
+  <a href="https://david-dm.org" title="Dependency Monitor">
+    <img src="https://david-dm.org/gwigz/sljs.svg" alt="Dependency Monitor">
+  </a>
   <a href="https://travis-ci.org/gwigz/sljs" title="Travis CI Build Status">
     <img src="https://api.travis-ci.org/gwigz/sljs.svg?branch=master" alt="Travis CI Build Status">
   </a>
