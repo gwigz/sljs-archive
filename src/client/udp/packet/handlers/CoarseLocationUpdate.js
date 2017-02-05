@@ -5,7 +5,9 @@ class CoarseLocationUpdate extends AbstractHandler {
     const agent = this.manager.client.agent
     const index = parameters.index[0];
 
-    agent.position = parameters.location[index.you];
+    if (index.you !== -1) {
+      agent.position = parameters.location[index.you];
+    }
   }
 }
 
