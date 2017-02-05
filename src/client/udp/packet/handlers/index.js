@@ -4,6 +4,5 @@ module.exports = {
   CoarseLocationUpdate: require('./CoarseLocationUpdate'),
   HealthMessage: require('./HealthMessage'),
   RegionHandshake: require('./RegionHandshake'),
-  ScriptControlChange: require('./ScriptControlChange'),
   StartPingCheck: require('./StartPingCheck')
 }
