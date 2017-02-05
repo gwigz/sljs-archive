@@ -2,7 +2,7 @@ const Long = require('long')
 
 class PacketBuffer {
   constructor(buffer) {
-    this.buffer = buffer
+    this.buffer = buffer || new Buffer()
     this.position = 0
   }
 
@@ -156,7 +156,7 @@ class PacketBuffer {
         return [this.integer('F', 32), this.integer('F', 32), this.integer('F', 32), 0]
     }
 
-    if (typeof type === 'string' && type.indexOf('Fixed') === 0) {
+    if (type.indexOf('Fixed') === 0) {
       return this.fixed(Number(type.substr(5)))
     }
 
@@ -203,14 +203,7 @@ class PacketBuffer {
         if (type === 'F') {
           return this.buffer.readDoubleLE(position)
         } else if (type === 'U') {
-          let buffer = this.buffer.slice(position, position + 8)
-          let value = []
-
-          for (let i = 7; i >= 0; i--) {
-            value.push(buffer[i])
-          }
-
-          return new Long(new Buffer(value))
+          return new Long(this.buffer.readInt32LE(position), this.buffer.readInt32LE(position + 4))
         }
         break
     }
@@ -242,13 +235,12 @@ class PacketBuffer {
     return buffer.toString('utf8', 0, buffer.length - 1)
   }
 
-  fixed(length) {
-    const bytes = 8 * length
+  fixed(bytes) {
     const buffer = this.buffer.slice(this.position, this.position + bytes)
 
     this.position += bytes
 
-    return buffer.toString('utf8', 0, buffer.length - 1)
+    return buffer
   }
 
   text() {

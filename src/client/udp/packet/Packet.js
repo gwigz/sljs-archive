@@ -1,4 +1,5 @@
 const BufferList = require('bl')
+const Long = require('long')
 
 class Packet {
   constructor(data) {
@@ -84,7 +85,7 @@ class Packet {
 
     // Initiate buffer with packet header.
     // http://wiki.secondlife.com/wiki/Packet_Layout
-    const buffer = new BufferList(new Buffer([
+    const buffer = new BufferList(Buffer.from([
       0x00,
       number >> 24,
       number >> 16,
@@ -133,77 +134,7 @@ class Packet {
             return null
           }
 
-          const value = input[parameter.name]
-
-          switch (parameter.type) {
-            case 'BOOL':
-              buffer.append(Buffer.from([(value | 0) & 0xFF]))
-              break
-
-            case 'F32':
-              buffer.append(this.integer('F', 32, value))
-              break
-
-            case 'F64':
-              buffer.append(this.integer('F', 64, value))
-              break
-
-            case 'S8':
-              buffer.append(this.integer('S', 8, value))
-              break
-
-            case 'S16':
-              buffer.append(this.integer('S', 16, value))
-              break
-
-            case 'S32':
-              buffer.append(this.integer('S', 32, value))
-              break
-
-            case 'U8':
-              buffer.append(this.integer('U', 8, value))
-              break
-
-            case 'U16':
-              buffer.append(this.integer('U', 16, value))
-              break
-
-            case 'U32':
-              buffer.append(this.integer('U', 32, value))
-              break
-
-            case 'U64':
-              buffer.append(this.u64(value))
-              break
-
-            case 'LLVector3':
-              buffer.append(this.vector3(value))
-              break
-
-            case 'LLVector3d':
-              buffer.append(this.vector3d(value))
-              break
-
-            case 'LLVector4':
-              buffer.append(this.vector4(value))
-              break
-
-            case 'LLUUID':
-              buffer.append(this.uuid(value))
-              break
-
-            case 'LLQuaternion':
-              buffer.append(this.quaternion(value))
-              break
-
-            case 'Variable1':
-              buffer.append(this.variable(1, value))
-              break
-
-            case 'Variable2':
-              buffer.append(this.variable(2, value))
-              break
-          }
+          this.append(buffer, parameter.type, input[parameter.name])
         }
       }
     }
@@ -211,73 +142,126 @@ class Packet {
     return buffer.copy()
   }
 
+  append(buffer, type, value) {
+    switch (type) {
+      case 'BOOL':
+        return buffer.append(Buffer.from([(value | 0) & 0xFF]))
+
+      case 'F32':
+        return buffer.append(this.integer('F', 32, value))
+
+      case 'F64':
+        return buffer.append(this.integer('F', 64, value))
+
+      case 'S8':
+        return buffer.append(this.integer('S', 8, value))
+
+      case 'S16':
+        return buffer.append(this.integer('S', 16, value))
+
+      case 'S32':
+        return buffer.append(this.integer('S', 32, value))
+
+      case 'U8':
+        return buffer.append(this.integer('U', 8, value))
+
+      case 'U16':
+        return buffer.append(this.integer('U', 16, value))
+
+      case 'U32':
+        return buffer.append(this.integer('U', 32, value))
+
+      case 'U64':
+        return buffer.append(this.u64(value))
+
+      case 'LLVector3':
+        return buffer.append(this.vector3(value))
+
+      case 'LLVector3d':
+        return buffer.append(this.vector3d(value))
+
+      case 'LLVector4':
+        return buffer.append(this.vector4(value))
+
+      case 'LLUUID':
+        return buffer.append(this.uuid(value))
+
+      case 'LLQuaternion':
+        return buffer.append(this.quaternion(value))
+
+      case 'Variable1':
+        return buffer.append(this.variable(1, value))
+
+      case 'Variable2':
+        return buffer.append(this.variable(2, value))
+    }
+
+    if (type.indexOf('Fixed') === 0) {
+      return buffer.append(this.fixed(Number(type.substr(5)), value))
+    }
+
+    return null
+  }
+
   integer(type, bits, value) {
-    let bytes = Buffer.alloc(bits / 8)
+    let buffer = Buffer.alloc(bits / 8)
 
     switch (type) {
       case 'F':
         if (bits === 32) {
-          bytes.writeFloatLE(value, 0)
+          buffer.writeFloatLE(value, 0)
         } else {
-          bytes.writeDoubleLE(value, 0)
+          buffer.writeDoubleLE(value, 0)
         }
         break
 
       case 'S':
         if (bits === 8) {
-          bytes.writeInt8(value, 0)
+          buffer.writeInt8(value, 0)
         } else if (bits === 16) {
-          bytes.writeInt16LE(value, 0)
+          buffer.writeInt16LE(value, 0)
         } else {
-          bytes.writeInt32LE(value, 0)
+          buffer.writeInt32LE(value, 0)
         }
         break
 
       case 'U':
         if (bits === 8) {
-          bytes.writeUInt8(value, 0)
+          buffer.writeUInt8(value, 0)
         } else if (bits === 16) {
-          bytes.writeUInt16LE(value, 0)
+          buffer.writeUInt16LE(value, 0)
         } else if (bits === 32) {
-          bytes.writeUInt32LE(value, 0)
+          buffer.writeUInt32LE(value, 0)
+        } else if (value instanceof Long) {
+          buffer.writeInt32LE(value.low, 0)
+          buffer.writeInt32LE(value.high, 4)
         } else {
-          bytes = this.u64(value)
+          buffer.writeDoubleLE(value)
         }
         break
     }
 
-    return Buffer.from(bytes)
-  }
-
-  u64(value) {
-    let bytes = []
-    let octets = parseInt(value).toOctetString(' ').split(' ')
-
-    for (let i = 7; i >= 0; i--) {
-      bytes[7 - i] = parseInt(octets[i], 16)
-    }
-
-    return Buffer.from(bytes)
+    return buffer
   }
 
   vector3(value) {
-    let bytes = Buffer.alloc(12)
+    let buffer = Buffer.alloc(12)
 
-    bytes.writeFloatLE(value[0], 0)
-    bytes.writeFloatLE(value[1], 4)
-    bytes.writeFloatLE(value[2], 8)
+    buffer.writeFloatLE(value[0], 0)
+    buffer.writeFloatLE(value[1], 4)
+    buffer.writeFloatLE(value[2], 8)
 
-    return bytes
+    return buffer
   }
 
   vector3d(value) {
-    let bytes = Buffer.alloc(24)
+    let buffer = Buffer.alloc(24)
 
-    bytes.writeDoubleLE(value[0], 0)
-    bytes.writeDoubleLE(value[1], 8)
-    bytes.writeDoubleLE(value[2], 16)
+    buffer.writeDoubleLE(value[0], 0)
+    buffer.writeDoubleLE(value[1], 8)
+    buffer.writeDoubleLE(value[2], 16)
 
-    return bytes
+    return buffer
   }
 
   vector4(value) {
@@ -317,12 +301,24 @@ class Packet {
   }
 
   variable(bytes, value) {
+    if (value instanceof Buffer) {
+      return value
+    }
+
     const bits = 8 * bytes
     const max = 255 * bytes
     const buffer = Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
 
     return Buffer.concat([this.integer('U', bits, length), buffer.slice(0, length)])
+  }
+
+  fixed(length, value) {
+    if (value instanceof Buffer) {
+      return value
+    }
+
+    return Buffer.from(value, 'utf-8')
   }
 }
 
