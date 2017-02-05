@@ -80,13 +80,13 @@ class Agent {
     // - AGENT_CONTROL_LBUTTON_UP = 0x20000000
     // - AGENT_CONTROL_ML_LBUTTON_DOWN = 0x40000000
     // - AGENT_CONTROL_ML_LBUTTON_UP = 0x80000000
-    return 0;
+    return 0
   }
 
   get state() {
     // - AGENT_STATE_TYPING = 0x04
     // - AGENT_STATE_EDITING = 0x10
-    return 0;
+    return 0
   }
 }
 
