@@ -63,7 +63,7 @@ class AgentMovementComplete extends AbstractHandler {
       },
       fovBlock: {
         genCounter: 0,
-        // client.fov?
+        // client.fov or camera.fov?
         verticalAngle: (Math.PI * 2) - 0.05
       }
     })
@@ -80,6 +80,38 @@ class AgentMovementComplete extends AbstractHandler {
         genCounter: 0,
         height: 360,
         width: 640
+      }
+    })
+
+    // Toggle for always run, probably more likely to be used; but we'll set
+    // that up once we have a "agent control manager" or something of the sorts.
+    this.manager.send(PKID.SetAlwaysRun, {
+      agentData: {
+        agent: agent.id,
+        session: agent.session,
+        alwaysRun: false
+      }
+    })
+
+    // TODO: Add toggle to enable/disable these packets, as they allow object
+    // data to start being recieved, which we may or may not want.
+    this.manager.send(PKID.AgentUpdate, {
+      agentData: {
+        agent: agent.id,
+        session: agent.session,
+        bodyRotation: agent.rotation,
+        headRotation: agent.rotation,
+        state: agent.state,
+        // TODO: Setup camera structure or something...
+        cameraCenter: agent.position,
+        cameraAtAxis: [0.0, 0.0, 0.0],
+        cameraLeftAxis: [0.0, 0.0, 0.0],
+        cameraUpAxis: [0.0, 0.0, 0.0],
+        // client or camera.distance or something?
+        far: 20,
+        controlFlags: agent.flags,
+        // for auto pilot: 0x02
+        flags: 0
       }
     })
   }
