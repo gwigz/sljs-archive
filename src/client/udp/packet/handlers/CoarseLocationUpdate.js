@@ -8,6 +8,7 @@ class CoarseLocationUpdate extends AbstractHandler {
 
     if (index.you !== -1) {
       agent.position = parameters.location[index.you]
+      agent.position.z * 4
 
       // Eventually we'll move where this is done...
       this.manager.send(PKID.AgentUpdate, {
