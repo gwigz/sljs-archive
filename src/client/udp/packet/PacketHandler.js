@@ -4,6 +4,25 @@ const MessageFormats = require('./MessageFormats')
 const Packet = require('./Packet')
 const PKID = require('../../../utilities/Packets')
 
+const CurrentlyMutedPackets = [
+  PKID.AttachedSound,
+  PKID.AvatarAnimation,
+  PKID.CoarseLocationUpdate,
+  PKID.ImprovedTerseObjectUpdate,
+  PKID.LayerData,
+  PKID.ObjectUpdate,
+  PKID.ObjectUpdateCached,
+  PKID.PacketAck,
+  PKID.ParcelOverlay,
+  PKID.PreloadSound,
+  PKID.ScriptControlChange,
+  PKID.SimStats,
+  PKID.SimulatorViewerTimeMessage,
+  PKID.SoundTrigger,
+  PKID.StartPingCheck,
+  PKID.ViewerEffect
+]
+
 class PacketHandler {
   constructor(manager) {
     this.manager = manager
@@ -39,24 +58,40 @@ class PacketHandler {
   }
 
   process(buffer) {
-    let packet = Packet.parse(this, buffer)
+    // TODO: Change this to Packet.create()/new Packet() when possible.
+    const packet = Packet.parse(buffer)
 
     if (packet.reliable) {
       this.ack.queue(packet.number)
     }
 
-    // TODO: Move this debugging somehow.
-    if (typeof this.handlers[packet.id] === 'undefined') {
-      console.log(`\x1b[31m\u276E\x1b[0m ${this.name(packet)} \x1b[31munhandled\x1b[0m`)
-    } else {
-      process.stdout.write(`\x1b[33m\u276E\x1b[0m ${this.name(packet)}`)
+    // TODO: Move this debugging somehow, maybe just emit stuff here too.
+    if (CurrentlyMutedPackets.indexOf(packet.id) === -1) {
+      if (typeof this.handlers[packet.id] !== 'undefined') {
+        process.stdout.write(`\x1b[33m\u276E\x1b[0m ${this.name(packet)} \x1b[33m${packet.id}\x1b[0m`)
 
-      if (this.handlers[packet.id].handle(packet.parameters) === false) {
-        process.stdout.write(' \x1b[33mignored\x1b[0m')
+        this.read(packet, buffer)
+
+        if (this.handle(packet) === false) {
+          process.stdout.write(' \x1b[33mignored\x1b[0m')
+        }
+
+        process.stdout.write('\n')
+      } else if (CurrentlyMutedPackets.indexOf(packet.id) === -1) {
+        console.log(`\x1b[31m\u276E\x1b[0m ${this.name(packet)} \x1b[33m${packet.id} \x1b[31munhandled\x1b[0m`)
       }
-
-      process.stdout.write('\n')
+    } else if (typeof this.handlers[packet.id] !== 'undefined') {
+      this.read(packet, buffer)
+      this.handle(packet)
     }
+  }
+
+  read(packet, buffer) {
+    packet.read(buffer, this.format(packet))
+  }
+
+  handle(packet) {
+    return this.handlers[packet.id].handle(packet.parameters)
   }
 }
 

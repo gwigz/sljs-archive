@@ -13,30 +13,32 @@ class Packet {
   }
 
   static create(id, parameters) {
+    // TODO: Read `...args`, parse either buffer or `id` + `parameters`
     return new this({
       id: id,
-      parameters: parameters
+      parameters: parameters,
+      reliable: false
     })
   }
 
-  static parse(handler, buffer) {
+  static parse(buffer) {
     // Dezero if we need too, depending on the packets header flag.
     buffer.clean()
 
-    const packet = new Packet({
+    return new this({
       id: buffer.id,
       number: buffer.sequence,
       reliable: buffer.reliable
     })
+  }
 
-    const format = handler.format(packet)
-
+  read(buffer, format) {
     // If we have no format, don't attempt to parse any further.
     if (!(format && format.requirements && format.requirements.length)) {
-      return packet
+      return
     }
 
-    packet.parameters = {}
+    this.parameters = {}
 
     // Notify our buffer set our start position, this will be after the
     // packet header.
@@ -48,7 +50,7 @@ class Packet {
         const quantity = block.quantity ? block.quantity : buffer.read('U8')
 
         // Prepare an array for containing block content.
-        packet.parameters[block.name] = []
+        this.parameters[block.name] = []
 
         // Loop through block dependant on quantity value.
         for (let i = 0; i < quantity; i++) {
@@ -60,14 +62,12 @@ class Packet {
             parameters[parameter.name] = buffer.read(parameter.type)
           }
 
-          packet.parameters[block.name].push(parameters)
+          this.parameters[block.name].push(parameters)
         }
       }
     } catch (error) {
-      console.error(error, `${packet.id} failed to process, whoops...`)
+      console.error(error, `${this.id} failed to process, whoops...`)
     }
-
-    return packet
   }
 
   buffer(handler, number) {
