@@ -13,6 +13,14 @@ class AgentMovementComplete extends AbstractHandler {
 
     // TODO: Listen/callback of sorts for position updates.
     agent.position = data.position
+    agent.rotation = data.lookAt
+
+    // TODO: Setup actual objects for these.
+    agent.handle = {
+      x: data.regionHandle.shiftRight(32).toNumber(),
+      y: data.regionHandle.and(0xffffffff).toNumber(),
+      z: 0.0
+    }
 
     // client.throttle/bandwidth?
     const throttle = 500 * 1024

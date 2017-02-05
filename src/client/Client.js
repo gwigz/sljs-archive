@@ -106,6 +106,7 @@ class Client extends EventEmitter {
       // TODO: Move these to parameters?
       agree_to_tos: true,
       read_critical: true,
+      // TODO: Figure out better method of doing this, for callers file?
       viewer_digest: crypto.createHash('md5').update(JSON.stringify(Constants.Package)).digest('hex'),
       options: [
         'inventory-root',

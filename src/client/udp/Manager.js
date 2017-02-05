@@ -105,6 +105,8 @@ class Manager {
           resolve()
         }
       })
+    }).catch((error) => {
+      console.error(error)
     })
   }
 
