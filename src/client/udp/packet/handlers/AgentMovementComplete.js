@@ -100,7 +100,7 @@ class AgentMovementComplete extends AbstractHandler {
         agent: agent.id,
         session: agent.session,
         bodyRotation: agent.rotation,
-        headRotation: agent.rotation,
+        headRotation: [0.0, 0.0, 0.0, 0.0],
         state: agent.state,
         // TODO: Setup camera structure or something...
         cameraCenter: agent.position,
@@ -109,7 +109,7 @@ class AgentMovementComplete extends AbstractHandler {
         cameraUpAxis: [0.0, 0.0, 0.0],
         // client or camera.distance or something?
         far: 20,
-        controlFlags: agent.flags,
+        controlFlags: 65536,
         // for auto pilot: 0x02
         flags: 0
       }
