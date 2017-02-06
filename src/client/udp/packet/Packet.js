@@ -232,11 +232,9 @@ class Packet {
           buffer.writeUInt16LE(value, 0)
         } else if (bits === 32) {
           buffer.writeUInt32LE(value, 0)
-        } else if (value instanceof Long) {
+        } else {
           buffer.writeInt32LE(value.low, 0)
           buffer.writeInt32LE(value.high, 4)
-        } else {
-          buffer.writeDoubleLE(value)
         }
         break
     }
