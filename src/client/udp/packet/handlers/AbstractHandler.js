@@ -1,5 +1,5 @@
 class AbstractHandler {
-  constructor(manager) {
+  constructor (manager) {
     this.manager = manager
   }
 
@@ -7,7 +7,7 @@ class AbstractHandler {
    * Handle given packet blocks.
    * @param {Object} parameters Packet block data
    */
-  handle() {
+  handle () {
     // ...
   }
 }

@@ -2,7 +2,7 @@ const Constants = require('../../utilities/Constants')
 const xmlrpc = require('xmlrpc')
 
 class Authenticator {
-  constructor() {
+  constructor () {
     /**
      * The XMLRPC connection to the gateway
      * @type {xmlrpc}
@@ -14,7 +14,7 @@ class Authenticator {
     })
   }
 
-  login(parameters) {
+  login (parameters) {
     return new Promise((resolve, reject) => {
       this.xmlrpc.methodCall('login_to_simulator', [parameters], (error, response) => {
         if (error || typeof response !== 'object' || !response.login) {

@@ -2,7 +2,7 @@ const AbstractHandler = require('./AbstractHandler')
 const PKID = require('../../../../utilities/Packets')
 
 class AgentMovementComplete extends AbstractHandler {
-  handle(parameters) {
+  handle (parameters) {
     const data = parameters.data[0]
     const sim = parameters.simData[0]
     const agent = this.manager.client.agent

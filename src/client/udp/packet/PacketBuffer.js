@@ -1,20 +1,20 @@
 const Long = require('long')
 
 class PacketBuffer {
-  constructor(buffer) {
+  constructor (buffer) {
     this.buffer = buffer || new Buffer()
     this.position = 0
   }
 
-  get zerocoded() {
+  get zerocoded () {
     return !!(this.buffer[0] & 0x80)
   }
 
-  get reliable() {
+  get reliable () {
     return !!(this.buffer[0] & 0x40)
   }
 
-  get frequency() {
+  get frequency () {
     if (this.buffer[6] !== 0xFF) {
       return 2
     } else if (this.buffer[7] !== 0xFF) {
@@ -26,7 +26,7 @@ class PacketBuffer {
     }
   }
 
-  get id() {
+  get id () {
     if (this.buffer[6] !== 0xFF) {
       return Number(`${this.buffer[6]}2`)
     } else if (this.buffer[7] !== 0xFF) {
@@ -38,11 +38,11 @@ class PacketBuffer {
     }
   }
 
-  get sequence() {
+  get sequence () {
     return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4]
   }
 
-  clean() {
+  clean () {
     if (!this.zerocoded) {
       return
     }
@@ -74,7 +74,7 @@ class PacketBuffer {
     this.buffer = new Buffer(output)
   }
 
-  restart() {
+  restart () {
     // Calculate base header byte size.
     this.position = 6 + this.buffer.readUInt8(5)
 
@@ -95,7 +95,7 @@ class PacketBuffer {
     }
   }
 
-  read(type) {
+  read (type) {
     switch (type) {
       case 'BOOL':
         return !!this.integer('U', 8)
@@ -166,7 +166,7 @@ class PacketBuffer {
     return null
   }
 
-  integer(type, bits) {
+  integer (type, bits) {
     let position = this.position
 
     // Push position forwards by X bytes.
@@ -211,7 +211,7 @@ class PacketBuffer {
     return 0
   }
 
-  uuid() {
+  uuid () {
     let output = ''
 
     for (let c = 0; c < 16; c++) {
@@ -226,7 +226,7 @@ class PacketBuffer {
     return output
   }
 
-  variable(length) {
+  variable (length) {
     const bytes = this.integer('U', 8 * length)
     const buffer = this.buffer.slice(this.position, this.position + bytes)
 
@@ -235,7 +235,7 @@ class PacketBuffer {
     return buffer.toString('utf8', 0, buffer.length - 1)
   }
 
-  fixed(bytes) {
+  fixed (bytes) {
     const buffer = this.buffer.slice(this.position, this.position + bytes)
 
     this.position += bytes
@@ -243,7 +243,7 @@ class PacketBuffer {
     return buffer
   }
 
-  text() {
+  text () {
     let byte = 0x00
     let bytes = []
 
@@ -257,7 +257,7 @@ class PacketBuffer {
     return new Buffer(bytes).toString('utf8')
   }
 
-  static fill(value, width) {
+  static fill (value, width) {
     width -= value.toString().length
 
     return width > 0

@@ -2,7 +2,7 @@
  * Represents an agent.
  */
 class Agent {
-  constructor(client, data) {
+  constructor (client, data) {
     /**
      * The Client that instantiated this Client object.
      * @name Client#client
@@ -14,7 +14,7 @@ class Agent {
     this.setup(data)
   }
 
-  setup(data) {
+  setup (data) {
     /**
      * UUID for this Agent.
      * @type {string}
@@ -46,7 +46,7 @@ class Agent {
     this.rotation = data.rotation || [0.0, 0.0, 0.0, 0.0]
   }
 
-  get flags() {
+  get flags () {
     // TODO: Calculate and keep result!
     // - AGENT_CONTROL_AT_POS = 0x00000001
     // - AGENT_CONTROL_AT_NEG = 0x00000002
@@ -83,7 +83,7 @@ class Agent {
     return 0
   }
 
-  get state() {
+  get state () {
     // - AGENT_STATE_TYPING = 0x04
     // - AGENT_STATE_EDITING = 0x10
     return 0

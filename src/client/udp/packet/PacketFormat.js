@@ -1,5 +1,5 @@
 class PacketFormat {
-  constructor(id, data) {
+  constructor (id, data) {
     this.id = id
     this.name = data.name
     this.number = data.number

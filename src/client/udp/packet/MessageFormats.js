@@ -17,7 +17,7 @@ const BLOCK_PARAMETER_REGEX = /{\s+(\w+)\s+(\w+(?:\s+\d+)?)\s+}/g
 const FREQUENCY_LIST = ['Low', 'Medium', 'High', 'Fixed']
 
 class MessageFormats {
-  static load() {
+  static load () {
     let formats = {}
 
     // https://bitbucket.org/lindenlab/master-message-template/raw/tip/message_template.msg

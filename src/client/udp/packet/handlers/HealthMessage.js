@@ -1,7 +1,7 @@
 const AbstractHandler = require('./AbstractHandler')
 
 class HealthMessage extends AbstractHandler {
-  handle(parameters) {
+  handle (parameters) {
     const data = parameters.healthData[0]
     const agent = this.manager.client.agent
 

@@ -24,7 +24,7 @@ const CurrentlyMutedPackets = [
 ]
 
 class PacketHandler {
-  constructor(manager) {
+  constructor (manager) {
     this.manager = manager
     this.formats = MessageFormats.load()
     this.ack = new AcknowledgeQueueHandler(this)
@@ -40,7 +40,7 @@ class PacketHandler {
    * @param {Packet} packet Packet object to lookup by PKID
    * @returns {?PacketFormat}
    */
-  format(packet) {
+  format (packet) {
     return this.formats[packet.id] || undefined
   }
 
@@ -49,15 +49,15 @@ class PacketHandler {
    * @param {Packet} packet Packet object to lookup by PKID
    * @returns {?string}
    */
-  name(packet) {
+  name (packet) {
     return this.formats[packet.id] ? this.formats[packet.id].name : 'UnknownPacket'
   }
 
-  register(pkid, Handler) {
+  register (pkid, Handler) {
     this.handlers[pkid] = new Handler(this.manager)
   }
 
-  process(buffer) {
+  process (buffer) {
     // TODO: Change this to Packet.create()/new Packet() when possible.
     const packet = Packet.parse(buffer)
 
@@ -86,11 +86,11 @@ class PacketHandler {
     }
   }
 
-  read(packet, buffer) {
+  read (packet, buffer) {
     packet.read(buffer, this.format(packet))
   }
 
-  handle(packet) {
+  handle (packet) {
     return this.handlers[packet.id].handle(packet.parameters)
   }
 }

@@ -13,7 +13,7 @@ const { Constants } = require('../utilities')
  * @extends {EventEmitter}
  */
 class Client extends EventEmitter {
-  constructor() {
+  constructor () {
     super()
 
     /**
@@ -66,11 +66,11 @@ class Client extends EventEmitter {
     // ...
   }
 
-  get status() {
+  get status () {
     return this.udp.status
   }
 
-  connect(username, password) {
+  connect (username, password) {
     if (typeof username !== 'string') {
       throw new Error(Constants.Errors.INVALID_LOGIN)
     }
@@ -133,7 +133,7 @@ class Client extends EventEmitter {
     return this.xmlrpc.login(parameters).then(this.connected.bind(this))
   }
 
-  connected(response) {
+  connected (response) {
     if ('circuit_code' in response
       && 'agent_id' in response
       && 'session_id' in response
@@ -159,7 +159,7 @@ class Client extends EventEmitter {
     }
   }
 
-  disconnect() {
+  disconnect () {
     // TODO: Update status and such.
     return this.udp.disconnect()
   }

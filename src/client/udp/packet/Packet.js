@@ -2,18 +2,18 @@ const BufferList = require('bl')
 const Long = require('long')
 
 class Packet {
-  constructor(data) {
+  constructor (data) {
     this.setup(data)
   }
 
-  setup(data) {
+  setup (data) {
     this.id = data.id
     this.reliable = data.reliable || false
     this.number = data.number || undefined
     this.parameters = data.parameters || null
   }
 
-  static create(id, parameters) {
+  static create (id, parameters) {
     // TODO: Read `...args`, parse either buffer or `id` + `parameters`
     return new this({
       id: id,
@@ -22,7 +22,7 @@ class Packet {
     })
   }
 
-  static parse(buffer) {
+  static parse (buffer) {
     // Dezero if we need too, depending on the packets header flag.
     buffer.clean()
 
@@ -33,7 +33,7 @@ class Packet {
     })
   }
 
-  read(buffer, format) {
+  read (buffer, format) {
     // If we have no format, don't attempt to parse any further.
     if (!(format && format.requirements && format.requirements.length)) {
       return
@@ -71,7 +71,7 @@ class Packet {
     }
   }
 
-  buffer(handler, number) {
+  buffer (handler, number) {
     // TODO: Move all of the buffer related parts here into PacketBuffer
     // instead, and maybe remove BufferList dependancy while doing so, as all of
     // the below is all just passing of buffer objects...
@@ -142,7 +142,7 @@ class Packet {
     return buffer.copy()
   }
 
-  append(buffer, type, value) {
+  append (buffer, type, value) {
     switch (type) {
       case 'BOOL':
         return buffer.append(Buffer.from([(value | 0) & 0xFF]))
@@ -203,7 +203,7 @@ class Packet {
     return null
   }
 
-  integer(type, bits, value) {
+  integer (type, bits, value) {
     let buffer = Buffer.alloc(bits / 8)
 
     switch (type) {
@@ -244,7 +244,7 @@ class Packet {
     return buffer
   }
 
-  vector3(value) {
+  vector3 (value) {
     let buffer = Buffer.alloc(12)
 
     buffer.writeFloatLE(value[0], 0)
@@ -254,7 +254,7 @@ class Packet {
     return buffer
   }
 
-  vector3d(value) {
+  vector3d (value) {
     let buffer = Buffer.alloc(24)
 
     buffer.writeDoubleLE(value[0], 0)
@@ -264,7 +264,7 @@ class Packet {
     return buffer
   }
 
-  vector4(value) {
+  vector4 (value) {
     let bytes = Buffer.alloc(16)
 
     bytes.writeFloatLE(value[0], 0)
@@ -275,7 +275,7 @@ class Packet {
     return bytes
   }
 
-  uuid(value) {
+  uuid (value) {
     let bytes = []
     let parts = value.split('-')
 
@@ -288,7 +288,7 @@ class Packet {
     return Buffer.from(bytes)
   }
 
-  quaternion(value) {
+  quaternion (value) {
     let bytes = Buffer.alloc(16)
 
     // TODO: This is probably wrong, needs converting.
@@ -300,7 +300,7 @@ class Packet {
     return bytes
   }
 
-  variable(bytes, value) {
+  variable (bytes, value) {
     if (value instanceof Buffer) {
       return value
     }
@@ -313,7 +313,7 @@ class Packet {
     return Buffer.concat([this.integer('U', bits, length), buffer.slice(0, length)])
   }
 
-  fixed(length, value) {
+  fixed (length, value) {
     if (value instanceof Buffer) {
       return value
     }
