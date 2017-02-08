@@ -2,7 +2,7 @@
  * Represents a simulator.
  */
 class Simulator {
-  constructor(client, data) {
+  constructor (client, data) {
     /**
      * The Client that instantiated this Simulator object.
      * @name Simulator#client
@@ -14,7 +14,7 @@ class Simulator {
     this.setup(data)
   }
 
-  setup(data) {
+  setup (data) {
     /**
      * IP address of this Simulator.
      * @type {string}

@@ -14,7 +14,7 @@ class Manager {
   /**
    * @param {Client} client value for emiting processed messages back to
    */
-  constructor(client) {
+  constructor (client) {
     /**
      * The Client that instantiated this UDPManager.
      * @type {Client}
@@ -57,7 +57,7 @@ class Manager {
    * Creates our UDP socket
    * @returns {dgram} dgram Socket
    */
-  setup() {
+  setup () {
     const socket = dgram.createSocket('udp4')
 
     socket.on('error', (error) => {
@@ -69,11 +69,11 @@ class Manager {
     return socket
   }
 
-  get agent() {
+  get agent () {
     return this.client.agent
   }
 
-  get simulator() {
+  get simulator () {
     return this.client.simulator
   }
 
@@ -83,7 +83,7 @@ class Manager {
    * @param {Object} parameters Not required if sending Packet object
    * @returns {Promise}
    */
-  send(input, parameters) {
+  send (input, parameters) {
     const number = this.packet++
 
     // TODO: Check we are still connected.
@@ -115,7 +115,7 @@ class Manager {
    * @param {Buffer} buffer The raw message recieved
    * @param {Object} info Packet info such as; address, port and size
    */
-  handle(buffer, info) {
+  handle (buffer, info) {
     this.handler.process(new PacketBuffer(buffer), info)
   }
 
@@ -123,7 +123,7 @@ class Manager {
    * Connects the client to a given circuit code.
    * @returns {Promise}
    */
-  handshake() {
+  handshake () {
     this.status = Constants.Status.CONNECTING
     this.client.emit('debug', `Connecting to simulator ${this.simulator.ip}:${this.simulator.port}...`)
 
@@ -144,7 +144,7 @@ class Manager {
    * Connects the client to a given circuit code.
    * @returns {?Promise}
    */
-  disconnect() {
+  disconnect () {
     if (this.status <= Constants.Status.CONNECTING) {
       // TODO: Maybe drop the socket, depends what happens on reconnecting.
       return this.methods.logoutRequest()

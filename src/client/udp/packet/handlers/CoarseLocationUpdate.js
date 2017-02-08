@@ -2,7 +2,7 @@ const AbstractHandler = require('./AbstractHandler')
 const PKID = require('../../../../utilities/Packets')
 
 class CoarseLocationUpdate extends AbstractHandler {
-  handle(parameters) {
+  handle (parameters) {
     const agent = this.manager.client.agent
     const index = parameters.index[0]
 

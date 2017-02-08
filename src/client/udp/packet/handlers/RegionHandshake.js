@@ -2,7 +2,7 @@ const AbstractHandler = require('./AbstractHandler')
 const PKID = require('../../../../utilities/Packets')
 
 class RegionHandshake extends AbstractHandler {
-  handle() {
+  handle () {
     const agent = this.manager.client.agent
 
     // RegionInfo

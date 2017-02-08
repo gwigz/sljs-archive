@@ -1,7 +1,7 @@
 const AbstractHandler = require('./AbstractHandler')
 
 class AgentDataUpdate extends AbstractHandler {
-  handle(parameters) {
+  handle (parameters) {
     const data = parameters.agentData[0]
     const agent = this.manager.client.agent
 
