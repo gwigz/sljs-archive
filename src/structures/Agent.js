@@ -22,28 +22,22 @@ class Agent {
     this.id = data.id
 
     /**
-     * UUID for the session ID, which Agent would be given given upon login.
+     * UUID for the current session key for this Agent.
      * @type {string}
      */
-    this.session = data.session || null
+    this.session = data.session
 
     /**
-     * U8 for the circuit code, which Agent would be given given upon login.
-     * @type {string}
-     */
-    this.circuit = data.circuit || null
-
-    /**
-     * Current position of the agent.
+     * Current position of Agent.
      * @type {array}
      */
     this.position = data.position || undefined
 
     /**
-     * Current rotation of the agent.
+     * Current rotation of Agent.
      * @type {array}
      */
-    this.rotation = data.rotation || [0.0, 0.0, 0.0, 0.0]
+    this.rotation = data.rotation || [0.0, 0.0, 0.0]
   }
 
   get flags () {
@@ -80,14 +74,17 @@ class Agent {
     // - AGENT_CONTROL_LBUTTON_UP = 0x20000000
     // - AGENT_CONTROL_ML_LBUTTON_DOWN = 0x40000000
     // - AGENT_CONTROL_ML_LBUTTON_UP = 0x80000000
+
     return 0
   }
 
   get state () {
+    // TODO: Calculate and keep result!
     // - AGENT_STATE_TYPING = 0x04
     // - AGENT_STATE_EDITING = 0x10
+
     return 0
   }
 }
 
-module.exports = Agent
+export default Agent

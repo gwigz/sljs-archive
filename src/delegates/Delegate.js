@@ -1,6 +1,6 @@
-class AbstractHandler {
-  constructor (manager) {
-    this.manager = manager
+class Delegate {
+  constructor (core) {
+    this.core = core
   }
 
   /**
@@ -12,4 +12,4 @@ class AbstractHandler {
   }
 }
 
-module.exports = AbstractHandler
+export default Delegate

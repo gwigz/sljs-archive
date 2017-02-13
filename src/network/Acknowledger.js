@@ -1,7 +1,7 @@
-const Packet = require('./Packet')
-const PKID = require('../../../utilities/Packets')
+import Packet from './Packet'
+import PKID from '../../../utilities/Packets'
 
-class AcknowledgeQueueHandler {
+class Acknowledger {
   constructor (handler) {
     this.manager = handler.manager
     this.packet = Packet.create(PKID.PacketAck, { packets: [] })
@@ -21,4 +21,4 @@ class AcknowledgeQueueHandler {
   }
 }
 
-module.exports = AcknowledgeQueueHandler
+export default Acknowledger

@@ -1,17 +1,19 @@
-const AbstractHandler = require('./AbstractHandler')
-const PKID = require('../../../../utilities/Packets')
+import Delegate from './Delegate'
+import PKID from '../utilities/Packets'
 
-class CoarseLocationUpdate extends AbstractHandler {
+class CoarseLocationUpdate extends Delegate {
   handle (parameters) {
-    const agent = this.manager.client.agent
+    const agent = this.core.client.agent
     const index = parameters.index[0]
 
     if (index.you !== -1) {
+      // TODO: This is not correct, self-agent should not use these location
+      // details as they are only accurate to the meter, and less so by Z axis.
       agent.position = parameters.location[index.you]
       agent.position.z *= 4
 
       // Eventually we'll move where this is done...
-      this.manager.send(PKID.AgentUpdate, {
+      this.core.send(PKID.AgentUpdate, {
         agentData: {
           agent: agent.id,
           session: agent.session,
@@ -34,4 +36,4 @@ class CoarseLocationUpdate extends AbstractHandler {
   }
 }
 
-module.exports = CoarseLocationUpdate
+export default CoarseLocationUpdate

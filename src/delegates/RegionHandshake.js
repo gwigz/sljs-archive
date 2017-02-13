@@ -1,9 +1,9 @@
-const AbstractHandler = require('./AbstractHandler')
-const PKID = require('../../../../utilities/Packets')
+import Delegate from './Delegate'
+import PKID from '../utilities/Packets'
 
-class RegionHandshake extends AbstractHandler {
+class RegionHandshake extends Delegate {
   handle () {
-    const agent = this.manager.client.agent
+    const agent = this.core.client.agent
 
     // RegionInfo
     // { RegionFlags   U32 }
@@ -23,7 +23,7 @@ class RegionHandshake extends AbstractHandler {
     // { ProductName       Variable  1 } // string
 
     // TODO: Add toggle for this, if we don't want objects dont send this.
-    this.manager.send(PKID.RegionHandshakeReply, {
+    this.core.send(PKID.RegionHandshakeReply, {
       agentData: {
         agent: agent.id,
         session: agent.session
@@ -36,4 +36,4 @@ class RegionHandshake extends AbstractHandler {
   }
 }
 
-module.exports = RegionHandshake
+export default RegionHandshake
