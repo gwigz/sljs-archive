@@ -1,3 +1,5 @@
+import { UseCircuitCode, CompleteAgentMovement } from '../packets'
+
 class Circuit {
   constructor (core, { id, address, port } = {} ) {
     this.id = id
@@ -22,20 +24,20 @@ class Circuit {
     }
 
     return Promise.all([
-      this.send('UseCircuitCode', {
+      this.send(new UseCircuitCode({
         circuitCode: {
           id: this.agent.id,
           code: this.id,
           session: this.agent.session
         }
-      }),
-      this.send('CompleteAgentMovement', {
+      })),
+      this.send(new CompleteAgentMovement({
         agentData: {
           agent: this.agent.id,
           session: this.agent.session,
           circuitCode: this.circuit
         }
-      })
+      }))
     ])
   }
 }
