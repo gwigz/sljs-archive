@@ -2,39 +2,62 @@
   "name": "sljs",
   "version": "0.0.0",
   "description": "A client for connecting to Linden Lab's virtual world \"Second Life\"",
-  "main": "./src/index",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "babel src --out-dir dist",
+    "prepublish": "npm run build",
+    "start": "babel-node --harmony-async-await ./src/index.js",
     "test": "npm run lint",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs",
+      "transform-export-extensions"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gwigz/sljs.git"
   },
   "keywords": [
-    "secondlife",
-    "sl",
     "api",
     "bot",
     "client",
-    "node"
+    "framework",
+    "library",
+    "node",
+    "secondlife",
+    "sl",
+    "sljs"
   ],
   "author": "gwigz <git.sljs@gwi.gr>",
+  "contributors": {
+    "name": "Gwigz"
+  },
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/gwigz/sljs/issues"
   },
   "homepage": "https://github.com/gwigz/sljs#readme",
+  "engines": {
+    "node": ">=7.5.0"
+  },
   "dependencies": {
-    "bl": "^1.2.0",
     "long": "^3.2.0",
+    "uneval": "^0.1.2",
     "xmlrpc": "^1.3.2"
   },
-  "engines": {
-    "node": ">=6.0.0"
-  },
   "devDependencies": {
-    "eslint": "^3.14.1"
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "eslint": "^3.14.1",
+    "eslint-plugin-import": "^2.0.1"
   }
 }

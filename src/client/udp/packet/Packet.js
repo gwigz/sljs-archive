@@ -1,5 +1,5 @@
-const BufferList = require('bl')
-const Long = require('long')
+import BufferList from 'bl'
+import Long from 'long'
 
 class Packet {
   constructor (data) {
@@ -322,4 +322,4 @@ class Packet {
   }
 }
 
-module.exports = Packet
+export default Packet

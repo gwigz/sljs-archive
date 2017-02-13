@@ -143,4 +143,4 @@ class Simulator {
   */
 }
 
-module.exports = Simulator
+export default Simulator

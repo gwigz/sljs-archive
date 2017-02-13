@@ -1,4 +1,4 @@
-const Long = require('long')
+import Long from 'long'
 
 class PacketBuffer {
   constructor (buffer) {
@@ -266,4 +266,4 @@ class PacketBuffer {
   }
 }
 
-module.exports = PacketBuffer
+export default PacketBuffer

@@ -1,12 +1,12 @@
-const AbstractHandler = require('./AbstractHandler')
-const PKID = require('../../../../utilities/Packets')
+import Delegate from './Delegate'
+import PKID from '../utilities/Packets'
 
-class AgentMovementComplete extends AbstractHandler {
+class AgentMovementComplete extends Delegate {
   handle (parameters) {
     const data = parameters.data[0]
     const sim = parameters.simData[0]
-    const agent = this.manager.client.agent
-    const simulator = this.manager.client.simulator
+    const agent = this.core.client.agent
+    const simulator = this.core.client.simulator
 
     // TODO: Figure out where to put regionHandle, if we need it for anything.
     simulator.channel = sim.channelVersion
@@ -49,7 +49,7 @@ class AgentMovementComplete extends AbstractHandler {
     // Pass our throttle data, generated above. This controls the rate of
     // various packets that we can safely handle without hitting the users
     // specified bandwidth limit.
-    this.manager.send(PKID.AgentThrottle, {
+    this.core.send(PKID.AgentThrottle, {
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -63,7 +63,7 @@ class AgentMovementComplete extends AbstractHandler {
 
     // This sends the users field of vision value, which in this case we're
     // just saying "hey, give me everything, even stuff behind me".
-    this.manager.send(PKID.AgentFOV, {
+    this.core.send(PKID.AgentFOV, {
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -78,7 +78,7 @@ class AgentMovementComplete extends AbstractHandler {
 
     // This sends the height and width of what would usually calculated via. 3D
     // display/window size.
-    this.manager.send(PKID.AgentHeightWidth, {
+    this.core.send(PKID.AgentHeightWidth, {
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -93,7 +93,7 @@ class AgentMovementComplete extends AbstractHandler {
 
     // Toggle for always run, probably more likely to be used; but we'll set
     // that up once we have a "agent control manager" or something of the sorts.
-    this.manager.send(PKID.SetAlwaysRun, {
+    this.core.send(PKID.SetAlwaysRun, {
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -103,7 +103,7 @@ class AgentMovementComplete extends AbstractHandler {
 
     // TODO: Add toggle to enable/disable these packets, as they allow object
     // data to start being recieved, which we may or may not want.
-    this.manager.send(PKID.AgentUpdate, {
+    this.core.send(PKID.AgentUpdate, {
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -125,4 +125,4 @@ class AgentMovementComplete extends AbstractHandler {
   }
 }
 
-module.exports = AgentMovementComplete
+export default AgentMovementComplete
