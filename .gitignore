@@ -1,6 +1,12 @@
 # Babel compiled directory
 dist
 
+# Horrible packet class generater, may clean and publish in future
+bin/*
+
+# Old code, to be nuked
+src/client/*
+
 # Logs
 logs
 *.log
