@@ -4,8 +4,8 @@ class S16 {
   /**
    * Converts integer input into a buffer representing an 16-bit signed integer.
    *
-   * @param {integer} integer
-   * @return {Buffer}
+   * @param {integer} integer Integer to convert
+   * @returns {Buffer}
    */
   static toBuffer (integer) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -19,8 +19,8 @@ class S16 {
    * Converts buffer input into an integer which was representing an 16-bit
    * signed integer.
    *
-   * @param {Buffer} buffer
-   * @return {integer}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {integer}
    */
   static fromBuffer (buffer) {
     return buffer.readInt16LE(buffer, 0)

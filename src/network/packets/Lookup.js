@@ -323,6 +323,10 @@ class Lookup {
     [42949672923, Packet.OpenCircuit],
     [42949672933, Packet.CloseCircuit]
   ])
+
+  static find (id) {
+    return this.lookup.get(id)
+  }
 }
 
 export default Lookup

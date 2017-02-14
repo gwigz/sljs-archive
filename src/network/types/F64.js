@@ -4,8 +4,8 @@ class F64 {
   /**
    * Converts number input into a buffer representing an 64-bit float.
    *
-   * @param {number} float
-   * @return {Buffer}
+   * @param {number} float Number/float to convert
+   * @returns {Buffer}
    */
   static toBuffer (float) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -19,8 +19,8 @@ class F64 {
    * Converts buffer input into an number which was representing an 64-bit
    * float.
    *
-   * @param {Buffer} buffer
-   * @return {number}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {number}
    */
   static fromBuffer (buffer) {
     return buffer.readDoubleLE(buffer, 0)

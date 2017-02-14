@@ -6,15 +6,15 @@ class UUID {
    * Converts string input into a buffer representing a UUID.
    *
    * @todo Optimize this, it's probably not that good
-   * @param {string} uuid
-   * @return {Buffer}
+   * @param {string} uuid UUID string to convert
+   * @returns {Buffer}
    */
   static toBuffer (uuid) {
     const bytes = []
     const parts = uuid.split('-')
 
     for (const part of parts) {
-      for (const c = 0; c < part.length; c += 2) {
+      for (let c = 0; c < part.length; c += 2) {
         bytes.push(parseInt(part.substr(c, 2), 16))
       }
     }
@@ -26,15 +26,15 @@ class UUID {
    * Converts buffer input into a UUID string.
    *
    * @todo Optimize this, it's probably not that good
-   * @param {Buffer} buffer
-   * @return {string}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {string}
    */
   static fromBuffer (buffer) {
-    const output = ''
-    const position = 0
+    let output = ''
+    let position = 0
 
-    for (const c = 0; c < 16; c++) {
-      output += this.fill(buffer.readUInt8(buffer, position).toString(16), 2)
+    for (let c = 0; c < 16; c++) {
+      output += this.pad(buffer.readUInt8(buffer, position).toString(16), 2)
 
       if (c === 3 || c === 5 || c === 7 || c === 9) {
         output += '-'
@@ -49,11 +49,11 @@ class UUID {
   /**
    * Zero padding helper function, may be moved.
    *
-   * @param {string} value
+   * @param {string} value Character to pad
    * @param {integer} width Number of characters to zero pad
-   * @return {string}
+   * @returns {string}
    */
-  static fill (value, width) {
+  static pad (value, width) {
     width -= value.toString().length
 
     return width > 0

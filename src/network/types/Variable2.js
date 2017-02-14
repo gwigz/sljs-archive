@@ -10,9 +10,9 @@ class Variable2 extends String {
    * terminater.
    *
    * @param {string} string Maximum length of 4080 bytes, will be truncated
-   * @return {Buffer}
+   * @returns {Buffer}
    */
-  static toBuffer(string) {
+  static toBuffer (string) {
     return this.toPrefixedBuffer(this.prefix, string)
   }
 }
