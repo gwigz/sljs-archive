@@ -1,4 +1,4 @@
-import * as Delegates from '../delegates'
+// import * as Delegates from '../delegates'
 
 import Circuit from './Circuit'
 import Socket from './Socket'
@@ -48,8 +48,8 @@ class Core {
   }
 
   /**
-   * Sends message to current Simulator over UDP socket.
-   * @returns {Promise}
+   * Sends message to Circuit over UDP socket.
+   * @param {Circuit} circuit Circuit to send packet too
    */
   async send (circuit, ...args) {
     await this.socket.send(circuit, ...args)
@@ -58,6 +58,7 @@ class Core {
   /**
    * Connects the client to a given circuit code.
    * @param {string} session Session ID
+   * @returns {Promise}
    */
   handshake (session, ...args) {
     const circuit = new Circuit(this, ...args)

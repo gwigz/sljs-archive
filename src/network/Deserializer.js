@@ -6,22 +6,22 @@
   import PKID from '../../../utilities/Packets'
 
   const CurrentlyMutedPackets = [
-    PKID.AttachedSound,
-    PKID.AvatarAnimation,
-    PKID.CoarseLocationUpdate,
-    PKID.ImprovedTerseObjectUpdate,
-    PKID.LayerData,
-    PKID.ObjectUpdate,
-    PKID.ObjectUpdateCached,
-    PKID.PacketAck,
-    PKID.ParcelOverlay,
-    PKID.PreloadSound,
-    PKID.ScriptControlChange,
-    PKID.SimStats,
-    PKID.SimulatorViewerTimeMessage,
-    PKID.SoundTrigger,
-    PKID.StartPingCheck,
-    PKID.ViewerEffect
+    Packet.AttachedSound.id,
+    Packet.AvatarAnimation.id,
+    Packet.CoarseLocationUpdate.id,
+    Packet.ImprovedTerseObjectUpdate.id,
+    Packet.LayerData.id,
+    Packet.ObjectUpdate.id,
+    Packet.ObjectUpdateCached.id,
+    Packet.PacketAck.id,
+    Packet.ParcelOverlay.id,
+    Packet.PreloadSound.id,
+    Packet.ScriptControlChange.id,
+    Packet.SimStats.id,
+    Packet.SimulatorViewerTimeMessage.id,
+    Packet.SoundTrigger.id,
+    Packet.StartPingCheck.id,
+    Packet.ViewerEffect.id
   ]
 */
 

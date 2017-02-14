@@ -1,5 +1,6 @@
 import Delegate from './Delegate'
-import PKID from '../utilities/Packets'
+
+import { AgentUpdate } from '../network/packets'
 
 class CoarseLocationUpdate extends Delegate {
   handle (parameters) {
@@ -13,7 +14,7 @@ class CoarseLocationUpdate extends Delegate {
       agent.position.z *= 4
 
       // Eventually we'll move where this is done...
-      this.core.send(PKID.AgentUpdate, {
+      this.core.send(new AgentUpdate({
         agentData: {
           agent: agent.id,
           session: agent.session,
@@ -31,7 +32,7 @@ class CoarseLocationUpdate extends Delegate {
           // for auto pilot: 0x02
           flags: 0
         }
-      })
+      }))
     }
   }
 }

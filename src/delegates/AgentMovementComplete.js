@@ -1,5 +1,12 @@
 import Delegate from './Delegate'
-import PKID from '../utilities/Packets'
+
+import {
+  AgentFOV,
+  AgentHeightWidth,
+  AgentThrottle,
+  AgentUpdate,
+  SetAlwaysRun
+} from '../network/packets'
 
 class AgentMovementComplete extends Delegate {
   handle (parameters) {
@@ -49,7 +56,7 @@ class AgentMovementComplete extends Delegate {
     // Pass our throttle data, generated above. This controls the rate of
     // various packets that we can safely handle without hitting the users
     // specified bandwidth limit.
-    this.core.send(PKID.AgentThrottle, {
+    this.core.send(new AgentThrottle({
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -59,11 +66,11 @@ class AgentMovementComplete extends Delegate {
         genCounter: 0,
         throttles: throttles
       }
-    })
+    }))
 
     // This sends the users field of vision value, which in this case we're
     // just saying "hey, give me everything, even stuff behind me".
-    this.core.send(PKID.AgentFOV, {
+    this.core.send(new AgentFOV({
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -74,11 +81,11 @@ class AgentMovementComplete extends Delegate {
         // client.fov or camera.fov?
         verticalAngle: (Math.PI * 2) - 0.05
       }
-    })
+    }))
 
     // This sends the height and width of what would usually calculated via. 3D
     // display/window size.
-    this.core.send(PKID.AgentHeightWidth, {
+    this.core.send(new AgentHeightWidth({
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -89,21 +96,21 @@ class AgentMovementComplete extends Delegate {
         height: 360,
         width: 640
       }
-    })
+    }))
 
     // Toggle for always run, probably more likely to be used; but we'll set
     // that up once we have a "agent control manager" or something of the sorts.
-    this.core.send(PKID.SetAlwaysRun, {
+    this.core.send(new SetAlwaysRun({
       agentData: {
         agent: agent.id,
         session: agent.session,
         alwaysRun: false
       }
-    })
+    }))
 
     // TODO: Add toggle to enable/disable these packets, as they allow object
     // data to start being recieved, which we may or may not want.
-    this.core.send(PKID.AgentUpdate, {
+    this.core.send(new AgentUpdate({
       agentData: {
         agent: agent.id,
         session: agent.session,
@@ -121,7 +128,7 @@ class AgentMovementComplete extends Delegate {
         // for auto pilot: 0x02
         flags: 0
       }
-    })
+    }))
   }
 }
 

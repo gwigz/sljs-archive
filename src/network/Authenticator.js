@@ -29,7 +29,7 @@ class Authenticator {
     this.agent = `${channel} ${version}`
 
     // TODO: Figure out better method of doing this, for callers file?
-    this.digest = crypto.createHash('md5').update(JSON.stringify(this.channel,)).digest('hex')
+    this.digest = crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
 
     /**
      * The XMLRPC connection to the gateway
@@ -83,7 +83,7 @@ class Authenticator {
 
   call (method, parameters) {
     return new Promise((resolve) => {
-      this.xmlrpc.methodCall(method, parameters, function(error, response) {
+      this.xmlrpc.methodCall(method, parameters, (error, response) => {
         resolve(error || response)
       })
     })
