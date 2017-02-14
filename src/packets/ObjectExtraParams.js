@@ -13,8 +13,8 @@ class ObjectExtraParams extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['objectData', { parameters: [['objectLocal', 'U32'], ['paramType', 'U16'], ['paramInUse', 'BOOL'], ['paramSize', 'U32'], ['paramData', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['objectData', { parameters: new Collection([['objectLocal', 'U32'], ['paramType', 'U16'], ['paramInUse', 'boolean'], ['paramSize', 'U32'], ['paramData', 'Variable1']]) }]
   ])
 
   /**

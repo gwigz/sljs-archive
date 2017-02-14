@@ -13,7 +13,7 @@ class DeRezAck extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['transactionData', { quantity: 1, parameters: [['transaction', 'LLUUID'], ['success', 'BOOL']] }]
+    ['transactionData', { quantity: 1, parameters: new Collection([['transaction', 'LLUUID'], ['success', 'boolean']]) }]
   ])
 
   /**

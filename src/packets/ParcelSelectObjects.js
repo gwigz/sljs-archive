@@ -13,9 +13,9 @@ class ParcelSelectObjects extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['parcelData', { quantity: 1, parameters: [['local', 'S32'], ['returnType', 'U32']] }],
-    ['returnIDs', { parameters: [['return', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['parcelData', { quantity: 1, parameters: new Collection([['local', 'S32'], ['returnType', 'U32']]) }],
+    ['returnIDs', { parameters: new Collection([['return', 'LLUUID']]) }]
   ])
 
   /**

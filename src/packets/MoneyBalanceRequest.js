@@ -13,8 +13,8 @@ class MoneyBalanceRequest extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['moneyData', { quantity: 1, parameters: [['transaction', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['moneyData', { quantity: 1, parameters: new Collection([['transaction', 'LLUUID']]) }]
   ])
 
   /**

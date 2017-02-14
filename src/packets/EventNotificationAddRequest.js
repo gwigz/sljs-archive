@@ -13,8 +13,8 @@ class EventNotificationAddRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['eventData', { quantity: 1, parameters: [['event', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['eventData', { quantity: 1, parameters: new Collection([['event', 'U32']]) }]
   ])
 
   /**

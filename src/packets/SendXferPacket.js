@@ -13,8 +13,8 @@ class SendXferPacket extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['xfer', { quantity: 1, parameters: [['id', 'U64'], ['packet', 'U32']] }],
-    ['dataPacket', { quantity: 1, parameters: [['data', 'Variable2']] }]
+    ['xfer', { quantity: 1, parameters: new Collection([['id', 'U64'], ['packet', 'U32']]) }],
+    ['dataPacket', { quantity: 1, parameters: new Collection([['data', 'Variable2']]) }]
   ])
 
   /**

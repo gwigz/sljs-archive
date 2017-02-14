@@ -13,7 +13,7 @@ class ScriptTeleportRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['data', { quantity: 1, parameters: [['objectName', 'Variable1'], ['simName', 'Variable1'], ['simPosition', 'LLVector3'], ['lookAt', 'LLVector3']] }]
+    ['data', { quantity: 1, parameters: new Collection([['objectName', 'Variable1'], ['simName', 'Variable1'], ['simPosition', 'LLVector3'], ['lookAt', 'LLVector3']]) }]
   ])
 
   /**

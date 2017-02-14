@@ -13,7 +13,7 @@ class RegionPresenceResponse extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['regionData', { parameters: [['region', 'LLUUID'], ['regionHandle', 'U64'], ['internalRegionIP', 'IPADDR'], ['externalRegionIP', 'IPADDR'], ['regionPort', 'IPPORT'], ['validUntil', 'F64'], ['message', 'Variable1']] }]
+    ['regionData', { parameters: new Collection([['region', 'LLUUID'], ['regionHandle', 'U64'], ['internalRegionIP', 'IPADDR'], ['externalRegionIP', 'IPADDR'], ['regionPort', 'IPPORT'], ['validUntil', 'F64'], ['message', 'Variable1']]) }]
   ])
 
   /**

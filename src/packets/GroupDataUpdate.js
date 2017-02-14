@@ -13,7 +13,7 @@ class GroupDataUpdate extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentGroupData', { parameters: [['agent', 'LLUUID'], ['group', 'LLUUID'], ['agentPowers', 'U64'], ['groupTitle', 'Variable1']] }]
+    ['agentGroupData', { parameters: new Collection([['agent', 'LLUUID'], ['group', 'LLUUID'], ['agentPowers', 'U64'], ['groupTitle', 'Variable1']]) }]
   ])
 
   /**

@@ -13,10 +13,10 @@ class SimulatorPresentAtLocation extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['simulatorPublicHostBlock', { quantity: 1, parameters: [['port', 'IPPORT'], ['simulatorIP', 'IPADDR'], ['gridX', 'U32'], ['gridY', 'U32']] }],
-    ['neighborBlock', { quantity: 4, parameters: [['ip', 'IPADDR'], ['port', 'IPPORT']] }],
-    ['simulatorBlock', { quantity: 1, parameters: [['simName', 'Variable1'], ['simAccess', 'U8'], ['regionFlags', 'U32'], ['region', 'LLUUID'], ['estate', 'U32'], ['parentEstate', 'U32']] }],
-    ['telehubBlock', { parameters: [['hasTelehub', 'BOOL'], ['telehubPos', 'LLVector3']] }]
+    ['simulatorPublicHostBlock', { quantity: 1, parameters: new Collection([['port', 'IPPORT'], ['simulatorIP', 'IPADDR'], ['gridX', 'U32'], ['gridY', 'U32']]) }],
+    ['neighborBlock', { quantity: 4, parameters: new Collection([['ip', 'IPADDR'], ['port', 'IPPORT']]) }],
+    ['simulatorBlock', { quantity: 1, parameters: new Collection([['simName', 'Variable1'], ['simAccess', 'U8'], ['regionFlags', 'U32'], ['region', 'LLUUID'], ['estate', 'U32'], ['parentEstate', 'U32']]) }],
+    ['telehubBlock', { parameters: new Collection([['hasTelehub', 'boolean'], ['telehubPos', 'LLVector3']]) }]
   ])
 
   /**

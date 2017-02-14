@@ -13,8 +13,8 @@ class ClassifiedInfoReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['classified', 'LLUUID'], ['creator', 'LLUUID'], ['creationDate', 'U32'], ['expirationDate', 'U32'], ['category', 'U32'], ['name', 'Variable1'], ['desc', 'Variable2'], ['parcel', 'LLUUID'], ['parentEstate', 'U32'], ['snapshot', 'LLUUID'], ['simName', 'Variable1'], ['posGlobal', 'LLVector3d'], ['parcelName', 'Variable1'], ['classifiedFlags', 'U8'], ['priceForListing', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['classified', 'LLUUID'], ['creator', 'LLUUID'], ['creationDate', 'U32'], ['expirationDate', 'U32'], ['category', 'U32'], ['name', 'Variable1'], ['desc', 'Variable2'], ['parcel', 'LLUUID'], ['parentEstate', 'U32'], ['snapshot', 'LLUUID'], ['simName', 'Variable1'], ['posGlobal', 'LLVector3d'], ['parcelName', 'Variable1'], ['classifiedFlags', 'U8'], ['priceForListing', 'S32']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class ViewerFrozenMessage extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['frozenData', { quantity: 1, parameters: [['data', 'BOOL']] }]
+    ['frozenData', { quantity: 1, parameters: new Collection([['data', 'boolean']]) }]
   ])
 
   /**

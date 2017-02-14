@@ -13,7 +13,7 @@ class CompleteAuction extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['parcelData', { parameters: [['parcel', 'LLUUID']] }]
+    ['parcelData', { parameters: new Collection([['parcel', 'LLUUID']]) }]
   ])
 
   /**

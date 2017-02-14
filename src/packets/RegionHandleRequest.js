@@ -13,7 +13,7 @@ class RegionHandleRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['requestBlock', { quantity: 1, parameters: [['region', 'LLUUID']] }]
+    ['requestBlock', { quantity: 1, parameters: new Collection([['region', 'LLUUID']]) }]
   ])
 
   /**

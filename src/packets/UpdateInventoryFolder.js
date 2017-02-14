@@ -13,8 +13,8 @@ class UpdateInventoryFolder extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['folderData', { parameters: [['folder', 'LLUUID'], ['parent', 'LLUUID'], ['type', 'S8'], ['name', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['folderData', { parameters: new Collection([['folder', 'LLUUID'], ['parent', 'LLUUID'], ['type', 'S8'], ['name', 'Variable1']]) }]
   ])
 
   /**

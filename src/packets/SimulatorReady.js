@@ -13,8 +13,8 @@ class SimulatorReady extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['simulatorBlock', { quantity: 1, parameters: [['simName', 'Variable1'], ['simAccess', 'U8'], ['regionFlags', 'U32'], ['region', 'LLUUID'], ['estate', 'U32'], ['parentEstate', 'U32']] }],
-    ['telehubBlock', { quantity: 1, parameters: [['hasTelehub', 'BOOL'], ['telehubPos', 'LLVector3']] }]
+    ['simulatorBlock', { quantity: 1, parameters: new Collection([['simName', 'Variable1'], ['simAccess', 'U8'], ['regionFlags', 'U32'], ['region', 'LLUUID'], ['estate', 'U32'], ['parentEstate', 'U32']]) }],
+    ['telehubBlock', { quantity: 1, parameters: new Collection([['hasTelehub', 'boolean'], ['telehubPos', 'LLVector3']]) }]
   ])
 
   /**

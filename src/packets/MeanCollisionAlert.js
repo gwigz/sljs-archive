@@ -13,7 +13,7 @@ class MeanCollisionAlert extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['meanCollision', { parameters: [['victim', 'LLUUID'], ['perp', 'LLUUID'], ['time', 'U32'], ['mag', 'F32'], ['type', 'U8']] }]
+    ['meanCollision', { parameters: new Collection([['victim', 'LLUUID'], ['perp', 'LLUUID'], ['time', 'U32'], ['mag', 'F32'], ['type', 'U8']]) }]
   ])
 
   /**

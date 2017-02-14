@@ -13,8 +13,8 @@ class AgentIsNowWearing extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['wearableData', { parameters: [['item', 'LLUUID'], ['wearableType', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['wearableData', { parameters: new Collection([['item', 'LLUUID'], ['wearableType', 'U8']]) }]
   ])
 
   /**

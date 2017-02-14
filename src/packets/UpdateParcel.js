@@ -13,7 +13,7 @@ class UpdateParcel extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['parcelData', { quantity: 1, parameters: [['parcel', 'LLUUID'], ['regionHandle', 'U64'], ['owner', 'LLUUID'], ['groupOwned', 'BOOL'], ['status', 'U8'], ['name', 'Variable1'], ['description', 'Variable1'], ['musicURL', 'Variable1'], ['regionX', 'F32'], ['regionY', 'F32'], ['actualArea', 'S32'], ['billableArea', 'S32'], ['showDir', 'BOOL'], ['isForSale', 'BOOL'], ['category', 'U8'], ['snapshot', 'LLUUID'], ['userLocation', 'LLVector3'], ['salePrice', 'S32'], ['authorizedBuyer', 'LLUUID'], ['allowPublish', 'BOOL'], ['maturePublish', 'BOOL']] }]
+    ['parcelData', { quantity: 1, parameters: new Collection([['parcel', 'LLUUID'], ['regionHandle', 'U64'], ['owner', 'LLUUID'], ['groupOwned', 'boolean'], ['status', 'U8'], ['name', 'Variable1'], ['description', 'Variable1'], ['musicURL', 'Variable1'], ['regionX', 'F32'], ['regionY', 'F32'], ['actualArea', 'S32'], ['billableArea', 'S32'], ['showDir', 'boolean'], ['isForSale', 'boolean'], ['category', 'U8'], ['snapshot', 'LLUUID'], ['userLocation', 'LLVector3'], ['salePrice', 'S32'], ['authorizedBuyer', 'LLUUID'], ['allowPublish', 'boolean'], ['maturePublish', 'boolean']]) }]
   ])
 
   /**

@@ -13,10 +13,10 @@ class DirPlacesReply extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['queryData', { parameters: [['query', 'LLUUID']] }],
-    ['queryReplies', { parameters: [['parcel', 'LLUUID'], ['name', 'Variable1'], ['forSale', 'BOOL'], ['auction', 'BOOL'], ['dwell', 'F32']] }],
-    ['statusData', { parameters: [['status', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['queryData', { parameters: new Collection([['query', 'LLUUID']]) }],
+    ['queryReplies', { parameters: new Collection([['parcel', 'LLUUID'], ['name', 'Variable1'], ['forSale', 'boolean'], ['auction', 'boolean'], ['dwell', 'F32']]) }],
+    ['statusData', { parameters: new Collection([['status', 'U32']]) }]
   ])
 
   /**

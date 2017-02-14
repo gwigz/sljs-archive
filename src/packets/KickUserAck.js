@@ -13,7 +13,7 @@ class KickUserAck extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['userInfo', { quantity: 1, parameters: [['session', 'LLUUID'], ['flags', 'U32']] }]
+    ['userInfo', { quantity: 1, parameters: new Collection([['session', 'LLUUID'], ['flags', 'U32']]) }]
   ])
 
   /**

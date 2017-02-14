@@ -13,8 +13,8 @@ class SimCrashed extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['data', { quantity: 1, parameters: [['regionX', 'U32'], ['regionY', 'U32']] }],
-    ['users', { parameters: [['agent', 'LLUUID']] }]
+    ['data', { quantity: 1, parameters: new Collection([['regionX', 'U32'], ['regionY', 'U32']]) }],
+    ['users', { parameters: new Collection([['agent', 'LLUUID']]) }]
   ])
 
   /**

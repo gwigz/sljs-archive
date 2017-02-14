@@ -13,8 +13,8 @@ class ScriptAnswerYes extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['task', 'LLUUID'], ['item', 'LLUUID'], ['questions', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['task', 'LLUUID'], ['item', 'LLUUID'], ['questions', 'S32']]) }]
   ])
 
   /**

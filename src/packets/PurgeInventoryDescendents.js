@@ -13,8 +13,8 @@ class PurgeInventoryDescendents extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['inventoryData', { quantity: 1, parameters: [['folder', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['inventoryData', { quantity: 1, parameters: new Collection([['folder', 'LLUUID']]) }]
   ])
 
   /**

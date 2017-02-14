@@ -13,8 +13,8 @@ class AvatarSitResponse extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['sitObject', { quantity: 1, parameters: [['id', 'LLUUID']] }],
-    ['sitTransform', { quantity: 1, parameters: [['autoPilot', 'BOOL'], ['sitPosition', 'LLVector3'], ['sitRotation', 'LLQuaternion'], ['cameraEyeOffset', 'LLVector3'], ['cameraAtOffset', 'LLVector3'], ['forceMouselook', 'BOOL']] }]
+    ['sitObject', { quantity: 1, parameters: new Collection([['id', 'LLUUID']]) }],
+    ['sitTransform', { quantity: 1, parameters: new Collection([['autoPilot', 'boolean'], ['sitPosition', 'LLVector3'], ['sitRotation', 'LLQuaternion'], ['cameraEyeOffset', 'LLVector3'], ['cameraAtOffset', 'LLVector3'], ['forceMouselook', 'boolean']]) }]
   ])
 
   /**

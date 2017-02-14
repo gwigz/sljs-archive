@@ -13,8 +13,8 @@ class GroupNoticesListReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['group', 'LLUUID']] }],
-    ['data', { parameters: [['notice', 'LLUUID'], ['timestamp', 'U32'], ['fromName', 'Variable2'], ['subject', 'Variable2'], ['hasAttachment', 'BOOL'], ['assetType', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['group', 'LLUUID']]) }],
+    ['data', { parameters: new Collection([['notice', 'LLUUID'], ['timestamp', 'U32'], ['fromName', 'Variable2'], ['subject', 'Variable2'], ['hasAttachment', 'boolean'], ['assetType', 'U8']]) }]
   ])
 
   /**

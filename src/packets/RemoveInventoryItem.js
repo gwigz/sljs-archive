@@ -13,8 +13,8 @@ class RemoveInventoryItem extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['inventoryData', { parameters: [['item', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['inventoryData', { parameters: new Collection([['item', 'LLUUID']]) }]
   ])
 
   /**

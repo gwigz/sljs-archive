@@ -13,9 +13,9 @@ class StartLure extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['info', { quantity: 1, parameters: [['lureType', 'U8'], ['message', 'Variable1']] }],
-    ['targetData', { parameters: [['target', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['info', { quantity: 1, parameters: new Collection([['lureType', 'U8'], ['message', 'Variable1']]) }],
+    ['targetData', { parameters: new Collection([['target', 'LLUUID']]) }]
   ])
 
   /**

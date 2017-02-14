@@ -13,7 +13,7 @@ class ChildAgentPositionUpdate extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['regionHandle', 'U64'], ['viewerCircuitCode', 'U32'], ['agent', 'LLUUID'], ['session', 'LLUUID'], ['agentPos', 'LLVector3'], ['agentVel', 'LLVector3'], ['center', 'LLVector3'], ['size', 'LLVector3'], ['atAxis', 'LLVector3'], ['leftAxis', 'LLVector3'], ['upAxis', 'LLVector3'], ['changedGrid', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64'], ['viewerCircuitCode', 'U32'], ['agent', 'LLUUID'], ['session', 'LLUUID'], ['agentPos', 'LLVector3'], ['agentVel', 'LLVector3'], ['center', 'LLVector3'], ['size', 'LLVector3'], ['atAxis', 'LLVector3'], ['leftAxis', 'LLVector3'], ['upAxis', 'LLVector3'], ['changedGrid', 'boolean']]) }]
   ])
 
   /**

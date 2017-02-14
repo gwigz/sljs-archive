@@ -13,9 +13,9 @@ class RemoveInventoryObjects extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['folderData', { parameters: [['folder', 'LLUUID']] }],
-    ['itemData', { parameters: [['item', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['folderData', { parameters: new Collection([['folder', 'LLUUID']]) }],
+    ['itemData', { parameters: new Collection([['item', 'LLUUID']]) }]
   ])
 
   /**

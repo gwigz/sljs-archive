@@ -13,8 +13,8 @@ class ObjectSpinStart extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['objectData', { quantity: 1, parameters: [['object', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['objectData', { quantity: 1, parameters: new Collection([['object', 'LLUUID']]) }]
   ])
 
   /**

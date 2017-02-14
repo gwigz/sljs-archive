@@ -13,8 +13,8 @@ class ParcelJoin extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['parcelData', { quantity: 1, parameters: [['west', 'F32'], ['south', 'F32'], ['east', 'F32'], ['north', 'F32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['parcelData', { quantity: 1, parameters: new Collection([['west', 'F32'], ['south', 'F32'], ['east', 'F32'], ['north', 'F32']]) }]
   ])
 
   /**

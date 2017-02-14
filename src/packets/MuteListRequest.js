@@ -13,8 +13,8 @@ class MuteListRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['muteData', { quantity: 1, parameters: [['muteCRC', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['muteData', { quantity: 1, parameters: new Collection([['muteCRC', 'U32']]) }]
   ])
 
   /**

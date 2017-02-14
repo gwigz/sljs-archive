@@ -13,9 +13,9 @@ class AgentMovementComplete extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['position', 'LLVector3'], ['lookAt', 'LLVector3'], ['regionHandle', 'U64'], ['timestamp', 'U32']] }],
-    ['simData', { quantity: 1, parameters: [['channelVersion', 'Variable2']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['position', 'LLVector3'], ['lookAt', 'LLVector3'], ['regionHandle', 'U64'], ['timestamp', 'U32']]) }],
+    ['simData', { quantity: 1, parameters: new Collection([['channelVersion', 'Variable2']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class UpdateUserInfo extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['userData', { quantity: 1, parameters: [['imViaEMail', 'BOOL'], ['directoryVisibility', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['userData', { quantity: 1, parameters: new Collection([['imViaEmail', 'boolean'], ['directoryVisibility', 'Variable1']]) }]
   ])
 
   /**

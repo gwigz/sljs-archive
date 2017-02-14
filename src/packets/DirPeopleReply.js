@@ -13,9 +13,9 @@ class DirPeopleReply extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['queryData', { quantity: 1, parameters: [['query', 'LLUUID']] }],
-    ['queryReplies', { parameters: [['agent', 'LLUUID'], ['firstName', 'Variable1'], ['lastName', 'Variable1'], ['group', 'Variable1'], ['online', 'BOOL'], ['reputation', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['queryData', { quantity: 1, parameters: new Collection([['query', 'LLUUID']]) }],
+    ['queryReplies', { parameters: new Collection([['agent', 'LLUUID'], ['firstName', 'Variable1'], ['lastName', 'Variable1'], ['group', 'Variable1'], ['online', 'boolean'], ['reputation', 'S32']]) }]
   ])
 
   /**

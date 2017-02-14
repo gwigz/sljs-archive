@@ -13,8 +13,8 @@ class AgentFOV extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['circuitCode', 'U32']] }],
-    ['fovBlock', { quantity: 1, parameters: [['genCounter', 'U32'], ['verticalAngle', 'F32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['circuitCode', 'U32']]) }],
+    ['fovBlock', { quantity: 1, parameters: new Collection([['genCounter', 'U32'], ['verticalAngle', 'F32']]) }]
   ])
 
   /**

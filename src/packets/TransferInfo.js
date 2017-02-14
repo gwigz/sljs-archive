@@ -13,7 +13,7 @@ class TransferInfo extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['transferInfo', { quantity: 1, parameters: [['transfer', 'LLUUID'], ['channelType', 'S32'], ['targetType', 'S32'], ['status', 'S32'], ['size', 'S32'], ['params', 'Variable2']] }]
+    ['transferInfo', { quantity: 1, parameters: new Collection([['transfer', 'LLUUID'], ['channelType', 'S32'], ['targetType', 'S32'], ['status', 'S32'], ['size', 'S32'], ['params', 'Variable2']]) }]
   ])
 
   /**

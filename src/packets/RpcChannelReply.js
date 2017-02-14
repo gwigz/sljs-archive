@@ -13,7 +13,7 @@ class RpcChannelReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['task', 'LLUUID'], ['item', 'LLUUID'], ['channel', 'LLUUID']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['task', 'LLUUID'], ['item', 'LLUUID'], ['channel', 'LLUUID']]) }]
   ])
 
   /**

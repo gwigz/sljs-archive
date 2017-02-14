@@ -13,7 +13,7 @@ class UpdateSimulator extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['simulatorInfo', { quantity: 1, parameters: [['region', 'LLUUID'], ['simName', 'Variable1'], ['estate', 'U32'], ['simAccess', 'U8']] }]
+    ['simulatorInfo', { quantity: 1, parameters: new Collection([['region', 'LLUUID'], ['simName', 'Variable1'], ['estate', 'U32'], ['simAccess', 'U8']]) }]
   ])
 
   /**

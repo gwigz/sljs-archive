@@ -13,7 +13,7 @@ class TeleportLandingStatusChanged extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['regionData', { quantity: 1, parameters: [['regionHandle', 'U64']] }]
+    ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64']]) }]
   ])
 
   /**

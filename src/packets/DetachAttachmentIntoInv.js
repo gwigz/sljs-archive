@@ -13,7 +13,7 @@ class DetachAttachmentIntoInv extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['objectData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['item', 'LLUUID']] }]
+    ['objectData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['item', 'LLUUID']]) }]
   ])
 
   /**

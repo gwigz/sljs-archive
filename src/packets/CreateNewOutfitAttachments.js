@@ -13,9 +13,9 @@ class CreateNewOutfitAttachments extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['headerData', { quantity: 1, parameters: [['newFolder', 'LLUUID']] }],
-    ['objectData', { parameters: [['oldItem', 'LLUUID'], ['oldFolder', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['headerData', { quantity: 1, parameters: new Collection([['newFolder', 'LLUUID']]) }],
+    ['objectData', { parameters: new Collection([['oldItem', 'LLUUID'], ['oldFolder', 'LLUUID']]) }]
   ])
 
   /**

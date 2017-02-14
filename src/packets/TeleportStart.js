@@ -13,7 +13,7 @@ class TeleportStart extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['info', { quantity: 1, parameters: [['teleportFlags', 'U32']] }]
+    ['info', { quantity: 1, parameters: new Collection([['teleportFlags', 'U32']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class SystemKickUser extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentInfo', { parameters: [['agent', 'LLUUID']] }]
+    ['agentInfo', { parameters: new Collection([['agent', 'LLUUID']]) }]
   ])
 
   /**

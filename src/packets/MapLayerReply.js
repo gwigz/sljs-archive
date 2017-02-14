@@ -13,8 +13,8 @@ class MapLayerReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['flags', 'U32']] }],
-    ['layerData', { parameters: [['left', 'U32'], ['right', 'U32'], ['top', 'U32'], ['bottom', 'U32'], ['image', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['flags', 'U32']]) }],
+    ['layerData', { parameters: new Collection([['left', 'U32'], ['right', 'U32'], ['top', 'U32'], ['bottom', 'U32'], ['image', 'LLUUID']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class SetCPURatio extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['data', { quantity: 1, parameters: [['ratio', 'U8']] }]
+    ['data', { quantity: 1, parameters: new Collection([['ratio', 'U8']]) }]
   ])
 
   /**

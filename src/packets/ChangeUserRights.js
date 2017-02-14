@@ -13,8 +13,8 @@ class ChangeUserRights extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['rights', { parameters: [['agentRelated', 'LLUUID'], ['relatedRights', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['rights', { parameters: new Collection([['agentRelated', 'LLUUID'], ['relatedRights', 'S32']]) }]
   ])
 
   /**

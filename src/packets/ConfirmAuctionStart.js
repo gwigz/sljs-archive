@@ -13,7 +13,7 @@ class ConfirmAuctionStart extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['auctionData', { quantity: 1, parameters: [['parcel', 'LLUUID'], ['auction', 'U32']] }]
+    ['auctionData', { quantity: 1, parameters: new Collection([['parcel', 'LLUUID'], ['auction', 'U32']]) }]
   ])
 
   /**

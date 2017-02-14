@@ -13,8 +13,8 @@ class EventInfoReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['eventData', { quantity: 1, parameters: [['event', 'U32'], ['creator', 'Variable1'], ['name', 'Variable1'], ['category', 'Variable1'], ['desc', 'Variable2'], ['date', 'Variable1'], ['dateUTC', 'U32'], ['duration', 'U32'], ['cover', 'U32'], ['amount', 'U32'], ['simName', 'Variable1'], ['globalPos', 'LLVector3d'], ['eventFlags', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['eventData', { quantity: 1, parameters: new Collection([['event', 'U32'], ['creator', 'Variable1'], ['name', 'Variable1'], ['category', 'Variable1'], ['desc', 'Variable2'], ['date', 'Variable1'], ['dateUTC', 'U32'], ['duration', 'U32'], ['cover', 'U32'], ['amount', 'U32'], ['simName', 'Variable1'], ['globalPos', 'LLVector3d'], ['eventFlags', 'U32']]) }]
   ])
 
   /**

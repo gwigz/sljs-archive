@@ -13,8 +13,8 @@ class SetScriptRunning extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['script', { quantity: 1, parameters: [['object', 'LLUUID'], ['item', 'LLUUID'], ['running', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['script', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['item', 'LLUUID'], ['running', 'boolean']]) }]
   ])
 
   /**

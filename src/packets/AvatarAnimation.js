@@ -13,10 +13,10 @@ class AvatarAnimation extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['sender', { quantity: 1, parameters: [['id', 'LLUUID']] }],
-    ['animationList', { parameters: [['anim', 'LLUUID'], ['animSequence', 'S32']] }],
-    ['animationSourceList', { parameters: [['object', 'LLUUID']] }],
-    ['physicalAvatarEventList', { parameters: [['typeData', 'Variable1']] }]
+    ['sender', { quantity: 1, parameters: new Collection([['id', 'LLUUID']]) }],
+    ['animationList', { parameters: new Collection([['anim', 'LLUUID'], ['animSequence', 'S32']]) }],
+    ['animationSourceList', { parameters: new Collection([['object', 'LLUUID']]) }],
+    ['physicalAvatarEventList', { parameters: new Collection([['typeData', 'Variable1']]) }]
   ])
 
   /**

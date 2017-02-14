@@ -13,7 +13,7 @@ class ScriptControlChange extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['data', { parameters: [['takeControls', 'BOOL'], ['controls', 'U32'], ['passToAgent', 'BOOL']] }]
+    ['data', { parameters: new Collection([['takeControls', 'boolean'], ['controls', 'U32'], ['passToAgent', 'boolean']]) }]
   ])
 
   /**

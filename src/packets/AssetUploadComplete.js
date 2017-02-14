@@ -13,7 +13,7 @@ class AssetUploadComplete extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['assetBlock', { quantity: 1, parameters: [['uUID', 'LLUUID'], ['type', 'S8'], ['success', 'BOOL']] }]
+    ['assetBlock', { quantity: 1, parameters: new Collection([['uUID', 'LLUUID'], ['type', 'S8'], ['success', 'boolean']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class ScriptSensorReply extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['requester', { quantity: 1, parameters: [['source', 'LLUUID']] }],
-    ['sensedData', { parameters: [['object', 'LLUUID'], ['owner', 'LLUUID'], ['group', 'LLUUID'], ['position', 'LLVector3'], ['velocity', 'LLVector3'], ['rotation', 'LLQuaternion'], ['name', 'Variable1'], ['type', 'S32'], ['range', 'F32']] }]
+    ['requester', { quantity: 1, parameters: new Collection([['source', 'LLUUID']]) }],
+    ['sensedData', { parameters: new Collection([['object', 'LLUUID'], ['owner', 'LLUUID'], ['group', 'LLUUID'], ['position', 'LLVector3'], ['velocity', 'LLVector3'], ['rotation', 'LLQuaternion'], ['name', 'Variable1'], ['type', 'S32'], ['range', 'F32']]) }]
   ])
 
   /**

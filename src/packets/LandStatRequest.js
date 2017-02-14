@@ -13,8 +13,8 @@ class LandStatRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['requestData', { quantity: 1, parameters: [['reportType', 'U32'], ['requestFlags', 'U32'], ['filter', 'Variable1'], ['parcelLocal', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['requestData', { quantity: 1, parameters: new Collection([['reportType', 'U32'], ['requestFlags', 'U32'], ['filter', 'Variable1'], ['parcelLocal', 'S32']]) }]
   ])
 
   /**

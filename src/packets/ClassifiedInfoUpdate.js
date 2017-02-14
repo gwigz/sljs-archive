@@ -13,8 +13,8 @@ class ClassifiedInfoUpdate extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['classified', 'LLUUID'], ['category', 'U32'], ['name', 'Variable1'], ['desc', 'Variable2'], ['parcel', 'LLUUID'], ['parentEstate', 'U32'], ['snapshot', 'LLUUID'], ['posGlobal', 'LLVector3d'], ['classifiedFlags', 'U8'], ['priceForListing', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['classified', 'LLUUID'], ['category', 'U32'], ['name', 'Variable1'], ['desc', 'Variable2'], ['parcel', 'LLUUID'], ['parentEstate', 'U32'], ['snapshot', 'LLUUID'], ['posGlobal', 'LLVector3d'], ['classifiedFlags', 'U8'], ['priceForListing', 'S32']]) }]
   ])
 
   /**

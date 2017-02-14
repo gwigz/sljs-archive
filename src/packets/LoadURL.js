@@ -13,7 +13,7 @@ class LoadURL extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['data', { quantity: 1, parameters: [['objectName', 'Variable1'], ['object', 'LLUUID'], ['owner', 'LLUUID'], ['ownerIsGroup', 'BOOL'], ['message', 'Variable1'], ['uRL', 'Variable1']] }]
+    ['data', { quantity: 1, parameters: new Collection([['objectName', 'Variable1'], ['object', 'LLUUID'], ['owner', 'LLUUID'], ['ownerIsGroup', 'boolean'], ['message', 'Variable1'], ['uRL', 'Variable1']]) }]
   ])
 
   /**

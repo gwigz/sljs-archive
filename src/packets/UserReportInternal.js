@@ -13,7 +13,7 @@ class UserReportInternal extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['reportData', { quantity: 1, parameters: [['reportType', 'U8'], ['category', 'U8'], ['reporter', 'LLUUID'], ['viewerPosition', 'LLVector3'], ['agentPosition', 'LLVector3'], ['screenshot', 'LLUUID'], ['object', 'LLUUID'], ['owner', 'LLUUID'], ['lastOwner', 'LLUUID'], ['creator', 'LLUUID'], ['region', 'LLUUID'], ['abuser', 'LLUUID'], ['abuseRegionName', 'Variable1'], ['abuseRegion', 'LLUUID'], ['summary', 'Variable1'], ['details', 'Variable2'], ['versionString', 'Variable1']] }]
+    ['reportData', { quantity: 1, parameters: new Collection([['reportType', 'U8'], ['category', 'U8'], ['reporter', 'LLUUID'], ['viewerPosition', 'LLVector3'], ['agentPosition', 'LLVector3'], ['screenshot', 'LLUUID'], ['object', 'LLUUID'], ['owner', 'LLUUID'], ['lastOwner', 'LLUUID'], ['creator', 'LLUUID'], ['region', 'LLUUID'], ['abuser', 'LLUUID'], ['abuseRegionName', 'Variable1'], ['abuseRegion', 'LLUUID'], ['summary', 'Variable1'], ['details', 'Variable2'], ['versionString', 'Variable1']]) }]
   ])
 
   /**

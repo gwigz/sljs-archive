@@ -13,8 +13,8 @@ class GroupRoleMembersReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['group', 'LLUUID'], ['request', 'LLUUID'], ['totalPairs', 'U32']] }],
-    ['memberData', { parameters: [['role', 'LLUUID'], ['member', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['group', 'LLUUID'], ['request', 'LLUUID'], ['totalPairs', 'U32']]) }],
+    ['memberData', { parameters: new Collection([['role', 'LLUUID'], ['member', 'LLUUID']]) }]
   ])
 
   /**

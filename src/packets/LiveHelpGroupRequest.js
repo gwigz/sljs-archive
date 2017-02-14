@@ -13,7 +13,7 @@ class LiveHelpGroupRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['requestData', { quantity: 1, parameters: [['request', 'LLUUID'], ['agent', 'LLUUID']] }]
+    ['requestData', { quantity: 1, parameters: new Collection([['request', 'LLUUID'], ['agent', 'LLUUID']]) }]
   ])
 
   /**

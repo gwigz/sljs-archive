@@ -13,8 +13,8 @@ class FindAgent extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentBlock', { quantity: 1, parameters: [['hunter', 'LLUUID'], ['prey', 'LLUUID'], ['spaceIP', 'IPADDR']] }],
-    ['locationBlock', { parameters: [['globalX', 'F64'], ['globalY', 'F64']] }]
+    ['agentBlock', { quantity: 1, parameters: new Collection([['hunter', 'LLUUID'], ['prey', 'LLUUID'], ['spaceIP', 'IPADDR']]) }],
+    ['locationBlock', { parameters: new Collection([['globalX', 'F64'], ['globalY', 'F64']]) }]
   ])
 
   /**

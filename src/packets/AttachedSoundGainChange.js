@@ -13,7 +13,7 @@ class AttachedSoundGainChange extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['object', 'LLUUID'], ['gain', 'F32']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['gain', 'F32']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class OfferCallingCard extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['agentBlock', { quantity: 1, parameters: [['dest', 'LLUUID'], ['transaction', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['agentBlock', { quantity: 1, parameters: new Collection([['dest', 'LLUUID'], ['transaction', 'LLUUID']]) }]
   ])
 
   /**

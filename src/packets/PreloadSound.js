@@ -13,7 +13,7 @@ class PreloadSound extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { parameters: [['object', 'LLUUID'], ['owner', 'LLUUID'], ['sound', 'LLUUID']] }]
+    ['dataBlock', { parameters: new Collection([['object', 'LLUUID'], ['owner', 'LLUUID'], ['sound', 'LLUUID']]) }]
   ])
 
   /**

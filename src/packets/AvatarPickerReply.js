@@ -13,8 +13,8 @@ class AvatarPickerReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['query', 'LLUUID']] }],
-    ['data', { parameters: [['avatar', 'LLUUID'], ['firstName', 'Variable1'], ['lastName', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['query', 'LLUUID']]) }],
+    ['data', { parameters: new Collection([['avatar', 'LLUUID'], ['firstName', 'Variable1'], ['lastName', 'Variable1']]) }]
   ])
 
   /**

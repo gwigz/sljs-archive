@@ -13,7 +13,7 @@ class RpcChannelRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['gridX', 'U32'], ['gridY', 'U32'], ['task', 'LLUUID'], ['item', 'LLUUID']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['gridX', 'U32'], ['gridY', 'U32'], ['task', 'LLUUID'], ['item', 'LLUUID']]) }]
   ])
 
   /**

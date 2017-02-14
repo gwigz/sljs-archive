@@ -13,7 +13,7 @@ class AttachedSound extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['sound', 'LLUUID'], ['object', 'LLUUID'], ['owner', 'LLUUID'], ['gain', 'F32'], ['flags', 'U8']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['sound', 'LLUUID'], ['object', 'LLUUID'], ['owner', 'LLUUID'], ['gain', 'F32'], ['flags', 'U8']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class ChatPass extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['chatData', { quantity: 1, parameters: [['channel', 'S32'], ['position', 'LLVector3'], ['id', 'LLUUID'], ['owner', 'LLUUID'], ['name', 'Variable1'], ['sourceType', 'U8'], ['type', 'U8'], ['radius', 'F32'], ['simAccess', 'U8'], ['message', 'Variable2']] }]
+    ['chatData', { quantity: 1, parameters: new Collection([['channel', 'S32'], ['position', 'LLVector3'], ['id', 'LLUUID'], ['owner', 'LLUUID'], ['name', 'Variable1'], ['sourceType', 'U8'], ['type', 'U8'], ['radius', 'F32'], ['simAccess', 'U8'], ['message', 'Variable2']]) }]
   ])
 
   /**

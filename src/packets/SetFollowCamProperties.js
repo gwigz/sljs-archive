@@ -13,8 +13,8 @@ class SetFollowCamProperties extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['objectData', { quantity: 1, parameters: [['object', 'LLUUID']] }],
-    ['cameraProperty', { parameters: [['type', 'S32'], ['value', 'F32']] }]
+    ['objectData', { quantity: 1, parameters: new Collection([['object', 'LLUUID']]) }],
+    ['cameraProperty', { parameters: new Collection([['type', 'S32'], ['value', 'F32']]) }]
   ])
 
   /**

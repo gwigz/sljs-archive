@@ -13,8 +13,8 @@ class MergeParcel extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['masterParcelData', { quantity: 1, parameters: [['master', 'LLUUID']] }],
-    ['slaveParcelData', { parameters: [['slave', 'LLUUID']] }]
+    ['masterParcelData', { quantity: 1, parameters: new Collection([['master', 'LLUUID']]) }],
+    ['slaveParcelData', { parameters: new Collection([['slave', 'LLUUID']]) }]
   ])
 
   /**

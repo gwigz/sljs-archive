@@ -13,7 +13,7 @@ class CheckParcelSales extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['regionData', { parameters: [['regionHandle', 'U64']] }]
+    ['regionData', { parameters: new Collection([['regionHandle', 'U64']]) }]
   ])
 
   /**

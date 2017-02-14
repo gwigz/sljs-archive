@@ -13,7 +13,7 @@ class AbortXfer extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['xfer', { quantity: 1, parameters: [['id', 'U64'], ['result', 'S32']] }]
+    ['xfer', { quantity: 1, parameters: new Collection([['id', 'U64'], ['result', 'S32']]) }]
   ])
 
   /**

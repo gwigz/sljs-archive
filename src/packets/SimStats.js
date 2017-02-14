@@ -13,9 +13,9 @@ class SimStats extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['region', { quantity: 1, parameters: [['regionX', 'U32'], ['regionY', 'U32'], ['regionFlags', 'U32'], ['objectCapacity', 'U32']] }],
-    ['stat', { parameters: [['stat', 'U32'], ['statValue', 'F32']] }],
-    ['pidStat', { quantity: 1, parameters: [['pID', 'S32']] }]
+    ['region', { quantity: 1, parameters: new Collection([['regionX', 'U32'], ['regionY', 'U32'], ['regionFlags', 'U32'], ['objectCapacity', 'U32']]) }],
+    ['stat', { parameters: new Collection([['stat', 'U32'], ['statValue', 'F32']]) }],
+    ['pidStat', { quantity: 1, parameters: new Collection([['pID', 'S32']]) }]
   ])
 
   /**

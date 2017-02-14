@@ -13,7 +13,7 @@ class ReportAutosaveCrash extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['autosaveData', { quantity: 1, parameters: [['pID', 'S32'], ['status', 'S32']] }]
+    ['autosaveData', { quantity: 1, parameters: new Collection([['pID', 'S32'], ['status', 'S32']]) }]
   ])
 
   /**

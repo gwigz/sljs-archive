@@ -13,10 +13,10 @@ class ParcelReturnObjects extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['parcelData', { quantity: 1, parameters: [['local', 'S32'], ['returnType', 'U32']] }],
-    ['taskIDs', { parameters: [['task', 'LLUUID']] }],
-    ['ownerIDs', { parameters: [['owner', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['parcelData', { quantity: 1, parameters: new Collection([['local', 'S32'], ['returnType', 'U32']]) }],
+    ['taskIDs', { parameters: new Collection([['task', 'LLUUID']]) }],
+    ['ownerIDs', { parameters: new Collection([['owner', 'LLUUID']]) }]
   ])
 
   /**

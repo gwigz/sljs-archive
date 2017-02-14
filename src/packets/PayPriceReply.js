@@ -13,8 +13,8 @@ class PayPriceReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['objectData', { quantity: 1, parameters: [['object', 'LLUUID'], ['defaultPayPrice', 'S32']] }],
-    ['buttonData', { parameters: [['payButton', 'S32']] }]
+    ['objectData', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['defaultPayPrice', 'S32']]) }],
+    ['buttonData', { parameters: new Collection([['payButton', 'S32']]) }]
   ])
 
   /**

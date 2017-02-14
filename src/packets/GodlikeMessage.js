@@ -13,9 +13,9 @@ class GodlikeMessage extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['transaction', 'LLUUID']] }],
-    ['methodData', { quantity: 1, parameters: [['method', 'Variable1'], ['invoice', 'LLUUID']] }],
-    ['paramList', { parameters: [['parameter', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['transaction', 'LLUUID']]) }],
+    ['methodData', { quantity: 1, parameters: new Collection([['method', 'Variable1'], ['invoice', 'LLUUID']]) }],
+    ['paramList', { parameters: new Collection([['parameter', 'Variable1']]) }]
   ])
 
   /**

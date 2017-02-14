@@ -13,8 +13,8 @@ class AgentThrottle extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['circuitCode', 'U32']] }],
-    ['throttle', { quantity: 1, parameters: [['genCounter', 'U32'], ['throttles', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['circuitCode', 'U32']]) }],
+    ['throttle', { quantity: 1, parameters: new Collection([['genCounter', 'U32'], ['throttles', 'Variable1']]) }]
   ])
 
   /**

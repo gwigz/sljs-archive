@@ -13,8 +13,8 @@ class UpdateMuteListEntry extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['muteData', { quantity: 1, parameters: [['mute', 'LLUUID'], ['muteName', 'Variable1'], ['muteType', 'S32'], ['muteFlags', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['muteData', { quantity: 1, parameters: new Collection([['mute', 'LLUUID'], ['muteName', 'Variable1'], ['muteType', 'S32'], ['muteFlags', 'U32']]) }]
   ])
 
   /**

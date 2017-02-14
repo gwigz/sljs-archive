@@ -13,9 +13,9 @@ class EjectGroupMemberRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['groupData', { quantity: 1, parameters: [['group', 'LLUUID']] }],
-    ['ejectData', { parameters: [['ejectee', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['groupData', { quantity: 1, parameters: new Collection([['group', 'LLUUID']]) }],
+    ['ejectData', { parameters: new Collection([['ejectee', 'LLUUID']]) }]
   ])
 
   /**

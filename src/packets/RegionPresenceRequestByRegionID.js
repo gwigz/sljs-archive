@@ -13,7 +13,7 @@ class RegionPresenceRequestByRegionID extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['regionData', { parameters: [['region', 'LLUUID']] }]
+    ['regionData', { parameters: new Collection([['region', 'LLUUID']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class SimStatus extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['simStatus', { quantity: 1, parameters: [['canAcceptAgents', 'BOOL'], ['canAcceptTasks', 'BOOL']] }]
+    ['simStatus', { quantity: 1, parameters: new Collection([['canAcceptAgents', 'boolean'], ['canAcceptTasks', 'boolean']]) }]
   ])
 
   /**

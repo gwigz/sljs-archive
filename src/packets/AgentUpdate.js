@@ -13,7 +13,7 @@ class AgentUpdate extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['bodyRotation', 'LLQuaternion'], ['headRotation', 'LLQuaternion'], ['state', 'U8'], ['cameraCenter', 'LLVector3'], ['cameraAtAxis', 'LLVector3'], ['cameraLeftAxis', 'LLVector3'], ['cameraUpAxis', 'LLVector3'], ['far', 'F32'], ['controlFlags', 'U32'], ['flags', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['bodyRotation', 'LLQuaternion'], ['headRotation', 'LLQuaternion'], ['state', 'U8'], ['cameraCenter', 'LLVector3'], ['cameraAtAxis', 'LLVector3'], ['cameraLeftAxis', 'LLVector3'], ['cameraUpAxis', 'LLVector3'], ['far', 'F32'], ['controlFlags', 'U32'], ['flags', 'U8']]) }]
   ])
 
   /**

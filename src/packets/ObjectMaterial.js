@@ -13,8 +13,8 @@ class ObjectMaterial extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['objectData', { parameters: [['objectLocal', 'U32'], ['material', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['objectData', { parameters: new Collection([['objectLocal', 'U32'], ['material', 'U8']]) }]
   ])
 
   /**

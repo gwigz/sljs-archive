@@ -13,8 +13,8 @@ class GroupNoticeAdd extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['messageBlock', { quantity: 1, parameters: [['toGroup', 'LLUUID'], ['id', 'LLUUID'], ['dialog', 'U8'], ['fromAgentName', 'Variable1'], ['message', 'Variable2'], ['binaryBucket', 'Variable2']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['messageBlock', { quantity: 1, parameters: new Collection([['toGroup', 'LLUUID'], ['id', 'LLUUID'], ['dialog', 'U8'], ['fromAgentName', 'Variable1'], ['message', 'Variable2'], ['binaryBucket', 'Variable2']]) }]
   ])
 
   /**
