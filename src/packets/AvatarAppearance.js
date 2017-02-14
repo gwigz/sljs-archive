@@ -13,9 +13,9 @@ class AvatarAppearance extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['sender', { quantity: 1, parameters: [['id', 'LLUUID'], ['isTrial', 'BOOL']] }],
-    ['objectData', { quantity: 1, parameters: [['textureEntry', 'Variable2']] }],
-    ['visualParam', { parameters: [['paramValue', 'U8']] }]
+    ['sender', { quantity: 1, parameters: new Collection([['id', 'LLUUID'], ['isTrial', 'boolean']]) }],
+    ['objectData', { quantity: 1, parameters: new Collection([['textureEntry', 'Variable2']]) }],
+    ['visualParam', { parameters: new Collection([['paramValue', 'U8']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class ImageNotInDatabase extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['image', { quantity: 1, parameters: [['id', 'LLUUID']] }]
+    ['image', { quantity: 1, parameters: new Collection([['id', 'LLUUID']]) }]
   ])
 
   /**

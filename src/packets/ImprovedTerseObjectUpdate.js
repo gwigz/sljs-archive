@@ -13,8 +13,8 @@ class ImprovedTerseObjectUpdate extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['regionData', { quantity: 1, parameters: [['regionHandle', 'U64'], ['timeDilation', 'U16']] }],
-    ['objectData', { parameters: [['data', 'Variable1'], ['textureEntry', 'Variable2']] }]
+    ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64'], ['timeDilation', 'U16']]) }],
+    ['objectData', { parameters: new Collection([['data', 'Variable1'], ['textureEntry', 'Variable2']]) }]
   ])
 
   /**

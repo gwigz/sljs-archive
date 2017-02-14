@@ -13,7 +13,7 @@ class FeatureDisabled extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['failureInfo', { quantity: 1, parameters: [['errorMessage', 'Variable1'], ['agent', 'LLUUID'], ['transaction', 'LLUUID']] }]
+    ['failureInfo', { quantity: 1, parameters: new Collection([['errorMessage', 'Variable1'], ['agent', 'LLUUID'], ['transaction', 'LLUUID']]) }]
   ])
 
   /**

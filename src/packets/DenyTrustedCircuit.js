@@ -13,7 +13,7 @@ class DenyTrustedCircuit extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['endPoint', 'LLUUID']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['endPoint', 'LLUUID']]) }]
   ])
 
   /**

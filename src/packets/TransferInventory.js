@@ -13,8 +13,8 @@ class TransferInventory extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['infoBlock', { quantity: 1, parameters: [['source', 'LLUUID'], ['dest', 'LLUUID'], ['transaction', 'LLUUID']] }],
-    ['inventoryBlock', { parameters: [['inventory', 'LLUUID'], ['type', 'S8']] }]
+    ['infoBlock', { quantity: 1, parameters: new Collection([['source', 'LLUUID'], ['dest', 'LLUUID'], ['transaction', 'LLUUID']]) }],
+    ['inventoryBlock', { parameters: new Collection([['inventory', 'LLUUID'], ['type', 'S8']]) }]
   ])
 
   /**

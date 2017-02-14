@@ -13,8 +13,8 @@ class UserInfoReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['userData', { quantity: 1, parameters: [['imViaEMail', 'BOOL'], ['directoryVisibility', 'Variable1'], ['eMail', 'Variable2']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['userData', { quantity: 1, parameters: new Collection([['imViaEmail', 'boolean'], ['directoryVisibility', 'Variable1'], ['email', 'Variable2']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class ScriptDataRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { parameters: [['hash', 'U64'], ['requestType', 'S8'], ['request', 'Variable2']] }]
+    ['dataBlock', { parameters: new Collection([['hash', 'U64'], ['requestType', 'S8'], ['request', 'Variable2']]) }]
   ])
 
   /**

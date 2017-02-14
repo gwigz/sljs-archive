@@ -13,8 +13,8 @@ class AgentHeightWidth extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['circuitCode', 'U32']] }],
-    ['heightWidthBlock', { quantity: 1, parameters: [['genCounter', 'U32'], ['height', 'U16'], ['width', 'U16']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['circuitCode', 'U32']]) }],
+    ['heightWidthBlock', { quantity: 1, parameters: new Collection([['genCounter', 'U32'], ['height', 'U16'], ['width', 'U16']]) }]
   ])
 
   /**

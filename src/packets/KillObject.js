@@ -13,7 +13,7 @@ class KillObject extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['objectData', { parameters: [['id', 'U32']] }]
+    ['objectData', { parameters: new Collection([['id', 'U32']]) }]
   ])
 
   /**

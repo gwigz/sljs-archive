@@ -13,9 +13,9 @@ class ScriptDialog extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['data', { quantity: 1, parameters: [['object', 'LLUUID'], ['firstName', 'Variable1'], ['lastName', 'Variable1'], ['objectName', 'Variable1'], ['message', 'Variable2'], ['chatChannel', 'S32'], ['image', 'LLUUID']] }],
-    ['buttons', { parameters: [['buttonLabel', 'Variable1']] }],
-    ['ownerData', { parameters: [['owner', 'LLUUID']] }]
+    ['data', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['firstName', 'Variable1'], ['lastName', 'Variable1'], ['objectName', 'Variable1'], ['message', 'Variable2'], ['chatChannel', 'S32'], ['image', 'LLUUID']]) }],
+    ['buttons', { parameters: new Collection([['buttonLabel', 'Variable1']]) }],
+    ['ownerData', { parameters: new Collection([['owner', 'LLUUID']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class LayerData extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['layer', { quantity: 1, parameters: [['type', 'U8']] }],
-    ['layerData', { quantity: 1, parameters: [['data', 'Variable2']] }]
+    ['layer', { quantity: 1, parameters: new Collection([['type', 'U8']]) }],
+    ['layerData', { quantity: 1, parameters: new Collection([['data', 'Variable2']]) }]
   ])
 
   /**

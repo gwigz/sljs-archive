@@ -13,7 +13,7 @@ class GetScriptRunning extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['script', { quantity: 1, parameters: [['object', 'LLUUID'], ['item', 'LLUUID']] }]
+    ['script', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['item', 'LLUUID']]) }]
   ])
 
   /**

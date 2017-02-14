@@ -13,8 +13,8 @@ class ParcelPropertiesRequest extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['parcelData', { quantity: 1, parameters: [['sequence', 'S32'], ['west', 'F32'], ['south', 'F32'], ['east', 'F32'], ['north', 'F32'], ['snapSelection', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['parcelData', { quantity: 1, parameters: new Collection([['sequence', 'S32'], ['west', 'F32'], ['south', 'F32'], ['east', 'F32'], ['north', 'F32'], ['snapSelection', 'boolean']]) }]
   ])
 
   /**

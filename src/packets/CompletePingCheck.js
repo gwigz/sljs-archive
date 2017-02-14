@@ -13,7 +13,7 @@ class CompletePingCheck extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['ping', { quantity: 1, parameters: [['ping', 'U8']] }]
+    ['ping', { quantity: 1, parameters: new Collection([['ping', 'U8']]) }]
   ])
 
   /**

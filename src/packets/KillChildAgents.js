@@ -13,7 +13,7 @@ class KillChildAgents extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['idBlock', { quantity: 1, parameters: [['agent', 'LLUUID']] }]
+    ['idBlock', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }]
   ])
 
   /**

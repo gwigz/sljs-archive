@@ -13,7 +13,7 @@ class RequestPayPrice extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['objectData', { quantity: 1, parameters: [['object', 'LLUUID']] }]
+    ['objectData', { quantity: 1, parameters: new Collection([['object', 'LLUUID']]) }]
   ])
 
   /**

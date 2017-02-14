@@ -13,8 +13,8 @@ class SimWideDeletes extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['dataBlock', { quantity: 1, parameters: [['target', 'LLUUID'], ['flags', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['dataBlock', { quantity: 1, parameters: new Collection([['target', 'LLUUID'], ['flags', 'U32']]) }]
   ])
 
   /**

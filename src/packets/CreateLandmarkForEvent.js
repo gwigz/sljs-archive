@@ -13,9 +13,9 @@ class CreateLandmarkForEvent extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['eventData', { quantity: 1, parameters: [['event', 'U32']] }],
-    ['inventoryBlock', { quantity: 1, parameters: [['folder', 'LLUUID'], ['name', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['eventData', { quantity: 1, parameters: new Collection([['event', 'U32']]) }],
+    ['inventoryBlock', { quantity: 1, parameters: new Collection([['folder', 'LLUUID'], ['name', 'Variable1']]) }]
   ])
 
   /**

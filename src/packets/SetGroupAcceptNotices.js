@@ -13,9 +13,9 @@ class SetGroupAcceptNotices extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['group', 'LLUUID'], ['acceptNotices', 'BOOL']] }],
-    ['newData', { quantity: 1, parameters: [['listInProfile', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['group', 'LLUUID'], ['acceptNotices', 'boolean']]) }],
+    ['newData', { quantity: 1, parameters: new Collection([['listInProfile', 'boolean']]) }]
   ])
 
   /**

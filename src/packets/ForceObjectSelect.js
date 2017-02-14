@@ -13,8 +13,8 @@ class ForceObjectSelect extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['header', { quantity: 1, parameters: [['resetList', 'BOOL']] }],
-    ['data', { parameters: [['local', 'U32']] }]
+    ['header', { quantity: 1, parameters: new Collection([['resetList', 'boolean']]) }],
+    ['data', { parameters: new Collection([['local', 'U32']]) }]
   ])
 
   /**

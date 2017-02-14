@@ -13,8 +13,8 @@ class ImagePacket extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['image', { quantity: 1, parameters: [['id', 'LLUUID'], ['packet', 'U16']] }],
-    ['imageData', { quantity: 1, parameters: [['data', 'Variable2']] }]
+    ['image', { quantity: 1, parameters: new Collection([['id', 'LLUUID'], ['packet', 'U16']]) }],
+    ['imageData', { quantity: 1, parameters: new Collection([['data', 'Variable2']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class TerminateFriendship extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['exBlock', { quantity: 1, parameters: [['other', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['exBlock', { quantity: 1, parameters: new Collection([['other', 'LLUUID']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class DataServerLogout extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['userData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['viewerIP', 'IPADDR'], ['disconnect', 'BOOL'], ['session', 'LLUUID']] }]
+    ['userData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['viewerIP', 'IPADDR'], ['disconnect', 'boolean'], ['session', 'LLUUID']]) }]
   ])
 
   /**

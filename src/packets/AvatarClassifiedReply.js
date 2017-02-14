@@ -13,8 +13,8 @@ class AvatarClassifiedReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['target', 'LLUUID']] }],
-    ['data', { parameters: [['classified', 'LLUUID'], ['name', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['target', 'LLUUID']]) }],
+    ['data', { parameters: new Collection([['classified', 'LLUUID'], ['name', 'Variable1']]) }]
   ])
 
   /**

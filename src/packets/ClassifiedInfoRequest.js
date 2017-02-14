@@ -13,8 +13,8 @@ class ClassifiedInfoRequest extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['classified', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['classified', 'LLUUID']]) }]
   ])
 
   /**

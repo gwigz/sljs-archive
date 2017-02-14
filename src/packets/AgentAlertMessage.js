@@ -13,8 +13,8 @@ class AgentAlertMessage extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['alertData', { quantity: 1, parameters: [['modal', 'BOOL'], ['message', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['alertData', { quantity: 1, parameters: new Collection([['modal', 'boolean'], ['message', 'Variable1']]) }]
   ])
 
   /**

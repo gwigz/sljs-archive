@@ -13,9 +13,9 @@ class GroupVoteHistoryRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['groupData', { quantity: 1, parameters: [['group', 'LLUUID']] }],
-    ['transactionData', { quantity: 1, parameters: [['transaction', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['groupData', { quantity: 1, parameters: new Collection([['group', 'LLUUID']]) }],
+    ['transactionData', { quantity: 1, parameters: new Collection([['transaction', 'LLUUID']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class PickInfoReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['pick', 'LLUUID'], ['creator', 'LLUUID'], ['topPick', 'BOOL'], ['parcel', 'LLUUID'], ['name', 'Variable1'], ['desc', 'Variable2'], ['snapshot', 'LLUUID'], ['user', 'Variable1'], ['originalName', 'Variable1'], ['simName', 'Variable1'], ['posGlobal', 'LLVector3d'], ['sortOrder', 'S32'], ['enabled', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['pick', 'LLUUID'], ['creator', 'LLUUID'], ['topPick', 'boolean'], ['parcel', 'LLUUID'], ['name', 'Variable1'], ['desc', 'Variable2'], ['snapshot', 'LLUUID'], ['user', 'Variable1'], ['originalName', 'Variable1'], ['simName', 'Variable1'], ['posGlobal', 'LLVector3d'], ['sortOrder', 'S32'], ['enabled', 'boolean']]) }]
   ])
 
   /**

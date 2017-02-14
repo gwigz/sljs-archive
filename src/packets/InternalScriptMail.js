@@ -13,7 +13,7 @@ class InternalScriptMail extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['from', 'Variable1'], ['to', 'LLUUID'], ['subject', 'Variable1'], ['body', 'Variable2']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['from', 'Variable1'], ['to', 'LLUUID'], ['subject', 'Variable1'], ['body', 'Variable2']]) }]
   ])
 
   /**

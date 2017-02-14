@@ -13,7 +13,7 @@ class HealthMessage extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['healthData', { quantity: 1, parameters: [['health', 'F32']] }]
+    ['healthData', { quantity: 1, parameters: new Collection([['health', 'F32']]) }]
   ])
 
   /**

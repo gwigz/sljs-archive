@@ -13,8 +13,8 @@ class SimulatorLoad extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['simulatorLoad', { quantity: 1, parameters: [['timeDilation', 'F32'], ['agentCount', 'S32'], ['canAcceptAgents', 'BOOL']] }],
-    ['agentList', { parameters: [['circuitCode', 'U32'], ['x', 'U8'], ['y', 'U8']] }]
+    ['simulatorLoad', { quantity: 1, parameters: new Collection([['timeDilation', 'F32'], ['agentCount', 'S32'], ['canAcceptAgents', 'boolean']]) }],
+    ['agentList', { parameters: new Collection([['circuitCode', 'U32'], ['x', 'U8'], ['y', 'U8']]) }]
   ])
 
   /**

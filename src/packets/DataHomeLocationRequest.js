@@ -13,8 +13,8 @@ class DataHomeLocationRequest extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['info', { quantity: 1, parameters: [['agent', 'LLUUID'], ['kickedFromEstate', 'U32']] }],
-    ['agentInfo', { quantity: 1, parameters: [['agentEffectiveMaturity', 'U32']] }]
+    ['info', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['kickedFromEstate', 'U32']]) }],
+    ['agentInfo', { quantity: 1, parameters: new Collection([['agentEffectiveMaturity', 'U32']]) }]
   ])
 
   /**

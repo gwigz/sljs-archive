@@ -13,8 +13,8 @@ class ObjectName extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['objectData', { parameters: [['local', 'U32'], ['name', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['objectData', { parameters: new Collection([['local', 'U32'], ['name', 'Variable1']]) }]
   ])
 
   /**

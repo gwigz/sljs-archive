@@ -13,7 +13,7 @@ class EmailMessageRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dataBlock', { quantity: 1, parameters: [['object', 'LLUUID'], ['fromAddress', 'Variable1'], ['subject', 'Variable1']] }]
+    ['dataBlock', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['fromAddress', 'Variable1'], ['subject', 'Variable1']]) }]
   ])
 
   /**

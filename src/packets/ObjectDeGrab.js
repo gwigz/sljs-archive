@@ -13,9 +13,9 @@ class ObjectDeGrab extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['objectData', { quantity: 1, parameters: [['local', 'U32']] }],
-    ['surfaceInfo', { parameters: [['uVCoord', 'LLVector3'], ['sTCoord', 'LLVector3'], ['faceIndex', 'S32'], ['position', 'LLVector3'], ['normal', 'LLVector3'], ['binormal', 'LLVector3']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['objectData', { quantity: 1, parameters: new Collection([['local', 'U32']]) }],
+    ['surfaceInfo', { parameters: new Collection([['uVCoord', 'LLVector3'], ['sTCoord', 'LLVector3'], ['faceIndex', 'S32'], ['position', 'LLVector3'], ['normal', 'LLVector3'], ['binormal', 'LLVector3']]) }]
   ])
 
   /**

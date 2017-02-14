@@ -13,8 +13,8 @@ class AgentCachedTexture extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['serialNum', 'S32']] }],
-    ['wearableData', { parameters: [['id', 'LLUUID'], ['textureIndex', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['serialNum', 'S32']]) }],
+    ['wearableData', { parameters: new Collection([['id', 'LLUUID'], ['textureIndex', 'U8']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class RemoveAttachment extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['attachmentBlock', { quantity: 1, parameters: [['attachmentPoint', 'U8'], ['item', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['attachmentBlock', { quantity: 1, parameters: new Collection([['attachmentPoint', 'U8'], ['item', 'LLUUID']]) }]
   ])
 
   /**

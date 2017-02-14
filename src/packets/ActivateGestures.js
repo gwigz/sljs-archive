@@ -13,8 +13,8 @@ class ActivateGestures extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['flags', 'U32']] }],
-    ['data', { parameters: [['item', 'LLUUID'], ['asset', 'LLUUID'], ['gestureFlags', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['flags', 'U32']]) }],
+    ['data', { parameters: new Collection([['item', 'LLUUID'], ['asset', 'LLUUID'], ['gestureFlags', 'U32']]) }]
   ])
 
   /**

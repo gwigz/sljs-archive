@@ -13,8 +13,8 @@ class EventLocationReply extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['queryData', { quantity: 1, parameters: [['query', 'LLUUID']] }],
-    ['eventData', { quantity: 1, parameters: [['success', 'BOOL'], ['region', 'LLUUID'], ['regionPos', 'LLVector3']] }]
+    ['queryData', { quantity: 1, parameters: new Collection([['query', 'LLUUID']]) }],
+    ['eventData', { quantity: 1, parameters: new Collection([['success', 'boolean'], ['region', 'LLUUID'], ['regionPos', 'LLVector3']]) }]
   ])
 
   /**

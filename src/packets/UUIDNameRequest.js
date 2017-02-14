@@ -13,7 +13,7 @@ class UUIDNameRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['uUIDNameBlock', { parameters: [['id', 'LLUUID']] }]
+    ['uUIDNameBlock', { parameters: new Collection([['id', 'LLUUID']]) }]
   ])
 
   /**

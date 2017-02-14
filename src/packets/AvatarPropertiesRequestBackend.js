@@ -13,7 +13,7 @@ class AvatarPropertiesRequestBackend extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['avatar', 'LLUUID'], ['godLevel', 'U8'], ['webProfilesDisabled', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['avatar', 'LLUUID'], ['godLevel', 'U8'], ['webProfilesDisabled', 'boolean']]) }]
   ])
 
   /**

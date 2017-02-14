@@ -13,8 +13,8 @@ class TestMessage extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['testBlock1', { quantity: 1, parameters: [['test1', 'U32']] }],
-    ['neighborBlock', { quantity: 4, parameters: [['test0', 'U32'], ['test1', 'U32'], ['test2', 'U32']] }]
+    ['testBlock1', { quantity: 1, parameters: new Collection([['test1', 'U32']]) }],
+    ['neighborBlock', { quantity: 4, parameters: new Collection([['test0', 'U32'], ['test1', 'U32'], ['test2', 'U32']]) }]
   ])
 
   /**

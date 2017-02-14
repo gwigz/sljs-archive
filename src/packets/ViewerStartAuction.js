@@ -13,8 +13,8 @@ class ViewerStartAuction extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['parcelData', { quantity: 1, parameters: [['local', 'S32'], ['snapshot', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['parcelData', { quantity: 1, parameters: new Collection([['local', 'S32'], ['snapshot', 'LLUUID']]) }]
   ])
 
   /**

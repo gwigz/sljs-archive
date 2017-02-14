@@ -13,8 +13,8 @@ class Undo extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['group', 'LLUUID']] }],
-    ['objectData', { parameters: [['object', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['group', 'LLUUID']]) }],
+    ['objectData', { parameters: new Collection([['object', 'LLUUID']]) }]
   ])
 
   /**

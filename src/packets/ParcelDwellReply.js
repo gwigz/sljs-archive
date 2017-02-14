@@ -13,8 +13,8 @@ class ParcelDwellReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['local', 'S32'], ['parcel', 'LLUUID'], ['dwell', 'F32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['local', 'S32'], ['parcel', 'LLUUID'], ['dwell', 'F32']]) }]
   ])
 
   /**

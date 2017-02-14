@@ -13,8 +13,8 @@ class DirPlacesQueryBackend extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['queryData', { quantity: 1, parameters: [['query', 'LLUUID'], ['queryText', 'Variable1'], ['queryFlags', 'U32'], ['category', 'S8'], ['simName', 'Variable1'], ['estate', 'U32'], ['godlike', 'BOOL'], ['queryStart', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['queryData', { quantity: 1, parameters: new Collection([['query', 'LLUUID'], ['queryText', 'Variable1'], ['queryFlags', 'U32'], ['category', 'S8'], ['simName', 'Variable1'], ['estate', 'U32'], ['godlike', 'boolean'], ['queryStart', 'S32']]) }]
   ])
 
   /**

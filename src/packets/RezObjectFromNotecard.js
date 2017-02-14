@@ -13,10 +13,10 @@ class RezObjectFromNotecard extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['group', 'LLUUID']] }],
-    ['rezData', { quantity: 1, parameters: [['fromTask', 'LLUUID'], ['bypassRaycast', 'U8'], ['rayStart', 'LLVector3'], ['rayEnd', 'LLVector3'], ['rayTarget', 'LLUUID'], ['rayEndIsIntersection', 'BOOL'], ['rezSelected', 'BOOL'], ['removeItem', 'BOOL'], ['itemFlags', 'U32'], ['groupMask', 'U32'], ['everyoneMask', 'U32'], ['nextOwnerMask', 'U32']] }],
-    ['notecardData', { quantity: 1, parameters: [['notecardItem', 'LLUUID'], ['object', 'LLUUID']] }],
-    ['inventoryData', { parameters: [['item', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['group', 'LLUUID']]) }],
+    ['rezData', { quantity: 1, parameters: new Collection([['fromTask', 'LLUUID'], ['bypassRaycast', 'U8'], ['rayStart', 'LLVector3'], ['rayEnd', 'LLVector3'], ['rayTarget', 'LLUUID'], ['rayEndIsIntersection', 'boolean'], ['rezSelected', 'boolean'], ['removeItem', 'boolean'], ['itemFlags', 'U32'], ['groupMask', 'U32'], ['everyoneMask', 'U32'], ['nextOwnerMask', 'U32']]) }],
+    ['notecardData', { quantity: 1, parameters: new Collection([['notecardItem', 'LLUUID'], ['object', 'LLUUID']]) }],
+    ['inventoryData', { parameters: new Collection([['item', 'LLUUID']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class MuteListUpdate extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['muteData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['filename', 'Variable1']] }]
+    ['muteData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['filename', 'Variable1']]) }]
   ])
 
   /**

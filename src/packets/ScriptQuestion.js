@@ -13,7 +13,7 @@ class ScriptQuestion extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['data', { quantity: 1, parameters: [['task', 'LLUUID'], ['item', 'LLUUID'], ['objectName', 'Variable1'], ['objectOwner', 'Variable1'], ['questions', 'S32']] }]
+    ['data', { quantity: 1, parameters: new Collection([['task', 'LLUUID'], ['item', 'LLUUID'], ['objectName', 'Variable1'], ['objectOwner', 'Variable1'], ['questions', 'S32']]) }]
   ])
 
   /**

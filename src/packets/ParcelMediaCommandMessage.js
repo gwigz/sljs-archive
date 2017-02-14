@@ -13,7 +13,7 @@ class ParcelMediaCommandMessage extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['commandBlock', { quantity: 1, parameters: [['flags', 'U32'], ['command', 'U32'], ['time', 'F32']] }]
+    ['commandBlock', { quantity: 1, parameters: new Collection([['flags', 'U32'], ['command', 'U32'], ['time', 'F32']]) }]
   ])
 
   /**

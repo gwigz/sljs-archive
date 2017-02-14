@@ -13,9 +13,9 @@ class AvatarTextureUpdate extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['texturesChanged', 'BOOL']] }],
-    ['wearableData', { parameters: [['cache', 'LLUUID'], ['textureIndex', 'U8'], ['hostName', 'Variable1']] }],
-    ['textureData', { parameters: [['texture', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['texturesChanged', 'boolean']]) }],
+    ['wearableData', { parameters: new Collection([['cache', 'LLUUID'], ['textureIndex', 'U8'], ['hostName', 'Variable1']]) }],
+    ['textureData', { parameters: new Collection([['texture', 'LLUUID']]) }]
   ])
 
   /**

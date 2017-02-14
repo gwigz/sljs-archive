@@ -13,7 +13,7 @@ class ScriptSensorRequest extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['requester', { quantity: 1, parameters: [['source', 'LLUUID'], ['request', 'LLUUID'], ['search', 'LLUUID'], ['searchPos', 'LLVector3'], ['searchDir', 'LLQuaternion'], ['searchName', 'Variable1'], ['type', 'S32'], ['range', 'F32'], ['arc', 'F32'], ['regionHandle', 'U64'], ['searchRegions', 'U8']] }]
+    ['requester', { quantity: 1, parameters: new Collection([['source', 'LLUUID'], ['request', 'LLUUID'], ['search', 'LLUUID'], ['searchPos', 'LLVector3'], ['searchDir', 'LLQuaternion'], ['searchName', 'Variable1'], ['type', 'S32'], ['range', 'F32'], ['arc', 'F32'], ['regionHandle', 'U64'], ['searchRegions', 'U8']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class RebakeAvatarTextures extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['textureData', { quantity: 1, parameters: [['texture', 'LLUUID']] }]
+    ['textureData', { quantity: 1, parameters: new Collection([['texture', 'LLUUID']]) }]
   ])
 
   /**

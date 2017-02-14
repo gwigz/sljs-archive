@@ -13,8 +13,8 @@ class RequestImage extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['requestImage', { parameters: [['image', 'LLUUID'], ['discardLevel', 'S8'], ['downloadPriority', 'F32'], ['packet', 'U32'], ['type', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['requestImage', { parameters: new Collection([['image', 'LLUUID'], ['discardLevel', 'S8'], ['downloadPriority', 'F32'], ['packet', 'U32'], ['type', 'U8']]) }]
   ])
 
   /**

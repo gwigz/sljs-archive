@@ -13,8 +13,8 @@ class LeaveGroupReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['groupData', { quantity: 1, parameters: [['group', 'LLUUID'], ['success', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['groupData', { quantity: 1, parameters: new Collection([['group', 'LLUUID'], ['success', 'boolean']]) }]
   ])
 
   /**

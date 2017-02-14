@@ -13,8 +13,8 @@ class AgentRequestSit extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['targetObject', { quantity: 1, parameters: [['target', 'LLUUID'], ['offset', 'LLVector3']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['targetObject', { quantity: 1, parameters: new Collection([['target', 'LLUUID'], ['offset', 'LLVector3']]) }]
   ])
 
   /**

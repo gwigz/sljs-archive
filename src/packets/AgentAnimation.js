@@ -13,9 +13,9 @@ class AgentAnimation extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['animationList', { parameters: [['anim', 'LLUUID'], ['startAnim', 'BOOL']] }],
-    ['physicalAvatarEventList', { parameters: [['typeData', 'Variable1']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['animationList', { parameters: new Collection([['anim', 'LLUUID'], ['startAnim', 'boolean']]) }],
+    ['physicalAvatarEventList', { parameters: new Collection([['typeData', 'Variable1']]) }]
   ])
 
   /**

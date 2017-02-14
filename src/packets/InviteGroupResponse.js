@@ -13,7 +13,7 @@ class InviteGroupResponse extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['inviteData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['invitee', 'LLUUID'], ['group', 'LLUUID'], ['role', 'LLUUID'], ['membershipFee', 'S32']] }]
+    ['inviteData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['invitee', 'LLUUID'], ['group', 'LLUUID'], ['role', 'LLUUID'], ['membershipFee', 'S32']]) }]
   ])
 
   /**

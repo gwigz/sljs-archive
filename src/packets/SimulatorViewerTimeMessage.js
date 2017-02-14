@@ -13,7 +13,7 @@ class SimulatorViewerTimeMessage extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['timeInfo', { quantity: 1, parameters: [['usecSinceStart', 'U64'], ['secPerDay', 'U32'], ['secPerYear', 'U32'], ['sunDirection', 'LLVector3'], ['sunPhase', 'F32'], ['sunAngVelocity', 'LLVector3']] }]
+    ['timeInfo', { quantity: 1, parameters: new Collection([['usecSinceStart', 'U64'], ['secPerDay', 'U32'], ['secPerYear', 'U32'], ['sunDirection', 'LLVector3'], ['sunPhase', 'F32'], ['sunAngVelocity', 'LLVector3']]) }]
   ])
 
   /**

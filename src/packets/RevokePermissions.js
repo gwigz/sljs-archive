@@ -13,8 +13,8 @@ class RevokePermissions extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['object', 'LLUUID'], ['objectPermissions', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['object', 'LLUUID'], ['objectPermissions', 'U32']]) }]
   ])
 
   /**

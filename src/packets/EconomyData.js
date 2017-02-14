@@ -13,7 +13,7 @@ class EconomyData extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['info', { quantity: 1, parameters: [['objectCapacity', 'S32'], ['objectCount', 'S32'], ['priceEnergyUnit', 'S32'], ['priceObjectClaim', 'S32'], ['pricePublicObjectDecay', 'S32'], ['pricePublicObjectDelete', 'S32'], ['priceParcelClaim', 'S32'], ['priceParcelClaimFactor', 'F32'], ['priceUpload', 'S32'], ['priceRentLight', 'S32'], ['teleportMinPrice', 'S32'], ['teleportPriceExponent', 'F32'], ['energyEfficiency', 'F32'], ['priceObjectRent', 'F32'], ['priceObjectScaleFactor', 'F32'], ['priceParcelRent', 'S32'], ['priceGroupCreate', 'S32']] }]
+    ['info', { quantity: 1, parameters: new Collection([['objectCapacity', 'S32'], ['objectCount', 'S32'], ['priceEnergyUnit', 'S32'], ['priceObjectClaim', 'S32'], ['pricePublicObjectDecay', 'S32'], ['pricePublicObjectDelete', 'S32'], ['priceParcelClaim', 'S32'], ['priceParcelClaimFactor', 'F32'], ['priceUpload', 'S32'], ['priceRentLight', 'S32'], ['teleportMinPrice', 'S32'], ['teleportPriceExponent', 'F32'], ['energyEfficiency', 'F32'], ['priceObjectRent', 'F32'], ['priceObjectScaleFactor', 'F32'], ['priceParcelRent', 'S32'], ['priceGroupCreate', 'S32']]) }]
   ])
 
   /**

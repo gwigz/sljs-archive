@@ -13,7 +13,7 @@ class OfflineNotification extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentBlock', { parameters: [['agent', 'LLUUID']] }]
+    ['agentBlock', { parameters: new Collection([['agent', 'LLUUID']]) }]
   ])
 
   /**

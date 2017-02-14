@@ -13,7 +13,7 @@ class EdgeDataPacket extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['edgeData', { quantity: 1, parameters: [['layerType', 'U8'], ['direction', 'U8'], ['layerData', 'Variable2']] }]
+    ['edgeData', { quantity: 1, parameters: new Collection([['layerType', 'U8'], ['direction', 'U8'], ['layerData', 'Variable2']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class DirLandQueryBackend extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['queryData', { quantity: 1, parameters: [['query', 'LLUUID'], ['queryFlags', 'U32'], ['searchType', 'U32'], ['price', 'S32'], ['area', 'S32'], ['queryStart', 'S32'], ['estate', 'U32'], ['godlike', 'BOOL']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['queryData', { quantity: 1, parameters: new Collection([['query', 'LLUUID'], ['queryFlags', 'U32'], ['searchType', 'U32'], ['price', 'S32'], ['area', 'S32'], ['queryStart', 'S32'], ['estate', 'U32'], ['godlike', 'boolean']]) }]
   ])
 
   /**

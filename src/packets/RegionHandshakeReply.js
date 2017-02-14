@@ -13,8 +13,8 @@ class RegionHandshakeReply extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['regionInfo', { quantity: 1, parameters: [['flags', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['regionInfo', { quantity: 1, parameters: new Collection([['flags', 'U32']]) }]
   ])
 
   /**

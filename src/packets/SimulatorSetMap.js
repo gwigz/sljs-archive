@@ -13,7 +13,7 @@ class SimulatorSetMap extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['mapData', { quantity: 1, parameters: [['regionHandle', 'U64'], ['type', 'S32'], ['mapImage', 'LLUUID']] }]
+    ['mapData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64'], ['type', 'S32'], ['mapImage', 'LLUUID']]) }]
   ])
 
   /**

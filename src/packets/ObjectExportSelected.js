@@ -13,8 +13,8 @@ class ObjectExportSelected extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['request', 'LLUUID'], ['volumeDetail', 'S16']] }],
-    ['objectData', { parameters: [['object', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['request', 'LLUUID'], ['volumeDetail', 'S16']]) }],
+    ['objectData', { parameters: new Collection([['object', 'LLUUID']]) }]
   ])
 
   /**

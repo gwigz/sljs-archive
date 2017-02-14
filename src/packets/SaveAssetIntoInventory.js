@@ -13,8 +13,8 @@ class SaveAssetIntoInventory extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['inventoryData', { quantity: 1, parameters: [['item', 'LLUUID'], ['newAsset', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['inventoryData', { quantity: 1, parameters: new Collection([['item', 'LLUUID'], ['newAsset', 'LLUUID']]) }]
   ])
 
   /**

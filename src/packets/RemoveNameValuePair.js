@@ -13,8 +13,8 @@ class RemoveNameValuePair extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['taskData', { quantity: 1, parameters: [['id', 'LLUUID']] }],
-    ['nameValueData', { parameters: [['nVPair', 'Variable2']] }]
+    ['taskData', { quantity: 1, parameters: new Collection([['id', 'LLUUID']]) }],
+    ['nameValueData', { parameters: new Collection([['nVPair', 'Variable2']]) }]
   ])
 
   /**

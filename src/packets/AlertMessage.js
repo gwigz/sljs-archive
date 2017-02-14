@@ -13,8 +13,8 @@ class AlertMessage extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['alertData', { quantity: 1, parameters: [['message', 'Variable1']] }],
-    ['alertInfo', { parameters: [['message', 'Variable1'], ['extraParams', 'Variable1']] }]
+    ['alertData', { quantity: 1, parameters: new Collection([['message', 'Variable1']]) }],
+    ['alertInfo', { parameters: new Collection([['message', 'Variable1'], ['extraParams', 'Variable1']]) }]
   ])
 
   /**

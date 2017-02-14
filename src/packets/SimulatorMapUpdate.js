@@ -13,7 +13,7 @@ class SimulatorMapUpdate extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['mapData', { quantity: 1, parameters: [['flags', 'U32']] }]
+    ['mapData', { quantity: 1, parameters: new Collection([['flags', 'U32']]) }]
   ])
 
   /**

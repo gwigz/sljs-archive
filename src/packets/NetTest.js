@@ -13,7 +13,7 @@ class NetTest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['netBlock', { quantity: 1, parameters: [['port', 'IPPORT']] }]
+    ['netBlock', { quantity: 1, parameters: new Collection([['port', 'IPPORT']]) }]
   ])
 
   /**

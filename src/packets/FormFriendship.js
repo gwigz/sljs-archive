@@ -13,7 +13,7 @@ class FormFriendship extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentBlock', { quantity: 1, parameters: [['source', 'LLUUID'], ['dest', 'LLUUID']] }]
+    ['agentBlock', { quantity: 1, parameters: new Collection([['source', 'LLUUID'], ['dest', 'LLUUID']]) }]
   ])
 
   /**

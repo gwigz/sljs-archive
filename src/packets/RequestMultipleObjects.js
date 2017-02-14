@@ -13,8 +13,8 @@ class RequestMultipleObjects extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['objectData', { parameters: [['cacheMissType', 'U8'], ['id', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['objectData', { parameters: new Collection([['cacheMissType', 'U8'], ['id', 'U32']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class RequestInventoryAsset extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['queryData', { quantity: 1, parameters: [['query', 'LLUUID'], ['agent', 'LLUUID'], ['owner', 'LLUUID'], ['item', 'LLUUID']] }]
+    ['queryData', { quantity: 1, parameters: new Collection([['query', 'LLUUID'], ['agent', 'LLUUID'], ['owner', 'LLUUID'], ['item', 'LLUUID']]) }]
   ])
 
   /**

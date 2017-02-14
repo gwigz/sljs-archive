@@ -13,10 +13,10 @@ class ModifyLand extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['modifyBlock', { quantity: 1, parameters: [['action', 'U8'], ['brushSize', 'U8'], ['seconds', 'F32'], ['height', 'F32']] }],
-    ['parcelData', { parameters: [['local', 'S32'], ['west', 'F32'], ['south', 'F32'], ['east', 'F32'], ['north', 'F32']] }],
-    ['modifyBlockExtended', { parameters: [['brushSize', 'F32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['modifyBlock', { quantity: 1, parameters: new Collection([['action', 'U8'], ['brushSize', 'U8'], ['seconds', 'F32'], ['height', 'F32']]) }],
+    ['parcelData', { parameters: new Collection([['local', 'S32'], ['west', 'F32'], ['south', 'F32'], ['east', 'F32'], ['north', 'F32']]) }],
+    ['modifyBlockExtended', { parameters: new Collection([['brushSize', 'F32']]) }]
   ])
 
   /**

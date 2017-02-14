@@ -13,7 +13,7 @@ class NearestLandingRegionRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['requestingRegionData', { quantity: 1, parameters: [['regionHandle', 'U64']] }]
+    ['requestingRegionData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64']]) }]
   ])
 
   /**

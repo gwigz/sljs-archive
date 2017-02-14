@@ -13,7 +13,7 @@ class CameraConstraint extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['cameraCollidePlane', { quantity: 1, parameters: [['plane', 'LLVector4']] }]
+    ['cameraCollidePlane', { quantity: 1, parameters: new Collection([['plane', 'LLVector4']]) }]
   ])
 
   /**

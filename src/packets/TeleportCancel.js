@@ -13,7 +13,7 @@ class TeleportCancel extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['info', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }]
+    ['info', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }]
   ])
 
   /**

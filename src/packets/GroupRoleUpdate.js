@@ -13,8 +13,8 @@ class GroupRoleUpdate extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['group', 'LLUUID']] }],
-    ['roleData', { parameters: [['role', 'LLUUID'], ['name', 'Variable1'], ['description', 'Variable1'], ['title', 'Variable1'], ['powers', 'U64'], ['updateType', 'U8']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['group', 'LLUUID']]) }],
+    ['roleData', { parameters: new Collection([['role', 'LLUUID'], ['name', 'Variable1'], ['description', 'Variable1'], ['title', 'Variable1'], ['powers', 'U64'], ['updateType', 'U8']]) }]
   ])
 
   /**

@@ -13,7 +13,7 @@ class OpenCircuit extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['circuitInfo', { quantity: 1, parameters: [['ip', 'IPADDR'], ['port', 'IPPORT']] }]
+    ['circuitInfo', { quantity: 1, parameters: new Collection([['ip', 'IPADDR'], ['port', 'IPPORT']]) }]
   ])
 
   /**

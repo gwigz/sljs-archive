@@ -1,0 +1,26 @@
+{
+  "source": {
+    "excludePattern": "(node_modules/|docs)",
+    "include": ["src/Client.js", "src/structures/", "package.json", "README.md"],
+    "includePattern": ".js$",
+  },
+  "opts": {
+    "destination": "./docs/",
+    "encoding": "utf8",
+    "recurse": true,
+    "template": "node_modules/minami"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
+  },
+  "plugins": [
+    "plugins/markdown",
+    "node_modules/jsdoc-babel",
+    "node_modules/jsdoc-strip-async-await"
+  ]
+}

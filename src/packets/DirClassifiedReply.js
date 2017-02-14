@@ -13,10 +13,10 @@ class DirClassifiedReply extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['queryData', { quantity: 1, parameters: [['query', 'LLUUID']] }],
-    ['queryReplies', { parameters: [['classified', 'LLUUID'], ['name', 'Variable1'], ['classifiedFlags', 'U8'], ['creationDate', 'U32'], ['expirationDate', 'U32'], ['priceForListing', 'S32']] }],
-    ['statusData', { parameters: [['status', 'U32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['queryData', { quantity: 1, parameters: new Collection([['query', 'LLUUID']]) }],
+    ['queryReplies', { parameters: new Collection([['classified', 'LLUUID'], ['name', 'Variable1'], ['classifiedFlags', 'U8'], ['creationDate', 'U32'], ['expirationDate', 'U32'], ['priceForListing', 'S32']]) }],
+    ['statusData', { parameters: new Collection([['status', 'U32']]) }]
   ])
 
   /**

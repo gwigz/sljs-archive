@@ -13,8 +13,8 @@ class ObjectUpdateCached extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['regionData', { quantity: 1, parameters: [['regionHandle', 'U64'], ['timeDilation', 'U16']] }],
-    ['objectData', { parameters: [['id', 'U32'], ['cRC', 'U32'], ['updateFlags', 'U32']] }]
+    ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64'], ['timeDilation', 'U16']]) }],
+    ['objectData', { parameters: new Collection([['id', 'U32'], ['cRC', 'U32'], ['updateFlags', 'U32']]) }]
   ])
 
   /**

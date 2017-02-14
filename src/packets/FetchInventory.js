@@ -13,8 +13,8 @@ class FetchInventory extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['inventoryData', { parameters: [['owner', 'LLUUID'], ['item', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['inventoryData', { parameters: new Collection([['owner', 'LLUUID'], ['item', 'LLUUID']]) }]
   ])
 
   /**

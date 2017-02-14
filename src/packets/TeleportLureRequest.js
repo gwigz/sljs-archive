@@ -13,7 +13,7 @@ class TeleportLureRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['info', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['lure', 'LLUUID'], ['teleportFlags', 'U32']] }]
+    ['info', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['lure', 'LLUUID'], ['teleportFlags', 'U32']]) }]
   ])
 
   /**

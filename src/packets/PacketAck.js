@@ -13,7 +13,7 @@ class PacketAck extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['packets', { parameters: [['id', 'U32']] }]
+    ['packets', { parameters: new Collection([['id', 'U32']]) }]
   ])
 
   /**

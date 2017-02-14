@@ -13,7 +13,7 @@ class EnableSimulator extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['simulatorInfo', { quantity: 1, parameters: [['handle', 'U64'], ['ip', 'IPADDR'], ['port', 'IPPORT']] }]
+    ['simulatorInfo', { quantity: 1, parameters: new Collection([['handle', 'U64'], ['ip', 'IPADDR'], ['port', 'IPPORT']]) }]
   ])
 
   /**

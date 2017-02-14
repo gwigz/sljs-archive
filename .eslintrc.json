@@ -30,7 +30,6 @@
       },
       "preferType": {
         "String": "string",
-        "Number": "number",
         "Boolean": "boolean",
         "object": "Object",
         "function": "Function",

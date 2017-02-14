@@ -13,9 +13,9 @@ class LogParcelChanges extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID']] }],
-    ['regionData', { quantity: 1, parameters: [['regionHandle', 'U64']] }],
-    ['parcelData', { parameters: [['parcel', 'LLUUID'], ['owner', 'LLUUID'], ['isOwnerGroup', 'BOOL'], ['actualArea', 'S32'], ['action', 'S8'], ['transaction', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID']]) }],
+    ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', 'U64']]) }],
+    ['parcelData', { parameters: new Collection([['parcel', 'LLUUID'], ['owner', 'LLUUID'], ['isOwnerGroup', 'boolean'], ['actualArea', 'S32'], ['action', 'S8'], ['transaction', 'LLUUID']]) }]
   ])
 
   /**

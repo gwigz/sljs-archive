@@ -13,8 +13,8 @@ class MoveTaskInventory extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['folder', 'LLUUID']] }],
-    ['inventoryData', { quantity: 1, parameters: [['local', 'U32'], ['item', 'LLUUID']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['folder', 'LLUUID']]) }],
+    ['inventoryData', { quantity: 1, parameters: new Collection([['local', 'U32'], ['item', 'LLUUID']]) }]
   ])
 
   /**

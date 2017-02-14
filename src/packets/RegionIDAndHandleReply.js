@@ -13,7 +13,7 @@ class RegionIDAndHandleReply extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['replyBlock', { quantity: 1, parameters: [['region', 'LLUUID'], ['regionHandle', 'U64']] }]
+    ['replyBlock', { quantity: 1, parameters: new Collection([['region', 'LLUUID'], ['regionHandle', 'U64']]) }]
   ])
 
   /**

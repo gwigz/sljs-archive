@@ -13,8 +13,8 @@ class ParcelAccessListRequest extends Packet {
   static compression = true
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['data', { quantity: 1, parameters: [['sequence', 'S32'], ['flags', 'U32'], ['local', 'S32']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['data', { quantity: 1, parameters: new Collection([['sequence', 'S32'], ['flags', 'U32'], ['local', 'S32']]) }]
   ])
 
   /**

@@ -13,8 +13,8 @@ class TeleportRequest extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID']] }],
-    ['info', { quantity: 1, parameters: [['region', 'LLUUID'], ['position', 'LLVector3'], ['lookAt', 'LLVector3']] }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID']]) }],
+    ['info', { quantity: 1, parameters: new Collection([['region', 'LLUUID'], ['position', 'LLVector3'], ['lookAt', 'LLVector3']]) }]
   ])
 
   /**

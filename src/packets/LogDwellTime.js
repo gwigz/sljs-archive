@@ -13,7 +13,7 @@ class LogDwellTime extends Packet {
   static compression = false
 
   static format = new Collection([
-    ['dwellInfo', { quantity: 1, parameters: [['agent', 'LLUUID'], ['session', 'LLUUID'], ['duration', 'F32'], ['simName', 'Variable1'], ['regionX', 'U32'], ['regionY', 'U32'], ['avgAgentsInView', 'U8'], ['avgViewerFPS', 'U8']] }]
+    ['dwellInfo', { quantity: 1, parameters: new Collection([['agent', 'LLUUID'], ['session', 'LLUUID'], ['duration', 'F32'], ['simName', 'Variable1'], ['regionX', 'U32'], ['regionY', 'U32'], ['avgAgentsInView', 'U8'], ['avgViewerFPS', 'U8']]) }]
   ])
 
   /**
