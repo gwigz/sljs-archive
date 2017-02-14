@@ -42,3 +42,5 @@ class String {
     return buffer.toString('utf8')
   }
 }
+
+export default String
