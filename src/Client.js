@@ -1,9 +1,7 @@
-import crypto from 'crypto'
 import EventEmitter from 'events'
-import os from 'os'
 
 import { Authenticator, Core } from './network'
-import { Agent, Simulator } from './structures'
+import { Agent } from './structures'
 import { Constants } from './utilities'
 
 /**
@@ -88,6 +86,8 @@ class Client extends EventEmitter {
     ) {
       return this.handshake(response)
     }
+
+    return false
   }
 
   handshake (response) {
@@ -99,7 +99,7 @@ class Client extends EventEmitter {
     return this.core.handshake(response.session_id, {
       id: response.circuit_code,
       address: response.sim_ip,
-      port: response.sim_ip,
+      port: response.sim_ip
     })
   }
 

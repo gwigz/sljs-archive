@@ -1,5 +1,6 @@
 import Delegate from './Delegate'
-import PKID from '../utilities/Packets'
+
+import { RegionHandshakeReply } from '../network/packets'
 
 class RegionHandshake extends Delegate {
   handle () {
@@ -23,7 +24,7 @@ class RegionHandshake extends Delegate {
     // { ProductName       Variable  1 } // string
 
     // TODO: Add toggle for this, if we don't want objects dont send this.
-    this.core.send(PKID.RegionHandshakeReply, {
+    this.core.send(new RegionHandshakeReply({
       agentData: {
         agent: agent.id,
         session: agent.session
@@ -32,7 +33,7 @@ class RegionHandshake extends Delegate {
         // Set to support self appearance.
         flags: 0x0100
       }
-    })
+    }))
   }
 }
 

@@ -1,7 +1,7 @@
 import { UseCircuitCode, CompleteAgentMovement } from './packets'
 
 class Circuit {
-  constructor (core, { id, address, port } = {} ) {
+  constructor (core, { id, address, port } = {}) {
     this.id = id
     this.address = address
     this.port = port

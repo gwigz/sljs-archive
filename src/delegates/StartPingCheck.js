@@ -1,9 +1,10 @@
 import Delegate from './Delegate'
-import PKID from '../utilities/Packets'
+
+import { CompletePingCheck } from '../network/packets'
 
 class StartPingCheck extends Delegate {
   handle (parameters) {
-    this.core.send(PKID.CompletePingCheck, parameters)
+    this.core.send(new CompletePingCheck(parameters))
   }
 }
 

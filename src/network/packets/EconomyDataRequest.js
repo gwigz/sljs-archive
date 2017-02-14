@@ -1,9 +1,6 @@
 /* eslint-disable max-len */
 
 import Packet from './Packet'
-import Collection from '../../utilities/Collection'
-
-import * as Types from '../types'
 
 /**
  * EconomyDataRequest Packet
