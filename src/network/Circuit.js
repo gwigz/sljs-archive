@@ -1,4 +1,4 @@
-import { UseCircuitCode, CompleteAgentMovement } from '../packets'
+import { UseCircuitCode, CompleteAgentMovement } from './packets'
 
 class Circuit {
   constructor (core, { id, address, port } = {} ) {
