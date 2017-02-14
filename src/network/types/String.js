@@ -7,7 +7,7 @@ class String {
    *
    * @param {integer} size Prefix size
    * @param {string} value Limited length defined by
-   * @return {buffer}
+   * @returns {buffer}
    */
   static toPrefixedBuffer (size, value) {
     const max = 255 * (size * 8)
@@ -18,11 +18,11 @@ class String {
     switch (size) {
       case 1:
         buffer.writeUInt8(length, 0)
-        break;
+        break
 
       case 2:
         buffer.writeUInt16LE(length, 0)
-        break;
+        break
     }
 
     return Buffer.concat([
@@ -35,8 +35,8 @@ class String {
   /**
    * Converts buffer input into a string.
    *
-   * @param {Buffer} buffer
-   * @return {integer}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {integer}
    */
   static fromBuffer (buffer) {
     return buffer.toString('utf8')

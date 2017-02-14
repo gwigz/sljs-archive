@@ -6,8 +6,8 @@ class U64 {
   /**
    * Converts Long input into a buffer representing an 64-bit unsigned integer.
    *
-   * @param {Long} integer
-   * @return {Buffer}
+   * @param {Long} integer Integer to convert
+   * @returns {Buffer}
    */
   static toBuffer (integer) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -26,13 +26,13 @@ class U64 {
    * Converts buffer input into a Long which was representing an 64-bit unsigned
    * integer.
    *
-   * @param {Buffer} buffer
-   * @return {Long}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {Long}
    */
   static fromBuffer (buffer) {
     return new Long(
-      this.buffer.readInt32LE(position),
-      this.buffer.readInt32LE(position + 4)
+      buffer.readInt32LE(0),
+      buffer.readInt32LE(4)
     )
   }
 }

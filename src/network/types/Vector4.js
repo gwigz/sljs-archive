@@ -5,7 +5,7 @@ class Vector4 {
    * Converts array input into a buffer representing a 4 point vector.
    *
    * @param {number[]} vector Should contain 4 values
-   * @return {Buffer}
+   * @returns {Buffer}
    */
   static toBuffer (vector) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -22,8 +22,8 @@ class Vector4 {
    * Converts buffer input into an array of float values representing a 4 point
    * vector.
    *
-   * @param {Buffer} buffer
-   * @return {number[]}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {number[]}
    */
   static fromBuffer (buffer) {
     return [

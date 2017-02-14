@@ -5,7 +5,7 @@ class Vector3 {
    * Converts array input into a buffer representing a 3 point vector.
    *
    * @param {number[]} vector Should contain 3 values
-   * @return {Buffer}
+   * @returns {Buffer}
    */
   static toBuffer (vector) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -21,8 +21,8 @@ class Vector3 {
    * Converts buffer input into an array of float values representing a 3 point
    * vector.
    *
-   * @param {Buffer} buffer
-   * @return {number[]}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {number[]}
    */
   static fromBuffer (buffer) {
     return [

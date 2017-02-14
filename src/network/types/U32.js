@@ -5,8 +5,8 @@ class U32 {
    * Converts integer input into a buffer representing an 32-bit unsigned
    * integer.
    *
-   * @param {integer} integer
-   * @return {Buffer}
+   * @param {integer} integer Integer to convert
+   * @returns {Buffer}
    */
   static toBuffer (integer) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -20,8 +20,8 @@ class U32 {
    * Converts buffer input into an integer which was representing an 32-bit
    * unsigned integer.
    *
-   * @param {Buffer} buffer
-   * @return {integer}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {integer}
    */
   static fromBuffer (buffer) {
     return buffer.readUInt32LE(buffer, 0)

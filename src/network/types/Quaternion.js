@@ -5,7 +5,7 @@ class Quaternion {
    * Converts array input into a buffer representing a quaternion.
    *
    * @param {number[]} quaternion Should contain 4 values
-   * @return {Buffer}
+   * @returns {Buffer}
    */
   static toBuffer (quaternion) {
     const buffer = Buffer.allocUnsafe(this.size)
@@ -27,8 +27,8 @@ class Quaternion {
    * Converts buffer input into an array of float values representing a
    * normalized quaternion.
    *
-   * @param {Buffer} buffer
-   * @return {number[]}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {number[]}
    */
   static fromBuffer (buffer) {
     const quaternion = [
@@ -40,9 +40,9 @@ class Quaternion {
 
     if (buffer.length === this.size) {
       const w = 1.0 - (
-        quaternion[0] * quaternion[0] +
-        quaternion[1] * quaternion[1] +
-        quaternion[2] * quaternion[2]
+        (quaternion[0] * quaternion[0])
+        + (quaternion[1] * quaternion[1])
+        + (quaternion[2] * quaternion[2])
       )
 
       if (w > 0.0) {

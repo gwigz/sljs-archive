@@ -5,8 +5,8 @@ class IP {
    * Converts an IP address (string) input into a buffer, one place per byte, 4
    * bytes wide.
    *
-   * @param {integer} integer
-   * @return {Buffer}
+   * @param {string} string IP address string to convert
+   * @returns {Buffer}
    */
   static toBuffer (string) {
     const ip = string.split('.')
@@ -23,8 +23,8 @@ class IP {
   /**
    * Converts buffer input into a string representing an IP address
    *
-   * @param {Buffer} buffer
-   * @return {integer}
+   * @param {Buffer} buffer Buffer to convert
+   * @returns {integer}
    */
   static fromBuffer (buffer) {
     return [
