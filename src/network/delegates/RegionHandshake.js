@@ -1,6 +1,6 @@
 import Delegate from './Delegate'
 
-import { RegionHandshakeReply } from '../network/packets'
+import { RegionHandshakeReply } from '../packets'
 
 class RegionHandshake extends Delegate {
   handle () {
