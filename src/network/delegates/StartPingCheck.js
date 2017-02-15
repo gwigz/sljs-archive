@@ -1,6 +1,6 @@
 import Delegate from './Delegate'
 
-import { CompletePingCheck } from '../network/packets'
+import { CompletePingCheck } from '../packets'
 
 class StartPingCheck extends Delegate {
   handle (parameters) {

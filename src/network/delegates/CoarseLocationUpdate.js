@@ -1,6 +1,6 @@
 import Delegate from './Delegate'
 
-import { AgentUpdate } from '../network/packets'
+import { AgentUpdate } from '../packets'
 
 class CoarseLocationUpdate extends Delegate {
   handle (parameters) {

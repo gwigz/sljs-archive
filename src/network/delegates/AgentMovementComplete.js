@@ -6,7 +6,7 @@ import {
   AgentThrottle,
   AgentUpdate,
   SetAlwaysRun
-} from '../network/packets'
+} from '../packets'
 
 class AgentMovementComplete extends Delegate {
   handle (parameters) {
