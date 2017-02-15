@@ -7,7 +7,9 @@ export const Errors = {
   ALREADY_CONNECTED: 'Client is already connected, disconnect first.',
   BAD_LOGIN: 'Incorrect login details were provided.',
   LOGIN_FAILED: 'Login failed, may be due to bad credentials, pending logout, or external factors.',
-  UNKNOWN_PACKET_ID: 'Unknown packet, needs to be defined within the packets utility file, and tested if nessecery: '
+  UNKNOWN_PACKET_ID: 'Unknown packet, needs to be defined within the packets utility file, and tested if nessecery: ',
+  INACTIVE_CIRCUIT: 'Cannot send packets over inactive circuit.',
+  HANDSHAKE_ACTIVE_CIRCUIT: 'Cannot send handshake to active circuit.'
 }
 
 export const Status = {

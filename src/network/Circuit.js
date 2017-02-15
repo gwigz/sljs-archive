@@ -1,4 +1,5 @@
 import { UseCircuitCode, CompleteAgentMovement } from './packets'
+import { Constants } from '../utilities'
 
 class Circuit {
   constructor (core, { id, address, port } = {}) {
@@ -14,30 +15,30 @@ class Circuit {
     return this.core.agent
   }
 
+  get session () {
+    return this.core.agent.session
+  }
+
   async send (...args) {
+    if (!this.active) {
+      throw new Error(Constants.Error.INACTIVE_CIRCUIT)
+    }
+
     await this.core.send(this, ...args)
   }
 
   handshake () {
     if (this.active) {
-      return undefined
+      throw new Error(Constants.Error.HANDSHAKE_ACTIVE_CIRCUIT)
     }
 
     return Promise.all([
       this.send(new UseCircuitCode({
-        circuitCode: {
-          id: this.agent.id,
-          code: this.id,
-          session: this.agent.session
-        }
+        id: this.agent.id,
+        code: this.id,
+        session: this.session
       })),
-      this.send(new CompleteAgentMovement({
-        agentData: {
-          agent: this.agent.id,
-          session: this.agent.session,
-          circuitCode: this.circuit
-        }
-      }))
+      this.send(new CompleteAgentMovement)
     ])
   }
 }
