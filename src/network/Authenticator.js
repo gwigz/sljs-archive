@@ -75,7 +75,7 @@ class Authenticator {
     const response = await this.call('login_to_simulator', [parameters])
 
     if (typeof response !== 'object' || !response.login) {
-      throw new Error(Constants.Error.LOGIN_FAILED)
+      throw new Error(Constants.Errors.LOGIN_FAILED)
     }
 
     return response
