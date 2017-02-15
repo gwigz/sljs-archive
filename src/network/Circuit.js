@@ -1,3 +1,5 @@
+import Serializer from './Serializer'
+
 import { UseCircuitCode, CompleteAgentMovement } from './packets'
 import { Constants } from '../utilities'
 
@@ -8,7 +10,7 @@ class Circuit {
     this.port = port
     this.core = core
     this.active = false
-    this.index = 1
+    this.serializer = new Serializer(core)
   }
 
   get agent () {
@@ -19,18 +21,26 @@ class Circuit {
     return this.core.agent.session
   }
 
-  async send (...args) {
+  async send () {
     if (!this.active) {
-      throw new Error(Constants.Error.INACTIVE_CIRCUIT)
+      throw new Error(Constants.Errors.INACTIVE_CIRCUIT)
     }
 
-    await this.core.send(this, ...args)
+    for (const packet of arguments) {
+      this.core.send(this, await this.serializer.convert(packet))
+    }
+  }
+
+  async receive (buffer) {
+    // ...
   }
 
   handshake () {
     if (this.active) {
-      throw new Error(Constants.Error.HANDSHAKE_ACTIVE_CIRCUIT)
+      throw new Error(Constants.Errors.HANDSHAKE_ACTIVE_CIRCUIT)
     }
+
+    this.active = true
 
     return Promise.all([
       this.send(new UseCircuitCode({
@@ -38,7 +48,9 @@ class Circuit {
         code: this.id,
         session: this.session
       })),
-      this.send(new CompleteAgentMovement)
+      this.send(new CompleteAgentMovement({
+        circuitCode: this.id
+      }))
     ])
   }
 }

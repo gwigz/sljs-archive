@@ -78,4 +78,4 @@ class GenericError extends Packet {
   }
 }
 
-export default Error
+export default GenericError

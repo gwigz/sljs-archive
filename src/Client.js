@@ -99,7 +99,7 @@ class Client extends EventEmitter {
     return this.core.handshake(response.session_id, {
       id: response.circuit_code,
       address: response.sim_ip,
-      port: response.sim_ip
+      port: response.sim_port
     })
   }
 
