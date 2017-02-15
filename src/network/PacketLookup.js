@@ -454,7 +454,7 @@ class PacketLookup {
     [4190, Packet.ParcelMediaCommandMessage],
     [4200, Packet.ParcelMediaUpdate],
     [4210, Packet.LandStatRequest],
-    [4230, Packet.Error],
+    [4230, Packet.GenericError],
     [4240, Packet.ObjectIncludeInSearch],
     [4260, Packet.LinkInventoryItem],
     [42949672913, Packet.PacketAck],
