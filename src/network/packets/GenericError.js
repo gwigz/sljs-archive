@@ -6,9 +6,9 @@ import Collection from '../../utilities/Collection'
 import * as Types from '../types'
 
 /**
- * Error Packet
+ * GenericError Packet
  */
-class Error extends Packet {
+class GenericError extends Packet {
   /**
    * Packet ID, this value is only unique per-frequency range, see key get
    * method of Packet, plus the buffer helper of the network namespace for
