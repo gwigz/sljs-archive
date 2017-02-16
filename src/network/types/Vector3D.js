@@ -22,13 +22,14 @@ class Vector3D {
    * vector.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {number[]}
    */
-  static fromBuffer (buffer) {
+  static fromBuffer (buffer, position = 0) {
     return [
-      buffer.readDoubleLE(0),
-      buffer.readDoubleLE(8),
-      buffer.readDoubleLE(16)
+      buffer.readDoubleLE(position),
+      buffer.readDoubleLE(position + 8),
+      buffer.readDoubleLE(position + 16)
     ]
   }
 }

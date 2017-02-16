@@ -28,13 +28,14 @@ class Quaternion {
    * normalized quaternion.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {number[]}
    */
-  static fromBuffer (buffer) {
+  static fromBuffer (buffer, position = 0) {
     const quaternion = [
-      buffer.readFloatLE(0),
-      buffer.readFloatLE(4),
-      buffer.readFloatLE(8),
+      buffer.readFloatLE(position),
+      buffer.readFloatLE(position + 4),
+      buffer.readFloatLE(position + 8),
       0.0
     ]
 
@@ -49,7 +50,7 @@ class Quaternion {
         quaternion[3] = Math.sqrt(w)
       }
     } else {
-      quaternion[3] = buffer.readFloatLE(12)
+      quaternion[3] = buffer.readFloatLE(position + 12)
     }
 
     return quaternion

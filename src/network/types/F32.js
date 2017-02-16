@@ -20,10 +20,11 @@ class F32 {
    * float.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {number}
    */
-  static fromBuffer (buffer) {
-    return buffer.readFloatLE(buffer, 0)
+  static fromBuffer (buffer, position = 0) {
+    return buffer.readFloatLE(buffer, position)
   }
 }
 

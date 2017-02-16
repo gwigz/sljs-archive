@@ -20,10 +20,11 @@ class F64 {
    * float.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {number}
    */
-  static fromBuffer (buffer) {
-    return buffer.readDoubleLE(buffer, 0)
+  static fromBuffer (buffer, position = 0) {
+    return buffer.readDoubleLE(buffer, position)
   }
 }
 

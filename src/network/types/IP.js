@@ -24,14 +24,15 @@ class IP {
    * Converts buffer input into a string representing an IP address
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {integer}
    */
-  static fromBuffer (buffer) {
+  static fromBuffer (buffer, position = 0) {
     return [
-      buffer.readUInt8(buffer, 0),
-      buffer.readUInt8(buffer, 1),
-      buffer.readUInt8(buffer, 2),
-      buffer.readUInt8(buffer, 3)
+      buffer.readUInt8(buffer, position),
+      buffer.readUInt8(buffer, position + 1),
+      buffer.readUInt8(buffer, position + 2),
+      buffer.readUInt8(buffer, position + 3)
     ].join('.')
   }
 }

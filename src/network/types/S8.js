@@ -20,10 +20,11 @@ class S8 {
    * signed integer.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {integer}
    */
-  static fromBuffer (buffer) {
-    return buffer.readInt8(buffer, 0)
+  static fromBuffer (buffer, position = 0) {
+    return buffer.readInt8(buffer, position)
   }
 }
 

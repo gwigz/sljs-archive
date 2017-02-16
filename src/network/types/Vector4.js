@@ -23,14 +23,15 @@ class Vector4 {
    * vector.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {number[]}
    */
-  static fromBuffer (buffer) {
+  static fromBuffer (buffer, position = 0) {
     return [
-      buffer.readFloatLE(0),
-      buffer.readFloatLE(4),
-      buffer.readFloatLE(8),
-      buffer.readFloatLE(12)
+      buffer.readFloatLE(position),
+      buffer.readFloatLE(position + 4),
+      buffer.readFloatLE(position + 8),
+      buffer.readFloatLE(position + 12)
     ]
   }
 }

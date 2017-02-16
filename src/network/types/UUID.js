@@ -27,11 +27,11 @@ class UUID {
    *
    * @todo Optimize this, it's probably not that good
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {string}
    */
-  static fromBuffer (buffer) {
+  static fromBuffer (buffer, position = 0) {
     let output = ''
-    let position = 0
 
     for (let c = 0; c < 16; c++) {
       output += this.pad(buffer.readUInt8(buffer, position).toString(16), 2)

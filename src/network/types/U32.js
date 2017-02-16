@@ -21,10 +21,11 @@ class U32 {
    * unsigned integer.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {integer}
    */
-  static fromBuffer (buffer) {
-    return buffer.readUInt32LE(buffer, 0)
+  static fromBuffer (buffer, position = 0) {
+    return buffer.readUInt32LE(buffer, position)
   }
 }
 

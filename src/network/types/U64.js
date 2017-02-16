@@ -27,12 +27,13 @@ class U64 {
    * integer.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} position Position to read from
    * @returns {Long}
    */
-  static fromBuffer (buffer) {
+  static fromBuffer (buffer, position = 0) {
     return new Long(
-      buffer.readInt32LE(0),
-      buffer.readInt32LE(4)
+      buffer.readInt32LE(position),
+      buffer.readInt32LE(position + 4)
     )
   }
 }
