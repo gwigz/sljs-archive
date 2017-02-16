@@ -20,6 +20,8 @@
   <!-- sljs -->
 </h1>
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea826f0f261e4e8db5a495f3b0b43133)](https://www.codacy.com/app/gwigz/sljs?utm_source=github.com&utm_medium=referral&utm_content=gwigz/sljs&utm_campaign=badger)
+
 #### Please note this library is a work in progress!
 
 It is not intended for use yet, large changes are due to happen. See the
