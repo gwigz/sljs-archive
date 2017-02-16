@@ -78,18 +78,18 @@ extremely long!
 - [x] Change status values when connecting, connected, disconnected
 - [ ] Emit ready message and status updates
 - [ ] Consider better sugar method creating `Variable` packets values, see `AgentThrottle`
-- [ ] Restructure folder layout, maybe combine `UDPManager` and `PacketHandler`
-- [ ] Move message template parsing into seperate method
-  - [ ] Keep and use pre-parsed JSON version
-  - [ ] Make generator for `./utilities/Packet.js` file
-  - [ ] See about adding typings based on packet format
-  - [ ] Consider alternative methods of packet creation
-  - [ ] Consider moving all buffer handling into `PacketBuffer`
-- [ ] Further compare to PyOGP project structure
+- [x] Restructure folder layout, maybe combine `UDPManager` and `PacketHandler`
+- [x] Move message template parsing into seperate method
+  - [x] Keep and use pre-parsed JSON version
+  - [x] Make generator for `./utilities/Packet.js` file
+  - [x] See about adding typings based on packet format
+  - [x] Consider alternative methods of packet creation
+  - [x] Consider moving all buffer handling into `PacketBuffer`
+- [x] Further compare to PyOGP project structure
 - [ ] Verify all packet value types are handled correctly
-  - [ ] Maybe add tests for these, with prebuilt packets passed to `PacketHandler`
+  - [ ] Maybe add tests for these...
 - [ ] Handle types of object updates packets
-- [ ] Add better handling to `StartPingCheck` for last ACK and such
+- [x] Add better handling to `StartPingCheck` for last ACK and such
 - [ ] Add max bandwidth parameter for adjusting what is sent by `AgentThrottle`
 - [ ] Add ability to change active group and ensure `AgentDataUpdate` is called
 - [ ] Handle time packets such as `SimulatorViewerTimeMessage`
@@ -106,7 +106,7 @@ extremely long!
   - [ ] System messages, such as simulator restarting warning
   - [ ] Teleport requests, sending accepting and declining
   - [ ] Teleport lures
-- [ ] Remove debugging, as no `console.*` methods should be used in this module!
+- [x] Remove debugging, as no `console.*` methods should be used in this module!
 - [ ] Create first alpha for text-based client, dubbed "Kalani"
   - [ ] Use [Electron](http://electron.atom.io/) for the frontend
   - [ ] Use [Squirrel](https://github.com/Squirrel) and [Nuts](https://github.com/GitbookIO/nuts) for sending future updates
@@ -131,7 +131,7 @@ extremely long!
   - [ ] Handle ability to accept group invites
 - [ ] Track current region, plus various details TBC
 - [ ] Track current parcel, plus various details TBC
-- [ ] Setup documentation generator
+- [x] Setup documentation generator
 - [ ] Create release branch/tag, change version to `1.0.0`
 - [ ] Basic region, estate and parcel management tools
   - [ ] List parcels in region
