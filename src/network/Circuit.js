@@ -32,7 +32,7 @@ class Circuit {
   }
 
   async receive (buffer) {
-    // ...
+    console.log(buffer)
   }
 
   handshake () {

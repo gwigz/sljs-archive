@@ -4,7 +4,7 @@ import { Constants } from '../utilities'
 class Serializer {
   constructor (core) {
     this.core = core
-    this.index = 0
+    this.index = 1
   }
 
   async convert (packet) {
@@ -104,7 +104,7 @@ class Serializer {
       }
 
       if (Type === Boolean) {
-        array.push(data[name] === true)
+        array.push(Buffer.from([data[name] === true]))
       } else {
         array.push(Type.toBuffer(data[name]))
       }

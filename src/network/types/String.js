@@ -36,10 +36,12 @@ class String {
    * Converts buffer input into a string.
    *
    * @param {Buffer} buffer Buffer to convert
+   * @param {integer} start Position to read from
+   * @param {integer} end Position to end at
    * @returns {integer}
    */
-  static fromBuffer (buffer) {
-    return buffer.toString('utf8')
+  static fromBuffer (buffer, start = 0, end = 0) {
+    return buffer.toString('utf8', start, end || buffer.length)
   }
 }
 
