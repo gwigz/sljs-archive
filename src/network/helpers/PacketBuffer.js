@@ -29,7 +29,7 @@ class PacketBuffer {
     if (buffer[6] !== 0xFF) {
       return Number(`${buffer[6]}2`)
     } else if (buffer[7] !== 0xFF) {
-      return Number(`${this.buffer[7]}1`)
+      return Number(`${buffer[7]}1`)
     } else if (buffer[8] !== 0xFF) {
       return Number(`${buffer.readUInt16BE(8)}0`)
     } else {

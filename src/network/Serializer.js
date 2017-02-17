@@ -3,7 +3,15 @@ import { Constants } from '../utilities'
 
 class Serializer {
   constructor (circuit) {
-    this.circuit = circuit
+    /**
+     * Circuit instance that instantiated this Seralizer.
+     *
+     * @name Seralizer#circuit
+     * @type {Circuit}
+     * @readonly
+     */
+    Object.defineProperty(this, 'circuit', { value: circuit })
+
     this.index = 1
   }
 
@@ -97,11 +105,11 @@ class Serializer {
             break
 
           case 'session':
-            data.session = this.circuit.agent.id
+            data.session = this.circuit.session
             break
 
           case 'circuitCode':
-            data.session = this.circuit.id
+            data.circuitCode = this.circuit.id
             break
 
           default:

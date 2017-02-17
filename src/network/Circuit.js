@@ -8,10 +8,18 @@ import { Constants } from '../utilities'
 
 class Circuit {
   constructor (core, { id, address, port } = {}) {
+    /**
+     * Core instance that instantiated this Circuit.
+     *
+     * @name Circuit#core
+     * @type {Core}
+     * @readonly
+     */
+    Object.defineProperty(this, 'core', { value: core })
+
     this.id = id
     this.address = address
     this.port = port
-    this.core = core
     this.active = false
     this.deserializer = new Deserializer
     this.serializer = new Serializer(this)
@@ -28,7 +36,7 @@ class Circuit {
     return this.core.agent.session
   }
 
-  async send (...args) {
+  send (...args) {
     if (!this.active) {
       throw new Error(Constants.Errors.INACTIVE_CIRCUIT)
     }
@@ -61,9 +69,7 @@ class Circuit {
         code: this.id,
         session: this.session
       }),
-      new CompleteAgentMovement({
-        circuitCode: this.id
-      })
+      new CompleteAgentMovement()
     )
   }
 
