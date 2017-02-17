@@ -3,7 +3,7 @@ import Delegate from './Delegate'
 class AgentDataUpdate extends Delegate {
   handle (parameters) {
     const data = parameters.agentData[0]
-    const agent = this.core.client.agent
+    const agent = this.circuit.agent
 
     agent.id = data.agent
     agent.firstname = data.firstName

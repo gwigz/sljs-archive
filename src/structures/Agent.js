@@ -5,6 +5,7 @@ class Agent {
   constructor (client, data) {
     /**
      * The Client that instantiated this Client object.
+     *
      * @name Client#client
      * @type {Client}
      * @readonly

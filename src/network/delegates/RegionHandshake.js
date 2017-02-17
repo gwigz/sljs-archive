@@ -4,7 +4,7 @@ import { RegionHandshakeReply } from '../packets'
 
 class RegionHandshake extends Delegate {
   handle () {
-    const agent = this.core.client.agent
+    const agent = this.circuit.agent
 
     // RegionInfo
     // { RegionFlags   U32 }
@@ -24,15 +24,9 @@ class RegionHandshake extends Delegate {
     // { ProductName       Variable  1 } // string
 
     // TODO: Add toggle for this, if we don't want objects dont send this.
-    this.core.send(new RegionHandshakeReply({
-      agentData: {
-        agent: agent.id,
-        session: agent.session
-      },
-      regionInfo: {
-        // Set to support self appearance.
-        flags: 0x0100
-      }
+    this.circuit.send(new RegionHandshakeReply({
+      // Set to support self appearance.
+      flags: 0x0100
     }))
   }
 }

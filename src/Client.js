@@ -33,28 +33,13 @@ class Client extends EventEmitter {
      */
     this.agent = null
 
-    // appearance
-    // state
-    // uptime
-    // region
-    // estate
+    // nearby
     // parcel
-    // - parcels?
-    // - objects
-    // - agents/avatars
-    // - terrain
+    // region
     // friends
-    // inventory
     // groups
-    // messages
-    // - local chat
-    // - region messages
-    // - script messages (local and remote?)
-    // - script dialogs
-    // - instant messages
-    // - group messages
-    // - group notices
-    // ...
+    // inventory
+    // https://gist.github.com/gwigz/0c13179591a3d005eb4765a3bfe9fc3d
   }
 
   get status () {
@@ -84,23 +69,19 @@ class Client extends EventEmitter {
       && 'sim_ip' in response
       && 'sim_port' in response
     ) {
-      return this.handshake(response)
+      this.agent = new Agent(this, {
+        id: response.agent_id,
+        session: response.session_id
+      })
+
+      return this.core.handshake(response.session_id, {
+        id: response.circuit_code,
+        address: response.sim_ip,
+        port: response.sim_port
+      })
     }
 
     return false
-  }
-
-  handshake (response) {
-    this.agent = new Agent(this, {
-      id: response.agent_id,
-      session: response.session_id
-    })
-
-    return this.core.handshake(response.session_id, {
-      id: response.circuit_code,
-      address: response.sim_ip,
-      port: response.sim_port
-    })
   }
 
   async disconnect () {
