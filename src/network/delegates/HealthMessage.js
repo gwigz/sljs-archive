@@ -1,7 +1,7 @@
 import Delegate from './Delegate'
 
 class HealthMessage extends Delegate {
-  handle (parameters) {
+  async handle (parameters) {
     const data = parameters.healthData[0]
     const agent = this.circuit.agent
 

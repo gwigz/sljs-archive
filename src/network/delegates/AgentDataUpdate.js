@@ -1,7 +1,7 @@
 import Delegate from './Delegate'
 
 class AgentDataUpdate extends Delegate {
-  handle (parameters) {
+  async handle (parameters) {
     const data = parameters.agentData[0]
     const agent = this.circuit.agent
 

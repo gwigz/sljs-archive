@@ -7,7 +7,7 @@ class Delegate {
    * Handle given packet blocks.
    * @param {Packet} packet Parsed packet object
    */
-  handle () {
+  async handle () {
     // ...
   }
 }

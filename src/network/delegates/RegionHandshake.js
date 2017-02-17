@@ -3,9 +3,7 @@ import Delegate from './Delegate'
 import { RegionHandshakeReply } from '../packets'
 
 class RegionHandshake extends Delegate {
-  handle () {
-    const agent = this.circuit.agent
-
+  async handle () {
     // RegionInfo
     // { RegionFlags   U32 }
     // { SimAccess   U8  }
@@ -25,8 +23,10 @@ class RegionHandshake extends Delegate {
 
     // TODO: Add toggle for this, if we don't want objects dont send this.
     this.circuit.send(new RegionHandshakeReply({
-      // Set to support self appearance.
-      flags: 0x0100
+      regionInfo: {
+        // Set to support self appearance.
+        flags: 0x0100
+      }
     }))
   }
 }
