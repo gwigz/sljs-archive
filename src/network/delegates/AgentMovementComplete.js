@@ -12,8 +12,8 @@ class AgentMovementComplete extends Delegate {
   handle (parameters) {
     const data = parameters.data[0]
     const sim = parameters.simData[0]
-    const agent = this.core.client.agent
-    const simulator = this.core.client.simulator
+    const agent = this.circuit.agent
+    const simulator = this.circuit.simulator
 
     // TODO: Figure out where to put regionHandle, if we need it for anything.
     simulator.channel = sim.channelVersion
@@ -56,11 +56,9 @@ class AgentMovementComplete extends Delegate {
     // Pass our throttle data, generated above. This controls the rate of
     // various packets that we can safely handle without hitting the users
     // specified bandwidth limit.
-    this.core.send(new AgentThrottle({
+    this.circuit.send(new AgentThrottle({
       agentData: {
-        agent: agent.id,
-        session: agent.session,
-        circuitCode: agent.circuit
+        circuitCode: this.circuit.id
       },
       throttle: {
         genCounter: 0,
@@ -70,11 +68,9 @@ class AgentMovementComplete extends Delegate {
 
     // This sends the users field of vision value, which in this case we're
     // just saying "hey, give me everything, even stuff behind me".
-    this.core.send(new AgentFOV({
+    this.circuit.send(new AgentFOV({
       agentData: {
-        agent: agent.id,
-        session: agent.session,
-        circuitCode: agent.circuit
+        circuitCode: this.circuit.id
       },
       fovBlock: {
         genCounter: 0,
@@ -85,11 +81,9 @@ class AgentMovementComplete extends Delegate {
 
     // This sends the height and width of what would usually calculated via. 3D
     // display/window size.
-    this.core.send(new AgentHeightWidth({
+    this.circuit.send(new AgentHeightWidth({
       agentData: {
-        agent: agent.id,
-        session: agent.session,
-        circuitCode: agent.circuit
+        circuitCode: this.circuit.id
       },
       heightWidthBlock: {
         genCounter: 0,
@@ -100,20 +94,14 @@ class AgentMovementComplete extends Delegate {
 
     // Toggle for always run, probably more likely to be used; but we'll set
     // that up once we have a "agent control manager" or something of the sorts.
-    this.core.send(new SetAlwaysRun({
-      agentData: {
-        agent: agent.id,
-        session: agent.session,
-        alwaysRun: false
-      }
+    this.circuit.send(new SetAlwaysRun({
+      alwaysRun: false
     }))
 
     // TODO: Add toggle to enable/disable these packets, as they allow object
     // data to start being recieved, which we may or may not want.
-    this.core.send(new AgentUpdate({
+    this.circuit.send(new AgentUpdate({
       agentData: {
-        agent: agent.id,
-        session: agent.session,
         bodyRotation: agent.rotation,
         headRotation: [0.0, 0.0, 0.0, 0.0],
         state: agent.state,

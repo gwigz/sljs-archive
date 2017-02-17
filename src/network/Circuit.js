@@ -1,4 +1,7 @@
+import Deserializer from './Deerializer'
 import Serializer from './Serializer'
+
+import * as Delegates from './delegates'
 
 import { UseCircuitCode, CompleteAgentMovement } from './packets'
 import { Constants } from '../utilities'
@@ -10,6 +13,7 @@ class Circuit {
     this.port = port
     this.core = core
     this.active = false
+    this.deserializer = new Deserializer
     this.serializer = new Serializer(core)
   }
 
@@ -32,7 +36,7 @@ class Circuit {
   }
 
   async receive (buffer) {
-    console.log(buffer)
+    const packet = await this.deserializer.convert(buffer)
   }
 
   handshake () {

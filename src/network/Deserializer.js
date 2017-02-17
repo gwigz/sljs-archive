@@ -4,7 +4,7 @@ import PacketLookup from './PacketLookup'
 import * as Types from './types'
 
 class Deserializer {
-  async handle (buffer) {
+  async convert (buffer) {
     const Packet = PacketLookup.find(this.id(buffer))
 
     if (Packet === undefined) {

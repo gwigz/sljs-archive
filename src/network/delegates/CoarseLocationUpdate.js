@@ -4,7 +4,7 @@ import { AgentUpdate } from '../packets'
 
 class CoarseLocationUpdate extends Delegate {
   handle (parameters) {
-    const agent = this.core.client.agent
+    const agent = this.circuit.agent
     const index = parameters.index[0]
 
     if (index.you !== -1) {
@@ -14,24 +14,20 @@ class CoarseLocationUpdate extends Delegate {
       agent.position.z *= 4
 
       // Eventually we'll move where this is done...
-      this.core.send(new AgentUpdate({
-        agentData: {
-          agent: agent.id,
-          session: agent.session,
-          bodyRotation: agent.rotation,
-          headRotation: [0.0, 0.0, 0.0, 0.0],
-          state: agent.state,
-          // TODO: Setup camera structure or something...
-          cameraCenter: agent.position,
-          cameraAtAxis: [0.0, 0.0, 0.0],
-          cameraLeftAxis: [0.0, 0.0, 0.0],
-          cameraUpAxis: [0.0, 0.0, 0.0],
-          // client or camera.distance or something?
-          far: 20,
-          controlFlags: agent.flags,
-          // for auto pilot: 0x02
-          flags: 0
-        }
+      this.circuit.send(new AgentUpdate({
+        bodyRotation: agent.rotation,
+        headRotation: [0.0, 0.0, 0.0, 0.0],
+        state: agent.state,
+        // TODO: Setup camera structure or something...
+        cameraCenter: agent.position,
+        cameraAtAxis: [0.0, 0.0, 0.0],
+        cameraLeftAxis: [0.0, 0.0, 0.0],
+        cameraUpAxis: [0.0, 0.0, 0.0],
+        // client or camera.distance or something?
+        far: 20,
+        controlFlags: agent.flags,
+        // for auto pilot: 0x02
+        flags: 0
       }))
     }
   }

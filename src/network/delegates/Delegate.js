@@ -1,11 +1,11 @@
 class Delegate {
-  constructor (core) {
-    this.core = core
+  constructor (circuit) {
+    this.circuit = circuit
   }
 
   /**
    * Handle given packet blocks.
-   * @param {Object} parameters Packet block data
+   * @param {Packet} packet Parsed packet object
    */
   handle () {
     // ...

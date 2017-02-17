@@ -1,8 +1,5 @@
 import dgram from 'dgram'
 
-// TODO: Move this into socket, or wherever delegates are stored.
-import Deserializer from './Deserializer'
-
 class Socket {
   constructor (core, type = 'udp4') {
     this.core = core
@@ -20,9 +17,7 @@ class Socket {
   }
 
   async receive (buffer, info) {
-    this.core.circuits.get(`${info.address}:${info.port}`).receive(
-      await this.deserializer.handle(buffer)
-    )
+    this.core.circuits.get(`${info.address}:${info.port}`).receive(buffer)
   }
 
   error (error) {
