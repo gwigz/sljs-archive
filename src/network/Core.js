@@ -15,10 +15,13 @@ class Core {
    */
   constructor (client) {
     /**
-     * The Client that instantiated this class.
+     * Client instance that instantiated this Core.
+     *
+     * @name Acknowledger#client
      * @type {Client}
+     * @readonly
      */
-    this.client = client
+    Object.defineProperty(this, 'client', { value: client })
 
     /**
      * The UDP connection/socket.
@@ -49,14 +52,17 @@ class Core {
 
   /**
    * Sends message to Circuit over UDP socket.
-   * @param {Circuit} circuit Circuit to send packet too
+   *
+   * @param {Circuit} circuit Circuit to send buffer too
+   * @param {Buffer} buffer Buffer to send
    */
-  async send (circuit, ...args) {
-    await this.socket.send(circuit, ...args)
+  send (circuit, buffer) {
+    this.socket.send(circuit, buffer)
   }
 
   /**
    * Connects the client to a given circuit code.
+   *
    * @param {string} session Session ID
    * @returns {Promise}
    */

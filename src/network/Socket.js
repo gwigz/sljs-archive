@@ -2,7 +2,15 @@ import dgram from 'dgram'
 
 class Socket {
   constructor (core, type = 'udp4') {
-    this.core = core
+    /**
+     * Core instance that instantiated this Socket.
+     *
+     * @name Socket#core
+     * @type {Core}
+     * @readonly
+     */
+    Object.defineProperty(this, 'core', { value: core })
+
     this.socket = dgram.createSocket({ type: type })
 
     this.socket.on('message', this.receive.bind(this))

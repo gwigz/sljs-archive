@@ -3,15 +3,17 @@ import Delegate from './Delegate'
 import { AgentUpdate } from '../packets'
 
 class CoarseLocationUpdate extends Delegate {
-  async handle (parameters) {
+  async handle (packet) {
     const agent = this.circuit.agent
-    const index = parameters.index[0]
+    const index = packet.data.index[0]
 
-    if (index.you !== -1) {
+    if (index.you !== -1
+      && packet.data.location.length >= index.you
+    ) {
       // TODO: This is not correct, self-agent should not use these location
       // details as they are only accurate to the meter, and less so by Z axis.
-      agent.position = parameters.location[index.you]
-      agent.position.z *= 4
+      agent.position = packet.data.location[index.you]
+      agent.position[2] *= 4
 
       // Eventually we'll move where this is done...
       this.circuit.send(new AgentUpdate({

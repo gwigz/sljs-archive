@@ -9,9 +9,9 @@ import {
 } from '../packets'
 
 class AgentMovementComplete extends Delegate {
-  async handle (parameters) {
-    const data = parameters.data[0]
-    const sim = parameters.simData[0]
+  async handle (packet) {
+    const data = packet.data.data[0]
+    const sim = packet.data.simData[0]
     const agent = this.circuit.agent
     const simulator = this.circuit.simulator
 
