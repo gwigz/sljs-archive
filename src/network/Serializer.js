@@ -2,12 +2,12 @@ import Packet from './packets/Packet'
 import { Constants } from '../utilities'
 
 class Serializer {
-  constructor (core) {
-    this.core = core
+  constructor (circuit) {
+    this.circuit = circuit
     this.index = 1
   }
 
-  async convert (packet) {
+  convert (packet) {
     if (!(packet instanceof Packet)) {
       throw new Error('Serializer is only able to convert instances of Packet.')
     }
@@ -76,6 +76,14 @@ class Serializer {
   parse (block, format, data = {}) {
     const array = []
 
+    if (data instanceof Array) {
+      for (const section of data) {
+        array.push(this.parse(block, format, section))
+      }
+
+      return Buffer.concat(array)
+    }
+
     // Attempt to fill optional parts of agent data blocks.
     if (block === 'agentData') {
       for (const [name] of format.parameters) {
@@ -85,11 +93,15 @@ class Serializer {
 
         switch (name) {
           case 'agent':
-            data.agent = this.core.agent.id
+            data.agent = this.circuit.agent.id
             break
 
           case 'session':
-            data.session = this.core.agent.id
+            data.session = this.circuit.agent.id
+            break
+
+          case 'circuitCode':
+            data.session = this.circuit.id
             break
 
           default:

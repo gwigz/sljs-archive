@@ -3,7 +3,6 @@ import dgram from 'dgram'
 class Socket {
   constructor (core, type = 'udp4') {
     this.core = core
-    this.deserializer = new Deserializer
     this.socket = dgram.createSocket({ type: type })
 
     this.socket.on('message', this.receive.bind(this))

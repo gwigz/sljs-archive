@@ -15,6 +15,17 @@ class Variable1 extends String {
   static toBuffer (string) {
     return this.toPrefixedBuffer(this.prefix, string)
   }
+
+  /**
+   * Converts buffer input into a string.
+   *
+   * @param {Buffer} buffer Buffer to convert
+   * @param {integer} start Position to read from
+   * @returns {string}
+   */
+  static fromBuffer (buffer, start) {
+    return super.fromBuffer(buffer, start + 2, start + buffer.readUInt16LE(start) + 1)
+  }
 }
 
 export default Variable1

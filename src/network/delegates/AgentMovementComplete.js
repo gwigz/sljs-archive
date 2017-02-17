@@ -9,7 +9,7 @@ import {
 } from '../packets'
 
 class AgentMovementComplete extends Delegate {
-  handle (parameters) {
+  async handle (parameters) {
     const data = parameters.data[0]
     const sim = parameters.simData[0]
     const agent = this.circuit.agent
@@ -57,9 +57,6 @@ class AgentMovementComplete extends Delegate {
     // various packets that we can safely handle without hitting the users
     // specified bandwidth limit.
     this.circuit.send(new AgentThrottle({
-      agentData: {
-        circuitCode: this.circuit.id
-      },
       throttle: {
         genCounter: 0,
         throttles: throttles
@@ -69,9 +66,6 @@ class AgentMovementComplete extends Delegate {
     // This sends the users field of vision value, which in this case we're
     // just saying "hey, give me everything, even stuff behind me".
     this.circuit.send(new AgentFOV({
-      agentData: {
-        circuitCode: this.circuit.id
-      },
       fovBlock: {
         genCounter: 0,
         // client.fov or camera.fov?
@@ -82,9 +76,6 @@ class AgentMovementComplete extends Delegate {
     // This sends the height and width of what would usually calculated via. 3D
     // display/window size.
     this.circuit.send(new AgentHeightWidth({
-      agentData: {
-        circuitCode: this.circuit.id
-      },
       heightWidthBlock: {
         genCounter: 0,
         height: 360,
@@ -95,7 +86,9 @@ class AgentMovementComplete extends Delegate {
     // Toggle for always run, probably more likely to be used; but we'll set
     // that up once we have a "agent control manager" or something of the sorts.
     this.circuit.send(new SetAlwaysRun({
-      alwaysRun: false
+      agentData: {
+        alwaysRun: false
+      }
     }))
 
     // TODO: Add toggle to enable/disable these packets, as they allow object

@@ -38,7 +38,7 @@ class String {
    * @param {Buffer} buffer Buffer to convert
    * @param {integer} start Position to read from
    * @param {integer} end Position to end at
-   * @returns {integer}
+   * @returns {string}
    */
   static fromBuffer (buffer, start = 0, end = 0) {
     return buffer.toString('utf8', start, end || buffer.length)

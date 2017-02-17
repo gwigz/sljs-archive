@@ -1,5 +1,5 @@
-import Collection from '../utilities/Collection'
-import * as Packet from './packets'
+import Collection from '../../utilities/Collection'
+import * as Packet from '../packets'
 
 class PacketLookup {
   static lookup = new Collection([
