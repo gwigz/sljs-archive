@@ -77,14 +77,16 @@ class Client extends EventEmitter {
         session: response.session_id
       })
 
-      return this.core.handshake(response.session_id, {
+      await this.core.handshake(response.session_id, {
         id: response.circuit_code,
         address: response.sim_ip,
         port: response.sim_port
       })
+
+      return
     }
 
-    return false
+    throw new Error(response.message || Constants.Errors.LOGIN_FAILED)
   }
 
   async disconnect () {
