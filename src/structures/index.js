@@ -1,4 +1,2 @@
-module.exports = {
-  Agent: require('./Agent'),
-  Simulator: require('./Simulator')
-}
+export Agent from './Agent'
+export Simulator from './Simulator'

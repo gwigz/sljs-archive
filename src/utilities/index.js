@@ -1,4 +1,2 @@
-module.exports = {
-  Constants: require('./Constants'),
-  Packets: require('./Packets')
-}
+export Collection from './Collection'
+export * as Constants from './Constants'

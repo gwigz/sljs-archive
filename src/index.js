@@ -1,5 +1,5 @@
-module.exports = {
-  Client: require('./client/Client'),
-  Version: require('../package').version,
-  Constants: require('./utilities/Constants')
-}
+export Client from './Client'
+
+export * as Constants from './utilities/Constants'
+export * as Packets from './network/packets'
+export * as Types from './network/types'
