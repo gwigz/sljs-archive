@@ -83,6 +83,8 @@ class Client extends EventEmitter {
         port: response.sim_port
       })
 
+      this.emit(Constants.Events.DEBUG, 'Connected!')
+
       return
     }
 
@@ -90,7 +92,10 @@ class Client extends EventEmitter {
   }
 
   async disconnect () {
-    return await this.core.disconnect()
+    await this.core.disconnect()
+
+    // May want to emit some statistics here, later.
+    this.emit(Constants.Events.DEBUG, 'Disconnected!')
   }
 }
 

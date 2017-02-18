@@ -3,6 +3,7 @@
 import Circuit from './Circuit'
 import Socket from './Socket'
 
+import { LogoutRequest } from './packets'
 import { Collection, Constants } from '../utilities'
 
 /**
@@ -76,15 +77,22 @@ class Core {
   }
 
   /**
-   * Connects the client to a given circuit code.
-   * @returns {?Promise}
+   * Disconnects the client from any connected circuits.
    */
   disconnect () {
-    if (this.status <= Constants.Status.CONNECTING) {
-      // TODO: ...logout.
+    if (this.status > Constants.Status.CONNECTING) {
+      return
     }
 
-    return null
+    // TODO: Add a method to fetch current circuit, handle removing sockets
+    // once logout reply packet is recieved when 'on/one' methods are added.
+    for (const circuit of this.circuits.values()) {
+      if (circuit.dead) {
+        continue
+      }
+
+      circuit.send(new LogoutRequest)
+    }
   }
 }
 
