@@ -20,7 +20,7 @@ class Circuit {
     this.id = id
     this.address = address
     this.port = port
-    this.active = false
+    this.dead = true
     this.deserializer = new Deserializer
     this.serializer = new Serializer(this)
     this.delegates = {}
@@ -37,7 +37,7 @@ class Circuit {
   }
 
   send (...args) {
-    if (!this.active) {
+    if (this.dead) {
       throw new Error(Constants.Errors.INACTIVE_CIRCUIT)
     }
 
@@ -57,11 +57,11 @@ class Circuit {
   }
 
   handshake () {
-    if (this.active) {
+    if (!this.dead) {
       throw new Error(Constants.Errors.HANDSHAKE_ACTIVE_CIRCUIT)
     }
 
-    this.active = true
+    this.dead = false
 
     return this.send(
       new UseCircuitCode({
