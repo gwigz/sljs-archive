@@ -65,8 +65,8 @@ class ScriptMailRegistration extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.dataBlock.targetIP] TargetIP
-   * @param {IPPORT} [data.dataBlock.targetPort] TargetPort
-   * @param {LLUUID} [data.dataBlock.task] TaskID
+   * @param {Port} [data.dataBlock.targetPort] TargetPort
+   * @param {UUID} [data.dataBlock.task] TaskID
    * @param {U32} [data.dataBlock.flags] Flags
    */
   constructor (data = {}) {

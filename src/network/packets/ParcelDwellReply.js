@@ -65,9 +65,9 @@ class ParcelDwellReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {S32} [data.data.local] LocalID
-   * @param {LLUUID} [data.data.parcel] ParcelID
+   * @param {UUID} [data.data.parcel] ParcelID
    * @param {F32} [data.data.dwell] Dwell
    */
   constructor (data = {}) {

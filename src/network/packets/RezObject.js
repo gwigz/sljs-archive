@@ -66,14 +66,14 @@ class RezObject extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.rezData.fromTask] FromTaskID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.rezData.fromTask] FromTaskID
    * @param {U8} [data.rezData.bypassRaycast] BypassRaycast
-   * @param {LLVector3} [data.rezData.rayStart] RayStart
-   * @param {LLVector3} [data.rezData.rayEnd] RayEnd
-   * @param {LLUUID} [data.rezData.rayTarget] RayTargetID
+   * @param {Vector3} [data.rezData.rayStart] RayStart
+   * @param {Vector3} [data.rezData.rayEnd] RayEnd
+   * @param {UUID} [data.rezData.rayTarget] RayTargetID
    * @param {BOOL} [data.rezData.rayEndIsIntersection] RayEndIsIntersection
    * @param {BOOL} [data.rezData.rezSelected] RezSelected
    * @param {BOOL} [data.rezData.removeItem] RemoveItem
@@ -81,18 +81,18 @@ class RezObject extends Packet {
    * @param {U32} [data.rezData.groupMask] GroupMask
    * @param {U32} [data.rezData.everyoneMask] EveryoneMask
    * @param {U32} [data.rezData.nextOwnerMask] NextOwnerMask
-   * @param {LLUUID} [data.inventoryData.item] ItemID
-   * @param {LLUUID} [data.inventoryData.folder] FolderID
-   * @param {LLUUID} [data.inventoryData.creator] CreatorID
-   * @param {LLUUID} [data.inventoryData.owner] OwnerID
-   * @param {LLUUID} [data.inventoryData.group] GroupID
+   * @param {UUID} [data.inventoryData.item] ItemID
+   * @param {UUID} [data.inventoryData.folder] FolderID
+   * @param {UUID} [data.inventoryData.creator] CreatorID
+   * @param {UUID} [data.inventoryData.owner] OwnerID
+   * @param {UUID} [data.inventoryData.group] GroupID
    * @param {U32} [data.inventoryData.baseMask] BaseMask
    * @param {U32} [data.inventoryData.ownerMask] OwnerMask
    * @param {U32} [data.inventoryData.groupMask] GroupMask
    * @param {U32} [data.inventoryData.everyoneMask] EveryoneMask
    * @param {U32} [data.inventoryData.nextOwnerMask] NextOwnerMask
    * @param {BOOL} [data.inventoryData.groupOwned] GroupOwned
-   * @param {LLUUID} [data.inventoryData.transaction] TransactionID
+   * @param {UUID} [data.inventoryData.transaction] TransactionID
    * @param {S8} [data.inventoryData.type] Type
    * @param {S8} [data.inventoryData.invType] InvType
    * @param {U32} [data.inventoryData.flags] Flags

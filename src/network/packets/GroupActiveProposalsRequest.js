@@ -66,10 +66,10 @@ class GroupActiveProposalsRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.groupData.group] GroupID
-   * @param {LLUUID} [data.transactionData.transaction] TransactionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.transactionData.transaction] TransactionID
    */
   constructor (data = {}) {
     super(data)

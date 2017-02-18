@@ -25,7 +25,7 @@ class U8 {
    * @returns {integer}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readUInt8(buffer, position)
+    return buffer.readUInt8(position)
   }
 }
 

@@ -64,8 +64,8 @@ class LogDwellTime extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dwellInfo.agent] AgentID
-   * @param {LLUUID} [data.dwellInfo.session] SessionID
+   * @param {UUID} [data.dwellInfo.agent] AgentID
+   * @param {UUID} [data.dwellInfo.session] SessionID
    * @param {F32} [data.dwellInfo.duration] Duration
    * @param {Variable1} [data.dwellInfo.simName] SimName
    * @param {U32} [data.dwellInfo.regionX] RegionX

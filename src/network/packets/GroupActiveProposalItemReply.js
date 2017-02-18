@@ -66,12 +66,12 @@ class GroupActiveProposalItemReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.transactionData.transaction] TransactionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.transactionData.transaction] TransactionID
    * @param {U32} [data.transactionData.totalNumItems] TotalNumItems
-   * @param {LLUUID} [data.proposalData.vote] VoteID
-   * @param {LLUUID} [data.proposalData.voteInitiator] VoteInitiator
+   * @param {UUID} [data.proposalData.vote] VoteID
+   * @param {UUID} [data.proposalData.voteInitiator] VoteInitiator
    * @param {Variable1} [data.proposalData.terseDate] TerseDateID
    * @param {Variable1} [data.proposalData.startDateTime] StartDateTime
    * @param {Variable1} [data.proposalData.endDateTime] EndDateTime

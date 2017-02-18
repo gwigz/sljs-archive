@@ -64,10 +64,10 @@ class TeleportFinish extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.info.agent] AgentID
+   * @param {UUID} [data.info.agent] AgentID
    * @param {U32} [data.info.location] LocationID
-   * @param {IPADDR} [data.info.simIP] SimIP
-   * @param {IPPORT} [data.info.simPort] SimPort
+   * @param {IP} [data.info.simIP] SimIP
+   * @param {Port} [data.info.simPort] SimPort
    * @param {U64} [data.info.regionHandle] RegionHandle
    * @param {Variable2} [data.info.seedCapability] SeedCapability
    * @param {U8} [data.info.simAccess] SimAccess

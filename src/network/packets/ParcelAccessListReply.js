@@ -65,11 +65,11 @@ class ParcelAccessListReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.agent] AgentID
+   * @param {UUID} [data.data.agent] AgentID
    * @param {S32} [data.data.sequence] SequenceID
    * @param {U32} [data.data.flags] Flags
    * @param {S32} [data.data.local] LocalID
-   * @param {LLUUID} [data.list.id] ID
+   * @param {UUID} [data.list.id] ID
    * @param {S32} [data.list.time] Time
    * @param {U32} [data.list.flags] Flags
    */

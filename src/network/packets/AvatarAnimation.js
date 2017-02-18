@@ -67,10 +67,10 @@ class AvatarAnimation extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.sender.id] ID
-   * @param {LLUUID} [data.animationList.anim] AnimID
+   * @param {UUID} [data.sender.id] ID
+   * @param {UUID} [data.animationList.anim] AnimID
    * @param {S32} [data.animationList.animSequence] AnimSequenceID
-   * @param {LLUUID} [data.animationSourceList.object] ObjectID
+   * @param {UUID} [data.animationSourceList.object] ObjectID
    * @param {Variable1} [data.physicalAvatarEventList.typeData] TypeData
    */
   constructor (data = {}) {

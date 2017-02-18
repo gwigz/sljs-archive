@@ -81,7 +81,7 @@ class Core {
    */
   disconnect () {
     if (this.status <= Constants.Status.CONNECTING) {
-      // TODO: ...
+      // TODO: ...logout.
     }
 
     return null

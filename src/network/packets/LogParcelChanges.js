@@ -66,14 +66,14 @@ class LogParcelChanges extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {U64} [data.regionData.regionHandle] RegionHandle
-   * @param {LLUUID} [data.parcelData.parcel] ParcelID
-   * @param {LLUUID} [data.parcelData.owner] OwnerID
+   * @param {UUID} [data.parcelData.parcel] ParcelID
+   * @param {UUID} [data.parcelData.owner] OwnerID
    * @param {BOOL} [data.parcelData.isOwnerGroup] IsOwnerGroup
    * @param {S32} [data.parcelData.actualArea] ActualArea
    * @param {S8} [data.parcelData.action] Action
-   * @param {LLUUID} [data.parcelData.transaction] TransactionID
+   * @param {UUID} [data.parcelData.transaction] TransactionID
    */
   constructor (data = {}) {
     super(data)

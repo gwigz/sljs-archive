@@ -64,7 +64,7 @@ class SystemKickUser extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentInfo.agent] AgentID
+   * @param {UUID} [data.agentInfo.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

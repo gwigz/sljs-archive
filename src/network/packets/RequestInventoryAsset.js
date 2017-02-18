@@ -64,10 +64,10 @@ class RequestInventoryAsset extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.queryData.query] QueryID
-   * @param {LLUUID} [data.queryData.agent] AgentID
-   * @param {LLUUID} [data.queryData.owner] OwnerID
-   * @param {LLUUID} [data.queryData.item] ItemID
+   * @param {UUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.queryData.agent] AgentID
+   * @param {UUID} [data.queryData.owner] OwnerID
+   * @param {UUID} [data.queryData.item] ItemID
    */
   constructor (data = {}) {
     super(data)

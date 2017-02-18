@@ -64,8 +64,8 @@ class DetachAttachmentIntoInv extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.objectData.agent] AgentID
-   * @param {LLUUID} [data.objectData.item] ItemID
+   * @param {UUID} [data.objectData.agent] AgentID
+   * @param {UUID} [data.objectData.item] ItemID
    */
   constructor (data = {}) {
     super(data)

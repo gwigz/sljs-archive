@@ -9,7 +9,6 @@ class AgentDataUpdate extends Delegate {
     agent.firstname = data.firstName
     agent.lastname = data.lastName
 
-    // TODO: Fetch group object via. data.activeGroup!
     /*
       agent.group = {
         id: data.activeGroup,

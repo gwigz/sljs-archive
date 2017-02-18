@@ -64,7 +64,7 @@ class EmailMessageReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.object] ObjectID
+   * @param {UUID} [data.dataBlock.object] ObjectID
    * @param {U32} [data.dataBlock.more] More
    * @param {U32} [data.dataBlock.time] Time
    * @param {Variable1} [data.dataBlock.fromAddress] FromAddress

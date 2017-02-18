@@ -54,7 +54,7 @@ class ObjectAdd extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
-    ['objectData', { quantity: 1, parameters: new Collection([['pCode', Types.U8], ['material', Types.U8], ['addFlags', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16], ['bypassRaycast', Types.U8], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['rayTarget', Types.UUID], ['rayEndIsIntersection', Types.U8], ['scale', Types.Vector3], ['rotation', Types.LLQuaternion], ['state', Types.U8]]) }]
+    ['objectData', { quantity: 1, parameters: new Collection([['pCode', Types.U8], ['material', Types.U8], ['addFlags', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16], ['bypassRaycast', Types.U8], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['rayTarget', Types.UUID], ['rayEndIsIntersection', Types.U8], ['scale', Types.Vector3], ['rotation', Types.Quaternion], ['state', Types.U8]]) }]
   ])
 
   /**
@@ -65,9 +65,9 @@ class ObjectAdd extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
    * @param {U8} [data.objectData.pCode] PCode
    * @param {U8} [data.objectData.material] Material
    * @param {U32} [data.objectData.addFlags] AddFlags
@@ -90,12 +90,12 @@ class ObjectAdd extends Packet {
    * @param {U16} [data.objectData.profileEnd] ProfileEnd
    * @param {U16} [data.objectData.profileHollow] ProfileHollow
    * @param {U8} [data.objectData.bypassRaycast] BypassRaycast
-   * @param {LLVector3} [data.objectData.rayStart] RayStart
-   * @param {LLVector3} [data.objectData.rayEnd] RayEnd
-   * @param {LLUUID} [data.objectData.rayTarget] RayTargetID
+   * @param {Vector3} [data.objectData.rayStart] RayStart
+   * @param {Vector3} [data.objectData.rayEnd] RayEnd
+   * @param {UUID} [data.objectData.rayTarget] RayTargetID
    * @param {U8} [data.objectData.rayEndIsIntersection] RayEndIsIntersection
-   * @param {LLVector3} [data.objectData.scale] Scale
-   * @param {LLQuaternion} [data.objectData.rotation] Rotation
+   * @param {Vector3} [data.objectData.scale] Scale
+   * @param {Quaternion} [data.objectData.rotation] Rotation
    * @param {U8} [data.objectData.state] State
    */
   constructor (data = {}) {

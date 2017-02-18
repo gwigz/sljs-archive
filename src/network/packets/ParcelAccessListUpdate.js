@@ -66,14 +66,14 @@ class ParcelAccessListUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.data.flags] Flags
    * @param {S32} [data.data.local] LocalID
-   * @param {LLUUID} [data.data.transaction] TransactionID
+   * @param {UUID} [data.data.transaction] TransactionID
    * @param {S32} [data.data.sequence] SequenceID
    * @param {S32} [data.data.sections] Sections
-   * @param {LLUUID} [data.list.id] ID
+   * @param {UUID} [data.list.id] ID
    * @param {S32} [data.list.time] Time
    * @param {U32} [data.list.flags] Flags
    */

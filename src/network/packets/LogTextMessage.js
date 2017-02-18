@@ -64,8 +64,8 @@ class LogTextMessage extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.fromAgentId] FromAgentId
-   * @param {LLUUID} [data.dataBlock.toAgentId] ToAgentId
+   * @param {UUID} [data.dataBlock.fromAgentId] FromAgentId
+   * @param {UUID} [data.dataBlock.toAgentId] ToAgentId
    * @param {F64} [data.dataBlock.globalX] GlobalX
    * @param {F64} [data.dataBlock.globalY] GlobalY
    * @param {U32} [data.dataBlock.time] Time

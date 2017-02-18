@@ -65,10 +65,10 @@ class GroupRoleDataRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.groupData.group] GroupID
-   * @param {LLUUID} [data.groupData.request] RequestID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.groupData.request] RequestID
    */
   constructor (data = {}) {
     super(data)

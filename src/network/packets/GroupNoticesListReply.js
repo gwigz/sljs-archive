@@ -65,9 +65,9 @@ class GroupNoticesListReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.data.notice] NoticeID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.data.notice] NoticeID
    * @param {U32} [data.data.timestamp] Timestamp
    * @param {Variable2} [data.data.fromName] FromName
    * @param {Variable2} [data.data.subject] Subject

@@ -64,9 +64,9 @@ class UpdateParcel extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.parcelData.parcel] ParcelID
+   * @param {UUID} [data.parcelData.parcel] ParcelID
    * @param {U64} [data.parcelData.regionHandle] RegionHandle
-   * @param {LLUUID} [data.parcelData.owner] OwnerID
+   * @param {UUID} [data.parcelData.owner] OwnerID
    * @param {BOOL} [data.parcelData.groupOwned] GroupOwned
    * @param {U8} [data.parcelData.status] Status
    * @param {Variable1} [data.parcelData.name] Name
@@ -79,10 +79,10 @@ class UpdateParcel extends Packet {
    * @param {BOOL} [data.parcelData.showDir] ShowDir
    * @param {BOOL} [data.parcelData.isForSale] IsForSale
    * @param {U8} [data.parcelData.category] Category
-   * @param {LLUUID} [data.parcelData.snapshot] SnapshotID
-   * @param {LLVector3} [data.parcelData.userLocation] UserLocation
+   * @param {UUID} [data.parcelData.snapshot] SnapshotID
+   * @param {Vector3} [data.parcelData.userLocation] UserLocation
    * @param {S32} [data.parcelData.salePrice] SalePrice
-   * @param {LLUUID} [data.parcelData.authorizedBuyer] AuthorizedBuyerID
+   * @param {UUID} [data.parcelData.authorizedBuyer] AuthorizedBuyerID
    * @param {BOOL} [data.parcelData.allowPublish] AllowPublish
    * @param {BOOL} [data.parcelData.maturePublish] MaturePublish
    */

@@ -54,7 +54,7 @@ class AvatarSitResponse extends Packet {
    */
   static format = new Collection([
     ['sitObject', { quantity: 1, parameters: new Collection([['id', Types.UUID]]) }],
-    ['sitTransform', { quantity: 1, parameters: new Collection([['autoPilot', Boolean], ['sitPosition', Types.Vector3], ['sitRotation', Types.LLQuaternion], ['cameraEyeOffset', Types.Vector3], ['cameraAtOffset', Types.Vector3], ['forceMouselook', Boolean]]) }]
+    ['sitTransform', { quantity: 1, parameters: new Collection([['autoPilot', Boolean], ['sitPosition', Types.Vector3], ['sitRotation', Types.Quaternion], ['cameraEyeOffset', Types.Vector3], ['cameraAtOffset', Types.Vector3], ['forceMouselook', Boolean]]) }]
   ])
 
   /**
@@ -65,12 +65,12 @@ class AvatarSitResponse extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.sitObject.id] ID
+   * @param {UUID} [data.sitObject.id] ID
    * @param {BOOL} [data.sitTransform.autoPilot] AutoPilot
-   * @param {LLVector3} [data.sitTransform.sitPosition] SitPosition
-   * @param {LLQuaternion} [data.sitTransform.sitRotation] SitRotation
-   * @param {LLVector3} [data.sitTransform.cameraEyeOffset] CameraEyeOffset
-   * @param {LLVector3} [data.sitTransform.cameraAtOffset] CameraAtOffset
+   * @param {Vector3} [data.sitTransform.sitPosition] SitPosition
+   * @param {Quaternion} [data.sitTransform.sitRotation] SitRotation
+   * @param {Vector3} [data.sitTransform.cameraEyeOffset] CameraEyeOffset
+   * @param {Vector3} [data.sitTransform.cameraAtOffset] CameraAtOffset
    * @param {BOOL} [data.sitTransform.forceMouselook] ForceMouselook
    */
   constructor (data = {}) {

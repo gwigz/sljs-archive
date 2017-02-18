@@ -53,7 +53,7 @@ class ScriptSensorRequest extends Packet {
    * @type {Collection}
    */
   static format = new Collection([
-    ['requester', { quantity: 1, parameters: new Collection([['source', Types.UUID], ['request', Types.UUID], ['search', Types.UUID], ['searchPos', Types.Vector3], ['searchDir', Types.LLQuaternion], ['searchName', Types.Variable1], ['type', Types.S32], ['range', Types.F32], ['arc', Types.F32], ['regionHandle', Types.U64], ['searchRegions', Types.U8]]) }]
+    ['requester', { quantity: 1, parameters: new Collection([['source', Types.UUID], ['request', Types.UUID], ['search', Types.UUID], ['searchPos', Types.Vector3], ['searchDir', Types.Quaternion], ['searchName', Types.Variable1], ['type', Types.S32], ['range', Types.F32], ['arc', Types.F32], ['regionHandle', Types.U64], ['searchRegions', Types.U8]]) }]
   ])
 
   /**
@@ -64,11 +64,11 @@ class ScriptSensorRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.requester.source] SourceID
-   * @param {LLUUID} [data.requester.request] RequestID
-   * @param {LLUUID} [data.requester.search] SearchID
-   * @param {LLVector3} [data.requester.searchPos] SearchPos
-   * @param {LLQuaternion} [data.requester.searchDir] SearchDir
+   * @param {UUID} [data.requester.source] SourceID
+   * @param {UUID} [data.requester.request] RequestID
+   * @param {UUID} [data.requester.search] SearchID
+   * @param {Vector3} [data.requester.searchPos] SearchPos
+   * @param {Quaternion} [data.requester.searchDir] SearchDir
    * @param {Variable1} [data.requester.searchName] SearchName
    * @param {S32} [data.requester.type] Type
    * @param {F32} [data.requester.range] Range

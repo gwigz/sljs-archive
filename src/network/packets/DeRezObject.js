@@ -66,12 +66,12 @@ class DeRezObject extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentBlock.group] GroupID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentBlock.group] GroupID
    * @param {U8} [data.agentBlock.destination] Destination
-   * @param {LLUUID} [data.agentBlock.destination] DestinationID
-   * @param {LLUUID} [data.agentBlock.transaction] TransactionID
+   * @param {UUID} [data.agentBlock.destination] DestinationID
+   * @param {UUID} [data.agentBlock.transaction] TransactionID
    * @param {U8} [data.agentBlock.packetCount] PacketCount
    * @param {U8} [data.agentBlock.packetNumber] PacketNumber
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID

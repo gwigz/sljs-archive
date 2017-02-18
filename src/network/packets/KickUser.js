@@ -65,10 +65,10 @@ class KickUser extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {IPADDR} [data.targetBlock.targetIP] TargetIP
-   * @param {IPPORT} [data.targetBlock.targetPort] TargetPort
-   * @param {LLUUID} [data.userInfo.agent] AgentID
-   * @param {LLUUID} [data.userInfo.session] SessionID
+   * @param {IP} [data.targetBlock.targetIP] TargetIP
+   * @param {Port} [data.targetBlock.targetPort] TargetPort
+   * @param {UUID} [data.userInfo.agent] AgentID
+   * @param {UUID} [data.userInfo.session] SessionID
    * @param {Variable2} [data.userInfo.reason] Reason
    */
   constructor (data = {}) {

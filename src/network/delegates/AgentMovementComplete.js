@@ -15,14 +15,13 @@ class AgentMovementComplete extends Delegate {
     const agent = this.circuit.agent
     const simulator = this.circuit.simulator
 
-    // TODO: Figure out where to put regionHandle, if we need it for anything.
-    simulator.channel = sim.channelVersion
+    // simulator.channel = sim.channelVersion
 
-    // TODO: Listen/callback of sorts for position updates.
     agent.position = data.position
     agent.rotation = data.lookAt
 
-    // TODO: Setup actual objects for these.
+    // TODO: Setup an actual objects for region handle (so we can have sugar for
+    // global to local transformations).
     agent.handle = {
       x: data.regionHandle.shiftRight(32).toNumber(),
       y: data.regionHandle.and(0xffffffff).toNumber(),
@@ -98,7 +97,6 @@ class AgentMovementComplete extends Delegate {
         bodyRotation: agent.rotation,
         headRotation: [0.0, 0.0, 0.0, 0.0],
         state: agent.state,
-        // TODO: Setup camera structure or something...
         cameraCenter: agent.position,
         cameraAtAxis: [0.0, 0.0, 0.0],
         cameraLeftAxis: [0.0, 0.0, 0.0],

@@ -53,7 +53,7 @@ class AgentUpdate extends Packet {
    * @type {Collection}
    */
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['bodyRotation', Types.LLQuaternion], ['headRotation', Types.LLQuaternion], ['state', Types.U8], ['cameraCenter', Types.Vector3], ['cameraAtAxis', Types.Vector3], ['cameraLeftAxis', Types.Vector3], ['cameraUpAxis', Types.Vector3], ['far', Types.F32], ['controlFlags', Types.U32], ['flags', Types.U8]]) }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['bodyRotation', Types.Quaternion], ['headRotation', Types.Quaternion], ['state', Types.U8], ['cameraCenter', Types.Vector3], ['cameraAtAxis', Types.Vector3], ['cameraLeftAxis', Types.Vector3], ['cameraUpAxis', Types.Vector3], ['far', Types.F32], ['controlFlags', Types.U32], ['flags', Types.U8]]) }]
   ])
 
   /**
@@ -64,15 +64,15 @@ class AgentUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLQuaternion} [data.agentData.bodyRotation] BodyRotation
-   * @param {LLQuaternion} [data.agentData.headRotation] HeadRotation
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {Quaternion} [data.agentData.bodyRotation] BodyRotation
+   * @param {Quaternion} [data.agentData.headRotation] HeadRotation
    * @param {U8} [data.agentData.state] State
-   * @param {LLVector3} [data.agentData.cameraCenter] CameraCenter
-   * @param {LLVector3} [data.agentData.cameraAtAxis] CameraAtAxis
-   * @param {LLVector3} [data.agentData.cameraLeftAxis] CameraLeftAxis
-   * @param {LLVector3} [data.agentData.cameraUpAxis] CameraUpAxis
+   * @param {Vector3} [data.agentData.cameraCenter] CameraCenter
+   * @param {Vector3} [data.agentData.cameraAtAxis] CameraAtAxis
+   * @param {Vector3} [data.agentData.cameraLeftAxis] CameraLeftAxis
+   * @param {Vector3} [data.agentData.cameraUpAxis] CameraUpAxis
    * @param {F32} [data.agentData.far] Far
    * @param {U32} [data.agentData.controlFlags] ControlFlags
    * @param {U8} [data.agentData.flags] Flags

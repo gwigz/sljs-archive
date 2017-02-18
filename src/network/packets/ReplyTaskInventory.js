@@ -64,7 +64,7 @@ class ReplyTaskInventory extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.inventoryData.task] TaskID
+   * @param {UUID} [data.inventoryData.task] TaskID
    * @param {S16} [data.inventoryData.serial] Serial
    * @param {Variable1} [data.inventoryData.filename] Filename
    */

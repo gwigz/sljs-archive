@@ -54,7 +54,7 @@ class ScriptSensorReply extends Packet {
    */
   static format = new Collection([
     ['requester', { quantity: 1, parameters: new Collection([['source', Types.UUID]]) }],
-    ['sensedData', { parameters: new Collection([['object', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['position', Types.Vector3], ['velocity', Types.Vector3], ['rotation', Types.LLQuaternion], ['name', Types.Variable1], ['type', Types.S32], ['range', Types.F32]]) }]
+    ['sensedData', { parameters: new Collection([['object', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['position', Types.Vector3], ['velocity', Types.Vector3], ['rotation', Types.Quaternion], ['name', Types.Variable1], ['type', Types.S32], ['range', Types.F32]]) }]
   ])
 
   /**
@@ -65,13 +65,13 @@ class ScriptSensorReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.requester.source] SourceID
-   * @param {LLUUID} [data.sensedData.object] ObjectID
-   * @param {LLUUID} [data.sensedData.owner] OwnerID
-   * @param {LLUUID} [data.sensedData.group] GroupID
-   * @param {LLVector3} [data.sensedData.position] Position
-   * @param {LLVector3} [data.sensedData.velocity] Velocity
-   * @param {LLQuaternion} [data.sensedData.rotation] Rotation
+   * @param {UUID} [data.requester.source] SourceID
+   * @param {UUID} [data.sensedData.object] ObjectID
+   * @param {UUID} [data.sensedData.owner] OwnerID
+   * @param {UUID} [data.sensedData.group] GroupID
+   * @param {Vector3} [data.sensedData.position] Position
+   * @param {Vector3} [data.sensedData.velocity] Velocity
+   * @param {Quaternion} [data.sensedData.rotation] Rotation
    * @param {Variable1} [data.sensedData.name] Name
    * @param {S32} [data.sensedData.type] Type
    * @param {F32} [data.sensedData.range] Range

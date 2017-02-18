@@ -65,8 +65,8 @@ class AgentFOV extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.circuitCode] CircuitCode
    * @param {U32} [data.fovBlock.genCounter] GenCounter
    * @param {F32} [data.fovBlock.verticalAngle] VerticalAngle

@@ -64,7 +64,7 @@ class AtomicPassObject extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.taskData.task] TaskID
+   * @param {UUID} [data.taskData.task] TaskID
    * @param {BOOL} [data.taskData.attachmentNeedsSave] AttachmentNeedsSave
    */
   constructor (data = {}) {

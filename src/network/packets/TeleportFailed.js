@@ -65,7 +65,7 @@ class TeleportFailed extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.info.agent] AgentID
+   * @param {UUID} [data.info.agent] AgentID
    * @param {Variable1} [data.info.reason] Reason
    * @param {Variable1} [data.alertInfo.message] Message
    * @param {Variable1} [data.alertInfo.extraParams] ExtraParams

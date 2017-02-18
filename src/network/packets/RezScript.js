@@ -66,23 +66,23 @@ class RezScript extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
    * @param {U32} [data.updateBlock.objectLocal] ObjectLocalID
    * @param {BOOL} [data.updateBlock.enabled] Enabled
-   * @param {LLUUID} [data.inventoryBlock.item] ItemID
-   * @param {LLUUID} [data.inventoryBlock.folder] FolderID
-   * @param {LLUUID} [data.inventoryBlock.creator] CreatorID
-   * @param {LLUUID} [data.inventoryBlock.owner] OwnerID
-   * @param {LLUUID} [data.inventoryBlock.group] GroupID
+   * @param {UUID} [data.inventoryBlock.item] ItemID
+   * @param {UUID} [data.inventoryBlock.folder] FolderID
+   * @param {UUID} [data.inventoryBlock.creator] CreatorID
+   * @param {UUID} [data.inventoryBlock.owner] OwnerID
+   * @param {UUID} [data.inventoryBlock.group] GroupID
    * @param {U32} [data.inventoryBlock.baseMask] BaseMask
    * @param {U32} [data.inventoryBlock.ownerMask] OwnerMask
    * @param {U32} [data.inventoryBlock.groupMask] GroupMask
    * @param {U32} [data.inventoryBlock.everyoneMask] EveryoneMask
    * @param {U32} [data.inventoryBlock.nextOwnerMask] NextOwnerMask
    * @param {BOOL} [data.inventoryBlock.groupOwned] GroupOwned
-   * @param {LLUUID} [data.inventoryBlock.transaction] TransactionID
+   * @param {UUID} [data.inventoryBlock.transaction] TransactionID
    * @param {S8} [data.inventoryBlock.type] Type
    * @param {S8} [data.inventoryBlock.invType] InvType
    * @param {U32} [data.inventoryBlock.flags] Flags

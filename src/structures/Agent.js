@@ -42,7 +42,6 @@ class Agent {
   }
 
   get flags () {
-    // TODO: Calculate and keep result!
     // - AGENT_CONTROL_AT_POS = 0x00000001
     // - AGENT_CONTROL_AT_NEG = 0x00000002
     // - AGENT_CONTROL_LEFT_POS = 0x00000004
@@ -80,7 +79,6 @@ class Agent {
   }
 
   get state () {
-    // TODO: Calculate and keep result!
     // - AGENT_STATE_TYPING = 0x04
     // - AGENT_STATE_EDITING = 0x10
 

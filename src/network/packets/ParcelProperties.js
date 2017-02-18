@@ -72,14 +72,14 @@ class ParcelProperties extends Packet {
    * @param {S32} [data.parcelData.otherCount] OtherCount
    * @param {S32} [data.parcelData.publicCount] PublicCount
    * @param {S32} [data.parcelData.local] LocalID
-   * @param {LLUUID} [data.parcelData.owner] OwnerID
+   * @param {UUID} [data.parcelData.owner] OwnerID
    * @param {BOOL} [data.parcelData.isGroupOwned] IsGroupOwned
    * @param {U32} [data.parcelData.auction] AuctionID
    * @param {S32} [data.parcelData.claimDate] ClaimDate
    * @param {S32} [data.parcelData.claimPrice] ClaimPrice
    * @param {S32} [data.parcelData.rentPrice] RentPrice
-   * @param {LLVector3} [data.parcelData.aABBMin] AABBMin
-   * @param {LLVector3} [data.parcelData.aABBMax] AABBMax
+   * @param {Vector3} [data.parcelData.aABBMin] AABBMin
+   * @param {Vector3} [data.parcelData.aABBMax] AABBMax
    * @param {Variable2} [data.parcelData.bitmap] Bitmap
    * @param {S32} [data.parcelData.area] Area
    * @param {U8} [data.parcelData.status] Status
@@ -99,16 +99,16 @@ class ParcelProperties extends Packet {
    * @param {Variable1} [data.parcelData.desc] Desc
    * @param {Variable1} [data.parcelData.musicURL] MusicURL
    * @param {Variable1} [data.parcelData.mediaURL] MediaURL
-   * @param {LLUUID} [data.parcelData.media] MediaID
+   * @param {UUID} [data.parcelData.media] MediaID
    * @param {U8} [data.parcelData.mediaAutoScale] MediaAutoScale
-   * @param {LLUUID} [data.parcelData.group] GroupID
+   * @param {UUID} [data.parcelData.group] GroupID
    * @param {S32} [data.parcelData.passPrice] PassPrice
    * @param {F32} [data.parcelData.passHours] PassHours
    * @param {U8} [data.parcelData.category] Category
-   * @param {LLUUID} [data.parcelData.authBuyer] AuthBuyerID
-   * @param {LLUUID} [data.parcelData.snapshot] SnapshotID
-   * @param {LLVector3} [data.parcelData.userLocation] UserLocation
-   * @param {LLVector3} [data.parcelData.userLookAt] UserLookAt
+   * @param {UUID} [data.parcelData.authBuyer] AuthBuyerID
+   * @param {UUID} [data.parcelData.snapshot] SnapshotID
+   * @param {Vector3} [data.parcelData.userLocation] UserLocation
+   * @param {Vector3} [data.parcelData.userLookAt] UserLookAt
    * @param {U8} [data.parcelData.landingType] LandingType
    * @param {BOOL} [data.parcelData.regionPushOverride] RegionPushOverride
    * @param {BOOL} [data.parcelData.regionDenyAnonymous] RegionDenyAnonymous

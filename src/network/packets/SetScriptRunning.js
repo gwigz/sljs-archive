@@ -65,10 +65,10 @@ class SetScriptRunning extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.script.object] ObjectID
-   * @param {LLUUID} [data.script.item] ItemID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.script.object] ObjectID
+   * @param {UUID} [data.script.item] ItemID
    * @param {BOOL} [data.script.running] Running
    */
   constructor (data = {}) {

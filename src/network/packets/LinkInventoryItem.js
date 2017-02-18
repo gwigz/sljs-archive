@@ -65,12 +65,12 @@ class LinkInventoryItem extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.inventoryBlock.callback] CallbackID
-   * @param {LLUUID} [data.inventoryBlock.folder] FolderID
-   * @param {LLUUID} [data.inventoryBlock.transaction] TransactionID
-   * @param {LLUUID} [data.inventoryBlock.oldItem] OldItemID
+   * @param {UUID} [data.inventoryBlock.folder] FolderID
+   * @param {UUID} [data.inventoryBlock.transaction] TransactionID
+   * @param {UUID} [data.inventoryBlock.oldItem] OldItemID
    * @param {S8} [data.inventoryBlock.type] Type
    * @param {S8} [data.inventoryBlock.invType] InvType
    * @param {Variable1} [data.inventoryBlock.name] Name

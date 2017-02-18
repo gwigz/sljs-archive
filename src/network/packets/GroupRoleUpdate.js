@@ -65,10 +65,10 @@ class GroupRoleUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.roleData.role] RoleID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.roleData.role] RoleID
    * @param {Variable1} [data.roleData.name] Name
    * @param {Variable1} [data.roleData.description] Description
    * @param {Variable1} [data.roleData.title] Title

@@ -65,10 +65,10 @@ class AgentCachedTexture extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {S32} [data.agentData.serialNum] SerialNum
-   * @param {LLUUID} [data.wearableData.id] ID
+   * @param {UUID} [data.wearableData.id] ID
    * @param {U8} [data.wearableData.textureIndex] TextureIndex
    */
   constructor (data = {}) {

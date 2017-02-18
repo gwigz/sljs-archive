@@ -65,11 +65,11 @@ class TeleportLocationRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U64} [data.info.regionHandle] RegionHandle
-   * @param {LLVector3} [data.info.position] Position
-   * @param {LLVector3} [data.info.lookAt] LookAt
+   * @param {Vector3} [data.info.position] Position
+   * @param {Vector3} [data.info.lookAt] LookAt
    */
   constructor (data = {}) {
     super(data)

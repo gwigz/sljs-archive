@@ -64,14 +64,14 @@ class LogFailedMoneyTransaction extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.transactionData.transaction] TransactionID
+   * @param {UUID} [data.transactionData.transaction] TransactionID
    * @param {U32} [data.transactionData.transactionTime] TransactionTime
    * @param {S32} [data.transactionData.transactionType] TransactionType
-   * @param {LLUUID} [data.transactionData.source] SourceID
-   * @param {LLUUID} [data.transactionData.dest] DestID
+   * @param {UUID} [data.transactionData.source] SourceID
+   * @param {UUID} [data.transactionData.dest] DestID
    * @param {U8} [data.transactionData.flags] Flags
    * @param {S32} [data.transactionData.amount] Amount
-   * @param {IPADDR} [data.transactionData.simulatorIP] SimulatorIP
+   * @param {IP} [data.transactionData.simulatorIP] SimulatorIP
    * @param {U32} [data.transactionData.gridX] GridX
    * @param {U32} [data.transactionData.gridY] GridY
    * @param {U8} [data.transactionData.failureType] FailureType

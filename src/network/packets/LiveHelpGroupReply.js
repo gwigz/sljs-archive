@@ -64,8 +64,8 @@ class LiveHelpGroupReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.replyData.request] RequestID
-   * @param {LLUUID} [data.replyData.group] GroupID
+   * @param {UUID} [data.replyData.request] RequestID
+   * @param {UUID} [data.replyData.group] GroupID
    * @param {Variable1} [data.replyData.selection] Selection
    */
   constructor (data = {}) {

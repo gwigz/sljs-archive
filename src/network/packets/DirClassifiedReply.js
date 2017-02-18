@@ -67,9 +67,9 @@ class DirClassifiedReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.queryData.query] QueryID
-   * @param {LLUUID} [data.queryReplies.classified] ClassifiedID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.queryReplies.classified] ClassifiedID
    * @param {Variable1} [data.queryReplies.name] Name
    * @param {U8} [data.queryReplies.classifiedFlags] ClassifiedFlags
    * @param {U32} [data.queryReplies.creationDate] CreationDate

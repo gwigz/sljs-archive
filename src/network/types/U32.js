@@ -25,7 +25,7 @@ class U32 {
    * @returns {integer}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readUInt32LE(buffer, position)
+    return buffer.readUInt32LE(position)
   }
 }
 

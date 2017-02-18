@@ -64,7 +64,7 @@ class KillChildAgents extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.idBlock.agent] AgentID
+   * @param {UUID} [data.idBlock.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

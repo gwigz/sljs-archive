@@ -64,10 +64,10 @@ class ObjectProperties extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.objectData.object] ObjectID
-   * @param {LLUUID} [data.objectData.creator] CreatorID
-   * @param {LLUUID} [data.objectData.owner] OwnerID
-   * @param {LLUUID} [data.objectData.group] GroupID
+   * @param {UUID} [data.objectData.object] ObjectID
+   * @param {UUID} [data.objectData.creator] CreatorID
+   * @param {UUID} [data.objectData.owner] OwnerID
+   * @param {UUID} [data.objectData.group] GroupID
    * @param {U64} [data.objectData.creationDate] CreationDate
    * @param {U32} [data.objectData.baseMask] BaseMask
    * @param {U32} [data.objectData.ownerMask] OwnerMask
@@ -82,10 +82,10 @@ class ObjectProperties extends Packet {
    * @param {U8} [data.objectData.aggregatePermTexturesOwner] AggregatePermTexturesOwner
    * @param {U32} [data.objectData.category] Category
    * @param {S16} [data.objectData.inventorySerial] InventorySerial
-   * @param {LLUUID} [data.objectData.item] ItemID
-   * @param {LLUUID} [data.objectData.folder] FolderID
-   * @param {LLUUID} [data.objectData.fromTask] FromTaskID
-   * @param {LLUUID} [data.objectData.lastOwner] LastOwnerID
+   * @param {UUID} [data.objectData.item] ItemID
+   * @param {UUID} [data.objectData.folder] FolderID
+   * @param {UUID} [data.objectData.fromTask] FromTaskID
+   * @param {UUID} [data.objectData.lastOwner] LastOwnerID
    * @param {Variable1} [data.objectData.name] Name
    * @param {Variable1} [data.objectData.description] Description
    * @param {Variable1} [data.objectData.touchName] TouchName

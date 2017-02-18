@@ -65,8 +65,8 @@ class DirLandQueryBackend extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.queryData.query] QueryID
    * @param {U32} [data.queryData.queryFlags] QueryFlags
    * @param {U32} [data.queryData.searchType] SearchType
    * @param {S32} [data.queryData.price] Price

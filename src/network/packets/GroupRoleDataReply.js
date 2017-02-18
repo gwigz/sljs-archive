@@ -66,11 +66,11 @@ class GroupRoleDataReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.groupData.group] GroupID
-   * @param {LLUUID} [data.groupData.request] RequestID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.groupData.request] RequestID
    * @param {S32} [data.groupData.roleCount] RoleCount
-   * @param {LLUUID} [data.roleData.role] RoleID
+   * @param {UUID} [data.roleData.role] RoleID
    * @param {Variable1} [data.roleData.name] Name
    * @param {Variable1} [data.roleData.title] Title
    * @param {Variable1} [data.roleData.description] Description

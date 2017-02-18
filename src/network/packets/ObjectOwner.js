@@ -66,11 +66,11 @@ class ObjectOwner extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {BOOL} [data.headerData.override] Override
-   * @param {LLUUID} [data.headerData.owner] OwnerID
-   * @param {LLUUID} [data.headerData.group] GroupID
+   * @param {UUID} [data.headerData.owner] OwnerID
+   * @param {UUID} [data.headerData.group] GroupID
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */
   constructor (data = {}) {

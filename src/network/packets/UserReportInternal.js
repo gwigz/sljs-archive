@@ -66,18 +66,18 @@ class UserReportInternal extends Packet {
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U8} [data.reportData.reportType] ReportType
    * @param {U8} [data.reportData.category] Category
-   * @param {LLUUID} [data.reportData.reporter] ReporterID
-   * @param {LLVector3} [data.reportData.viewerPosition] ViewerPosition
-   * @param {LLVector3} [data.reportData.agentPosition] AgentPosition
-   * @param {LLUUID} [data.reportData.screenshot] ScreenshotID
-   * @param {LLUUID} [data.reportData.object] ObjectID
-   * @param {LLUUID} [data.reportData.owner] OwnerID
-   * @param {LLUUID} [data.reportData.lastOwner] LastOwnerID
-   * @param {LLUUID} [data.reportData.creator] CreatorID
-   * @param {LLUUID} [data.reportData.region] RegionID
-   * @param {LLUUID} [data.reportData.abuser] AbuserID
+   * @param {UUID} [data.reportData.reporter] ReporterID
+   * @param {Vector3} [data.reportData.viewerPosition] ViewerPosition
+   * @param {Vector3} [data.reportData.agentPosition] AgentPosition
+   * @param {UUID} [data.reportData.screenshot] ScreenshotID
+   * @param {UUID} [data.reportData.object] ObjectID
+   * @param {UUID} [data.reportData.owner] OwnerID
+   * @param {UUID} [data.reportData.lastOwner] LastOwnerID
+   * @param {UUID} [data.reportData.creator] CreatorID
+   * @param {UUID} [data.reportData.region] RegionID
+   * @param {UUID} [data.reportData.abuser] AbuserID
    * @param {Variable1} [data.reportData.abuseRegionName] AbuseRegionName
-   * @param {LLUUID} [data.reportData.abuseRegion] AbuseRegionID
+   * @param {UUID} [data.reportData.abuseRegion] AbuseRegionID
    * @param {Variable1} [data.reportData.summary] Summary
    * @param {Variable2} [data.reportData.details] Details
    * @param {Variable1} [data.reportData.versionString] VersionString

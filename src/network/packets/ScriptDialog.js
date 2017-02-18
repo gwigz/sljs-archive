@@ -66,15 +66,15 @@ class ScriptDialog extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.object] ObjectID
+   * @param {UUID} [data.data.object] ObjectID
    * @param {Variable1} [data.data.firstName] FirstName
    * @param {Variable1} [data.data.lastName] LastName
    * @param {Variable1} [data.data.objectName] ObjectName
    * @param {Variable2} [data.data.message] Message
    * @param {S32} [data.data.chatChannel] ChatChannel
-   * @param {LLUUID} [data.data.image] ImageID
+   * @param {UUID} [data.data.image] ImageID
    * @param {Variable1} [data.buttons.buttonLabel] ButtonLabel
-   * @param {LLUUID} [data.ownerData.owner] OwnerID
+   * @param {UUID} [data.ownerData.owner] OwnerID
    */
   constructor (data = {}) {
     super(data)

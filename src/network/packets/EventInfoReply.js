@@ -54,7 +54,7 @@ class EventInfoReply extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
-    ['eventData', { quantity: 1, parameters: new Collection([['event', Types.U32], ['creator', Types.Variable1], ['name', Types.Variable1], ['category', Types.Variable1], ['desc', Types.Variable2], ['date', Types.Variable1], ['dateUTC', Types.U32], ['duration', Types.U32], ['cover', Types.U32], ['amount', Types.U32], ['simName', Types.Variable1], ['globalPos', Types.Vector3d], ['eventFlags', Types.U32]]) }]
+    ['eventData', { quantity: 1, parameters: new Collection([['event', Types.U32], ['creator', Types.Variable1], ['name', Types.Variable1], ['category', Types.Variable1], ['desc', Types.Variable2], ['date', Types.Variable1], ['dateUTC', Types.U32], ['duration', Types.U32], ['cover', Types.U32], ['amount', Types.U32], ['simName', Types.Variable1], ['globalPos', Types.Vector3D], ['eventFlags', Types.U32]]) }]
   ])
 
   /**
@@ -65,7 +65,7 @@ class EventInfoReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {U32} [data.eventData.event] EventID
    * @param {Variable1} [data.eventData.creator] Creator
    * @param {Variable1} [data.eventData.name] Name
@@ -77,7 +77,7 @@ class EventInfoReply extends Packet {
    * @param {U32} [data.eventData.cover] Cover
    * @param {U32} [data.eventData.amount] Amount
    * @param {Variable1} [data.eventData.simName] SimName
-   * @param {LLVector3d} [data.eventData.globalPos] GlobalPos
+   * @param {Vector3D} [data.eventData.globalPos] GlobalPos
    * @param {U32} [data.eventData.eventFlags] EventFlags
    */
   constructor (data = {}) {

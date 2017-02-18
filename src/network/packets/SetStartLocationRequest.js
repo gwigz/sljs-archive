@@ -65,12 +65,12 @@ class SetStartLocationRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {Variable1} [data.startLocationData.simName] SimName
    * @param {U32} [data.startLocationData.location] LocationID
-   * @param {LLVector3} [data.startLocationData.locationPos] LocationPos
-   * @param {LLVector3} [data.startLocationData.locationLookAt] LocationLookAt
+   * @param {Vector3} [data.startLocationData.locationPos] LocationPos
+   * @param {Vector3} [data.startLocationData.locationLookAt] LocationLookAt
    */
   constructor (data = {}) {
     super(data)

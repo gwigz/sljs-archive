@@ -66,10 +66,10 @@ class ObjectDuplicate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLVector3} [data.sharedData.offset] Offset
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {Vector3} [data.sharedData.offset] Offset
    * @param {U32} [data.sharedData.duplicateFlags] DuplicateFlags
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */

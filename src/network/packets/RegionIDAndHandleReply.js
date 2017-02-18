@@ -64,7 +64,7 @@ class RegionIDAndHandleReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.replyBlock.region] RegionID
+   * @param {UUID} [data.replyBlock.region] RegionID
    * @param {U64} [data.replyBlock.regionHandle] RegionHandle
    */
   constructor (data = {}) {

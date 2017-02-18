@@ -64,8 +64,8 @@ class LiveHelpGroupRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.requestData.request] RequestID
-   * @param {LLUUID} [data.requestData.agent] AgentID
+   * @param {UUID} [data.requestData.request] RequestID
+   * @param {UUID} [data.requestData.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

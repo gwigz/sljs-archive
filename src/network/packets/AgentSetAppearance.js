@@ -67,11 +67,11 @@ class AgentSetAppearance extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.serialNum] SerialNum
-   * @param {LLVector3} [data.agentData.size] Size
-   * @param {LLUUID} [data.wearableData.cache] CacheID
+   * @param {Vector3} [data.agentData.size] Size
+   * @param {UUID} [data.wearableData.cache] CacheID
    * @param {U8} [data.wearableData.textureIndex] TextureIndex
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    * @param {U8} [data.visualParam.paramValue] ParamValue

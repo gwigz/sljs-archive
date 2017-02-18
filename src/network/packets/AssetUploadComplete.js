@@ -64,7 +64,7 @@ class AssetUploadComplete extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.assetBlock.uUID] UUID
+   * @param {UUID} [data.assetBlock.uUID] UUID
    * @param {S8} [data.assetBlock.type] Type
    * @param {BOOL} [data.assetBlock.success] Success
    */

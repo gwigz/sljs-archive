@@ -65,12 +65,12 @@ class CreateGroupRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {Variable1} [data.groupData.name] Name
    * @param {Variable2} [data.groupData.charter] Charter
    * @param {BOOL} [data.groupData.showInList] ShowInList
-   * @param {LLUUID} [data.groupData.insignia] InsigniaID
+   * @param {UUID} [data.groupData.insignia] InsigniaID
    * @param {S32} [data.groupData.membershipFee] MembershipFee
    * @param {BOOL} [data.groupData.openEnrollment] OpenEnrollment
    * @param {BOOL} [data.groupData.allowPublish] AllowPublish

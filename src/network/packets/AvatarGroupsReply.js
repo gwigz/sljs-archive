@@ -66,14 +66,14 @@ class AvatarGroupsReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.avatar] AvatarID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.avatar] AvatarID
    * @param {U64} [data.groupData.groupPowers] GroupPowers
    * @param {BOOL} [data.groupData.acceptNotices] AcceptNotices
    * @param {Variable1} [data.groupData.groupTitle] GroupTitle
-   * @param {LLUUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.groupData.group] GroupID
    * @param {Variable1} [data.groupData.groupName] GroupName
-   * @param {LLUUID} [data.groupData.groupInsignia] GroupInsigniaID
+   * @param {UUID} [data.groupData.groupInsignia] GroupInsigniaID
    * @param {BOOL} [data.newGroupData.listInProfile] ListInProfile
    */
   constructor (data = {}) {

@@ -64,11 +64,11 @@ class RegionPresenceResponse extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.regionData.region] RegionID
+   * @param {UUID} [data.regionData.region] RegionID
    * @param {U64} [data.regionData.regionHandle] RegionHandle
-   * @param {IPADDR} [data.regionData.internalRegionIP] InternalRegionIP
-   * @param {IPADDR} [data.regionData.externalRegionIP] ExternalRegionIP
-   * @param {IPPORT} [data.regionData.regionPort] RegionPort
+   * @param {IP} [data.regionData.internalRegionIP] InternalRegionIP
+   * @param {IP} [data.regionData.externalRegionIP] ExternalRegionIP
+   * @param {Port} [data.regionData.regionPort] RegionPort
    * @param {F64} [data.regionData.validUntil] ValidUntil
    * @param {Variable1} [data.regionData.message] Message
    */

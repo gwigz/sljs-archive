@@ -24,7 +24,7 @@ class F32 {
    * @returns {number}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readFloatLE(buffer, position)
+    return buffer.readFloatLE(position)
   }
 }
 

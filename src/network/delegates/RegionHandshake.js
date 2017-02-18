@@ -8,11 +8,11 @@ class RegionHandshake extends Delegate {
     // { RegionFlags   U32 }
     // { SimAccess   U8  }
     // { SimName     Variable  1 } // string
-    // { SimOwner    LLUUID  }
+    // { SimOwner    UUID  }
     // { IsEstateManager BOOL  } // this agent, for this sim
 
     // RegionInfo2
-    // { RegionID    LLUUID  }
+    // { RegionID    UUID  }
 
     // RegionInfo3 Single
     // { CPUClassID        S32   }

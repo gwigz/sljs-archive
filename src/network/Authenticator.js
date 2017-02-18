@@ -65,7 +65,6 @@ class Authenticator {
       platform: system.platform,
       mac: system.network[0].mac,
       id0: system.filesystem.id0,
-      // TODO: Move these to parameters?
       agree_to_tos: true,
       read_critical: true,
       viewer_digest: this.digest,
@@ -75,7 +74,7 @@ class Authenticator {
     const response = await this.call('login_to_simulator', [parameters])
 
     if (typeof response !== 'object' || !response.login) {
-      throw new Error(Constants.Errors.LOGIN_FAILED)
+      throw new Error(response.reason || Constants.Errors.LOGIN_FAILED)
     }
 
     return response

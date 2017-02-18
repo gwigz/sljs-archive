@@ -65,9 +65,9 @@ class StartAuction extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.parcelData.parcel] ParcelID
-   * @param {LLUUID} [data.parcelData.snapshot] SnapshotID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.parcelData.parcel] ParcelID
+   * @param {UUID} [data.parcelData.snapshot] SnapshotID
    * @param {Variable1} [data.parcelData.name] Name
    */
   constructor (data = {}) {

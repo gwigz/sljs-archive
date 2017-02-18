@@ -65,10 +65,10 @@ class GenericError extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {S32} [data.data.code] Code
    * @param {Variable1} [data.data.token] Token
-   * @param {LLUUID} [data.data.id] ID
+   * @param {UUID} [data.data.id] ID
    * @param {Variable1} [data.data.system] System
    * @param {Variable2} [data.data.message] Message
    * @param {Variable2} [data.data.data] Data

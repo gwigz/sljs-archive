@@ -67,9 +67,9 @@ class DirPlacesReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.queryData.query] QueryID
-   * @param {LLUUID} [data.queryReplies.parcel] ParcelID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.queryReplies.parcel] ParcelID
    * @param {Variable1} [data.queryReplies.name] Name
    * @param {BOOL} [data.queryReplies.forSale] ForSale
    * @param {BOOL} [data.queryReplies.auction] Auction

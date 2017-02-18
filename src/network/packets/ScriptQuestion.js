@@ -64,8 +64,8 @@ class ScriptQuestion extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.task] TaskID
-   * @param {LLUUID} [data.data.item] ItemID
+   * @param {UUID} [data.data.task] TaskID
+   * @param {UUID} [data.data.item] ItemID
    * @param {Variable1} [data.data.objectName] ObjectName
    * @param {Variable1} [data.data.objectOwner] ObjectOwner
    * @param {S32} [data.data.questions] Questions

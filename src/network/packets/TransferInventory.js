@@ -65,10 +65,10 @@ class TransferInventory extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.infoBlock.source] SourceID
-   * @param {LLUUID} [data.infoBlock.dest] DestID
-   * @param {LLUUID} [data.infoBlock.transaction] TransactionID
-   * @param {LLUUID} [data.inventoryBlock.inventory] InventoryID
+   * @param {UUID} [data.infoBlock.source] SourceID
+   * @param {UUID} [data.infoBlock.dest] DestID
+   * @param {UUID} [data.infoBlock.transaction] TransactionID
+   * @param {UUID} [data.inventoryBlock.inventory] InventoryID
    * @param {S8} [data.inventoryBlock.type] Type
    */
   constructor (data = {}) {

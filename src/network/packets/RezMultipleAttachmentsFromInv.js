@@ -66,13 +66,13 @@ class RezMultipleAttachmentsFromInv extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.headerData.compoundMsg] CompoundMsgID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.headerData.compoundMsg] CompoundMsgID
    * @param {U8} [data.headerData.totalObjects] TotalObjects
    * @param {BOOL} [data.headerData.firstDetachAll] FirstDetachAll
-   * @param {LLUUID} [data.objectData.item] ItemID
-   * @param {LLUUID} [data.objectData.owner] OwnerID
+   * @param {UUID} [data.objectData.item] ItemID
+   * @param {UUID} [data.objectData.owner] OwnerID
    * @param {U8} [data.objectData.attachmentPt] AttachmentPt
    * @param {U32} [data.objectData.itemFlags] ItemFlags
    * @param {U32} [data.objectData.groupMask] GroupMask

@@ -65,11 +65,11 @@ class AgentWearablesUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.serialNum] SerialNum
-   * @param {LLUUID} [data.wearableData.item] ItemID
-   * @param {LLUUID} [data.wearableData.asset] AssetID
+   * @param {UUID} [data.wearableData.item] ItemID
+   * @param {UUID} [data.wearableData.asset] AssetID
    * @param {U8} [data.wearableData.wearableType] WearableType
    */
   constructor (data = {}) {

@@ -64,7 +64,7 @@ class UpdateSimulator extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.simulatorInfo.region] RegionID
+   * @param {UUID} [data.simulatorInfo.region] RegionID
    * @param {Variable1} [data.simulatorInfo.simName] SimName
    * @param {U32} [data.simulatorInfo.estate] EstateID
    * @param {U8} [data.simulatorInfo.simAccess] SimAccess

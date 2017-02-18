@@ -65,7 +65,7 @@ class ImagePacket extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.image.id] ID
+   * @param {UUID} [data.image.id] ID
    * @param {U16} [data.image.packet] Packet
    * @param {Variable2} [data.imageData.data] Data
    */

@@ -65,8 +65,8 @@ class GodUpdateRegionInfo extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {Variable1} [data.regionInfo.simName] SimName
    * @param {U32} [data.regionInfo.estate] EstateID
    * @param {U32} [data.regionInfo.parentEstate] ParentEstateID

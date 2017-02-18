@@ -64,7 +64,7 @@ class SetSimStatusInDatabase extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.region] RegionID
+   * @param {UUID} [data.data.region] RegionID
    * @param {Variable1} [data.data.hostName] HostName
    * @param {S32} [data.data.x] X
    * @param {S32} [data.data.y] Y

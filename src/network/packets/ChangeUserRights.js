@@ -65,8 +65,8 @@ class ChangeUserRights extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.rights.agentRelated] AgentRelated
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.rights.agentRelated] AgentRelated
    * @param {S32} [data.rights.relatedRights] RelatedRights
    */
   constructor (data = {}) {

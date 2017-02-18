@@ -64,9 +64,9 @@ class AttachedSound extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.sound] SoundID
-   * @param {LLUUID} [data.dataBlock.object] ObjectID
-   * @param {LLUUID} [data.dataBlock.owner] OwnerID
+   * @param {UUID} [data.dataBlock.sound] SoundID
+   * @param {UUID} [data.dataBlock.object] ObjectID
+   * @param {UUID} [data.dataBlock.owner] OwnerID
    * @param {F32} [data.dataBlock.gain] Gain
    * @param {U8} [data.dataBlock.flags] Flags
    */

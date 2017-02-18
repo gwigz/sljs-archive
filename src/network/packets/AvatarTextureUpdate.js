@@ -66,12 +66,12 @@ class AvatarTextureUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {BOOL} [data.agentData.texturesChanged] TexturesChanged
-   * @param {LLUUID} [data.wearableData.cache] CacheID
+   * @param {UUID} [data.wearableData.cache] CacheID
    * @param {U8} [data.wearableData.textureIndex] TextureIndex
    * @param {Variable1} [data.wearableData.hostName] HostName
-   * @param {LLUUID} [data.textureData.texture] TextureID
+   * @param {UUID} [data.textureData.texture] TextureID
    */
   constructor (data = {}) {
     super(data)

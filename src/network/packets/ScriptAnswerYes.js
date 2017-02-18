@@ -65,10 +65,10 @@ class ScriptAnswerYes extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.data.task] TaskID
-   * @param {LLUUID} [data.data.item] ItemID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.data.task] TaskID
+   * @param {UUID} [data.data.item] ItemID
    * @param {S32} [data.data.questions] Questions
    */
   constructor (data = {}) {

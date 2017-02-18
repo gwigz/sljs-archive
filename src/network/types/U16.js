@@ -25,7 +25,7 @@ class U16 {
    * @returns {integer}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readUInt16LE(buffer, position)
+    return buffer.readUInt16LE(position)
   }
 }
 

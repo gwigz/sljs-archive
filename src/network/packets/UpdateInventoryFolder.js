@@ -65,10 +65,10 @@ class UpdateInventoryFolder extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.folderData.folder] FolderID
-   * @param {LLUUID} [data.folderData.parent] ParentID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.folderData.folder] FolderID
+   * @param {UUID} [data.folderData.parent] ParentID
    * @param {S8} [data.folderData.type] Type
    * @param {Variable1} [data.folderData.name] Name
    */

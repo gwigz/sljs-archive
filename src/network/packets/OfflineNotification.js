@@ -64,7 +64,7 @@ class OfflineNotification extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentBlock.agent] AgentID
+   * @param {UUID} [data.agentBlock.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

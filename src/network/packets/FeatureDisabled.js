@@ -65,8 +65,8 @@ class FeatureDisabled extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.failureInfo.errorMessage] ErrorMessage
-   * @param {LLUUID} [data.failureInfo.agent] AgentID
-   * @param {LLUUID} [data.failureInfo.transaction] TransactionID
+   * @param {UUID} [data.failureInfo.agent] AgentID
+   * @param {UUID} [data.failureInfo.transaction] TransactionID
    */
   constructor (data = {}) {
     super(data)

@@ -67,21 +67,21 @@ class GroupVoteHistoryItemReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.transactionData.transaction] TransactionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.transactionData.transaction] TransactionID
    * @param {U32} [data.transactionData.totalNumItems] TotalNumItems
-   * @param {LLUUID} [data.historyItemData.vote] VoteID
+   * @param {UUID} [data.historyItemData.vote] VoteID
    * @param {Variable1} [data.historyItemData.terseDate] TerseDateID
    * @param {Variable1} [data.historyItemData.startDateTime] StartDateTime
    * @param {Variable1} [data.historyItemData.endDateTime] EndDateTime
-   * @param {LLUUID} [data.historyItemData.voteInitiator] VoteInitiator
+   * @param {UUID} [data.historyItemData.voteInitiator] VoteInitiator
    * @param {Variable1} [data.historyItemData.voteType] VoteType
    * @param {Variable1} [data.historyItemData.voteResult] VoteResult
    * @param {F32} [data.historyItemData.majority] Majority
    * @param {S32} [data.historyItemData.quorum] Quorum
    * @param {Variable2} [data.historyItemData.proposalText] ProposalText
-   * @param {LLUUID} [data.voteItem.candidate] CandidateID
+   * @param {UUID} [data.voteItem.candidate] CandidateID
    * @param {Variable1} [data.voteItem.voteCast] VoteCast
    * @param {S32} [data.voteItem.numVotes] NumVotes
    */

@@ -64,7 +64,7 @@ class CreateTrustedCircuit extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.endPoint] EndPointID
+   * @param {UUID} [data.dataBlock.endPoint] EndPointID
    * @param {Fixed32} [data.dataBlock.digest] Digest
    */
   constructor (data = {}) {

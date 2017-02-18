@@ -65,18 +65,18 @@ class RequestParcelTransfer extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.transaction] TransactionID
+   * @param {UUID} [data.data.transaction] TransactionID
    * @param {U32} [data.data.transactionTime] TransactionTime
-   * @param {LLUUID} [data.data.source] SourceID
-   * @param {LLUUID} [data.data.dest] DestID
-   * @param {LLUUID} [data.data.owner] OwnerID
+   * @param {UUID} [data.data.source] SourceID
+   * @param {UUID} [data.data.dest] DestID
+   * @param {UUID} [data.data.owner] OwnerID
    * @param {U8} [data.data.flags] Flags
    * @param {S32} [data.data.transactionType] TransactionType
    * @param {S32} [data.data.amount] Amount
    * @param {S32} [data.data.billableArea] BillableArea
    * @param {S32} [data.data.actualArea] ActualArea
    * @param {BOOL} [data.data.final] Final
-   * @param {LLUUID} [data.regionData.region] RegionID
+   * @param {UUID} [data.regionData.region] RegionID
    * @param {U32} [data.regionData.gridX] GridX
    * @param {U32} [data.regionData.gridY] GridY
    */

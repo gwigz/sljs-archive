@@ -65,10 +65,10 @@ class AvatarPropertiesUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.propertiesData.image] ImageID
-   * @param {LLUUID} [data.propertiesData.fLImage] FLImageID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.propertiesData.image] ImageID
+   * @param {UUID} [data.propertiesData.fLImage] FLImageID
    * @param {Variable2} [data.propertiesData.aboutText] AboutText
    * @param {Variable1} [data.propertiesData.fLAboutText] FLAboutText
    * @param {BOOL} [data.propertiesData.allowPublish] AllowPublish

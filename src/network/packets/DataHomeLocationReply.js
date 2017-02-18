@@ -64,10 +64,10 @@ class DataHomeLocationReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.info.agent] AgentID
+   * @param {UUID} [data.info.agent] AgentID
    * @param {U64} [data.info.regionHandle] RegionHandle
-   * @param {LLVector3} [data.info.position] Position
-   * @param {LLVector3} [data.info.lookAt] LookAt
+   * @param {Vector3} [data.info.position] Position
+   * @param {Vector3} [data.info.lookAt] LookAt
    */
   constructor (data = {}) {
     super(data)

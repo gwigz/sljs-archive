@@ -64,11 +64,11 @@ class NeighborList extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {IPADDR} [data.neighborBlock.ip] IP
-   * @param {IPPORT} [data.neighborBlock.port] Port
-   * @param {IPADDR} [data.neighborBlock.publicIP] PublicIP
-   * @param {IPPORT} [data.neighborBlock.publicPort] PublicPort
-   * @param {LLUUID} [data.neighborBlock.region] RegionID
+   * @param {IP} [data.neighborBlock.ip] IP
+   * @param {Port} [data.neighborBlock.port] Port
+   * @param {IP} [data.neighborBlock.publicIP] PublicIP
+   * @param {Port} [data.neighborBlock.publicPort] PublicPort
+   * @param {UUID} [data.neighborBlock.region] RegionID
    * @param {Variable1} [data.neighborBlock.name] Name
    * @param {U8} [data.neighborBlock.simAccess] SimAccess
    */

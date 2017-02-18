@@ -29,10 +29,10 @@ class IP {
    */
   static fromBuffer (buffer, position = 0) {
     return [
-      buffer.readUInt8(buffer, position),
-      buffer.readUInt8(buffer, position + 1),
-      buffer.readUInt8(buffer, position + 2),
-      buffer.readUInt8(buffer, position + 3)
+      buffer.readUInt8(position),
+      buffer.readUInt8(position + 1),
+      buffer.readUInt8(position + 2),
+      buffer.readUInt8(position + 3)
     ].join('.')
   }
 }

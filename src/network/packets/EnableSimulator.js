@@ -65,8 +65,8 @@ class EnableSimulator extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U64} [data.simulatorInfo.handle] Handle
-   * @param {IPADDR} [data.simulatorInfo.ip] IP
-   * @param {IPPORT} [data.simulatorInfo.port] Port
+   * @param {IP} [data.simulatorInfo.ip] IP
+   * @param {Port} [data.simulatorInfo.port] Port
    */
   constructor (data = {}) {
     super(data)

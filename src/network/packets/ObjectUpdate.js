@@ -69,12 +69,12 @@ class ObjectUpdate extends Packet {
    * @param {U16} [data.regionData.timeDilation] TimeDilation
    * @param {U32} [data.objectData.id] ID
    * @param {U8} [data.objectData.state] State
-   * @param {LLUUID} [data.objectData.full] FullID
+   * @param {UUID} [data.objectData.full] FullID
    * @param {U32} [data.objectData.cRC] CRC
    * @param {U8} [data.objectData.pCode] PCode
    * @param {U8} [data.objectData.material] Material
    * @param {U8} [data.objectData.clickAction] ClickAction
-   * @param {LLVector3} [data.objectData.scale] Scale
+   * @param {Vector3} [data.objectData.scale] Scale
    * @param {Variable1} [data.objectData.objectData] ObjectData
    * @param {U32} [data.objectData.parent] ParentID
    * @param {U32} [data.objectData.updateFlags] UpdateFlags
@@ -105,14 +105,14 @@ class ObjectUpdate extends Packet {
    * @param {Variable1} [data.objectData.mediaURL] MediaURL
    * @param {Variable1} [data.objectData.pSBlock] PSBlock
    * @param {Variable1} [data.objectData.extraParams] ExtraParams
-   * @param {LLUUID} [data.objectData.sound] Sound
-   * @param {LLUUID} [data.objectData.owner] OwnerID
+   * @param {UUID} [data.objectData.sound] Sound
+   * @param {UUID} [data.objectData.owner] OwnerID
    * @param {F32} [data.objectData.gain] Gain
    * @param {U8} [data.objectData.flags] Flags
    * @param {F32} [data.objectData.radius] Radius
    * @param {U8} [data.objectData.jointType] JointType
-   * @param {LLVector3} [data.objectData.jointPivot] JointPivot
-   * @param {LLVector3} [data.objectData.jointAxisOrAnchor] JointAxisOrAnchor
+   * @param {Vector3} [data.objectData.jointPivot] JointPivot
+   * @param {Vector3} [data.objectData.jointAxisOrAnchor] JointAxisOrAnchor
    */
   constructor (data = {}) {
     super(data)

@@ -64,8 +64,8 @@ class GetScriptRunning extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.script.object] ObjectID
-   * @param {LLUUID} [data.script.item] ItemID
+   * @param {UUID} [data.script.object] ObjectID
+   * @param {UUID} [data.script.item] ItemID
    */
   constructor (data = {}) {
     super(data)

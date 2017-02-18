@@ -54,7 +54,7 @@ class ObjectAttach extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['attachmentPoint', Types.U8]]) }],
-    ['objectData', { parameters: new Collection([['objectLocal', Types.U32], ['rotation', Types.LLQuaternion]]) }]
+    ['objectData', { parameters: new Collection([['objectLocal', Types.U32], ['rotation', Types.Quaternion]]) }]
   ])
 
   /**
@@ -65,11 +65,11 @@ class ObjectAttach extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U8} [data.agentData.attachmentPoint] AttachmentPoint
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
-   * @param {LLQuaternion} [data.objectData.rotation] Rotation
+   * @param {Quaternion} [data.objectData.rotation] Rotation
    */
   constructor (data = {}) {
     super(data)

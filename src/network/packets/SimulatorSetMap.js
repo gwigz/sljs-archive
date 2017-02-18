@@ -66,7 +66,7 @@ class SimulatorSetMap extends Packet {
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U64} [data.mapData.regionHandle] RegionHandle
    * @param {S32} [data.mapData.type] Type
-   * @param {LLUUID} [data.mapData.mapImage] MapImage
+   * @param {UUID} [data.mapData.mapImage] MapImage
    */
   constructor (data = {}) {
     super(data)

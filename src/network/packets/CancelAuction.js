@@ -64,7 +64,7 @@ class CancelAuction extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.parcelData.parcel] ParcelID
+   * @param {UUID} [data.parcelData.parcel] ParcelID
    */
   constructor (data = {}) {
     super(data)

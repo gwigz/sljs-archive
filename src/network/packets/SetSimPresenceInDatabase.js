@@ -64,7 +64,7 @@ class SetSimPresenceInDatabase extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.simData.region] RegionID
+   * @param {UUID} [data.simData.region] RegionID
    * @param {Variable1} [data.simData.hostName] HostName
    * @param {U32} [data.simData.gridX] GridX
    * @param {U32} [data.simData.gridY] GridY

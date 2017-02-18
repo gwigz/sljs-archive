@@ -65,11 +65,11 @@ class ActivateGestures extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.flags] Flags
-   * @param {LLUUID} [data.data.item] ItemID
-   * @param {LLUUID} [data.data.asset] AssetID
+   * @param {UUID} [data.data.item] ItemID
+   * @param {UUID} [data.data.asset] AssetID
    * @param {U32} [data.data.gestureFlags] GestureFlags
    */
   constructor (data = {}) {

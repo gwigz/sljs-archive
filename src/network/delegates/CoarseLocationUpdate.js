@@ -7,7 +7,7 @@ class CoarseLocationUpdate extends Delegate {
     const agent = this.circuit.agent
     const index = packet.data.index[0]
 
-    if (index.you !== -1
+    if (index.you > 0
       && packet.data.location.length >= index.you
     ) {
       // TODO: This is not correct, self-agent should not use these location

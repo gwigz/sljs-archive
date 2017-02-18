@@ -65,8 +65,8 @@ class ParcelPropertiesUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {S32} [data.parcelData.local] LocalID
    * @param {U32} [data.parcelData.flags] Flags
    * @param {U32} [data.parcelData.parcelFlags] ParcelFlags
@@ -75,16 +75,16 @@ class ParcelPropertiesUpdate extends Packet {
    * @param {Variable1} [data.parcelData.desc] Desc
    * @param {Variable1} [data.parcelData.musicURL] MusicURL
    * @param {Variable1} [data.parcelData.mediaURL] MediaURL
-   * @param {LLUUID} [data.parcelData.media] MediaID
+   * @param {UUID} [data.parcelData.media] MediaID
    * @param {U8} [data.parcelData.mediaAutoScale] MediaAutoScale
-   * @param {LLUUID} [data.parcelData.group] GroupID
+   * @param {UUID} [data.parcelData.group] GroupID
    * @param {S32} [data.parcelData.passPrice] PassPrice
    * @param {F32} [data.parcelData.passHours] PassHours
    * @param {U8} [data.parcelData.category] Category
-   * @param {LLUUID} [data.parcelData.authBuyer] AuthBuyerID
-   * @param {LLUUID} [data.parcelData.snapshot] SnapshotID
-   * @param {LLVector3} [data.parcelData.userLocation] UserLocation
-   * @param {LLVector3} [data.parcelData.userLookAt] UserLookAt
+   * @param {UUID} [data.parcelData.authBuyer] AuthBuyerID
+   * @param {UUID} [data.parcelData.snapshot] SnapshotID
+   * @param {Vector3} [data.parcelData.userLocation] UserLocation
+   * @param {Vector3} [data.parcelData.userLookAt] UserLookAt
    * @param {U8} [data.parcelData.landingType] LandingType
    */
   constructor (data = {}) {

@@ -65,9 +65,9 @@ class SaveAssetIntoInventory extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.inventoryData.item] ItemID
-   * @param {LLUUID} [data.inventoryData.newAsset] NewAssetID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.inventoryData.item] ItemID
+   * @param {UUID} [data.inventoryData.newAsset] NewAssetID
    */
   constructor (data = {}) {
     super(data)
