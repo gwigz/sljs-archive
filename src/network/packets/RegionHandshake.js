@@ -69,19 +69,19 @@ class RegionHandshake extends Packet {
    * @param {U32} [data.regionInfo.regionFlags] RegionFlags
    * @param {U8} [data.regionInfo.simAccess] SimAccess
    * @param {Variable1} [data.regionInfo.simName] SimName
-   * @param {LLUUID} [data.regionInfo.simOwner] SimOwner
+   * @param {UUID} [data.regionInfo.simOwner] SimOwner
    * @param {BOOL} [data.regionInfo.isEstateManager] IsEstateManager
    * @param {F32} [data.regionInfo.waterHeight] WaterHeight
    * @param {F32} [data.regionInfo.billableFactor] BillableFactor
-   * @param {LLUUID} [data.regionInfo.cache] CacheID
-   * @param {LLUUID} [data.regionInfo.terrainBase0] TerrainBase0
-   * @param {LLUUID} [data.regionInfo.terrainBase1] TerrainBase1
-   * @param {LLUUID} [data.regionInfo.terrainBase2] TerrainBase2
-   * @param {LLUUID} [data.regionInfo.terrainBase3] TerrainBase3
-   * @param {LLUUID} [data.regionInfo.terrainDetail0] TerrainDetail0
-   * @param {LLUUID} [data.regionInfo.terrainDetail1] TerrainDetail1
-   * @param {LLUUID} [data.regionInfo.terrainDetail2] TerrainDetail2
-   * @param {LLUUID} [data.regionInfo.terrainDetail3] TerrainDetail3
+   * @param {UUID} [data.regionInfo.cache] CacheID
+   * @param {UUID} [data.regionInfo.terrainBase0] TerrainBase0
+   * @param {UUID} [data.regionInfo.terrainBase1] TerrainBase1
+   * @param {UUID} [data.regionInfo.terrainBase2] TerrainBase2
+   * @param {UUID} [data.regionInfo.terrainBase3] TerrainBase3
+   * @param {UUID} [data.regionInfo.terrainDetail0] TerrainDetail0
+   * @param {UUID} [data.regionInfo.terrainDetail1] TerrainDetail1
+   * @param {UUID} [data.regionInfo.terrainDetail2] TerrainDetail2
+   * @param {UUID} [data.regionInfo.terrainDetail3] TerrainDetail3
    * @param {F32} [data.regionInfo.terrainStartHeight00] TerrainStartHeight00
    * @param {F32} [data.regionInfo.terrainStartHeight01] TerrainStartHeight01
    * @param {F32} [data.regionInfo.terrainStartHeight10] TerrainStartHeight10
@@ -90,7 +90,7 @@ class RegionHandshake extends Packet {
    * @param {F32} [data.regionInfo.terrainHeightRange01] TerrainHeightRange01
    * @param {F32} [data.regionInfo.terrainHeightRange10] TerrainHeightRange10
    * @param {F32} [data.regionInfo.terrainHeightRange11] TerrainHeightRange11
-   * @param {LLUUID} [data.regionInfo2.region] RegionID
+   * @param {UUID} [data.regionInfo2.region] RegionID
    * @param {S32} [data.regionInfo3.cPUClass] CPUClassID
    * @param {S32} [data.regionInfo3.cPURatio] CPURatio
    * @param {Variable1} [data.regionInfo3.coloName] ColoName

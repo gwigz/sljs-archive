@@ -65,7 +65,7 @@ class InternalScriptMail extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.dataBlock.from] From
-   * @param {LLUUID} [data.dataBlock.to] To
+   * @param {UUID} [data.dataBlock.to] To
    * @param {Variable1} [data.dataBlock.subject] Subject
    * @param {Variable2} [data.dataBlock.body] Body
    */

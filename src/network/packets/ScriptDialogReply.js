@@ -65,9 +65,9 @@ class ScriptDialogReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.data.object] ObjectID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.data.object] ObjectID
    * @param {S32} [data.data.chatChannel] ChatChannel
    * @param {S32} [data.data.buttonIndex] ButtonIndex
    * @param {Variable1} [data.data.buttonLabel] ButtonLabel

@@ -65,9 +65,9 @@ class AvatarPickerReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.query] QueryID
-   * @param {LLUUID} [data.data.avatar] AvatarID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.query] QueryID
+   * @param {UUID} [data.data.avatar] AvatarID
    * @param {Variable1} [data.data.firstName] FirstName
    * @param {Variable1} [data.data.lastName] LastName
    */

@@ -66,16 +66,16 @@ class ObjectGrab extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.objectData.local] LocalID
-   * @param {LLVector3} [data.objectData.grabOffset] GrabOffset
-   * @param {LLVector3} [data.surfaceInfo.uVCoord] UVCoord
-   * @param {LLVector3} [data.surfaceInfo.sTCoord] STCoord
+   * @param {Vector3} [data.objectData.grabOffset] GrabOffset
+   * @param {Vector3} [data.surfaceInfo.uVCoord] UVCoord
+   * @param {Vector3} [data.surfaceInfo.sTCoord] STCoord
    * @param {S32} [data.surfaceInfo.faceIndex] FaceIndex
-   * @param {LLVector3} [data.surfaceInfo.position] Position
-   * @param {LLVector3} [data.surfaceInfo.normal] Normal
-   * @param {LLVector3} [data.surfaceInfo.binormal] Binormal
+   * @param {Vector3} [data.surfaceInfo.position] Position
+   * @param {Vector3} [data.surfaceInfo.normal] Normal
+   * @param {Vector3} [data.surfaceInfo.binormal] Binormal
    */
   constructor (data = {}) {
     super(data)

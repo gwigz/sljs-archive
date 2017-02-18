@@ -65,9 +65,9 @@ class GrantUserRights extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.rights.agentRelated] AgentRelated
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.rights.agentRelated] AgentRelated
    * @param {S32} [data.rights.relatedRights] RelatedRights
    */
   constructor (data = {}) {

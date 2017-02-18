@@ -54,7 +54,7 @@ class ClassifiedInfoUpdate extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
-    ['data', { quantity: 1, parameters: new Collection([['classified', Types.UUID], ['category', Types.U32], ['name', Types.Variable1], ['desc', Types.Variable2], ['parcel', Types.UUID], ['parentEstate', Types.U32], ['snapshot', Types.UUID], ['posGlobal', Types.Vector3d], ['classifiedFlags', Types.U8], ['priceForListing', Types.S32]]) }]
+    ['data', { quantity: 1, parameters: new Collection([['classified', Types.UUID], ['category', Types.U32], ['name', Types.Variable1], ['desc', Types.Variable2], ['parcel', Types.UUID], ['parentEstate', Types.U32], ['snapshot', Types.UUID], ['posGlobal', Types.Vector3D], ['classifiedFlags', Types.U8], ['priceForListing', Types.S32]]) }]
   ])
 
   /**
@@ -65,16 +65,16 @@ class ClassifiedInfoUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.data.classified] ClassifiedID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.data.classified] ClassifiedID
    * @param {U32} [data.data.category] Category
    * @param {Variable1} [data.data.name] Name
    * @param {Variable2} [data.data.desc] Desc
-   * @param {LLUUID} [data.data.parcel] ParcelID
+   * @param {UUID} [data.data.parcel] ParcelID
    * @param {U32} [data.data.parentEstate] ParentEstate
-   * @param {LLUUID} [data.data.snapshot] SnapshotID
-   * @param {LLVector3d} [data.data.posGlobal] PosGlobal
+   * @param {UUID} [data.data.snapshot] SnapshotID
+   * @param {Vector3D} [data.data.posGlobal] PosGlobal
    * @param {U8} [data.data.classifiedFlags] ClassifiedFlags
    * @param {S32} [data.data.priceForListing] PriceForListing
    */

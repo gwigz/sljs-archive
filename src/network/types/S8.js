@@ -24,7 +24,7 @@ class S8 {
    * @returns {integer}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readInt8(buffer, position)
+    return buffer.readInt8(position)
   }
 }
 

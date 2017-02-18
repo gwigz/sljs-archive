@@ -67,7 +67,7 @@ class SimCrashed extends Packet {
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.data.regionX] RegionX
    * @param {U32} [data.data.regionY] RegionY
-   * @param {LLUUID} [data.users.agent] AgentID
+   * @param {UUID} [data.users.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

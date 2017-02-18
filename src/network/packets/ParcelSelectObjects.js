@@ -66,11 +66,11 @@ class ParcelSelectObjects extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {S32} [data.parcelData.local] LocalID
    * @param {U32} [data.parcelData.returnType] ReturnType
-   * @param {LLUUID} [data.returnIDs.return] ReturnID
+   * @param {UUID} [data.returnIDs.return] ReturnID
    */
   constructor (data = {}) {
     super(data)

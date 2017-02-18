@@ -66,9 +66,9 @@ class GroupAccountDetailsReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.moneyData.request] RequestID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.moneyData.request] RequestID
    * @param {S32} [data.moneyData.intervalDays] IntervalDays
    * @param {S32} [data.moneyData.currentInterval] CurrentInterval
    * @param {Variable1} [data.moneyData.startDate] StartDate

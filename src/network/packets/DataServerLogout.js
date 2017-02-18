@@ -64,10 +64,10 @@ class DataServerLogout extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.userData.agent] AgentID
-   * @param {IPADDR} [data.userData.viewerIP] ViewerIP
+   * @param {UUID} [data.userData.agent] AgentID
+   * @param {IP} [data.userData.viewerIP] ViewerIP
    * @param {BOOL} [data.userData.disconnect] Disconnect
-   * @param {LLUUID} [data.userData.session] SessionID
+   * @param {UUID} [data.userData.session] SessionID
    */
   constructor (data = {}) {
     super(data)

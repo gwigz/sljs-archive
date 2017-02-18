@@ -65,12 +65,12 @@ class CopyInventoryItem extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U32} [data.inventoryData.callback] CallbackID
-   * @param {LLUUID} [data.inventoryData.oldAgent] OldAgentID
-   * @param {LLUUID} [data.inventoryData.oldItem] OldItemID
-   * @param {LLUUID} [data.inventoryData.newFolder] NewFolderID
+   * @param {UUID} [data.inventoryData.oldAgent] OldAgentID
+   * @param {UUID} [data.inventoryData.oldItem] OldItemID
+   * @param {UUID} [data.inventoryData.newFolder] NewFolderID
    * @param {Variable1} [data.inventoryData.newName] NewName
    */
   constructor (data = {}) {

@@ -67,14 +67,14 @@ class RezObjectFromNotecard extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.rezData.fromTask] FromTaskID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.rezData.fromTask] FromTaskID
    * @param {U8} [data.rezData.bypassRaycast] BypassRaycast
-   * @param {LLVector3} [data.rezData.rayStart] RayStart
-   * @param {LLVector3} [data.rezData.rayEnd] RayEnd
-   * @param {LLUUID} [data.rezData.rayTarget] RayTargetID
+   * @param {Vector3} [data.rezData.rayStart] RayStart
+   * @param {Vector3} [data.rezData.rayEnd] RayEnd
+   * @param {UUID} [data.rezData.rayTarget] RayTargetID
    * @param {BOOL} [data.rezData.rayEndIsIntersection] RayEndIsIntersection
    * @param {BOOL} [data.rezData.rezSelected] RezSelected
    * @param {BOOL} [data.rezData.removeItem] RemoveItem
@@ -82,9 +82,9 @@ class RezObjectFromNotecard extends Packet {
    * @param {U32} [data.rezData.groupMask] GroupMask
    * @param {U32} [data.rezData.everyoneMask] EveryoneMask
    * @param {U32} [data.rezData.nextOwnerMask] NextOwnerMask
-   * @param {LLUUID} [data.notecardData.notecardItem] NotecardItemID
-   * @param {LLUUID} [data.notecardData.object] ObjectID
-   * @param {LLUUID} [data.inventoryData.item] ItemID
+   * @param {UUID} [data.notecardData.notecardItem] NotecardItemID
+   * @param {UUID} [data.notecardData.object] ObjectID
+   * @param {UUID} [data.inventoryData.item] ItemID
    */
   constructor (data = {}) {
     super(data)

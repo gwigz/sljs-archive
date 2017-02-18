@@ -64,7 +64,7 @@ class ConfirmAuctionStart extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.auctionData.parcel] ParcelID
+   * @param {UUID} [data.auctionData.parcel] ParcelID
    * @param {U32} [data.auctionData.auction] AuctionID
    */
   constructor (data = {}) {

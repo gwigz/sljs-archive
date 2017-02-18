@@ -64,9 +64,9 @@ class GodKickUser extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.userInfo.god] GodID
-   * @param {LLUUID} [data.userInfo.godSession] GodSessionID
-   * @param {LLUUID} [data.userInfo.agent] AgentID
+   * @param {UUID} [data.userInfo.god] GodID
+   * @param {UUID} [data.userInfo.godSession] GodSessionID
+   * @param {UUID} [data.userInfo.agent] AgentID
    * @param {U32} [data.userInfo.kickFlags] KickFlags
    * @param {Variable2} [data.userInfo.reason] Reason
    */

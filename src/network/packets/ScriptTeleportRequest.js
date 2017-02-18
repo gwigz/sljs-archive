@@ -66,8 +66,8 @@ class ScriptTeleportRequest extends Packet {
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.data.objectName] ObjectName
    * @param {Variable1} [data.data.simName] SimName
-   * @param {LLVector3} [data.data.simPosition] SimPosition
-   * @param {LLVector3} [data.data.lookAt] LookAt
+   * @param {Vector3} [data.data.simPosition] SimPosition
+   * @param {Vector3} [data.data.lookAt] LookAt
    */
   constructor (data = {}) {
     super(data)

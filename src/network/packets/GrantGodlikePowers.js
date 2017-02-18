@@ -65,10 +65,10 @@ class GrantGodlikePowers extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U8} [data.grantData.godLevel] GodLevel
-   * @param {LLUUID} [data.grantData.token] Token
+   * @param {UUID} [data.grantData.token] Token
    */
   constructor (data = {}) {
     super(data)

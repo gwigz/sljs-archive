@@ -65,7 +65,7 @@ class MapBlockReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {U32} [data.agentData.flags] Flags
    * @param {U16} [data.data.x] X
    * @param {U16} [data.data.y] Y
@@ -74,7 +74,7 @@ class MapBlockReply extends Packet {
    * @param {U32} [data.data.regionFlags] RegionFlags
    * @param {U8} [data.data.waterHeight] WaterHeight
    * @param {U8} [data.data.agents] Agents
-   * @param {LLUUID} [data.data.mapImage] MapImageID
+   * @param {UUID} [data.data.mapImage] MapImageID
    */
   constructor (data = {}) {
     super(data)

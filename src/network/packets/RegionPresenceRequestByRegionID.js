@@ -64,7 +64,7 @@ class RegionPresenceRequestByRegionID extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.regionData.region] RegionID
+   * @param {UUID} [data.regionData.region] RegionID
    */
   constructor (data = {}) {
     super(data)

@@ -64,10 +64,10 @@ class TeleportLocal extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.info.agent] AgentID
+   * @param {UUID} [data.info.agent] AgentID
    * @param {U32} [data.info.location] LocationID
-   * @param {LLVector3} [data.info.position] Position
-   * @param {LLVector3} [data.info.lookAt] LookAt
+   * @param {Vector3} [data.info.position] Position
+   * @param {Vector3} [data.info.lookAt] LookAt
    * @param {U32} [data.info.teleportFlags] TeleportFlags
    */
   constructor (data = {}) {

@@ -66,9 +66,9 @@ class DirGroupsReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.queryData.query] QueryID
-   * @param {LLUUID} [data.queryReplies.group] GroupID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.queryReplies.group] GroupID
    * @param {Variable1} [data.queryReplies.groupName] GroupName
    * @param {S32} [data.queryReplies.members] Members
    * @param {F32} [data.queryReplies.searchOrder] SearchOrder

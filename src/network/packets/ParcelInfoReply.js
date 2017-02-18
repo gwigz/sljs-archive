@@ -65,9 +65,9 @@ class ParcelInfoReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.data.parcel] ParcelID
-   * @param {LLUUID} [data.data.owner] OwnerID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.data.parcel] ParcelID
+   * @param {UUID} [data.data.owner] OwnerID
    * @param {Variable1} [data.data.name] Name
    * @param {Variable1} [data.data.desc] Desc
    * @param {S32} [data.data.actualArea] ActualArea
@@ -77,7 +77,7 @@ class ParcelInfoReply extends Packet {
    * @param {F32} [data.data.globalY] GlobalY
    * @param {F32} [data.data.globalZ] GlobalZ
    * @param {Variable1} [data.data.simName] SimName
-   * @param {LLUUID} [data.data.snapshot] SnapshotID
+   * @param {UUID} [data.data.snapshot] SnapshotID
    * @param {F32} [data.data.dwell] Dwell
    * @param {S32} [data.data.salePrice] SalePrice
    * @param {S32} [data.data.auction] AuctionID

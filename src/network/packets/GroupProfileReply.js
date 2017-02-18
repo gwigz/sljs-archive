@@ -65,15 +65,15 @@ class GroupProfileReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.groupData.group] GroupID
    * @param {Variable1} [data.groupData.name] Name
    * @param {Variable2} [data.groupData.charter] Charter
    * @param {BOOL} [data.groupData.showInList] ShowInList
    * @param {Variable1} [data.groupData.memberTitle] MemberTitle
    * @param {U64} [data.groupData.powersMask] PowersMask
-   * @param {LLUUID} [data.groupData.insignia] InsigniaID
-   * @param {LLUUID} [data.groupData.founder] FounderID
+   * @param {UUID} [data.groupData.insignia] InsigniaID
+   * @param {UUID} [data.groupData.founder] FounderID
    * @param {S32} [data.groupData.membershipFee] MembershipFee
    * @param {BOOL} [data.groupData.openEnrollment] OpenEnrollment
    * @param {S32} [data.groupData.money] Money
@@ -81,7 +81,7 @@ class GroupProfileReply extends Packet {
    * @param {S32} [data.groupData.groupRolesCount] GroupRolesCount
    * @param {BOOL} [data.groupData.allowPublish] AllowPublish
    * @param {BOOL} [data.groupData.maturePublish] MaturePublish
-   * @param {LLUUID} [data.groupData.ownerRole] OwnerRole
+   * @param {UUID} [data.groupData.ownerRole] OwnerRole
    */
   constructor (data = {}) {
     super(data)

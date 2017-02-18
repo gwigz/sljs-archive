@@ -65,9 +65,9 @@ class ChatPass extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {S32} [data.chatData.channel] Channel
-   * @param {LLVector3} [data.chatData.position] Position
-   * @param {LLUUID} [data.chatData.id] ID
-   * @param {LLUUID} [data.chatData.owner] OwnerID
+   * @param {Vector3} [data.chatData.position] Position
+   * @param {UUID} [data.chatData.id] ID
+   * @param {UUID} [data.chatData.owner] OwnerID
    * @param {Variable1} [data.chatData.name] Name
    * @param {U8} [data.chatData.sourceType] SourceType
    * @param {U8} [data.chatData.type] Type

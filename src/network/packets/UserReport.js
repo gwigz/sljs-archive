@@ -65,17 +65,17 @@ class UserReport extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U8} [data.reportData.reportType] ReportType
    * @param {U8} [data.reportData.category] Category
-   * @param {LLVector3} [data.reportData.position] Position
+   * @param {Vector3} [data.reportData.position] Position
    * @param {U8} [data.reportData.checkFlags] CheckFlags
-   * @param {LLUUID} [data.reportData.screenshot] ScreenshotID
-   * @param {LLUUID} [data.reportData.object] ObjectID
-   * @param {LLUUID} [data.reportData.abuser] AbuserID
+   * @param {UUID} [data.reportData.screenshot] ScreenshotID
+   * @param {UUID} [data.reportData.object] ObjectID
+   * @param {UUID} [data.reportData.abuser] AbuserID
    * @param {Variable1} [data.reportData.abuseRegionName] AbuseRegionName
-   * @param {LLUUID} [data.reportData.abuseRegion] AbuseRegionID
+   * @param {UUID} [data.reportData.abuseRegion] AbuseRegionID
    * @param {Variable1} [data.reportData.summary] Summary
    * @param {Variable2} [data.reportData.details] Details
    * @param {Variable1} [data.reportData.versionString] VersionString

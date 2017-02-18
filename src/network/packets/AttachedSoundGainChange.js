@@ -64,7 +64,7 @@ class AttachedSoundGainChange extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.object] ObjectID
+   * @param {UUID} [data.dataBlock.object] ObjectID
    * @param {F32} [data.dataBlock.gain] Gain
    */
   constructor (data = {}) {

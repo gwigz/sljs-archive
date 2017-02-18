@@ -64,7 +64,7 @@ class TransferAbort extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.transferInfo.transfer] TransferID
+   * @param {UUID} [data.transferInfo.transfer] TransferID
    * @param {S32} [data.transferInfo.channelType] ChannelType
    */
   constructor (data = {}) {

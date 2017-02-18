@@ -65,8 +65,8 @@ class ChatFromViewer extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {Variable2} [data.chatData.message] Message
    * @param {U8} [data.chatData.type] Type
    * @param {S32} [data.chatData.channel] Channel

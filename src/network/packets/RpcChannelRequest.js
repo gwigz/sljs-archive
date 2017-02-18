@@ -66,8 +66,8 @@ class RpcChannelRequest extends Packet {
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.dataBlock.gridX] GridX
    * @param {U32} [data.dataBlock.gridY] GridY
-   * @param {LLUUID} [data.dataBlock.task] TaskID
-   * @param {LLUUID} [data.dataBlock.item] ItemID
+   * @param {UUID} [data.dataBlock.task] TaskID
+   * @param {UUID} [data.dataBlock.item] ItemID
    */
   constructor (data = {}) {
     super(data)

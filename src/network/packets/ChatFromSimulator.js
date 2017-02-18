@@ -65,12 +65,12 @@ class ChatFromSimulator extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.chatData.fromName] FromName
-   * @param {LLUUID} [data.chatData.source] SourceID
-   * @param {LLUUID} [data.chatData.owner] OwnerID
+   * @param {UUID} [data.chatData.source] SourceID
+   * @param {UUID} [data.chatData.owner] OwnerID
    * @param {U8} [data.chatData.sourceType] SourceType
    * @param {U8} [data.chatData.chatType] ChatType
    * @param {U8} [data.chatData.audible] Audible
-   * @param {LLVector3} [data.chatData.position] Position
+   * @param {Vector3} [data.chatData.position] Position
    * @param {Variable2} [data.chatData.message] Message
    */
   constructor (data = {}) {

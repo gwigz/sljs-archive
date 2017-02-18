@@ -66,7 +66,7 @@ class AvatarAppearance extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.sender.id] ID
+   * @param {UUID} [data.sender.id] ID
    * @param {BOOL} [data.sender.isTrial] IsTrial
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    * @param {U8} [data.visualParam.paramValue] ParamValue

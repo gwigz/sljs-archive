@@ -66,11 +66,11 @@ class InviteGroupRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.groupData.group] GroupID
-   * @param {LLUUID} [data.inviteData.invitee] InviteeID
-   * @param {LLUUID} [data.inviteData.role] RoleID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.inviteData.invitee] InviteeID
+   * @param {UUID} [data.inviteData.role] RoleID
    */
   constructor (data = {}) {
     super(data)

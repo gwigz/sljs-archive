@@ -65,13 +65,13 @@ class MapLayerReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {U32} [data.agentData.flags] Flags
    * @param {U32} [data.layerData.left] Left
    * @param {U32} [data.layerData.right] Right
    * @param {U32} [data.layerData.top] Top
    * @param {U32} [data.layerData.bottom] Bottom
-   * @param {LLUUID} [data.layerData.image] ImageID
+   * @param {UUID} [data.layerData.image] ImageID
    */
   constructor (data = {}) {
     super(data)

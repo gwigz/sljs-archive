@@ -66,7 +66,7 @@ class SystemMessage extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.methodData.method] Method
-   * @param {LLUUID} [data.methodData.invoice] Invoice
+   * @param {UUID} [data.methodData.invoice] Invoice
    * @param {Fixed32} [data.methodData.digest] Digest
    * @param {Variable1} [data.paramList.parameter] Parameter
    */

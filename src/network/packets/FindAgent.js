@@ -65,9 +65,9 @@ class FindAgent extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentBlock.hunter] Hunter
-   * @param {LLUUID} [data.agentBlock.prey] Prey
-   * @param {IPADDR} [data.agentBlock.spaceIP] SpaceIP
+   * @param {UUID} [data.agentBlock.hunter] Hunter
+   * @param {UUID} [data.agentBlock.prey] Prey
+   * @param {IP} [data.agentBlock.spaceIP] SpaceIP
    * @param {F64} [data.locationBlock.globalX] GlobalX
    * @param {F64} [data.locationBlock.globalY] GlobalY
    */

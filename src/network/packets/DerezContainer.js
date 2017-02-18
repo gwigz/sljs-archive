@@ -64,7 +64,7 @@ class DerezContainer extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.object] ObjectID
+   * @param {UUID} [data.data.object] ObjectID
    * @param {BOOL} [data.data.delete] Delete
    */
   constructor (data = {}) {

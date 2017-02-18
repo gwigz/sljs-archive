@@ -67,9 +67,9 @@ class DirEventsReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.queryData.query] QueryID
-   * @param {LLUUID} [data.queryReplies.owner] OwnerID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.queryReplies.owner] OwnerID
    * @param {Variable1} [data.queryReplies.name] Name
    * @param {U32} [data.queryReplies.event] EventID
    * @param {Variable1} [data.queryReplies.date] Date

@@ -65,16 +65,16 @@ class ImprovedInstantMessage extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {BOOL} [data.messageBlock.fromGroup] FromGroup
-   * @param {LLUUID} [data.messageBlock.toAgent] ToAgentID
+   * @param {UUID} [data.messageBlock.toAgent] ToAgentID
    * @param {U32} [data.messageBlock.parentEstate] ParentEstateID
-   * @param {LLUUID} [data.messageBlock.region] RegionID
-   * @param {LLVector3} [data.messageBlock.position] Position
+   * @param {UUID} [data.messageBlock.region] RegionID
+   * @param {Vector3} [data.messageBlock.position] Position
    * @param {U8} [data.messageBlock.offline] Offline
    * @param {U8} [data.messageBlock.dialog] Dialog
-   * @param {LLUUID} [data.messageBlock.id] ID
+   * @param {UUID} [data.messageBlock.id] ID
    * @param {U32} [data.messageBlock.timestamp] Timestamp
    * @param {Variable1} [data.messageBlock.fromAgentName] FromAgentName
    * @param {Variable2} [data.messageBlock.message] Message

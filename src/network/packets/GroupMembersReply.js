@@ -66,11 +66,11 @@ class GroupMembersReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.groupData.group] GroupID
-   * @param {LLUUID} [data.groupData.request] RequestID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.groupData.group] GroupID
+   * @param {UUID} [data.groupData.request] RequestID
    * @param {S32} [data.groupData.memberCount] MemberCount
-   * @param {LLUUID} [data.memberData.agent] AgentID
+   * @param {UUID} [data.memberData.agent] AgentID
    * @param {S32} [data.memberData.contribution] Contribution
    * @param {Variable1} [data.memberData.onlineStatus] OnlineStatus
    * @param {U64} [data.memberData.agentPowers] AgentPowers

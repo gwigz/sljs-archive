@@ -66,14 +66,14 @@ class CrossedRegion extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {IPADDR} [data.regionData.simIP] SimIP
-   * @param {IPPORT} [data.regionData.simPort] SimPort
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {IP} [data.regionData.simIP] SimIP
+   * @param {Port} [data.regionData.simPort] SimPort
    * @param {U64} [data.regionData.regionHandle] RegionHandle
    * @param {Variable2} [data.regionData.seedCapability] SeedCapability
-   * @param {LLVector3} [data.info.position] Position
-   * @param {LLVector3} [data.info.lookAt] LookAt
+   * @param {Vector3} [data.info.position] Position
+   * @param {Vector3} [data.info.lookAt] LookAt
    */
   constructor (data = {}) {
     super(data)

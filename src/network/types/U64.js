@@ -12,12 +12,12 @@ class U64 {
   static toBuffer (integer) {
     const buffer = Buffer.allocUnsafe(this.size)
 
-    if (integer instanceof Long) {
-      buffer.writeInt32LE(integer.low, 0)
-      buffer.writeInt32LE(integer.high, 4)
-    } else {
-      // TODO: ...allow input of less than safe max integer types here.
+    if (!(integer instanceof Long)) {
+      integer = Long.fromNumber(integer, true)
     }
+
+    buffer.writeInt32LE(integer.low, 0)
+    buffer.writeInt32LE(integer.high, 4)
 
     return buffer
   }
@@ -31,9 +31,10 @@ class U64 {
    * @returns {Long}
    */
   static fromBuffer (buffer, position = 0) {
-    return new Long(
+    return Long.fromBits(
       buffer.readInt32LE(position),
-      buffer.readInt32LE(position + 4)
+      buffer.readInt32LE(position + 4),
+      true
     )
   }
 }

@@ -67,23 +67,23 @@ class UpdateAttachment extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U8} [data.attachmentBlock.attachmentPoint] AttachmentPoint
    * @param {BOOL} [data.operationData.addItem] AddItem
    * @param {BOOL} [data.operationData.useExistingAsset] UseExistingAsset
-   * @param {LLUUID} [data.inventoryData.item] ItemID
-   * @param {LLUUID} [data.inventoryData.folder] FolderID
-   * @param {LLUUID} [data.inventoryData.creator] CreatorID
-   * @param {LLUUID} [data.inventoryData.owner] OwnerID
-   * @param {LLUUID} [data.inventoryData.group] GroupID
+   * @param {UUID} [data.inventoryData.item] ItemID
+   * @param {UUID} [data.inventoryData.folder] FolderID
+   * @param {UUID} [data.inventoryData.creator] CreatorID
+   * @param {UUID} [data.inventoryData.owner] OwnerID
+   * @param {UUID} [data.inventoryData.group] GroupID
    * @param {U32} [data.inventoryData.baseMask] BaseMask
    * @param {U32} [data.inventoryData.ownerMask] OwnerMask
    * @param {U32} [data.inventoryData.groupMask] GroupMask
    * @param {U32} [data.inventoryData.everyoneMask] EveryoneMask
    * @param {U32} [data.inventoryData.nextOwnerMask] NextOwnerMask
    * @param {BOOL} [data.inventoryData.groupOwned] GroupOwned
-   * @param {LLUUID} [data.inventoryData.asset] AssetID
+   * @param {UUID} [data.inventoryData.asset] AssetID
    * @param {S8} [data.inventoryData.type] Type
    * @param {S8} [data.inventoryData.invType] InvType
    * @param {U32} [data.inventoryData.flags] Flags

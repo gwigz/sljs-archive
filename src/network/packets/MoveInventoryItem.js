@@ -65,11 +65,11 @@ class MoveInventoryItem extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {BOOL} [data.agentData.stamp] Stamp
-   * @param {LLUUID} [data.inventoryData.item] ItemID
-   * @param {LLUUID} [data.inventoryData.folder] FolderID
+   * @param {UUID} [data.inventoryData.item] ItemID
+   * @param {UUID} [data.inventoryData.folder] FolderID
    * @param {Variable1} [data.inventoryData.newName] NewName
    */
   constructor (data = {}) {

@@ -64,12 +64,12 @@ class SoundTrigger extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.soundData.sound] SoundID
-   * @param {LLUUID} [data.soundData.owner] OwnerID
-   * @param {LLUUID} [data.soundData.object] ObjectID
-   * @param {LLUUID} [data.soundData.parent] ParentID
+   * @param {UUID} [data.soundData.sound] SoundID
+   * @param {UUID} [data.soundData.owner] OwnerID
+   * @param {UUID} [data.soundData.object] ObjectID
+   * @param {UUID} [data.soundData.parent] ParentID
    * @param {U64} [data.soundData.handle] Handle
-   * @param {LLVector3} [data.soundData.position] Position
+   * @param {Vector3} [data.soundData.position] Position
    * @param {F32} [data.soundData.gain] Gain
    */
   constructor (data = {}) {

@@ -53,7 +53,7 @@ class TelehubInfo extends Packet {
    * @type {Collection}
    */
   static format = new Collection([
-    ['telehubBlock', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['objectName', Types.Variable1], ['telehubPos', Types.Vector3], ['telehubRot', Types.LLQuaternion]]) }],
+    ['telehubBlock', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['objectName', Types.Variable1], ['telehubPos', Types.Vector3], ['telehubRot', Types.Quaternion]]) }],
     ['spawnPointBlock', { parameters: new Collection([['spawnPointPos', Types.Vector3]]) }]
   ])
 
@@ -65,11 +65,11 @@ class TelehubInfo extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.telehubBlock.object] ObjectID
+   * @param {UUID} [data.telehubBlock.object] ObjectID
    * @param {Variable1} [data.telehubBlock.objectName] ObjectName
-   * @param {LLVector3} [data.telehubBlock.telehubPos] TelehubPos
-   * @param {LLQuaternion} [data.telehubBlock.telehubRot] TelehubRot
-   * @param {LLVector3} [data.spawnPointBlock.spawnPointPos] SpawnPointPos
+   * @param {Vector3} [data.telehubBlock.telehubPos] TelehubPos
+   * @param {Quaternion} [data.telehubBlock.telehubRot] TelehubRot
+   * @param {Vector3} [data.spawnPointBlock.spawnPointPos] SpawnPointPos
    */
   constructor (data = {}) {
     super(data)

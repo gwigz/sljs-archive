@@ -65,8 +65,8 @@ class UseCircuitCode extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.circuitCode.code] Code
-   * @param {LLUUID} [data.circuitCode.session] SessionID
-   * @param {LLUUID} [data.circuitCode.id] ID
+   * @param {UUID} [data.circuitCode.session] SessionID
+   * @param {UUID} [data.circuitCode.id] ID
    */
   constructor (data = {}) {
     super(data)

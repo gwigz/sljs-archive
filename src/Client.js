@@ -13,11 +13,13 @@ class Client extends EventEmitter {
     super()
 
     /**
-     * The network interface.
+     * Core instance that instantiated this Client.
+     *
+     * @name Client#core
      * @type {Core}
-     * @private
+     * @readonly
      */
-    this.core = new Core(this)
+    Object.defineProperty(this, 'core', { value: new Core(this) })
 
     /**
      * The interface for first circuit creation, via. XMLRPC authentication.
@@ -39,6 +41,7 @@ class Client extends EventEmitter {
     // friends
     // groups
     // inventory
+    //
     // https://gist.github.com/gwigz/0c13179591a3d005eb4765a3bfe9fc3d
   }
 
@@ -85,7 +88,7 @@ class Client extends EventEmitter {
   }
 
   async disconnect () {
-    await this.core.disconnect()
+    return await this.core.disconnect()
   }
 }
 

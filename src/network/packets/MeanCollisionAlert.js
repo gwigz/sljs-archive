@@ -64,8 +64,8 @@ class MeanCollisionAlert extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.meanCollision.victim] Victim
-   * @param {LLUUID} [data.meanCollision.perp] Perp
+   * @param {UUID} [data.meanCollision.victim] Victim
+   * @param {UUID} [data.meanCollision.perp] Perp
    * @param {U32} [data.meanCollision.time] Time
    * @param {F32} [data.meanCollision.mag] Mag
    * @param {U8} [data.meanCollision.type] Type

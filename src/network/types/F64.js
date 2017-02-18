@@ -24,7 +24,7 @@ class F64 {
    * @returns {number}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readDoubleLE(buffer, position)
+    return buffer.readDoubleLE(position)
   }
 }
 

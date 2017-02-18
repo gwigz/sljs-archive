@@ -65,7 +65,7 @@ class RemoveNameValuePair extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.taskData.id] ID
+   * @param {UUID} [data.taskData.id] ID
    * @param {Variable2} [data.nameValueData.nVPair] NVPair
    */
   constructor (data = {}) {

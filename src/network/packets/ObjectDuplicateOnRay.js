@@ -65,16 +65,16 @@ class ObjectDuplicateOnRay extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLVector3} [data.agentData.rayStart] RayStart
-   * @param {LLVector3} [data.agentData.rayEnd] RayEnd
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {Vector3} [data.agentData.rayStart] RayStart
+   * @param {Vector3} [data.agentData.rayEnd] RayEnd
    * @param {BOOL} [data.agentData.bypassRaycast] BypassRaycast
    * @param {BOOL} [data.agentData.rayEndIsIntersection] RayEndIsIntersection
    * @param {BOOL} [data.agentData.copyCenters] CopyCenters
    * @param {BOOL} [data.agentData.copyRotates] CopyRotates
-   * @param {LLUUID} [data.agentData.rayTarget] RayTargetID
+   * @param {UUID} [data.agentData.rayTarget] RayTargetID
    * @param {U32} [data.agentData.duplicateFlags] DuplicateFlags
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */

@@ -66,25 +66,25 @@ class BulkUpdateInventory extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.transaction] TransactionID
-   * @param {LLUUID} [data.folderData.folder] FolderID
-   * @param {LLUUID} [data.folderData.parent] ParentID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.transaction] TransactionID
+   * @param {UUID} [data.folderData.folder] FolderID
+   * @param {UUID} [data.folderData.parent] ParentID
    * @param {S8} [data.folderData.type] Type
    * @param {Variable1} [data.folderData.name] Name
-   * @param {LLUUID} [data.itemData.item] ItemID
+   * @param {UUID} [data.itemData.item] ItemID
    * @param {U32} [data.itemData.callback] CallbackID
-   * @param {LLUUID} [data.itemData.folder] FolderID
-   * @param {LLUUID} [data.itemData.creator] CreatorID
-   * @param {LLUUID} [data.itemData.owner] OwnerID
-   * @param {LLUUID} [data.itemData.group] GroupID
+   * @param {UUID} [data.itemData.folder] FolderID
+   * @param {UUID} [data.itemData.creator] CreatorID
+   * @param {UUID} [data.itemData.owner] OwnerID
+   * @param {UUID} [data.itemData.group] GroupID
    * @param {U32} [data.itemData.baseMask] BaseMask
    * @param {U32} [data.itemData.ownerMask] OwnerMask
    * @param {U32} [data.itemData.groupMask] GroupMask
    * @param {U32} [data.itemData.everyoneMask] EveryoneMask
    * @param {U32} [data.itemData.nextOwnerMask] NextOwnerMask
    * @param {BOOL} [data.itemData.groupOwned] GroupOwned
-   * @param {LLUUID} [data.itemData.asset] AssetID
+   * @param {UUID} [data.itemData.asset] AssetID
    * @param {S8} [data.itemData.type] Type
    * @param {S8} [data.itemData.invType] InvType
    * @param {U32} [data.itemData.flags] Flags

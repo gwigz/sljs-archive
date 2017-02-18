@@ -67,9 +67,9 @@ class SimulatorViewerTimeMessage extends Packet {
    * @param {U64} [data.timeInfo.usecSinceStart] UsecSinceStart
    * @param {U32} [data.timeInfo.secPerDay] SecPerDay
    * @param {U32} [data.timeInfo.secPerYear] SecPerYear
-   * @param {LLVector3} [data.timeInfo.sunDirection] SunDirection
+   * @param {Vector3} [data.timeInfo.sunDirection] SunDirection
    * @param {F32} [data.timeInfo.sunPhase] SunPhase
-   * @param {LLVector3} [data.timeInfo.sunAngVelocity] SunAngVelocity
+   * @param {Vector3} [data.timeInfo.sunAngVelocity] SunAngVelocity
    */
   constructor (data = {}) {
     super(data)

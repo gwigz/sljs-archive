@@ -64,8 +64,8 @@ class AvatarPropertiesRequestBackend extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.avatar] AvatarID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.avatar] AvatarID
    * @param {U8} [data.agentData.godLevel] GodLevel
    * @param {BOOL} [data.agentData.webProfilesDisabled] WebProfilesDisabled
    */

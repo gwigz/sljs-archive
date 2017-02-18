@@ -65,12 +65,12 @@ class GroupRoleMembersReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.agentData.request] RequestID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.agentData.request] RequestID
    * @param {U32} [data.agentData.totalPairs] TotalPairs
-   * @param {LLUUID} [data.memberData.role] RoleID
-   * @param {LLUUID} [data.memberData.member] MemberID
+   * @param {UUID} [data.memberData.role] RoleID
+   * @param {UUID} [data.memberData.member] MemberID
    */
   constructor (data = {}) {
     super(data)

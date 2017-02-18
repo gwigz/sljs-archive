@@ -65,10 +65,10 @@ class AgentRequestSit extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.targetObject.target] TargetID
-   * @param {LLVector3} [data.targetObject.offset] Offset
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.targetObject.target] TargetID
+   * @param {Vector3} [data.targetObject.offset] Offset
    */
   constructor (data = {}) {
     super(data)

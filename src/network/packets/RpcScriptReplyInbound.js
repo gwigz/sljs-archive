@@ -64,9 +64,9 @@ class RpcScriptReplyInbound extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.task] TaskID
-   * @param {LLUUID} [data.dataBlock.item] ItemID
-   * @param {LLUUID} [data.dataBlock.channel] ChannelID
+   * @param {UUID} [data.dataBlock.task] TaskID
+   * @param {UUID} [data.dataBlock.item] ItemID
+   * @param {UUID} [data.dataBlock.channel] ChannelID
    * @param {U32} [data.dataBlock.intValue] IntValue
    * @param {Variable2} [data.dataBlock.stringValue] StringValue
    */

@@ -69,7 +69,7 @@ class RequestXfer extends Packet {
    * @param {U8} [data.xfer.filePath] FilePath
    * @param {BOOL} [data.xfer.deleteOnCompletion] DeleteOnCompletion
    * @param {BOOL} [data.xfer.useBigPackets] UseBigPackets
-   * @param {LLUUID} [data.xfer.vFile] VFileID
+   * @param {UUID} [data.xfer.vFile] VFileID
    * @param {S16} [data.xfer.vFileType] VFileType
    */
   constructor (data = {}) {

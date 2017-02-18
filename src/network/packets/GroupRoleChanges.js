@@ -65,11 +65,11 @@ class GroupRoleChanges extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.group] GroupID
-   * @param {LLUUID} [data.roleChange.role] RoleID
-   * @param {LLUUID} [data.roleChange.member] MemberID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.group] GroupID
+   * @param {UUID} [data.roleChange.role] RoleID
+   * @param {UUID} [data.roleChange.member] MemberID
    * @param {U32} [data.roleChange.change] Change
    */
   constructor (data = {}) {

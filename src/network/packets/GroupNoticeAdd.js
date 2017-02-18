@@ -65,9 +65,9 @@ class GroupNoticeAdd extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.messageBlock.toGroup] ToGroupID
-   * @param {LLUUID} [data.messageBlock.id] ID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.messageBlock.toGroup] ToGroupID
+   * @param {UUID} [data.messageBlock.id] ID
    * @param {U8} [data.messageBlock.dialog] Dialog
    * @param {Variable1} [data.messageBlock.fromAgentName] FromAgentName
    * @param {Variable2} [data.messageBlock.message] Message

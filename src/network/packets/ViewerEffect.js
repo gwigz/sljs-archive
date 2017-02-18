@@ -65,10 +65,10 @@ class ViewerEffect extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.effect.id] ID
-   * @param {LLUUID} [data.effect.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.effect.id] ID
+   * @param {UUID} [data.effect.agent] AgentID
    * @param {U8} [data.effect.type] Type
    * @param {F32} [data.effect.duration] Duration
    * @param {Fixed4} [data.effect.color] Color

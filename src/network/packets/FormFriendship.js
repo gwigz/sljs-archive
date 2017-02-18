@@ -64,8 +64,8 @@ class FormFriendship extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentBlock.source] SourceID
-   * @param {LLUUID} [data.agentBlock.dest] DestID
+   * @param {UUID} [data.agentBlock.source] SourceID
+   * @param {UUID} [data.agentBlock.dest] DestID
    */
   constructor (data = {}) {
     super(data)

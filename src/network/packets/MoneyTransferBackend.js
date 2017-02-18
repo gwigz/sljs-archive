@@ -64,16 +64,16 @@ class MoneyTransferBackend extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.moneyData.transaction] TransactionID
+   * @param {UUID} [data.moneyData.transaction] TransactionID
    * @param {U32} [data.moneyData.transactionTime] TransactionTime
-   * @param {LLUUID} [data.moneyData.source] SourceID
-   * @param {LLUUID} [data.moneyData.dest] DestID
+   * @param {UUID} [data.moneyData.source] SourceID
+   * @param {UUID} [data.moneyData.dest] DestID
    * @param {U8} [data.moneyData.flags] Flags
    * @param {S32} [data.moneyData.amount] Amount
    * @param {U8} [data.moneyData.aggregatePermNextOwner] AggregatePermNextOwner
    * @param {U8} [data.moneyData.aggregatePermInventory] AggregatePermInventory
    * @param {S32} [data.moneyData.transactionType] TransactionType
-   * @param {LLUUID} [data.moneyData.region] RegionID
+   * @param {UUID} [data.moneyData.region] RegionID
    * @param {U32} [data.moneyData.gridX] GridX
    * @param {U32} [data.moneyData.gridY] GridY
    * @param {Variable1} [data.moneyData.description] Description

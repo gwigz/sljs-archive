@@ -64,8 +64,8 @@ class TransferInventoryAck extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.infoBlock.transaction] TransactionID
-   * @param {LLUUID} [data.infoBlock.inventory] InventoryID
+   * @param {UUID} [data.infoBlock.transaction] TransactionID
+   * @param {UUID} [data.infoBlock.inventory] InventoryID
    */
   constructor (data = {}) {
     super(data)

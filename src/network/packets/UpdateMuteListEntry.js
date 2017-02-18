@@ -65,9 +65,9 @@ class UpdateMuteListEntry extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.muteData.mute] MuteID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.muteData.mute] MuteID
    * @param {Variable1} [data.muteData.muteName] MuteName
    * @param {S32} [data.muteData.muteType] MuteType
    * @param {U32} [data.muteData.muteFlags] MuteFlags

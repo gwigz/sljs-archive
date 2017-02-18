@@ -66,7 +66,7 @@ class ParcelMediaUpdate extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.dataBlock.mediaURL] MediaURL
-   * @param {LLUUID} [data.dataBlock.media] MediaID
+   * @param {UUID} [data.dataBlock.media] MediaID
    * @param {U8} [data.dataBlock.mediaAutoScale] MediaAutoScale
    * @param {Variable1} [data.dataBlockExtended.mediaType] MediaType
    * @param {Variable1} [data.dataBlockExtended.mediaDesc] MediaDesc

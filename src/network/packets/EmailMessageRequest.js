@@ -64,7 +64,7 @@ class EmailMessageRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.dataBlock.object] ObjectID
+   * @param {UUID} [data.dataBlock.object] ObjectID
    * @param {Variable1} [data.dataBlock.fromAddress] FromAddress
    * @param {Variable1} [data.dataBlock.subject] Subject
    */

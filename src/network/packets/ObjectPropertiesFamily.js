@@ -65,9 +65,9 @@ class ObjectPropertiesFamily extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.objectData.requestFlags] RequestFlags
-   * @param {LLUUID} [data.objectData.object] ObjectID
-   * @param {LLUUID} [data.objectData.owner] OwnerID
-   * @param {LLUUID} [data.objectData.group] GroupID
+   * @param {UUID} [data.objectData.object] ObjectID
+   * @param {UUID} [data.objectData.owner] OwnerID
+   * @param {UUID} [data.objectData.group] GroupID
    * @param {U32} [data.objectData.baseMask] BaseMask
    * @param {U32} [data.objectData.ownerMask] OwnerMask
    * @param {U32} [data.objectData.groupMask] GroupMask
@@ -77,7 +77,7 @@ class ObjectPropertiesFamily extends Packet {
    * @param {U8} [data.objectData.saleType] SaleType
    * @param {S32} [data.objectData.salePrice] SalePrice
    * @param {U32} [data.objectData.category] Category
-   * @param {LLUUID} [data.objectData.lastOwner] LastOwnerID
+   * @param {UUID} [data.objectData.lastOwner] LastOwnerID
    * @param {Variable1} [data.objectData.name] Name
    * @param {Variable1} [data.objectData.description] Description
    */

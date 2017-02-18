@@ -27,9 +27,9 @@ class Vector3 {
    */
   static fromBuffer (buffer, position = 0) {
     return [
-      buffer.readFloatLE(0),
-      buffer.readFloatLE(4, position + 4),
-      buffer.readFloatLE(8, position + 8)
+      buffer.readFloatLE(position),
+      buffer.readFloatLE(position + 4),
+      buffer.readFloatLE(position + 8)
     ]
   }
 }

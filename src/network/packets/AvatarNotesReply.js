@@ -65,8 +65,8 @@ class AvatarNotesReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.data.target] TargetID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.data.target] TargetID
    * @param {Variable2} [data.data.notes] Notes
    */
   constructor (data = {}) {

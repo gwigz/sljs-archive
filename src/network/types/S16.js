@@ -24,7 +24,7 @@ class S16 {
    * @returns {integer}
    */
   static fromBuffer (buffer, position = 0) {
-    return buffer.readInt16LE(buffer, position)
+    return buffer.readInt16LE(position)
   }
 }
 

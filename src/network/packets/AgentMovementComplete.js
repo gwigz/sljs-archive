@@ -66,10 +66,10 @@ class AgentMovementComplete extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLVector3} [data.data.position] Position
-   * @param {LLVector3} [data.data.lookAt] LookAt
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {Vector3} [data.data.position] Position
+   * @param {Vector3} [data.data.lookAt] LookAt
    * @param {U64} [data.data.regionHandle] RegionHandle
    * @param {U32} [data.data.timestamp] Timestamp
    * @param {Variable2} [data.simData.channelVersion] ChannelVersion

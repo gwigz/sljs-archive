@@ -66,11 +66,11 @@ class StartLure extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
    * @param {U8} [data.info.lureType] LureType
    * @param {Variable1} [data.info.message] Message
-   * @param {LLUUID} [data.targetData.target] TargetID
+   * @param {UUID} [data.targetData.target] TargetID
    */
   constructor (data = {}) {
     super(data)

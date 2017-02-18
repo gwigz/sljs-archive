@@ -65,8 +65,8 @@ class MergeParcel extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.masterParcelData.master] MasterID
-   * @param {LLUUID} [data.slaveParcelData.slave] SlaveID
+   * @param {UUID} [data.masterParcelData.master] MasterID
+   * @param {UUID} [data.slaveParcelData.slave] SlaveID
    */
   constructor (data = {}) {
     super(data)

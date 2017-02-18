@@ -64,7 +64,7 @@ class TransferPacket extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.transferData.transfer] TransferID
+   * @param {UUID} [data.transferData.transfer] TransferID
    * @param {S32} [data.transferData.channelType] ChannelType
    * @param {S32} [data.transferData.packet] Packet
    * @param {S32} [data.transferData.status] Status

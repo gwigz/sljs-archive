@@ -66,11 +66,11 @@ class CreateNewOutfitAttachments extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.headerData.newFolder] NewFolderID
-   * @param {LLUUID} [data.objectData.oldItem] OldItemID
-   * @param {LLUUID} [data.objectData.oldFolder] OldFolderID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.headerData.newFolder] NewFolderID
+   * @param {UUID} [data.objectData.oldItem] OldItemID
+   * @param {UUID} [data.objectData.oldFolder] OldFolderID
    */
   constructor (data = {}) {
     super(data)

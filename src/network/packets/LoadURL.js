@@ -65,8 +65,8 @@ class LoadURL extends Packet {
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.data.objectName] ObjectName
-   * @param {LLUUID} [data.data.object] ObjectID
-   * @param {LLUUID} [data.data.owner] OwnerID
+   * @param {UUID} [data.data.object] ObjectID
+   * @param {UUID} [data.data.owner] OwnerID
    * @param {BOOL} [data.data.ownerIsGroup] OwnerIsGroup
    * @param {Variable1} [data.data.message] Message
    * @param {Variable1} [data.data.uRL] URL

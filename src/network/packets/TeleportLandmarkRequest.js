@@ -64,9 +64,9 @@ class TeleportLandmarkRequest extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.info.agent] AgentID
-   * @param {LLUUID} [data.info.session] SessionID
-   * @param {LLUUID} [data.info.landmark] LandmarkID
+   * @param {UUID} [data.info.agent] AgentID
+   * @param {UUID} [data.info.session] SessionID
+   * @param {UUID} [data.info.landmark] LandmarkID
    */
   constructor (data = {}) {
     super(data)

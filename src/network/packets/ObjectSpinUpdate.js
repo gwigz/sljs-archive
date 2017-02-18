@@ -54,7 +54,7 @@ class ObjectSpinUpdate extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
-    ['objectData', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['rotation', Types.LLQuaternion]]) }]
+    ['objectData', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['rotation', Types.Quaternion]]) }]
   ])
 
   /**
@@ -65,10 +65,10 @@ class ObjectSpinUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.objectData.object] ObjectID
-   * @param {LLQuaternion} [data.objectData.rotation] Rotation
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.objectData.object] ObjectID
+   * @param {Quaternion} [data.objectData.rotation] Rotation
    */
   constructor (data = {}) {
     super(data)

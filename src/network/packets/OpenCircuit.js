@@ -64,8 +64,8 @@ class OpenCircuit extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {IPADDR} [data.circuitInfo.ip] IP
-   * @param {IPPORT} [data.circuitInfo.port] Port
+   * @param {IP} [data.circuitInfo.ip] IP
+   * @param {Port} [data.circuitInfo.port] Port
    */
   constructor (data = {}) {
     super(data)

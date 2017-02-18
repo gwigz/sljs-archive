@@ -64,7 +64,7 @@ class CameraConstraint extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLVector4} [data.cameraCollidePlane.plane] Plane
+   * @param {Vector4} [data.cameraCollidePlane.plane] Plane
    */
   constructor (data = {}) {
     super(data)

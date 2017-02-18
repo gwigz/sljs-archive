@@ -53,7 +53,7 @@ class SendPostcard extends Packet {
    * @type {Collection}
    */
   static format = new Collection([
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['asset', Types.UUID], ['posGlobal', Types.Vector3d], ['to', Types.Variable1], ['from', Types.Variable1], ['name', Types.Variable1], ['subject', Types.Variable1], ['msg', Types.Variable2], ['allowPublish', Boolean], ['maturePublish', Boolean]]) }]
+    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['asset', Types.UUID], ['posGlobal', Types.Vector3D], ['to', Types.Variable1], ['from', Types.Variable1], ['name', Types.Variable1], ['subject', Types.Variable1], ['msg', Types.Variable2], ['allowPublish', Boolean], ['maturePublish', Boolean]]) }]
   ])
 
   /**
@@ -64,10 +64,10 @@ class SendPostcard extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentData.asset] AssetID
-   * @param {LLVector3d} [data.agentData.posGlobal] PosGlobal
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentData.asset] AssetID
+   * @param {Vector3D} [data.agentData.posGlobal] PosGlobal
    * @param {Variable1} [data.agentData.to] To
    * @param {Variable1} [data.agentData.from] From
    * @param {Variable1} [data.agentData.name] Name

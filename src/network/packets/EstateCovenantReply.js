@@ -64,10 +64,10 @@ class EstateCovenantReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.data.covenant] CovenantID
+   * @param {UUID} [data.data.covenant] CovenantID
    * @param {U32} [data.data.covenantTimestamp] CovenantTimestamp
    * @param {Variable1} [data.data.estateName] EstateName
-   * @param {LLUUID} [data.data.estateOwner] EstateOwnerID
+   * @param {UUID} [data.data.estateOwner] EstateOwnerID
    */
   constructor (data = {}) {
     super(data)

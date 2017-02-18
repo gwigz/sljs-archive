@@ -65,10 +65,10 @@ class OfferCallingCard extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
-   * @param {LLUUID} [data.agentData.session] SessionID
-   * @param {LLUUID} [data.agentBlock.dest] DestID
-   * @param {LLUUID} [data.agentBlock.transaction] TransactionID
+   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.session] SessionID
+   * @param {UUID} [data.agentBlock.dest] DestID
+   * @param {UUID} [data.agentBlock.transaction] TransactionID
    */
   constructor (data = {}) {
     super(data)

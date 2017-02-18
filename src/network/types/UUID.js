@@ -34,12 +34,10 @@ class UUID {
     let output = ''
 
     for (let c = 0; c < 16; c++) {
-      output += this.pad(buffer.readUInt8(buffer, position).toString(16), 2)
+      output += this.pad(buffer.readUInt8(position++).toString(16), 2)
 
       if (c === 3 || c === 5 || c === 7 || c === 9) {
         output += '-'
-      } else {
-        position += 1
       }
     }
 
@@ -54,7 +52,7 @@ class UUID {
    * @returns {string}
    */
   static pad (value, width) {
-    width -= value.toString().length
+    width -= value.length
 
     return width > 0
       ? new Array(width + (/\./.test(value) ? 2 : 1)).join('0') + value

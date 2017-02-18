@@ -64,11 +64,11 @@ class AgentDataUpdate extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.agentData.agent] AgentID
+   * @param {UUID} [data.agentData.agent] AgentID
    * @param {Variable1} [data.agentData.firstName] FirstName
    * @param {Variable1} [data.agentData.lastName] LastName
    * @param {Variable1} [data.agentData.groupTitle] GroupTitle
-   * @param {LLUUID} [data.agentData.activeGroup] ActiveGroupID
+   * @param {UUID} [data.agentData.activeGroup] ActiveGroupID
    * @param {U64} [data.agentData.groupPowers] GroupPowers
    * @param {Variable1} [data.agentData.groupName] GroupName
    */

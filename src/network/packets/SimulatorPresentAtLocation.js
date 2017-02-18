@@ -67,20 +67,20 @@ class SimulatorPresentAtLocation extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {IPPORT} [data.simulatorPublicHostBlock.port] Port
-   * @param {IPADDR} [data.simulatorPublicHostBlock.simulatorIP] SimulatorIP
+   * @param {Port} [data.simulatorPublicHostBlock.port] Port
+   * @param {IP} [data.simulatorPublicHostBlock.simulatorIP] SimulatorIP
    * @param {U32} [data.simulatorPublicHostBlock.gridX] GridX
    * @param {U32} [data.simulatorPublicHostBlock.gridY] GridY
-   * @param {IPADDR} [data.neighborBlock.ip] IP
-   * @param {IPPORT} [data.neighborBlock.port] Port
+   * @param {IP} [data.neighborBlock.ip] IP
+   * @param {Port} [data.neighborBlock.port] Port
    * @param {Variable1} [data.simulatorBlock.simName] SimName
    * @param {U8} [data.simulatorBlock.simAccess] SimAccess
    * @param {U32} [data.simulatorBlock.regionFlags] RegionFlags
-   * @param {LLUUID} [data.simulatorBlock.region] RegionID
+   * @param {UUID} [data.simulatorBlock.region] RegionID
    * @param {U32} [data.simulatorBlock.estate] EstateID
    * @param {U32} [data.simulatorBlock.parentEstate] ParentEstateID
    * @param {BOOL} [data.telehubBlock.hasTelehub] HasTelehub
-   * @param {LLVector3} [data.telehubBlock.telehubPos] TelehubPos
+   * @param {Vector3} [data.telehubBlock.telehubPos] TelehubPos
    */
   constructor (data = {}) {
     super(data)

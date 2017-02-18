@@ -66,19 +66,19 @@ class RoutedMoneyBalanceReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {IPADDR} [data.targetBlock.targetIP] TargetIP
-   * @param {IPPORT} [data.targetBlock.targetPort] TargetPort
-   * @param {LLUUID} [data.moneyData.agent] AgentID
-   * @param {LLUUID} [data.moneyData.transaction] TransactionID
+   * @param {IP} [data.targetBlock.targetIP] TargetIP
+   * @param {Port} [data.targetBlock.targetPort] TargetPort
+   * @param {UUID} [data.moneyData.agent] AgentID
+   * @param {UUID} [data.moneyData.transaction] TransactionID
    * @param {BOOL} [data.moneyData.transactionSuccess] TransactionSuccess
    * @param {S32} [data.moneyData.moneyBalance] MoneyBalance
    * @param {S32} [data.moneyData.squareMetersCredit] SquareMetersCredit
    * @param {S32} [data.moneyData.squareMetersCommitted] SquareMetersCommitted
    * @param {Variable1} [data.moneyData.description] Description
    * @param {S32} [data.transactionInfo.transactionType] TransactionType
-   * @param {LLUUID} [data.transactionInfo.source] SourceID
+   * @param {UUID} [data.transactionInfo.source] SourceID
    * @param {BOOL} [data.transactionInfo.isSourceGroup] IsSourceGroup
-   * @param {LLUUID} [data.transactionInfo.dest] DestID
+   * @param {UUID} [data.transactionInfo.dest] DestID
    * @param {BOOL} [data.transactionInfo.isDestGroup] IsDestGroup
    * @param {S32} [data.transactionInfo.amount] Amount
    * @param {Variable1} [data.transactionInfo.itemDescription] ItemDescription

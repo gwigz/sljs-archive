@@ -65,10 +65,10 @@ class EventLocationReply extends Packet {
    * requirements itself.
    *
    * @param {(Object|Buffer)} [data] Packet block data to be seralized, may be optional
-   * @param {LLUUID} [data.queryData.query] QueryID
+   * @param {UUID} [data.queryData.query] QueryID
    * @param {BOOL} [data.eventData.success] Success
-   * @param {LLUUID} [data.eventData.region] RegionID
-   * @param {LLVector3} [data.eventData.regionPos] RegionPos
+   * @param {UUID} [data.eventData.region] RegionID
+   * @param {Vector3} [data.eventData.regionPos] RegionPos
    */
   constructor (data = {}) {
     super(data)
