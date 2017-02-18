@@ -11,14 +11,14 @@ import {
 class AgentMovementComplete extends Delegate {
   async handle (packet) {
     const data = packet.data.data[0]
-    const sim = packet.data.simData[0]
     const agent = this.circuit.agent
-    const simulator = this.circuit.simulator
-
-    // simulator.channel = sim.channelVersion
+    // const sim = packet.data.simData[0]
+    // const simulator = this.circuit.simulator
 
     agent.position = data.position
     agent.rotation = data.lookAt
+
+    // simulator.channel = sim.channelVersion
 
     // TODO: Setup an actual objects for region handle (so we can have sugar for
     // global to local transformations).

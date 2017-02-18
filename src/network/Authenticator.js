@@ -71,13 +71,7 @@ class Authenticator {
       options: this.options
     }
 
-    const response = await this.call('login_to_simulator', [parameters])
-
-    if (typeof response !== 'object' || !response.login) {
-      throw new Error(response.reason || Constants.Errors.LOGIN_FAILED)
-    }
-
-    return response
+    return await this.call('login_to_simulator', [parameters])
   }
 
   call (method, parameters) {
