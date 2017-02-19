@@ -1,12 +1,12 @@
-/**
- * Represents an agent.
- */
+import { ImprovedInstantMessage } from '../network/packets'
+import { Vector3, UUID } from '../network/types'
+
 class Agent {
   constructor (client, data) {
     /**
-     * The Client that instantiated this Client object.
+     * The Client that instantiated this Agent object.
      *
-     * @name Client#client
+     * @name Agent#client
      * @type {Client}
      * @readonly
      */
@@ -20,25 +20,33 @@ class Agent {
      * UUID for this Agent.
      * @type {string}
      */
-    this.id = data.id
+    this.id = data.id || UUID.null
 
     /**
-     * UUID for the current session key for this Agent.
-     * @type {string}
+     * True if agent is self, as in the Client connected Agent.
+     * @type {boolean}
      */
-    this.session = data.session
+    this.self = 'session' in data
+
+    if (this.self) {
+      /**
+       * The Client connected Agent session ID, only exists for self.
+       * @type {?UUID}
+       */
+      this.session = data.session
+    }
 
     /**
      * Current position of Agent.
-     * @type {array}
+     * @type {Number[]}
      */
     this.position = data.position || undefined
 
     /**
      * Current rotation of Agent.
-     * @type {array}
+     * @type {Number[]}
      */
-    this.rotation = data.rotation || [0.0, 0.0, 0.0]
+    this.rotation = data.rotation || Vector3.zero
   }
 
   get flags () {
@@ -83,6 +91,43 @@ class Agent {
     // - AGENT_STATE_EDITING = 0x10
 
     return 0
+  }
+
+  get distance () {
+    if (this.self) {
+      return 0.0
+    }
+
+    return Vector3.distance(this.client.agent.position, this.position)
+  }
+
+  message (message) {
+    return this.client.send(new ImprovedInstantMessage({
+      id: this.client.agent.session,
+      dialog: 0,
+      timestamp: 0,
+      fromGroup: false,
+      fromAgentName: this.client.agent.name,
+      message: `${message}\x00`,
+      toAgent: this.id,
+      offline: 0,
+      parentEstate: 0,
+      region: UUID.zero,
+      position: Vector3.zero,
+      binaryBucket: null
+    }))
+  }
+
+  whisper (...args) {
+    return this.client.nearby.whisper(...args)
+  }
+
+  say (...args) {
+    return this.client.nearby.say(...args)
+  }
+
+  shout (...args) {
+    return this.client.nearby.shout(...args)
   }
 }
 

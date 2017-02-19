@@ -1,4 +1,4 @@
-// import * as Delegates from '../delegates'
+import EventEmitter from 'events'
 
 import Circuit from './Circuit'
 import Socket from './Socket'
@@ -10,11 +10,13 @@ import { Collection, Constants } from '../utilities'
  * The core handles connecting to a Simulator, processing and sending
  * messages. It's basically handles 100% of the the communication.
  */
-class Core {
+class Core extends EventEmitter {
   /**
    * @param {Client} client For emiting processed messages back to
    */
   constructor (client) {
+    super()
+
     /**
      * Client instance that instantiated this Core.
      *
@@ -37,7 +39,13 @@ class Core {
     this.circuits = new Collection
 
     /**
-     * The status of this class, a type of Constants.Status, IDLE default
+     * Currently active circuit.
+     * @type {?Circuit}
+     */
+    this.circuit = null
+
+    /**
+     * The status of this class, a type of Constants.Status, IDLE default.
      * @type {number}
      */
     this.status = Constants.Status.IDLE
@@ -54,11 +62,12 @@ class Core {
   /**
    * Sends message to Circuit over UDP socket.
    *
-   * @param {Circuit} circuit Circuit to send buffer too
-   * @param {Buffer} buffer Buffer to send
+   * @param {Circuit} circuit Circuit to send packets too
+   * @param {...Packet} packets Packet to send
+   * @returns {Promise}
    */
-  send (circuit, buffer) {
-    this.socket.send(circuit, buffer)
+  send (circuit, ...packets) {
+    return this.socket.send(circuit, ...packets)
   }
 
   /**
@@ -71,28 +80,36 @@ class Core {
     const circuit = new Circuit(this, ...args)
 
     this.status = Constants.Status.CONNECTING
+
+    if (this.circuit === null) {
+      this.circuit = circuit
+    }
+
     this.circuits.set(`${circuit.address}:${circuit.port}`, circuit)
 
     return circuit.handshake()
+  }
+
+  ready () {
+    console.log(ready)
+
+    if (this.status !== Constants.Status.CONNECTING) {
+      return
+    }
+
+    this.status = Constants.Status.READY
+    this.client.emit(Constants.Events.READY)
   }
 
   /**
    * Disconnects the client from any connected circuits.
    */
   disconnect () {
-    if (this.status > Constants.Status.CONNECTING) {
+    if (this.status >= Constants.Status.CONNECTING) {
       return
     }
 
-    // TODO: Add a method to fetch current circuit, handle removing sockets
-    // once logout reply packet is recieved when 'on/one' methods are added.
-    for (const circuit of this.circuits.values()) {
-      if (circuit.dead) {
-        continue
-      }
-
-      circuit.send(new LogoutRequest)
-    }
+    this.circuit.send(new LogoutRequest)
   }
 }
 

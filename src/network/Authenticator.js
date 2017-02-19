@@ -6,43 +6,15 @@ import { Constants } from '../utilities'
 
 class Authenticator {
   constructor (channel, version) {
-    this.options = [
-      'inventory-root',
-      'inventory-skeleton',
-      // 'inventory-lib-root',
-      // 'inventory-lib-owner',
-      // 'inventory-skel-lib',
-      // 'initial-outfit',
-      // 'gestures',
-      // 'event_categories',
-      // 'event_notifications',
-      // 'classified_categories',
-      'buddy-list',
-      // 'ui-config',
-      // 'login-flags',
-      // 'global-textures',
-      'adult_compliant'
-    ]
-
     this.channel = channel
     this.verison = version
     this.agent = `${channel} ${version}`
 
     // TODO: Figure out better method of doing this, for callers file?
     this.digest = crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
-
-    /**
-     * The XMLRPC connection to the gateway
-     * @type {xmlrpc}
-     */
-    this.xmlrpc = xmlrpc.createSecureClient({
-      url: Constants.Endpoints.LOGIN_URL,
-      headers: { 'User-Agent': this.agent },
-      rejectUnauthorized: false
-    })
   }
 
-  async login (username, password, start = 'last') {
+  async login (username, password, start = 'uri:Lehon&130&115&48') {
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',
@@ -54,6 +26,13 @@ class Authenticator {
       network: os.networkInterfaces().en0 || [{ mac: '00000000-0000-0000-0000-000000000000' }],
       platform: platforms[os.platform()] || 'Lin'
     }
+
+    const options = [
+      'inventory-root',
+      'inventory-skeleton',
+      'buddy-list',
+      'adult_compliant'
+    ]
 
     const parameters = {
       first: username.split(' ')[0],
@@ -68,15 +47,17 @@ class Authenticator {
       agree_to_tos: true,
       read_critical: true,
       viewer_digest: this.digest,
-      options: this.options
+      options: options
     }
 
-    return await this.call('login_to_simulator', [parameters])
-  }
+    const client = xmlrpc.createSecureClient({
+      url: Constants.Endpoints.LOGIN_URL,
+      headers: { 'User-Agent': this.agent },
+      rejectUnauthorized: false
+    })
 
-  call (method, parameters) {
     return new Promise((resolve) => {
-      this.xmlrpc.methodCall(method, parameters, (error, response) => {
+      client.methodCall('login_to_simulator', [parameters], (error, response) => {
         resolve(error || response)
       })
     })

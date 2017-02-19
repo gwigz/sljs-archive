@@ -1,16 +1,13 @@
 class String {
-  static null = Buffer.from(['\x00'])
-
   /**
-   * Converts a string to a buffer prefixed by length, and suffixed with a null
-   * terminater.
+   * Converts a string to a buffer prefixed by length.
    *
    * @param {integer} size Prefix size
    * @param {string} value Limited length defined by
    * @returns {buffer}
    */
   static toPrefixedBuffer (size, value) {
-    const max = 255 * (size * 8)
+    const max = (256 - size) * (size * 8)
     const buffer = Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
     const prefix = Buffer.allocUnsafe(size)
@@ -25,11 +22,7 @@ class String {
         break
     }
 
-    return Buffer.concat([
-      prefix,
-      buffer.slice(0, length),
-      this.null
-    ])
+    return Buffer.concat([prefix, buffer.slice(0, length)])
   }
 
   /**

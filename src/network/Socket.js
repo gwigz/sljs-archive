@@ -1,5 +1,7 @@
 import dgram from 'dgram'
 
+import { Constants } from '../utilities'
+
 class Socket {
   constructor (core, type = 'udp4') {
     /**
@@ -11,24 +13,27 @@ class Socket {
      */
     Object.defineProperty(this, 'core', { value: core })
 
-    this.socket = dgram.createSocket({ type: type })
-
-    this.socket.on('message', this.receive.bind(this))
-    this.socket.on('error', this.error.bind(this))
+    this.socket = dgram.createSocket(type, this.receive.bind(this))
   }
 
   send (circuit, buffer) {
-    if (buffer instanceof Buffer) {
-      this.socket.send(buffer, circuit.port, circuit.address)
+    if (!(buffer instanceof Buffer)) {
+      return null
     }
+
+    return new Promise((resolve) => {
+      this.socket.send(buffer, circuit.port, circuit.address, (error) => {
+        if (error) {
+          this.core.client.emit(Constants.Events.ERROR, error)
+        }
+
+        resolve()
+      })
+    })
   }
 
   async receive (buffer, info) {
     this.core.circuits.get(`${info.address}:${info.port}`).receive(buffer)
-  }
-
-  error (error) {
-    throw error
   }
 }
 

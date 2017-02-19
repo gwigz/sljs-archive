@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
 
 import { Authenticator, Core } from './network'
-import { Agent } from './structures'
+import { Agent, Nearby } from './structures'
 import { Constants } from './utilities'
 
 /**
@@ -30,12 +30,27 @@ class Client extends EventEmitter {
     this.authenticator = new Authenticator('sljs', '0.0.0')
 
     /**
-     * The Agent representing the logged in Client.
      * @type {?Agent}
      */
-    this.agent = null
+    /**
+     * The Agent representing the logged in Client, becomes fully functional
+     * after ready event is emitted.
+     *
+     * @name Client#nearby
+     * @type {Nearby}
+     * @readonly
+     */
+    this.agent = new Agent(this, {})
 
-    // nearby
+    /**
+     * The nearby helper, becomes fully functional after ready event is emitted.
+     *
+     * @name Client#nearby
+     * @type {Nearby}
+     * @readonly
+     */
+    Object.defineProperty(this, 'nearby', { value: new Nearby(this) })
+
     // parcel
     // region
     // friends
@@ -89,6 +104,35 @@ class Client extends EventEmitter {
     }
 
     throw new Error(response.message || Constants.Errors.LOGIN_FAILED)
+  }
+
+  /**
+   * Sends Packet (or multiple) to currently active Circuit.
+   *
+   * @param {...Packet} packets Packets to send
+   * @returns {?Promise}
+   */
+  send (...packets) {
+    if (this.circuit === undefined) {
+      throw new Error(Constants.Errors.NOT_CONNECTED)
+    }
+
+    return this.core.send(this.circuit, ...packets)
+  }
+
+  /**
+   * Sends instant message to Agent.
+   *
+   * @param {Agent} agent Agent to messsage
+   * @param {string} message Message to send to agent
+   * @returns {?Promise}
+   */
+  message (agent, message) {
+    if (!(agent instanceof Agent)) {
+      throw new Error(Constants.Errors.INVALID_PARAMETER_TYPE)
+    }
+
+    return agent.message(message)
   }
 
   async disconnect () {
