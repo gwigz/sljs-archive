@@ -3,7 +3,6 @@ import String from './String'
 class Variable1 extends String {
   static prefix = 1
   static size = 256
-  static suffix = 1
 
   /**
    * Converts string into a length-prefixed buffer, ending with a null
@@ -24,7 +23,7 @@ class Variable1 extends String {
    * @returns {string}
    */
   static fromBuffer (buffer, start) {
-    return super.fromBuffer(buffer, start + 2, start + buffer.readUInt16LE(start) + 1)
+    return super.fromPrefixedBuffer(this.prefix, buffer, start)
   }
 }
 

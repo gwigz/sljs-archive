@@ -3,13 +3,12 @@ import String from './String'
 class Variable2 extends String {
   static prefix = 2
   static size = 512
-  static suffix = 1
 
   /**
    * Converts string into a length-prefixed buffer, ending with a null
    * terminater.
    *
-   * @param {string} string Maximum length of 4080 bytes, will be truncated
+   * @param {string} string Maximum length of 4080 bytes, may truncate
    * @returns {Buffer}
    */
   static toBuffer (string) {
@@ -24,7 +23,7 @@ class Variable2 extends String {
    * @returns {string}
    */
   static fromBuffer (buffer, start) {
-    return super.fromBuffer(buffer, start + 1, start + buffer.readUInt8(start))
+    return super.fromPrefixedBuffer(this.prefix, buffer, start)
   }
 }
 

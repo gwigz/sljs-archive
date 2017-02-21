@@ -1,6 +1,8 @@
 class Delegate {
   constructor (circuit) {
-    this.circuit = circuit
+    Object.defineProperty(this, 'circuit', { value: circuit })
+    Object.defineProperty(this, 'core', { value: this.circuit.core })
+    Object.defineProperty(this, 'client', { value: this.core.client })
   }
 
   /**

@@ -11,9 +11,9 @@ import {
 class AgentMovementComplete extends Delegate {
   async handle (packet) {
     const data = packet.data.data[0]
-    const agent = this.circuit.agent
+    const agent = this.client.agent
     // const sim = packet.data.simData[0]
-    // const simulator = this.circuit.simulator
+    // const simulator = this.client.simulator
 
     agent.position = data.position
     agent.rotation = data.lookAt

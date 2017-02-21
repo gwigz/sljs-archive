@@ -4,7 +4,7 @@ import { AgentUpdate } from '../packets'
 
 class CoarseLocationUpdate extends Delegate {
   async handle (packet) {
-    const agent = this.circuit.agent
+    const agent = this.client.agent
     const index = packet.data.index[0]
 
     if (index.you > 0

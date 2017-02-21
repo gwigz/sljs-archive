@@ -1,8 +1,12 @@
+import EventEmitter from 'events'
+
 import { ChatFromViewer } from '../network/packets'
 import { Collection } from '../utilities'
 
-class Nearby {
+class Nearby extends EventEmitter {
   constructor (client) {
+    super()
+
     /**
      * The Client that instantiated this Nearby object.
      *
@@ -35,6 +39,14 @@ class Nearby {
         message: `${message}\x00`
       }
     }))
+  }
+
+  listen (callable) {
+    return this.on('message', callable)
+  }
+
+  watch (callable) {
+    return this.on('agent', callable)
   }
 }
 
