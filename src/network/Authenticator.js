@@ -14,7 +14,7 @@ class Authenticator {
     this.digest = crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
   }
 
-  async login (username, password, start = 'uri:Lehon&130&115&48') {
+  async login (username, password, start = 'last') {
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',
