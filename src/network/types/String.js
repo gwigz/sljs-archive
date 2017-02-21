@@ -8,17 +8,17 @@ class String {
    */
   static toPrefixedBuffer (size, value) {
     const max = (256 - size) * (size * 8)
-    const buffer = Buffer.from(value, 'utf-8')
+    const buffer = value instanceof Buffer ? value : Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
     const prefix = Buffer.allocUnsafe(size)
 
     switch (size) {
       case 1:
-        buffer.writeUInt8(length, 0)
+        prefix.writeUInt8(length, 0)
         break
 
       case 2:
-        buffer.writeUInt16LE(length, 0)
+        prefix.writeUInt16LE(length, 0)
         break
     }
 
