@@ -1,15 +1,28 @@
 import * as Types from '../types'
 
 class PacketBuffer {
-  constructor (buffer, frequency) {
+  constructor (buffer) {
     if (this.zerocoded(buffer)) {
       this.buffer = this.dezerocode(buffer)
     } else {
       this.buffer = buffer
     }
 
-    // Add additional length dependant on frequency.
-    switch (frequency) {
+    if (this.buffer[6] !== 0xFF) {
+      this.id = Number(`${this.buffer[6]}2`)
+      this.frequency = 2
+    } else if (this.buffer[7] !== 0xFF) {
+      this.id = Number(`${this.buffer[7]}1`)
+      this.frequency = 1
+    } else if (this.buffer[8] !== 0xFF) {
+      this.id = Number(`${this.buffer.readUInt16BE(8)}0`)
+      this.frequency = 0
+    } else {
+      this.id = Number(`${this.buffer[9]}3`)
+      this.frequency = 3
+    }
+
+    switch (this.frequency) {
       case 3:
       case 0:
         this.position = buffer.readUInt8(5) + 10
@@ -23,22 +36,6 @@ class PacketBuffer {
         this.position = buffer.readUInt8(5) + 7
         break
     }
-  }
-
-  static id (buffer) {
-    if (buffer[6] !== 0xFF) {
-      return Number(`${buffer[6]}2`)
-    } else if (buffer[7] !== 0xFF) {
-      return Number(`${buffer[7]}1`)
-    } else if (buffer[8] !== 0xFF) {
-      return Number(`${buffer.readUInt16BE(8)}0`)
-    } else {
-      return Number(`${buffer[9]}3`)
-    }
-  }
-
-  get id () {
-    return PacketBuffer.id(this.buffer)
   }
 
   get sequence () {

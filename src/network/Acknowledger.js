@@ -1,18 +1,18 @@
 import { PacketAck } from './packets'
 
 class Acknowledger {
-  constructor (core) {
+  constructor (circuit) {
     /**
-     * Core instance that instantiated this Acknowledger.
+     * Circuit instance that instantiated this Acknowledger.
      *
-     * @name Acknowledger#core
-     * @type {Core}
+     * @name Acknowledger#circuit
+     * @type {Circuit}
      * @readonly
      */
-    Object.defineProperty(this, 'core', { value: core })
+    Object.defineProperty(this, 'circuit', { value: circuit })
 
     this.packet = new PacketAck({ packets: [] })
-    this.timer = setInterval(this.tick.bind(this), 2000)
+    this.timer = setInterval(this.tick.bind(this), 100)
     this.packets = []
   }
 
@@ -23,7 +23,7 @@ class Acknowledger {
   tick () {
     if (this.packets.length) {
       this.packet.data.packets = this.packets.splice(0, 255).map(id => ({ id: id }))
-      this.core.send(this.packet)
+      this.circuit.send(this.packet)
     }
   }
 }

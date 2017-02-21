@@ -1,3 +1,4 @@
+import Acknowledger from './Acknowledger'
 import Deserializer from './Deserializer'
 import Serializer from './Serializer'
 
@@ -21,6 +22,7 @@ class Circuit {
     this.address = address
     this.port = port
     this.dead = true
+    this.acknowledger = new Acknowledger(this)
     this.deserializer = new Deserializer
     this.serializer = new Serializer(this)
     this.delegates = {}
@@ -42,16 +44,32 @@ class Circuit {
     }
 
     for (const packet of [...args]) {
-      this.core.send(this, this.serializer.convert(packet))
+      try {
+        this.core.emit('sending', packet.constructor.name)
+        this.core.send(this, this.serializer.convert(packet))
+      } catch (error) {
+        this.core.client.emit(Constants.Events.ERROR, error)
+      }
     }
   }
 
-  async receive (buffer) {
-    const Packet = this.deserializer.lookup(buffer)
+  async receive (data) {
+    const pbo = this.deserializer.read(data)
+    const Packet = this.deserializer.lookup(pbo)
 
-    if (Packet && Packet.name in Delegates) {
+    if (!Packet) {
+      return
+    }
+
+    this.core.emit('received', Packet.name)
+
+    if (pbo.reliable) {
+      this.acknowledger.queue(pbo.sequence)
+    }
+
+    if (Packet.name in Delegates) {
       this.delegates[Packet.name].handle(
-        this.deserializer.convert(Packet, buffer)
+        this.deserializer.convert(Packet, pbo)
       )
     }
   }

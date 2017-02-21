@@ -4,26 +4,27 @@ import PacketBuffer from './helpers/PacketBuffer'
 import * as Types from './types'
 
 class Deserializer {
-  lookup (buffer) {
-    return PacketLookup.find(PacketBuffer.id(buffer))
+  read (buffer) {
+    return new PacketBuffer(buffer)
   }
 
-  convert (Packet, buffer) {
+  lookup (pbo) {
+    return PacketLookup.find(pbo.id)
+  }
+
+  convert (Packet, pbo) {
     const packet = new Packet()
 
-    // Use our helper method to read stuff, keep track of current position, etc.
-    buffer = new PacketBuffer(buffer, Packet.frequency)
+    packet.index = pbo.sequence
+    packet.reliable = pbo.reliable
 
-    packet.index = buffer.sequence
-    packet.reliable = buffer.reliable
-
-    if (!('format' in Packet)) {
+    if (Packet.format === undefined) {
       return packet
     }
 
     // Parse everythiiiing...
     for (const [block, format] of Packet.format) {
-      const quantity = 'quantity' in format ? format.quantity : buffer.read(Types.U8)
+      const quantity = format.quantity ? format.quantity : pbo.read(Types.U8)
 
       packet.data[block] = []
 
@@ -32,7 +33,7 @@ class Deserializer {
         const parameters = {}
 
         for (const [name, Type] of format.parameters) {
-          parameters[name] = buffer.read(Type)
+          parameters[name] = pbo.read(Type)
         }
 
         packet.data[block].push(parameters)

@@ -91,24 +91,20 @@ class Core extends EventEmitter {
   }
 
   ready () {
-    console.log(ready)
-
-    if (this.status !== Constants.Status.CONNECTING) {
+    if (this.status < Constants.Status.CONNECTING) {
       return
     }
 
     this.status = Constants.Status.READY
+
+    this.client.emit(Constants.Events.DEBUG, 'Connected!')
     this.client.emit(Constants.Events.READY)
   }
 
   /**
-   * Disconnects the client from any connected circuits.
+   * Disconnects the client from the current circuit.
    */
   disconnect () {
-    if (this.status >= Constants.Status.CONNECTING) {
-      return
-    }
-
     this.circuit.send(new LogoutRequest)
   }
 }

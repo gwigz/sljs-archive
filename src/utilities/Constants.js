@@ -14,6 +14,7 @@ export const Errors = {
   INACTIVE_CIRCUIT: 'Cannot send packets over inactive circuit.',
   HANDSHAKE_ACTIVE_CIRCUIT: 'Cannot send handshake to active circuit.',
   MISSING_BLOCK: 'Missing packet block, packet will not be sent.',
+  INVALID_BLOCK_QUANTITY: 'Quantity requirement of packet block not met or above 255, packet will not be sent.',
   MISSING_PARAMETER: 'Missing packet parameters, packet will not be sent.',
   INVALID_PARAMETER_TYPE: 'Method parameter invalid.'
 }

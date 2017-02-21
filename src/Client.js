@@ -98,8 +98,6 @@ class Client extends EventEmitter {
         port: response.sim_port
       })
 
-      this.emit(Constants.Events.DEBUG, 'Connected!')
-
       return
     }
 
@@ -113,11 +111,11 @@ class Client extends EventEmitter {
    * @returns {?Promise}
    */
   send (...packets) {
-    if (this.circuit === undefined) {
+    if (this.core.circuit === undefined) {
       throw new Error(Constants.Errors.NOT_CONNECTED)
     }
 
-    return this.core.send(this.circuit, ...packets)
+    return this.core.circuit.send(...packets)
   }
 
   /**

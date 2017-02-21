@@ -1,4 +1,6 @@
 import Packet from './packets/Packet'
+
+import { U8 } from './types'
 import { Constants } from '../utilities'
 
 class Serializer {
@@ -22,7 +24,7 @@ class Serializer {
 
     const array = [this.header(packet.constructor)]
 
-    if ('format' in packet.constructor) {
+    if (packet.constructor.format) {
       // Support skipping the block name in parameters.
       if (packet.constructor.format.size === 1) {
         const [[block, format]] = packet.constructor.format
@@ -34,11 +36,35 @@ class Serializer {
       }
 
       for (const [block, format] of packet.constructor.format) {
-        if (block !== 'agentData' && !(block in packet.data)) {
-          throw new Error(Constants.Errors.MISSING_BLOCK)
+        if (!(block in packet.data)) {
+          if (block === 'agentData') {
+            packet.data[block] = [{}]
+          } else {
+            throw new Error(Constants.Errors.MISSING_BLOCK)
+          }
         }
 
-        array.push(this.parse(block, format, packet.data[block] || {}))
+        if (!(packet.data[block] instanceof Array)) {
+          packet.data[block] = [packet.data[block]]
+        }
+
+        const length = packet.data[block].length
+
+        if (length > 255
+          || (format.quantity
+            && length !== format.quantity)
+        ) {
+          throw new Error(Constants.Errors.INVALID_BLOCK_QUANTITY)
+        }
+
+        if (!format.quantity) {
+          // Prefix with variable block quantity.
+          array.push(U8.toBuffer(length || 1))
+        }
+
+        for (const data of packet.data[block]) {
+          array.push(this.parse(block, format, data))
+        }
       }
     }
 

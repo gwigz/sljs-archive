@@ -16,22 +16,24 @@ class Nearby {
   }
 
   whisper (message, channel = 0) {
-    return this.message.whisper(channel, message, 0)
+    return this.message(message, channel, 0)
   }
 
   say (message, channel = 0) {
-    return this.message.say(channel, message, 1)
+    return this.message(message, channel, 1)
   }
 
   shout (message, channel = 0) {
-    return this.message.shout(channel, message, 2)
+    return this.message(message, channel, 2)
   }
 
   message (message, channel = 0, type = 1) {
     return this.client.send(new ChatFromViewer({
-      channel: channel,
-      type: type,
-      message: `${message}\x00`
+      chatData: {
+        channel: channel,
+        type: type,
+        message: `${message}\x00`
+      }
     }))
   }
 }
