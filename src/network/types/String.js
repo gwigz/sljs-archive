@@ -7,7 +7,7 @@ class String {
    * @returns {buffer}
    */
   static toPrefixedBuffer (size, value) {
-    const max = (256 - size) * (size * 8)
+    const max = 256 * (size * 8)
     const buffer = value instanceof Buffer ? value : Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
     const prefix = Buffer.allocUnsafe(size)

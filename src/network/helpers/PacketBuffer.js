@@ -7,11 +7,7 @@ class PacketBuffer {
   constructor (buffer) {
     this.buffer = buffer
 
-    if (this.zerocoded) {
-      this.buffer = this.dezerocode(buffer)
-    }
-
-    if (this.buffer.length < 8) {
+    if (this.buffer.length < 7) {
       return
     }
 
@@ -31,6 +27,10 @@ class PacketBuffer {
   }
 
   prepare () {
+    if (this.zerocoded) {
+      this.dezerocode()
+    }
+
     switch (this.frequency) {
       case 3:
       case 0:
@@ -69,31 +69,31 @@ class PacketBuffer {
     return !!(this.buffer[0] & 0x80)
   }
 
-  dezerocode (buffer) {
-    const length = buffer.length
+  dezerocode () {
+    const length = this.buffer.length
 
     let position = 6
     let output = []
 
-    // Fetch most of the packet headers normally.
-    for (let i = 0; i < 6; i++) {
-      output.push(buffer[i])
+    // Fetch packet header normally.
+    for (let i = 0; i < position; i++) {
+      output.push(this.buffer[i])
     }
 
-    // Clean the rest.
+    // Uncompress the rest.
     for (let i = position; i < length; i++) {
-      if (buffer[i] === 0x00) {
-        for (let j = 0; j < buffer.readUInt8(i + 1); j++) {
+      if (this.buffer[i] === 0x00) {
+        for (let j = 0; j < this.buffer.readUInt8(i + 1); j++) {
           output[position++] = 0x00
         }
 
         i++
       } else {
-        output[position++] = buffer[i]
+        output[position++] = this.buffer[i]
       }
     }
 
-    return Buffer.from(output)
+    this.buffer = Buffer.from(output)
   }
 
   read (Type) {

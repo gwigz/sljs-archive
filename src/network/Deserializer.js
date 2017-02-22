@@ -6,6 +6,7 @@ import * as Types from './types'
 /**
  * @link http://wiki.secondlife.com/wiki/Packet_Layout
  * @link http://wiki.secondlife.com/wiki/Message_Layout
+ * @link http://wiki.secondlife.com/wiki/Pyogp/Client_Lib/Packet
  */
 class Deserializer {
   read (buffer) {

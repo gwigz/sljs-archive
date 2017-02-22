@@ -10,7 +10,7 @@ class Delegate {
    * ChatFromSimulator will return `false` if no listen events are bound to
    * the clinets nearby helper.
    *
-   * @return {boolean} True if we want to recieve packets, defaulted to true
+   * @returns {boolean} True if we want to recieve packets, defaulted to true
    */
   get waiting () {
     return true

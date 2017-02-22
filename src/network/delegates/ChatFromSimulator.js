@@ -7,8 +7,6 @@ class ChatFromSimulator extends Delegate {
   }
 
   async handle (packet) {
-    const nearby = this.client.nearby
-
     for (const data of packet.data.chatData) {
       let chatter = {
         id: data.source,

@@ -8,7 +8,7 @@ class Variable2 extends String {
    * Converts string into a length-prefixed buffer, ending with a null
    * terminater.
    *
-   * @param {string} string Maximum length of 4080 bytes, may truncate
+   * @param {string} string Maximum length of 65535 bytes, may truncate
    * @returns {Buffer}
    */
   static toBuffer (string) {
