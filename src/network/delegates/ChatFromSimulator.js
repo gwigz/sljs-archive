@@ -2,6 +2,10 @@ import Delegate from './Delegate'
 import { Constants } from '../../utilities'
 
 class ChatFromSimulator extends Delegate {
+  get waiting () {
+    return this.client.nearby.listeners('message', true)
+  }
+
   async handle (packet) {
     const nearby = this.client.nearby
 
@@ -17,7 +21,7 @@ class ChatFromSimulator extends Delegate {
         chatter.owner = data.owner
       }
 
-      nearby.emit('message', chatter, data.message || undefined)
+      this.client.nearby.emit('message', chatter, data.message || undefined)
     }
   }
 }

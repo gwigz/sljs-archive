@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import EventEmitter from 'eventemitter3'
 
 import { ChatFromViewer } from '../network/packets'
 import { Collection, Constants } from '../utilities'

@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import EventEmitter from 'eventemitter3'
 
 import { Authenticator, Core } from './network'
 import { Agent, Nearby } from './structures'

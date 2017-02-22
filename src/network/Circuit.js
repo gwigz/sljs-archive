@@ -70,7 +70,9 @@ class Circuit {
       this.acknowledger.queue(buffer.sequence)
     }
 
-    if (Packet.name in Delegates) {
+    if (Packet.name in this.delegates
+      && this.delegates[Packet.name].waiting
+    ) {
       this.delegates[Packet.name].handle(
         this.deserializer.convert(Packet, buffer.prepare())
       )
