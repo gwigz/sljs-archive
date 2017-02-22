@@ -11,17 +11,38 @@ class PacketBuffer {
       return
     }
 
-    if (this.buffer[6] !== 0xFF) {
-      this.id = Number(`${this.buffer[6]}2`)
+    let header = this.zerocoded
+      ? []
+      : this.buffer.slice(6, Math.min(this.buffer.length, 12))
+
+    if (header instanceof Array) {
+      let position = 0
+      const offset = Math.min(this.buffer.length, 12)
+
+      for (let i = 6; i < offset; i++) {
+        if (this.buffer[i] === 0x00) {
+          for (let j = 0; j < this.buffer.readUInt8(i + 1); j++) {
+            header[position++] = 0x00
+          }
+
+          i++
+        } else {
+          header[position++] = this.buffer[i]
+        }
+      }
+    }
+
+    if (header[0] !== 0xFF) {
+      this.id = Number(`${header[0]}2`)
       this.frequency = 2
-    } else if (this.buffer[7] !== 0xFF) {
-      this.id = Number(`${this.buffer[7]}1`)
+    } else if (header[1] !== 0xFF) {
+      this.id = Number(`${header[1]}1`)
       this.frequency = 1
-    } else if (this.buffer[8] !== 0xFF) {
-      this.id = Number(`${this.buffer.readUInt16BE(8)}0`)
+    } else if (header[2] !== 0xFF) {
+      this.id = Number(`${(header[2] << 8) + header[3]}0`)
       this.frequency = 0
     } else {
-      this.id = Number(`${this.buffer[9]}3`)
+      this.id = Number(`${header[3]}3`)
       this.frequency = 3
     }
   }

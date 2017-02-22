@@ -110,14 +110,6 @@ class Serializer {
   parse (block, format, data = {}) {
     const array = []
 
-    if (data instanceof Array) {
-      for (const section of data) {
-        array.push(this.parse(block, format, section))
-      }
-
-      return Buffer.concat(array)
-    }
-
     // Attempt to fill optional parts of agent data blocks.
     if (block === 'agentData') {
       for (const [name] of format.parameters) {
