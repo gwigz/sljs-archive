@@ -53,9 +53,8 @@ class Circuit {
     }
   }
 
-  async receive (data) {
-    const pbo = this.deserializer.read(data)
-    const Packet = this.deserializer.lookup(pbo)
+  async receive (buffer) {
+    const Packet = this.deserializer.lookup(buffer)
 
     if (!Packet) {
       return
@@ -63,13 +62,17 @@ class Circuit {
 
     this.core.emit('received', Packet.name)
 
-    if (pbo.reliable) {
-      this.acknowledger.queue(pbo.sequence)
+    if (buffer.reliable) {
+      if (this.acknowledger.seen(buffer.sequence)) {
+        return
+      }
+
+      this.acknowledger.queue(buffer.sequence)
     }
 
     if (Packet.name in Delegates) {
       this.delegates[Packet.name].handle(
-        this.deserializer.convert(Packet, pbo)
+        this.deserializer.convert(Packet, buffer.prepare())
       )
     }
   }

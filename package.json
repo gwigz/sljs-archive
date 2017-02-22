@@ -1,7 +1,7 @@
 {
   "name": "sljs",
   "version": "0.0.0",
-  "description": "A client for connecting to Linden Lab's virtual world \"Second Life\"",
+  "description": "A framework for connecting to Linden Lab's virtual world \"Second Life\"",
   "main": "./dist/index.js",
   "files": [
     "dist"
@@ -28,10 +28,11 @@
   "keywords": [
     "api",
     "bot",
-    "client",
     "framework",
     "library",
+    "life",
     "node",
+    "second",
     "secondlife",
     "sl",
     "sljs"

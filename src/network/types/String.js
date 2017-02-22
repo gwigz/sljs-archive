@@ -38,7 +38,9 @@ class String {
       ? buffer.readUInt8(start)
       : buffer.readUInt16LE(start)
 
-    return buffer.toString('utf8', start + size, length)
+    // May want to use slice instead here, so the delegates can handle whatever
+    // this value contains.
+    return buffer.toString('utf8', start + size, start + length + size)
   }
 }
 

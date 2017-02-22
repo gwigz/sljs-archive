@@ -5,3 +5,6 @@ export CoarseLocationUpdate from './CoarseLocationUpdate'
 export HealthMessage from './HealthMessage'
 export RegionHandshake from './RegionHandshake'
 export StartPingCheck from './StartPingCheck'
+
+// CloseCircuit
+// OpenCircuit

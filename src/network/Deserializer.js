@@ -3,20 +3,24 @@ import PacketBuffer from './helpers/PacketBuffer'
 
 import * as Types from './types'
 
+/**
+ * @link http://wiki.secondlife.com/wiki/Packet_Layout
+ * @link http://wiki.secondlife.com/wiki/Message_Layout
+ */
 class Deserializer {
   read (buffer) {
-    return new PacketBuffer(buffer)
+    return new PacketBuffer(buffer, this.circuit)
   }
 
-  lookup (pbo) {
-    return PacketLookup.find(pbo.id)
+  lookup (buffer) {
+    return PacketLookup.find(buffer.id)
   }
 
-  convert (Packet, pbo) {
+  convert (Packet, buffer) {
     const packet = new Packet()
 
-    packet.index = pbo.sequence
-    packet.reliable = pbo.reliable
+    packet.index = buffer.sequence
+    packet.reliable = buffer.reliable
 
     if (Packet.format === undefined) {
       return packet
@@ -24,7 +28,7 @@ class Deserializer {
 
     // Parse everythiiiing...
     for (const [block, format] of Packet.format) {
-      const quantity = format.quantity ? format.quantity : pbo.read(Types.U8)
+      const quantity = format.quantity ? format.quantity : buffer.read(Types.U8)
 
       packet.data[block] = []
 
@@ -33,7 +37,7 @@ class Deserializer {
         const parameters = {}
 
         for (const [name, Type] of format.parameters) {
-          parameters[name] = pbo.read(Type)
+          parameters[name] = buffer.read(Type)
         }
 
         packet.data[block].push(parameters)

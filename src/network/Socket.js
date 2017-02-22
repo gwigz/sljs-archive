@@ -33,7 +33,11 @@ class Socket {
   }
 
   async receive (buffer, info) {
-    this.core.circuits.get(`${info.address}:${info.port}`).receive(buffer)
+    const circuit = this.core.circuits.get(`${info.address}:${info.port}`)
+
+    if (circuit && buffer.length) {
+      circuit.receive(circuit.deserializer.read(buffer))
+    }
   }
 }
 

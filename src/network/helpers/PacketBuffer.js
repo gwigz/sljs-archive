@@ -1,11 +1,18 @@
 import * as Types from '../types'
 
+/**
+ * @link http://wiki.secondlife.com/wiki/Packet_Layout
+ */
 class PacketBuffer {
   constructor (buffer) {
-    if (this.zerocoded(buffer)) {
+    this.buffer = buffer
+
+    if (this.zerocoded) {
       this.buffer = this.dezerocode(buffer)
-    } else {
-      this.buffer = buffer
+    }
+
+    if (this.buffer.length < 8) {
+      return
     }
 
     if (this.buffer[6] !== 0xFF) {
@@ -21,33 +28,45 @@ class PacketBuffer {
       this.id = Number(`${this.buffer[9]}3`)
       this.frequency = 3
     }
+  }
 
+  prepare () {
     switch (this.frequency) {
       case 3:
       case 0:
-        this.position = buffer.readUInt8(5) + 10
+        this.position = this.buffer.readUInt8(5) + 10
         break
 
       case 1:
-        this.position = buffer.readUInt8(5) + 8
+        this.position = this.buffer.readUInt8(5) + 8
         break
 
       case 2:
-        this.position = buffer.readUInt8(5) + 7
+        this.position = this.buffer.readUInt8(5) + 7
         break
     }
+
+    return this
   }
 
   get sequence () {
     return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4]
   }
 
+  get acks () {
+    return !!(this.buffer[0] & 0x10)
+  }
+
+  get resent () {
+    return !!(this.buffer[0] & 0x20)
+  }
+
   get reliable () {
     return !!(this.buffer[0] & 0x40)
   }
 
-  zerocoded (buffer) {
-    return !!(buffer[0] & 0x80)
+  get zerocoded () {
+    return !!(this.buffer[0] & 0x80)
   }
 
   dezerocode (buffer) {
@@ -82,15 +101,14 @@ class PacketBuffer {
 
     switch (Type) {
       case Boolean:
-      case String:
         break
 
       case Types.Variable1:
-        this.position += this.buffer.readUInt8(this.position)
+        this.position += this.buffer.readUInt8(this.position) + 1
         break
 
       case Types.Variable2:
-        this.position += this.buffer.readUInt16LE(this.position)
+        this.position += this.buffer.readUInt16LE(this.position) + 2
         break
 
       case Types.Quaternion:

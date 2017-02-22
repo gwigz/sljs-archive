@@ -4,11 +4,9 @@ dist
 # Unfinished documentation stuff
 docs
 
-# Horrible packet class generater, may clean and publish in future
+# Unfinished tests
+tests
 bin
-
-# Old code, to be nuked
-src/client
 
 # Logs
 logs
@@ -20,15 +18,11 @@ pids
 *.pid
 *.seed
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
 # Dependency directories
 node_modules
-jspm_packages
 
-# Optional NPM cache directory
+# NPM cache directory
 .npm
 
-# Optional REPL history
+# REPL history
 .node_repl_history

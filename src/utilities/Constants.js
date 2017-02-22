@@ -30,3 +30,20 @@ export const Status = {
 export const Endpoints = {
   LOGIN_URL: 'https://login.agni.lindenlab.com/cgi-bin/login.cgi'
 }
+
+export const ChatSources = {
+  SYSTEM: 0,
+  AGENT: 1,
+  OBJECT: 2
+}
+
+export const ChatTypes = {
+  WHISPER: 0,
+  NORMAL: 1,
+  SHOUT: 2,
+  SAY: 3,
+  TYPING: 4,
+  STOPPED: 5,
+  DEBUG: 6,
+  OWNERSAY: 8
+}

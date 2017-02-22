@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
 
 import { ChatFromViewer } from '../network/packets'
-import { Collection } from '../utilities'
+import { Collection, Constants } from '../utilities'
 
 class Nearby extends EventEmitter {
   constructor (client) {
@@ -20,18 +20,18 @@ class Nearby extends EventEmitter {
   }
 
   whisper (message, channel = 0) {
-    return this.message(message, channel, 0)
+    return this.message(message, channel, Constants.ChatTypes.WHISPER)
   }
 
   say (message, channel = 0) {
-    return this.message(message, channel, 1)
+    return this.message(message, channel, Constants.ChatTypes.NORMAL)
   }
 
   shout (message, channel = 0) {
-    return this.message(message, channel, 2)
+    return this.message(message, channel, Constants.ChatTypes.SHOUT)
   }
 
-  message (message, channel = 0, type = 1) {
+  message (message, channel = 0, type = Constants.ChatTypes.NORMAL) {
     return this.client.send(new ChatFromViewer({
       chatData: {
         channel: channel,
