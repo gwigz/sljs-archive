@@ -55,8 +55,12 @@ class Core extends EventEmitter {
     return this.client.agent
   }
 
-  get simulator () {
-    return this.client.simulator
+  get region () {
+    return this.client.region
+  }
+
+  get objects () {
+    return this.client.region.objects
   }
 
   /**
