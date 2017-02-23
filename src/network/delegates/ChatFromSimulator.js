@@ -10,7 +10,7 @@ class ChatFromSimulator extends Delegate {
     for (const data of packet.data.chatData) {
       let chatter = {
         id: data.source,
-        name: data.fromName.replace(/\x00$/, ''),
+        name: data.fromName.toString().slice(0, -1),
         type: data.sourceType,
         position: data.position
       }
@@ -19,7 +19,7 @@ class ChatFromSimulator extends Delegate {
         chatter.owner = data.owner
       }
 
-      this.client.nearby.emit('message', chatter, data.message || undefined)
+      this.client.nearby.emit('message', chatter, data.message.toString().slice(0, -1))
     }
   }
 }

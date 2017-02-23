@@ -1,4 +1,4 @@
-class String {
+class Variable {
   /**
    * Converts a string to a buffer prefixed by length.
    *
@@ -40,8 +40,8 @@ class String {
 
     // May want to use slice instead here, so the delegates can handle whatever
     // this value contains.
-    return buffer.toString('utf8', start + size, start + length + size)
+    return buffer.slice(start + size, start + length + size)
   }
 }
 
-export default String
+export default Variable

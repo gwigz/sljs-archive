@@ -1,8 +1,7 @@
-import String from './String'
+import Variable from './Variable'
 
-class Variable1 extends String {
+class Variable1 extends Variable {
   static prefix = 1
-  static size = 256
 
   /**
    * Converts string into a length-prefixed buffer, ending with a null
