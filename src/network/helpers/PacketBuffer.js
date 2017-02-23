@@ -20,7 +20,7 @@ class PacketBuffer {
 
       for (let i = 6; i < offset; i++) {
         if (this.buffer[i] === 0x00) {
-          header.push(...new Array(this.buffer.readUInt8(++i)).fill(0x00))
+          header.push(...new Uint8Array(this.buffer.readUInt8(++i)))
         } else {
           header.push(this.buffer[i])
         }
@@ -91,7 +91,7 @@ class PacketBuffer {
 
     for (let i = 6; i < length; i++) {
       if (this.buffer[i] === 0x00) {
-        output.push(...new Array(this.buffer.readUInt8(++i)).fill(0x00))
+        output.push(...new Uint8Array(this.buffer.readUInt8(++i)))
       } else {
         output.push(this.buffer[i])
       }
