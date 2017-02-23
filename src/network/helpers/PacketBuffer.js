@@ -16,18 +16,13 @@ class PacketBuffer {
       : this.buffer.slice(6, Math.min(this.buffer.length, 12))
 
     if (header instanceof Array) {
-      let position = 0
       const offset = Math.min(this.buffer.length, 12)
 
       for (let i = 6; i < offset; i++) {
         if (this.buffer[i] === 0x00) {
-          for (let j = 0; j < this.buffer.readUInt8(i + 1); j++) {
-            header[position++] = 0x00
-          }
-
-          i++
+          header.push(...new Array(this.buffer.readUInt8(++i)).fill(0x00))
         } else {
-          header[position++] = this.buffer[i]
+          header.push(this.buffer[i])
         }
       }
     }
@@ -91,26 +86,14 @@ class PacketBuffer {
   }
 
   dezerocode () {
+    let output = [...this.buffer.slice(0, 6)]
     const length = this.buffer.length
 
-    let position = 6
-    let output = []
-
-    // Fetch packet header normally.
-    for (let i = 0; i < position; i++) {
-      output.push(this.buffer[i])
-    }
-
-    // Uncompress the rest.
-    for (let i = position; i < length; i++) {
+    for (let i = 6; i < length; i++) {
       if (this.buffer[i] === 0x00) {
-        for (let j = 0; j < this.buffer.readUInt8(i + 1); j++) {
-          output[position++] = 0x00
-        }
-
-        i++
+        output.push(...new Array(this.buffer.readUInt8(++i)).fill(0x00))
       } else {
-        output[position++] = this.buffer[i]
+        output.push(this.buffer[i])
       }
     }
 
