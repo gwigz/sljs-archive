@@ -27,6 +27,9 @@ class Deserializer {
       return packet
     }
 
+    // Set position and uncompress blocks, if we need too.
+    buffer.prepare()
+
     // Parse everythiiiing...
     for (const [block, format] of Packet.format) {
       const quantity = format.quantity ? format.quantity : buffer.read(Types.U8)
