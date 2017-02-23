@@ -53,7 +53,7 @@ class LoadURL extends Packet {
    * @type {Collection}
    */
   static format = new Collection([
-    ['data', { quantity: 1, parameters: new Collection([['objectName', Types.Variable1], ['object', Types.UUID], ['owner', Types.UUID], ['ownerIsGroup', Boolean], ['message', Types.Variable1], ['uRL', Types.Variable1]]) }]
+    ['data', { quantity: 1, parameters: new Collection([['objectName', Types.Variable1], ['object', Types.UUID], ['owner', Types.UUID], ['ownerIsGroup', Boolean], ['message', Types.Variable1], ['url', Types.Variable1]]) }]
   ])
 
   /**
@@ -69,7 +69,7 @@ class LoadURL extends Packet {
    * @param {UUID} [data.data.owner] OwnerID
    * @param {BOOL} [data.data.ownerIsGroup] OwnerIsGroup
    * @param {Variable1} [data.data.message] Message
-   * @param {Variable1} [data.data.uRL] URL
+   * @param {Variable1} [data.data.url] URL
    */
   constructor (data = {}) {
     super(data)

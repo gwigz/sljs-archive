@@ -54,7 +54,7 @@ class AvatarPropertiesReply extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
-    ['propertiesData', { quantity: 1, parameters: new Collection([['image', Types.UUID], ['fLImage', Types.UUID], ['partner', Types.UUID], ['aboutText', Types.Variable2], ['fLAboutText', Types.Variable1], ['bornOn', Types.Variable1], ['profileURL', Types.Variable1], ['charterMember', Types.Variable1], ['flags', Types.U32]]) }]
+    ['propertiesData', { quantity: 1, parameters: new Collection([['image', Types.UUID], ['firstLifeImage', Types.UUID], ['partner', Types.UUID], ['aboutText', Types.Variable2], ['firstLifeAboutText', Types.Variable1], ['bornOn', Types.Variable1], ['profileURL', Types.Variable1], ['charterMember', Types.Variable1], ['flags', Types.U32]]) }]
   ])
 
   /**
@@ -68,10 +68,10 @@ class AvatarPropertiesReply extends Packet {
    * @param {UUID} [data.agentData.agent] AgentID
    * @param {UUID} [data.agentData.avatar] AvatarID
    * @param {UUID} [data.propertiesData.image] ImageID
-   * @param {UUID} [data.propertiesData.fLImage] FLImageID
+   * @param {UUID} [data.propertiesData.firstLifeImage] FLImageID
    * @param {UUID} [data.propertiesData.partner] PartnerID
    * @param {Variable2} [data.propertiesData.aboutText] AboutText
-   * @param {Variable1} [data.propertiesData.fLAboutText] FLAboutText
+   * @param {Variable1} [data.propertiesData.firstLifeAboutText] FLAboutText
    * @param {Variable1} [data.propertiesData.bornOn] BornOn
    * @param {Variable1} [data.propertiesData.profileURL] ProfileURL
    * @param {Variable1} [data.propertiesData.charterMember] CharterMember

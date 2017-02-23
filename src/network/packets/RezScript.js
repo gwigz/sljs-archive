@@ -55,7 +55,7 @@ class RezScript extends Packet {
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
     ['updateBlock', { quantity: 1, parameters: new Collection([['objectLocal', Types.U32], ['enabled', Boolean]]) }],
-    ['inventoryBlock', { quantity: 1, parameters: new Collection([['item', Types.UUID], ['folder', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['groupOwned', Boolean], ['transaction', Types.UUID], ['type', Types.S8], ['invType', Types.S8], ['flags', Types.U32], ['saleType', Types.U8], ['salePrice', Types.S32], ['name', Types.Variable1], ['description', Types.Variable1], ['creationDate', Types.S32], ['cRC', Types.U32]]) }]
+    ['inventoryBlock', { quantity: 1, parameters: new Collection([['item', Types.UUID], ['folder', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['groupOwned', Boolean], ['transaction', Types.UUID], ['type', Types.S8], ['invType', Types.S8], ['flags', Types.U32], ['saleType', Types.U8], ['salePrice', Types.S32], ['name', Types.Variable1], ['description', Types.Variable1], ['creationDate', Types.S32], ['crc', Types.U32]]) }]
   ])
 
   /**
@@ -91,7 +91,7 @@ class RezScript extends Packet {
    * @param {Variable1} [data.inventoryBlock.name] Name
    * @param {Variable1} [data.inventoryBlock.description] Description
    * @param {S32} [data.inventoryBlock.creationDate] CreationDate
-   * @param {U32} [data.inventoryBlock.cRC] CRC
+   * @param {U32} [data.inventoryBlock.crc] CRC
    */
   constructor (data = {}) {
     super(data)

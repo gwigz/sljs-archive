@@ -54,7 +54,7 @@ class ObjectUpdateCached extends Packet {
    */
   static format = new Collection([
     ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['timeDilation', Types.U16]]) }],
-    ['objectData', { parameters: new Collection([['id', Types.U32], ['cRC', Types.U32], ['updateFlags', Types.U32]]) }]
+    ['objectData', { parameters: new Collection([['id', Types.U32], ['crc', Types.U32], ['updateFlags', Types.U32]]) }]
   ])
 
   /**
@@ -68,7 +68,7 @@ class ObjectUpdateCached extends Packet {
    * @param {U64} [data.regionData.regionHandle] RegionHandle
    * @param {U16} [data.regionData.timeDilation] TimeDilation
    * @param {U32} [data.objectData.id] ID
-   * @param {U32} [data.objectData.cRC] CRC
+   * @param {U32} [data.objectData.crc] CRC
    * @param {U32} [data.objectData.updateFlags] UpdateFlags
    */
   constructor (data = {}) {

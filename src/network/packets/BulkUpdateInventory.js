@@ -55,7 +55,7 @@ class BulkUpdateInventory extends Packet {
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['transaction', Types.UUID]]) }],
     ['folderData', { parameters: new Collection([['folder', Types.UUID], ['parent', Types.UUID], ['type', Types.S8], ['name', Types.Variable1]]) }],
-    ['itemData', { parameters: new Collection([['item', Types.UUID], ['callback', Types.U32], ['folder', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['groupOwned', Boolean], ['asset', Types.UUID], ['type', Types.S8], ['invType', Types.S8], ['flags', Types.U32], ['saleType', Types.U8], ['salePrice', Types.S32], ['name', Types.Variable1], ['description', Types.Variable1], ['creationDate', Types.S32], ['cRC', Types.U32]]) }]
+    ['itemData', { parameters: new Collection([['item', Types.UUID], ['callback', Types.U32], ['folder', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['groupOwned', Boolean], ['asset', Types.UUID], ['type', Types.S8], ['invType', Types.S8], ['flags', Types.U32], ['saleType', Types.U8], ['salePrice', Types.S32], ['name', Types.Variable1], ['description', Types.Variable1], ['creationDate', Types.S32], ['crc', Types.U32]]) }]
   ])
 
   /**
@@ -93,7 +93,7 @@ class BulkUpdateInventory extends Packet {
    * @param {Variable1} [data.itemData.name] Name
    * @param {Variable1} [data.itemData.description] Description
    * @param {S32} [data.itemData.creationDate] CreationDate
-   * @param {U32} [data.itemData.cRC] CRC
+   * @param {U32} [data.itemData.crc] CRC
    */
   constructor (data = {}) {
     super(data)

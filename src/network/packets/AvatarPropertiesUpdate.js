@@ -54,7 +54,7 @@ class AvatarPropertiesUpdate extends Packet {
    */
   static format = new Collection([
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
-    ['propertiesData', { quantity: 1, parameters: new Collection([['image', Types.UUID], ['fLImage', Types.UUID], ['aboutText', Types.Variable2], ['fLAboutText', Types.Variable1], ['allowPublish', Boolean], ['maturePublish', Boolean], ['profileURL', Types.Variable1]]) }]
+    ['propertiesData', { quantity: 1, parameters: new Collection([['image', Types.UUID], ['firstLifeImage', Types.UUID], ['aboutText', Types.Variable2], ['firstLifeAboutText', Types.Variable1], ['allowPublish', Boolean], ['maturePublish', Boolean], ['profileURL', Types.Variable1]]) }]
   ])
 
   /**
@@ -68,9 +68,9 @@ class AvatarPropertiesUpdate extends Packet {
    * @param {UUID} [data.agentData.agent] AgentID
    * @param {UUID} [data.agentData.session] SessionID
    * @param {UUID} [data.propertiesData.image] ImageID
-   * @param {UUID} [data.propertiesData.fLImage] FLImageID
+   * @param {UUID} [data.propertiesData.firstLifeImage] FLImageID
    * @param {Variable2} [data.propertiesData.aboutText] AboutText
-   * @param {Variable1} [data.propertiesData.fLAboutText] FLAboutText
+   * @param {Variable1} [data.propertiesData.firstLifeAboutText] FLAboutText
    * @param {BOOL} [data.propertiesData.allowPublish] AllowPublish
    * @param {BOOL} [data.propertiesData.maturePublish] MaturePublish
    * @param {Variable1} [data.propertiesData.profileURL] ProfileURL
