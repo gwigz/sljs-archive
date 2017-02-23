@@ -1,26 +1,11 @@
+import Entity from './Entity'
+
 import { ImprovedInstantMessage } from '../network/packets'
 import { Vector3, UUID } from '../network/types'
 
-class Agent {
+class Agent extends Entity {
   constructor (client, data) {
-    /**
-     * The Client that instantiated this Agent object.
-     *
-     * @name Agent#client
-     * @type {Client}
-     * @readonly
-     */
-    Object.defineProperty(this, 'client', { value: client })
-
-    this.setup(data)
-  }
-
-  setup (data) {
-    /**
-     * UUID for this Agent.
-     * @type {string}
-     */
-    this.id = data.id || UUID.null
+    super(client, data)
 
     /**
      * True if agent is self, as in the Client connected Agent.
@@ -35,18 +20,6 @@ class Agent {
        */
       this.session = data.session
     }
-
-    /**
-     * Current position of Agent.
-     * @type {Number[]}
-     */
-    this.position = data.position || undefined
-
-    /**
-     * Current rotation of Agent.
-     * @type {Number[]}
-     */
-    this.rotation = data.rotation || Vector3.zero
   }
 
   get flags () {

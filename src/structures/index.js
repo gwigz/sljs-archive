@@ -1,4 +1,6 @@
 export Agent from './Agent'
 export Camera from './Camera'
+export Entity from './Entity'
 export Nearby from './Nearby'
-export Simulator from './Simulator'
+export Objects from './Objects'
+export Region from './Region'
