@@ -10,7 +10,7 @@ import * as Types from './types'
  */
 class Deserializer {
   read (buffer) {
-    return new PacketBuffer(buffer, this.circuit)
+    return new PacketBuffer(buffer)
   }
 
   lookup (buffer) {

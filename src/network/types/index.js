@@ -1,5 +1,7 @@
 export F32 from './F32'
 export F64 from './F64'
+export Fixed32 from './Fixed32'
+export Fixed4 from './Fixed4'
 export IP from './IP'
 export Port from './Port'
 export Quaternion from './Quaternion'

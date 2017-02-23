@@ -54,7 +54,7 @@ class ObjectUpdate extends Packet {
    */
   static format = new Collection([
     ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['timeDilation', Types.U16]]) }],
-    ['objectData', { parameters: new Collection([['id', Types.U32], ['state', Types.U8], ['full', Types.UUID], ['crc', Types.U32], ['pCode', Types.U8], ['material', Types.U8], ['clickAction', Types.U8], ['scale', Types.Vector3], ['objectData', Types.Variable1], ['parent', Types.U32], ['updateFlags', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16], ['textureEntry', Types.Variable2], ['textureAnim', Types.Variable1], ['nameValue', Types.Variable2], ['data', Types.Variable2], ['text', Types.Variable1], ['textColor', Types.Fixed4], ['mediaURL', Types.Variable1], ['pSBlock', Types.Variable1], ['extraParams', Types.Variable1], ['sound', Types.UUID], ['owner', Types.UUID], ['gain', Types.F32], ['flags', Types.U8], ['radius', Types.F32], ['jointType', Types.U8], ['jointPivot', Types.Vector3], ['jointAxisOrAnchor', Types.Vector3]]) }]
+    ['objectData', { parameters: new Collection([['id', Types.U32], ['state', Types.U8], ['full', Types.UUID], ['crc', Types.U32], ['pCode', Types.U8], ['material', Types.U8], ['clickAction', Types.U8], ['scale', Types.Vector3], ['objectData', Types.Variable1], ['parent', Types.U32], ['updateFlags', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16], ['textureEntry', Types.Variable2], ['textureAnim', Types.Variable1], ['nameValue', Types.Variable2], ['data', Types.Variable2], ['text', Types.Variable1], ['textColor', Types.Fixed4], ['mediaURL', Types.Variable1], ['psBlock', Types.Variable1], ['extraParams', Types.Variable1], ['sound', Types.UUID], ['owner', Types.UUID], ['gain', Types.F32], ['flags', Types.U8], ['radius', Types.F32], ['jointType', Types.U8], ['jointPivot', Types.Vector3], ['jointAxisOrAnchor', Types.Vector3]]) }]
   ])
 
   /**
@@ -103,7 +103,7 @@ class ObjectUpdate extends Packet {
    * @param {Variable1} [data.objectData.text] Text
    * @param {Fixed4} [data.objectData.textColor] TextColor
    * @param {Variable1} [data.objectData.mediaURL] MediaURL
-   * @param {Variable1} [data.objectData.pSBlock] PSBlock
+   * @param {Variable1} [data.objectData.psBlock] PSBlock
    * @param {Variable1} [data.objectData.extraParams] ExtraParams
    * @param {UUID} [data.objectData.sound] Sound
    * @param {UUID} [data.objectData.owner] OwnerID
