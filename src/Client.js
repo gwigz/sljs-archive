@@ -1,8 +1,6 @@
-import EventEmitter from 'eventemitter3'
-
 import { Authenticator, Core } from './network'
 import { Agent, Nearby } from './structures'
-import { Constants } from './utilities'
+import { Constants, EventEmitter } from './utilities'
 
 /**
  * The starting point for the SLJS client.
@@ -30,17 +28,22 @@ class Client extends EventEmitter {
     this.authenticator = new Authenticator('sljs', '0.0.0')
 
     /**
-     * @type {?Agent}
-     */
-    /**
      * The Agent representing the logged in Client, becomes fully functional
      * after ready event is emitted.
      *
-     * @name Client#nearby
-     * @type {Nearby}
-     * @readonly
+     * @type {?Agent}
      */
     this.agent = new Agent(this, {})
+
+    /**
+     * The Region representing the current region, as in the region that this
+     * agent is standing within. Note that once teleporting is functional this
+     * value will be overwritten with a new object, watch the "teleport" event
+     * to avoid any potential issues.
+     *
+     * @type {?Region}
+     */
+    this.region = null
 
     /**
      * The nearby helper, becomes fully functional after ready event is emitted.

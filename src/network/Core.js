@@ -1,10 +1,8 @@
-import EventEmitter from 'eventemitter3'
-
 import Circuit from './Circuit'
 import Socket from './Socket'
 
 import { LogoutRequest } from './packets'
-import { Collection, Constants } from '../utilities'
+import { Collection, Constants, EventEmitter } from '../utilities'
 
 /**
  * The core handles connecting to a Simulator, processing and sending

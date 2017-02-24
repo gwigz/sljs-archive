@@ -18,7 +18,7 @@ class Deserializer {
   }
 
   convert (Packet, buffer) {
-    const packet = new Packet()
+    const packet = new Packet
 
     packet.index = buffer.sequence
     packet.reliable = buffer.reliable

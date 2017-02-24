@@ -1,7 +1,5 @@
-import EventEmitter from 'eventemitter3'
-
+import { Constants, EventEmitter } from '../utilities'
 import { ChatFromViewer } from '../network/packets'
-import { Collection, Constants } from '../utilities'
 
 class Nearby extends EventEmitter {
   constructor (client) {
@@ -15,8 +13,10 @@ class Nearby extends EventEmitter {
      * @readonly
      */
     Object.defineProperty(this, 'client', { value: client })
+  }
 
-    this.agents = new Collection
+  get agents () {
+    return this.client.region.agents
   }
 
   whisper (message, channel = 0) {
