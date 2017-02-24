@@ -4,8 +4,16 @@ import * as Types from '../types'
  * @link http://wiki.secondlife.com/wiki/Packet_Layout
  */
 class PacketBuffer {
-  constructor (buffer) {
+  constructor (buffer, delegating) {
     this.buffer = buffer
+
+    if (delegating) {
+      this.position = 0
+
+      // Skip parsing packet header if we are just want to use this for a
+      // buffer, may move the stuff below into a similar method like prepare.
+      return
+    }
 
     if (this.buffer.length < 7) {
       return
@@ -100,8 +108,8 @@ class PacketBuffer {
     this.buffer = Buffer.from(output)
   }
 
-  read (Type) {
-    const output = this.fetch(Type)
+  read (Type, ...args) {
+    const output = this.fetch(Type, ...args)
 
     switch (Type) {
       case Boolean:
@@ -127,16 +135,16 @@ class PacketBuffer {
     return output
   }
 
-  fetch (Type) {
+  fetch (Type, ...args) {
     switch (Type) {
       case Boolean:
         return !!this.buffer.readUInt8(this.position++)
 
       case Types.Quaternion:
-        return Type.fromBuffer(this.buffer, this.position)
+        return Type.fromBuffer(this.buffer, this.position, ...args)
 
       default:
-        return Type.fromBuffer(this.buffer, this.position)
+        return Type.fromBuffer(this.buffer, this.position, ...args)
     }
   }
 }
