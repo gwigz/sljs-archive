@@ -1,5 +1,8 @@
+import F32 from './F32'
+
 class Quaternion {
-  static size = 12
+  static size = 16
+  static zero = [0.0, 0.0, 0.0, 0.0]
 
   /**
    * Converts array input into a buffer representing a quaternion.
@@ -29,28 +32,25 @@ class Quaternion {
    *
    * @param {Buffer} buffer Buffer to convert
    * @param {integer} position Position to read from
+   * @param {Type} type Optional type overwrite
+   * @param {number} lower Lower limit for optional type convertion
+   * @param {number} upper Upper limit for optional type convertion
    * @returns {number[]}
    */
-  static fromBuffer (buffer, position = 0) {
+  static fromBuffer (buffer, position = 0, type = F32, lower, upper) {
+    if (!type) {
+      type = F32
+    }
+
     const quaternion = [
-      buffer.readFloatLE(position),
-      buffer.readFloatLE(position + 4),
-      buffer.readFloatLE(position + 8),
-      0.0
+      type.fromBuffer(buffer, position),
+      type.fromBuffer(buffer, position + type.size),
+      type.fromBuffer(buffer, position + (type.size * 2)),
+      type.fromBuffer(buffer, position + (type.size * 3))
     ]
 
-    if (buffer.length === this.size) {
-      const w = 1.0 - (
-        (quaternion[0] * quaternion[0])
-        + (quaternion[1] * quaternion[1])
-        + (quaternion[2] * quaternion[2])
-      )
-
-      if (w > 0.0) {
-        quaternion[3] = Math.sqrt(w)
-      }
-    } else {
-      quaternion[3] = buffer.readFloatLE(position + 12)
+    if (type.toFloat instanceof Function) {
+      return quaternion.map(value => type.toFloat(value, lower, upper))
     }
 
     return quaternion

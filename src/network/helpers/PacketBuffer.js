@@ -73,6 +73,10 @@ class PacketBuffer {
     return this
   }
 
+  get length () {
+    return this.buffer.length
+  }
+
   get sequence () {
     return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4]
   }
@@ -95,7 +99,7 @@ class PacketBuffer {
 
   dezerocode () {
     let output = [...this.buffer.slice(0, 6)]
-    const length = this.buffer.length
+    const length = this.length
 
     for (let i = 6; i < length; i++) {
       if (this.buffer[i] === 0x00) {
@@ -124,7 +128,12 @@ class PacketBuffer {
         break
 
       case Types.Quaternion:
-        this.position += Type.size + (output[3] ? 4 : 0)
+      case Types.Vector3:
+        if (args.length) {
+          this.position += args[0].size * (output.length + 1)
+        } else {
+          this.position += Type.size
+        }
         break
 
       default:

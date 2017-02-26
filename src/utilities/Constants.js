@@ -16,7 +16,8 @@ export const Errors = {
   MISSING_BLOCK: 'Missing packet block, packet will not be sent.',
   INVALID_BLOCK_QUANTITY: 'Quantity requirement of packet block not met or above 255, packet will not be sent.',
   MISSING_PARAMETER: 'Missing packet parameters, packet will not be sent.',
-  INVALID_PARAMETER_TYPE: 'Method parameter invalid.'
+  INVALID_PARAMETER_TYPE: 'Method parameter invalid.',
+  UNEXPECTED_OBJECT_UPDATE_LENGTH: 'Unexpected object update length!'
 }
 
 export const Status = {

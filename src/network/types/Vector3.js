@@ -1,6 +1,8 @@
+import F32 from './F32'
+
 class Vector3 {
   static size = 12
-  static zero = [0.0, 0.0, 0.0, 0.0]
+  static zero = [0.0, 0.0, 0.0]
 
   /**
    * Converts array input into a buffer representing a 3 point vector.
@@ -24,14 +26,23 @@ class Vector3 {
    *
    * @param {Buffer} buffer Buffer to convert
    * @param {integer} position Position to read from
+   * @param {Type} type Optional type overwrite
+   * @param {number} lower Lower limit for optional type convertion
+   * @param {number} upper Upper limit for optional type convertion
    * @returns {number[]}
    */
-  static fromBuffer (buffer, position = 0) {
-    return [
-      buffer.readFloatLE(position),
-      buffer.readFloatLE(position + 4),
-      buffer.readFloatLE(position + 8)
+  static fromBuffer (buffer, position = 0, type = F32, lower, upper) {
+    const output = [
+      type.fromBuffer(buffer, position),
+      type.fromBuffer(buffer, position + type.size),
+      type.fromBuffer(buffer, position + (type.size * 2))
     ]
+
+    if (type.toFloat instanceof Function) {
+      return output.map(value => type.toFloat(value, lower, upper))
+    }
+
+    return output
   }
 
   /**
@@ -41,7 +52,7 @@ class Vector3 {
    * @param {number[]} to Position to calculate distance to
    * @returns {number}
    */
-  distance (from, to) {
+  static distance (from, to) {
     const dx = from[0] - to[0]
     const dy = from[1] - to[1]
     const dz = from[2] - to[2]
