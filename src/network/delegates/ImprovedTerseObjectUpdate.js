@@ -7,7 +7,12 @@ import { Constants } from '../../utilities'
 
 class ImprovedTerseObjectUpdate extends Delegate {
   async handle (packet) {
-    // const region = packet.data.regionData[0].regionHandle
+    const handle = packet.data.regionData[0].regionHandle
+    const region = this.region(handle)
+
+    if (!region) {
+      throw Error(Constants.UNEXPECTED_OBJECT_UPDATE)
+    }
 
     for (const { data } of packet.data.objectData) {
       const buffer = new PacketBuffer(data, true)
@@ -16,31 +21,34 @@ class ImprovedTerseObjectUpdate extends Delegate {
         throw Error(Constants.Errors.UNEXPECTED_OBJECT_UPDATE_LENGTH)
       }
 
-      // TODO: Lookup object by local ID, update if found.
+      const entity = region.objects.get(buffer.read(Types.U32))
 
-      const test = {
-        id: buffer.read(Types.U32),
-        state: buffer.read(Types.U8),
-        agent: buffer.read(Boolean)
+      if (!entity) {
+        // TODO: We would want to log this, as a warning.
+        continue
       }
 
-      if (test.agent) {
-        // This contains a normal and Z position, we don't use these at the
-        // moment for anything, so don't include them for now.
-        // test.collisionPlane = buffer.read(Types.Vector4)
-        bufer.position += Types.Vector3.size
+      entity.state = buffer.read(Types.U8)
+
+      // Next byte defines if this update is for an avatar or not.
+      if (buffer.read(Boolean)) {
+        // This contains a normal and Z position for the avatars foot shadow,
+        // we don't use these at the moment for anything, so don't include them
+        // for now.
+        // entity.agent.something(...buffer.read(Types.Vector4))
+        buffer.position += Types.Vector3.size
       }
 
-      test.position = buffer.read(Types.Vector3)
+      entity.position = buffer.read(Types.Vector3)
 
       // U16 compressed velocity properties...
-      test.velocity = buffer.read(Types.Vector3, Types.U16, -64.0, 64.0)
-      test.rotation = buffer.read(Types.Quaternion, Types.U16, -1.0, 1.0)
-      test.angularVelocity = buffer.read(Types.Vector3, Types.U16, -64.0, 64.0)
+      entity.velocity = buffer.read(Types.Vector3, Types.U16, -64.0, 64.0)
+      entity.rotation = buffer.read(Types.Quaternion, Types.U16, -1.0, 1.0)
 
-      console.log(test)
+      // entity.angularVelocity = buffer.read(Types.Vector3, Types.U16, -64.0, 64.0)
+      // entity.emit('moved')
     }
   }
-}P
+}
 
 export default ImprovedTerseObjectUpdate

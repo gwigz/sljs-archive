@@ -1,6 +1,6 @@
 import { Authenticator, Core } from './network'
 import { Agent, Nearby } from './structures'
-import { Constants, EventEmitter } from './utilities'
+import { Collection, Constants, EventEmitter } from './utilities'
 
 /**
  * The starting point for the SLJS client.
@@ -45,6 +45,8 @@ class Client extends EventEmitter {
      */
     this.region = null
 
+    this.regions = new Collection
+
     /**
      * The nearby helper, becomes fully functional after ready event is emitted.
      *
@@ -55,7 +57,6 @@ class Client extends EventEmitter {
     Object.defineProperty(this, 'nearby', { value: new Nearby(this) })
 
     // parcel
-    // region
     // friends
     // groups
     // inventory

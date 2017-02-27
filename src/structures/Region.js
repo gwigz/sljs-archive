@@ -1,3 +1,4 @@
+import Entities from './Entities'
 import { Collection } from '../utilities'
 
 class Region {
@@ -12,9 +13,8 @@ class Region {
     Object.defineProperty(this, 'client', { value: client })
 
     this.agents = new Collection
-
-    // this.objects Entity[] or maybe Objects and have helper methods there
-    // this.parcels Collection<Parcel[]>
+    this.objects = new Entities
+    this.parcels = new Collection
   }
 }
 

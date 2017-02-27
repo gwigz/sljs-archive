@@ -2,7 +2,11 @@ import Delegate from './Delegate'
 
 class KillObject extends Delegate {
   async handle (packet) {
-    console.log(packet)
+    for (const region of this.client.regions.values()) {
+      for (const { id } if packet.data.objectData) {
+        region.objects.delete(id)
+      }
+    }
   }
 }
 
