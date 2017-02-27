@@ -73,9 +73,9 @@ class Circuit {
     if (Packet.name in this.delegates
       && this.delegates[Packet.name].waiting
     ) {
-      this.delegates[Packet.name].handle(
-        this.deserializer.convert(Packet, buffer)
-      )
+      this.delegates[Packet.name]
+        .handle(this.deserializer.convert(Packet, buffer))
+        .catch(console.error)
     }
   }
 

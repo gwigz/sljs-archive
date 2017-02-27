@@ -2,7 +2,7 @@ import Entities from './Entities'
 import { Collection } from '../utilities'
 
 class Region {
-  constructor (client) {
+  constructor (client, data) {
     /**
      * The Client that instantiated this Region.
      *
@@ -12,6 +12,7 @@ class Region {
      */
     Object.defineProperty(this, 'client', { value: client })
 
+    this.id = data.id
     this.agents = new Collection
     this.objects = new Entities
     this.parcels = new Collection

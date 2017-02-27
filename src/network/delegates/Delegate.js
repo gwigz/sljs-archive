@@ -17,11 +17,23 @@ class Delegate {
   }
 
   /**
-   * Handle given packet blocks.
+   * Handler recieved and parsed Packet objects.
+   *
    * @param {Packet} packet Parsed packet object
    */
   async handle () {
     // ...
+  }
+
+  /**
+   * Attempts to fetch region by region handle.
+   *
+   * @param {Long} id Region handle
+   * @returns {?Region}
+   */
+  region (id) {
+    // This is kinda ugly, I know.
+    return this.client.regions.get(`${id.getHighBits()}${id.getLowBits()}`)
   }
 }
 

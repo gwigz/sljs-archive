@@ -1,4 +1,5 @@
 import Delegate from './Delegate'
+import Region from '../../structures/Region'
 
 import {
   AgentFOV,
@@ -11,22 +12,29 @@ import {
 class AgentMovementComplete extends Delegate {
   async handle (packet) {
     const data = packet.data.data[0]
+    const client = this.client
     const agent = this.client.agent
     // const sim = packet.data.simData[0]
     // const simulator = this.client.simulator
 
+    // simulator.channel = sim.channelVersion
+
     agent.position = data.position
     agent.rotation = data.lookAt
 
-    // simulator.channel = sim.channelVersion
-
     // TODO: Setup an actual objects for region handle (so we can have sugar for
     // global to local transformations).
-    agent.handle = {
+    agent.offset = {
       x: data.regionHandle.shiftRight(32).toNumber(),
       y: data.regionHandle.and(0xffffffff).toNumber(),
       z: 0.0
     }
+
+    // This is kinda ugly, I know.
+    client.regions.set(
+      `${data.regionHandle.getHighBits()}${data.regionHandle.getLowBits()}`,
+      new Region(client, { id: data.regionHandle })
+    )
 
     // client.throttle/bandwidth?
     const throttle = 500 * 1024

@@ -16,10 +16,16 @@ class Entity {
 
   setup (data) {
     /**
-     * UUID for this Entity.
-     * @type {string}
+     * Local ID for this Entity.
+     * @type {number}
      */
-    this.id = data.id || UUID.null
+    this.id = data.id
+
+    /**
+     * UUID for this Entity.
+     * @type {number}
+     */
+    this.key = data.key || UUID.null
 
     /**
      * Current position of Entity.
@@ -32,14 +38,6 @@ class Entity {
      * @type {Number[]}
      */
     this.rotation = data.rotation || Vector3.zero
-
-    /**
-     * Toggle for Entitys that have recently been "killed", these are cleaned
-     * up eventually within Region via. it's Entities helper.
-     *
-     * @type {Boolean}
-     */
-    this.dead = false
   }
 
   get distance () {
