@@ -36,7 +36,7 @@ class ImprovedTerseObjectUpdate extends Delegate {
         // we don't use these at the moment for anything, so don't include them
         // for now.
         // entity.agent.something(...buffer.read(Types.Vector4))
-        buffer.position += Types.Vector3.size
+        buffer.position += Types.Vector4.size
       }
 
       entity.position = buffer.read(Types.Vector3)

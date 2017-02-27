@@ -24,7 +24,6 @@ class Client extends EventEmitter {
      * @type {Authenticator}
      * @private
      */
-    // `${Constants.Package.name} ${Constants.Package.version}`)
     this.authenticator = new Authenticator('sljs', '0.0.0')
 
     /**
@@ -36,15 +35,10 @@ class Client extends EventEmitter {
     this.agent = new Agent(this, {})
 
     /**
-     * The Region representing the current region, as in the region that this
-     * agent is standing within. Note that once teleporting is functional this
-     * value will be overwritten with a new object, watch the "teleport" event
-     * to avoid any potential issues.
+     * Regions we are currently connected to, or recently have been.
      *
-     * @type {?Region}
+     * @type {Collection}
      */
-    this.region = null
-
     this.regions = new Collection
 
     /**
@@ -66,6 +60,28 @@ class Client extends EventEmitter {
 
   get status () {
     return this.core.status
+  }
+
+  /**
+   * The Region representing the current region, as in the region that this
+   * agent is standing within. Note that once teleporting is functional this
+   * value will be overwritten with a new object, watch the "teleport" event
+   * to avoid any potential issues.
+   *
+   * @returns {?Region}
+   */
+  get region () {
+    return this.agent.region
+  }
+
+  /**
+   * The Parcel representing the current parcel, as in the parcel that this
+   * agent is standing within.
+   *
+   * @returns {?Parcel}
+   */
+  get parcel () {
+    return this.agent.parcel
   }
 
   async connect (username, password) {
