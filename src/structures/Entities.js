@@ -5,12 +5,12 @@ class Entities extends Collection {
     super()
 
     // Using WeakMap here, in hopes for automatic handling of
-    this.lookup = new WeakMap
+    this.register = new Collection
   }
 
-  lookup (uuid) {
-    if (this.lookup.has(uuid)) {
-      return this.get(this.lookup.get(uuid))
+  lookup (key) {
+    if (this.register.has(key)) {
+      return this.get(this.register.get(key))
     }
 
     return undefined
@@ -19,8 +19,18 @@ class Entities extends Collection {
   set (id, entity) {
     super.set(id, entity)
 
-    // Add UUID to our lookup WeakMap object.
-    this.lookup.set(entity.id, id)
+    // Add object UUID to our lookup object.
+    this.register.set(entity.key, id)
+  }
+
+  delete (id) {
+    const entity = this.get(id)
+
+    if (entity) {
+      this.register.delete(entity.key)
+    }
+
+    super.delete(id)
   }
 }
 

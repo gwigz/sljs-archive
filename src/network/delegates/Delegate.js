@@ -28,12 +28,12 @@ class Delegate {
   /**
    * Attempts to fetch region by region handle.
    *
-   * @param {Long} id Region handle
+   * @param {Long} handle Region handle
    * @returns {?Region}
    */
-  region (id) {
+  region (handle) {
     // This is kinda ugly, I know.
-    return this.client.regions.get(`${id.getHighBits()}${id.getLowBits()}`)
+    return this.client.regions.get(`${handle.getHighBits()}${handle.getLowBits()}`)
   }
 }
 

@@ -12,7 +12,7 @@ class Region {
      */
     Object.defineProperty(this, 'client', { value: client })
 
-    this.id = data.id
+    this.handle = data.handle
     this.agents = new Collection
     this.objects = new Entities
     this.parcels = new Collection

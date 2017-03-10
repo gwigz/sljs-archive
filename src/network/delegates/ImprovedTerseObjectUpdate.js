@@ -21,7 +21,8 @@ class ImprovedTerseObjectUpdate extends Delegate {
         throw Error(Constants.Errors.UNEXPECTED_OBJECT_UPDATE_LENGTH)
       }
 
-      const entity = region.objects.get(buffer.read(Types.U32))
+      const id = buffer.read(Types.U32)
+      const entity = region.objects.get(id)
 
       if (!entity) {
         // TODO: We would want to log this, as a warning.
@@ -43,7 +44,7 @@ class ImprovedTerseObjectUpdate extends Delegate {
 
       // U16 compressed velocity properties...
       entity.velocity = buffer.read(Types.Vector3, Types.U16, -64.0, 64.0)
-      entity.rotation = buffer.read(Types.Quaternion, Types.U16, -1.0, 1.0)
+      entity.rotation = buffer.read(Types.Quaternion, false, Types.U16, -1.0, 1.0)
 
       // entity.angularVelocity = buffer.read(Types.Vector3, Types.U16, -64.0, 64.0)
       // entity.emit('moved')

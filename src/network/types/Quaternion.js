@@ -1,7 +1,7 @@
 import F32 from './F32'
 
 class Quaternion {
-  static size = 16
+  static size = 12
   static zero = [0.0, 0.0, 0.0, 0.0]
 
   /**
@@ -32,12 +32,13 @@ class Quaternion {
    *
    * @param {Buffer} buffer Buffer to convert
    * @param {integer} position Position to read from
+   * @param {boolean} normalized True if value is normalized
    * @param {Type} type Optional type overwrite
    * @param {number} lower Lower limit for optional type convertion
    * @param {number} upper Upper limit for optional type convertion
    * @returns {number[]}
    */
-  static fromBuffer (buffer, position = 0, type = F32, lower, upper) {
+  static fromBuffer (buffer, position = 0, normalized = true, type = F32, lower, upper) {
     if (!type) {
       type = F32
     }
@@ -46,8 +47,17 @@ class Quaternion {
       type.fromBuffer(buffer, position),
       type.fromBuffer(buffer, position + type.size),
       type.fromBuffer(buffer, position + (type.size * 2)),
-      type.fromBuffer(buffer, position + (type.size * 3))
+      normalized ? 0.0 : type.fromBuffer(buffer, position + (type.size * 3))
     ]
+
+    if (normalized) {
+      const sum = 1
+        - (quaternion[0] * quaternion[0])
+        - (quaternion[1] * quaternion[1])
+        - (quaternion[2] * quaternion[2])
+
+      quaternion[3] = sum > 0.0 ? Math.sqrt(sum) : 0.0
+    }
 
     if (type.toFloat instanceof Function) {
       return quaternion.map(value => type.toFloat(value, lower, upper))

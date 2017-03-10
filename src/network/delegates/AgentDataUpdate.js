@@ -5,13 +5,13 @@ class AgentDataUpdate extends Delegate {
     const data = packet.data.agentData[0]
     const agent = this.client.agent
 
-    agent.id = data.agent
-    agent.firstname = data.firstName
-    agent.lastname = data.lastName
+    agent.key = data.agent
+    agent.firstname = data.firstName.toString('utf8').slice(0, -1)
+    agent.lastname = data.lastName.toString('utf8').slice(0, -1)
 
     /*
       agent.group = {
-        id: data.activeGroup,
+        key: data.activeGroup,
         name: data.groupName,
         title: data.groupTitle,
         permissions: data.groupPowers

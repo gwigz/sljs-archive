@@ -33,7 +33,7 @@ class AgentMovementComplete extends Delegate {
     // This is kinda ugly, I know.
     client.regions.set(
       `${data.regionHandle.getHighBits()}${data.regionHandle.getLowBits()}`,
-      new Region(client, { id: data.regionHandle })
+      new Region(client, { handle: data.regionHandle })
     )
 
     // client.throttle/bandwidth?

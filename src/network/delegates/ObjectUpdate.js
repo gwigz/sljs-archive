@@ -12,7 +12,7 @@ class ObjectUpdate extends Delegate {
       throw Error(Constants.Errors.UNEXPECTED_OBJECT_UPDATE)
     }
 
-    for (const { data } of packet.data.objectData) {
+    for (const data of packet.data.objectData) {
       const entity = region.objects.get(data.id)
 
       if (entity) {
@@ -40,10 +40,10 @@ class ObjectUpdate extends Delegate {
   }
 
   async insert (data, region) {
-    const entity = new Entity(this.update({}, data))
+    const entity = new Entity(this.client, await this.update({}, data))
 
-    // Pass to entities collection, lookup ID is handled here.
-    region.objects.set(data.id, entity)
+    // Pass to regions entity collection.
+    region.objects.set(entity.id, entity)
 
     return entity
   }

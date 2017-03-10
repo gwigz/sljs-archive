@@ -32,7 +32,7 @@ class Client extends EventEmitter {
      *
      * @type {?Agent}
      */
-    this.agent = new Agent(this, {})
+    this.agent = new Agent(this, { id: 0 })
 
     /**
      * Regions we are currently connected to, or recently have been.

@@ -39,7 +39,7 @@ class Vector3 {
     ]
 
     if (type.toFloat instanceof Function) {
-      return output.map(value => type.toFloat(value, lower, upper))
+      return output.map((value) => type.toFloat(value, lower, upper))
     }
 
     return output

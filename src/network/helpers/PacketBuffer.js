@@ -127,10 +127,30 @@ class PacketBuffer {
         this.position += this.buffer.readUInt16LE(this.position) + 2
         break
 
+      case Types.Text:
+        this.position += output.length + 1
+        break
+
       case Types.Quaternion:
+        if (args.length > 1) {
+          this.position += args[1].size * output.length
+
+          // If normalized, take one step away from the position we just added.
+          if (args[0]) {
+            this.position -= args[1].size
+          }
+        } else if (args.length) {
+          // If normalized, default to standard size.
+          this.position += Type.size
+        } else {
+          // If not, add one to default size.
+          this.position += Type.size + Types.F32.size
+        }
+        break
+
       case Types.Vector3:
         if (args.length) {
-          this.position += args[0].size * (output.length + 1)
+          this.position += args[0].size * output.length
         } else {
           this.position += Type.size
         }

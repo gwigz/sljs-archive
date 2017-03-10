@@ -9,7 +9,7 @@ class ChatFromSimulator extends Delegate {
   async handle (packet) {
     for (const data of packet.data.chatData) {
       const chatter = {
-        id: data.source,
+        key: data.source,
         name: data.fromName.toString().slice(0, -1),
         type: data.sourceType,
         position: data.position
