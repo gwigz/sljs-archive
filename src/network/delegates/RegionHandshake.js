@@ -1,5 +1,4 @@
 import Delegate from './Delegate'
-
 import { RegionHandshakeReply } from '../packets'
 
 class RegionHandshake extends Delegate {

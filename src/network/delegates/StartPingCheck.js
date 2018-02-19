@@ -1,5 +1,4 @@
 import Delegate from './Delegate'
-
 import { CompletePingCheck } from '../packets'
 
 class StartPingCheck extends Delegate {

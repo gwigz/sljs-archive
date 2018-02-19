@@ -82,6 +82,7 @@ class Core extends EventEmitter {
     const circuit = new Circuit(this, ...args)
 
     this.status = Constants.Status.CONNECTING
+    this.client.emit(Constants.Events.DEBUG, 'Handshake recieved, creating circuit...')
 
     if (this.circuit === null) {
       this.circuit = circuit
