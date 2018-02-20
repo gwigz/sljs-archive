@@ -1,5 +1,10 @@
-/* tslint:disable */
+import Collection from './Collection'
+import EventEmitter from './EventEmitter'
 
-export Collection from './Collection'
-export EventEmitter from './EventEmitter'
-export * as Constants from './Constants'
+import * as Constants from './Constants'
+
+export {
+  Collection,
+  Constants,
+  EventEmitter
+}

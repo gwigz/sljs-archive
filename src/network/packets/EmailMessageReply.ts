@@ -50,7 +50,7 @@ class EmailMessageReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['more', Types.U32], ['time', Types.U32], ['fromAddress', Types.Variable1], ['subject', Types.Variable1], ['data', Types.Variable2], ['mailFilter', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class EmailMessageReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.dataBlock.object] ObjectID
+   * @param {string} [data.dataBlock.object] ObjectID
    * @param {U32} [data.dataBlock.more] More
    * @param {U32} [data.dataBlock.time] Time
    * @param {Variable1} [data.dataBlock.fromAddress] FromAddress

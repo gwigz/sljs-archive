@@ -48,7 +48,7 @@ class SimStatus extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['simStatus', { quantity: 1, parameters: new Collection([['canAcceptAgents', Boolean], ['canAcceptTasks', Boolean]]) }]
   ])
@@ -61,8 +61,8 @@ class SimStatus extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {BOOL} [data.simStatus.canAcceptAgents] CanAcceptAgents
-   * @param {BOOL} [data.simStatus.canAcceptTasks] CanAcceptTasks
+   * @param {boolean} [data.simStatus.canAcceptAgents] CanAcceptAgents
+   * @param {boolean} [data.simStatus.canAcceptTasks] CanAcceptTasks
    */
   constructor (data = {}) {
     super(data)

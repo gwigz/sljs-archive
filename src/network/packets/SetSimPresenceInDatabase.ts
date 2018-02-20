@@ -50,7 +50,7 @@ class SetSimPresenceInDatabase extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['simData', { quantity: 1, parameters: new Collection([['region', Types.UUID], ['hostName', Types.Variable1], ['gridX', Types.U32], ['gridY', Types.U32], ['pID', Types.S32], ['agentCount', Types.S32], ['timeToLive', Types.S32], ['status', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class SetSimPresenceInDatabase extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.simData.region] RegionID
+   * @param {string} [data.simData.region] RegionID
    * @param {Variable1} [data.simData.hostName] HostName
    * @param {U32} [data.simData.gridX] GridX
    * @param {U32} [data.simData.gridY] GridY

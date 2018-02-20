@@ -50,7 +50,7 @@ class RequestXfer extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['xfer', { quantity: 1, parameters: new Collection([['id', Types.U64], ['filename', Types.Variable1], ['filePath', Types.U8], ['deleteOnCompletion', Boolean], ['useBigPackets', Boolean], ['vFile', Types.UUID], ['vFileType', Types.S16]]) }]
   ])
@@ -66,9 +66,9 @@ class RequestXfer extends Packet {
    * @param {U64} [data.xfer.id] ID
    * @param {Variable1} [data.xfer.filename] Filename
    * @param {U8} [data.xfer.filePath] FilePath
-   * @param {BOOL} [data.xfer.deleteOnCompletion] DeleteOnCompletion
-   * @param {BOOL} [data.xfer.useBigPackets] UseBigPackets
-   * @param {UUID} [data.xfer.vFile] VFileID
+   * @param {boolean} [data.xfer.deleteOnCompletion] DeleteOnCompletion
+   * @param {boolean} [data.xfer.useBigPackets] UseBigPackets
+   * @param {string} [data.xfer.vFile] VFileID
    * @param {S16} [data.xfer.vFileType] VFileType
    */
   constructor (data = {}) {

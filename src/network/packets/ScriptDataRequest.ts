@@ -50,7 +50,7 @@ class ScriptDataRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { parameters: new Collection([['hash', Types.U64], ['requestType', Types.S8], ['request', Types.Variable2]]) }]
   ])

@@ -50,7 +50,7 @@ class RoutedMoneyBalanceReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['targetBlock', { quantity: 1, parameters: new Collection([['targetIP', Types.IP], ['targetPort', Types.Port]]) }],
     // tslint:disable-next-line:max-line-length
@@ -69,18 +69,18 @@ class RoutedMoneyBalanceReply extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {IP} [data.targetBlock.targetIP] TargetIP
    * @param {Port} [data.targetBlock.targetPort] TargetPort
-   * @param {UUID} [data.moneyData.agent] AgentID
-   * @param {UUID} [data.moneyData.transaction] TransactionID
-   * @param {BOOL} [data.moneyData.transactionSuccess] TransactionSuccess
+   * @param {string} [data.moneyData.agent] AgentID
+   * @param {string} [data.moneyData.transaction] TransactionID
+   * @param {boolean} [data.moneyData.transactionSuccess] TransactionSuccess
    * @param {S32} [data.moneyData.moneyBalance] MoneyBalance
    * @param {S32} [data.moneyData.squareMetersCredit] SquareMetersCredit
    * @param {S32} [data.moneyData.squareMetersCommitted] SquareMetersCommitted
    * @param {Variable1} [data.moneyData.description] Description
    * @param {S32} [data.transactionInfo.transactionType] TransactionType
-   * @param {UUID} [data.transactionInfo.source] SourceID
-   * @param {BOOL} [data.transactionInfo.isSourceGroup] IsSourceGroup
-   * @param {UUID} [data.transactionInfo.dest] DestID
-   * @param {BOOL} [data.transactionInfo.isDestGroup] IsDestGroup
+   * @param {string} [data.transactionInfo.source] SourceID
+   * @param {boolean} [data.transactionInfo.isSourceGroup] IsSourceGroup
+   * @param {string} [data.transactionInfo.dest] DestID
+   * @param {boolean} [data.transactionInfo.isDestGroup] IsDestGroup
    * @param {S32} [data.transactionInfo.amount] Amount
    * @param {Variable1} [data.transactionInfo.itemDescription] ItemDescription
    */

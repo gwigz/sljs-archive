@@ -1,6 +1,6 @@
-import crypto from 'crypto'
-import os from 'os'
-import xmlrpc from 'xmlrpc'
+import * as Crypto from 'crypto'
+import * as OS from 'os'
+import * as XMLRPC from 'xmlrpc'
 
 import { Constants } from '../utilities'
 
@@ -11,7 +11,7 @@ class Authenticator {
     this.agent = `${channel} ${version}`
 
     // TODO: Figure out better method of doing this, for callers file?
-    this.digest = crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
+    this.digest = Crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
   }
 
   public async login (username: string, password: string, start: string = 'last'): void {
@@ -23,8 +23,8 @@ class Authenticator {
 
     const system = {
       filesystem: { id0: '00000000-0000-0000-0000-000000000000' },
-      network: os.networkInterfaces().en0 || [{ mac: '00000000-0000-0000-0000-000000000000' }],
-      platform: platforms[os.platform()] || 'Lin'
+      network: OS.networkInterfaces().en0 || [{ mac: '00000000-0000-0000-0000-000000000000' }],
+      platform: platforms[OS.platform()] || 'Lin'
     }
 
     const options = [
@@ -37,7 +37,7 @@ class Authenticator {
     const parameters = {
       first: username.split(' ')[0],
       last: username.split(' ')[1] || 'Resident',
-      passwd: `$1$${crypto.createHash('md5').update(password).digest('hex')}`,
+      passwd: `$1$${Crypto.createHash('md5').update(password).digest('hex')}`,
       start,
       channel: this.channel,
       version: this.version,
@@ -50,7 +50,7 @@ class Authenticator {
       options
     }
 
-    const client = xmlrpc.createSecureClient({
+    const client = XMLRPC.createSecureClient({
       url: Constants.Endpoints.LOGIN_URL,
       headers: { 'User-Agent': this.agent },
       rejectUnauthorized: false

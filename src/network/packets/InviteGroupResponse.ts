@@ -50,7 +50,7 @@ class InviteGroupResponse extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['inviteData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['invitee', Types.UUID], ['group', Types.UUID], ['role', Types.UUID], ['membershipFee', Types.S32]]) }]
   ])
@@ -63,10 +63,10 @@ class InviteGroupResponse extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.inviteData.agent] AgentID
-   * @param {UUID} [data.inviteData.invitee] InviteeID
-   * @param {UUID} [data.inviteData.group] GroupID
-   * @param {UUID} [data.inviteData.role] RoleID
+   * @param {string} [data.inviteData.agent] AgentID
+   * @param {string} [data.inviteData.invitee] InviteeID
+   * @param {string} [data.inviteData.group] GroupID
+   * @param {string} [data.inviteData.role] RoleID
    * @param {S32} [data.inviteData.membershipFee] MembershipFee
    */
   constructor (data = {}) {

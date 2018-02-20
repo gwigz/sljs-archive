@@ -50,7 +50,7 @@ class ReplyTaskInventory extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['inventoryData', { quantity: 1, parameters: new Collection([['task', Types.UUID], ['serial', Types.S16], ['filename', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class ReplyTaskInventory extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.inventoryData.task] TaskID
+   * @param {string} [data.inventoryData.task] TaskID
    * @param {S16} [data.inventoryData.serial] Serial
    * @param {Variable1} [data.inventoryData.filename] Filename
    */

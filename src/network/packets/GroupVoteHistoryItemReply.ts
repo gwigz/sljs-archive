@@ -50,7 +50,7 @@ class GroupVoteHistoryItemReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -69,21 +69,21 @@ class GroupVoteHistoryItemReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.group] GroupID
-   * @param {UUID} [data.transactionData.transaction] TransactionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.group] GroupID
+   * @param {string} [data.transactionData.transaction] TransactionID
    * @param {U32} [data.transactionData.totalNumItems] TotalNumItems
-   * @param {UUID} [data.historyItemData.vote] VoteID
+   * @param {string} [data.historyItemData.vote] VoteID
    * @param {Variable1} [data.historyItemData.terseDate] TerseDateID
    * @param {Variable1} [data.historyItemData.startDateTime] StartDateTime
    * @param {Variable1} [data.historyItemData.endDateTime] EndDateTime
-   * @param {UUID} [data.historyItemData.voteInitiator] VoteInitiator
+   * @param {string} [data.historyItemData.voteInitiator] VoteInitiator
    * @param {Variable1} [data.historyItemData.voteType] VoteType
    * @param {Variable1} [data.historyItemData.voteResult] VoteResult
    * @param {F32} [data.historyItemData.majority] Majority
    * @param {S32} [data.historyItemData.quorum] Quorum
    * @param {Variable2} [data.historyItemData.proposalText] ProposalText
-   * @param {UUID} [data.voteItem.candidate] CandidateID
+   * @param {string} [data.voteItem.candidate] CandidateID
    * @param {Variable1} [data.voteItem.voteCast] VoteCast
    * @param {S32} [data.voteItem.numVotes] NumVotes
    */

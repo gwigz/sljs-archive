@@ -50,7 +50,7 @@ class TeleportFinish extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['info', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['location', Types.U32], ['simIP', Types.IP], ['simPort', Types.Port], ['regionHandle', Types.U64], ['seedCapability', Types.Variable2], ['simAccess', Types.U8], ['teleportFlags', Types.U32]]) }]
   ])
@@ -63,7 +63,7 @@ class TeleportFinish extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.info.agent] AgentID
+   * @param {string} [data.info.agent] AgentID
    * @param {U32} [data.info.location] LocationID
    * @param {IP} [data.info.simIP] SimIP
    * @param {Port} [data.info.simPort] SimPort

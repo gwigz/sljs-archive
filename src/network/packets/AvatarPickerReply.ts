@@ -50,7 +50,7 @@ class AvatarPickerReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['query', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,9 +65,9 @@ class AvatarPickerReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.query] QueryID
-   * @param {UUID} [data.data.avatar] AvatarID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.query] QueryID
+   * @param {string} [data.data.avatar] AvatarID
    * @param {Variable1} [data.data.firstName] FirstName
    * @param {Variable1} [data.data.lastName] LastName
    */

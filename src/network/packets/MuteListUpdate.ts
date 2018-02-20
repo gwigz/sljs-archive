@@ -50,7 +50,7 @@ class MuteListUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['muteData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['filename', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class MuteListUpdate extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.muteData.agent] AgentID
+   * @param {string} [data.muteData.agent] AgentID
    * @param {Variable1} [data.muteData.filename] Filename
    */
   constructor (data = {}) {

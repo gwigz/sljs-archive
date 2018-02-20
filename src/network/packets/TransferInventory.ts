@@ -50,7 +50,7 @@ class TransferInventory extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['infoBlock', { quantity: 1, parameters: new Collection([['source', Types.UUID], ['dest', Types.UUID], ['transaction', Types.UUID]]) }],
     ['inventoryBlock', { parameters: new Collection([['inventory', Types.UUID], ['type', Types.S8]]) }]
@@ -64,10 +64,10 @@ class TransferInventory extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.infoBlock.source] SourceID
-   * @param {UUID} [data.infoBlock.dest] DestID
-   * @param {UUID} [data.infoBlock.transaction] TransactionID
-   * @param {UUID} [data.inventoryBlock.inventory] InventoryID
+   * @param {string} [data.infoBlock.source] SourceID
+   * @param {string} [data.infoBlock.dest] DestID
+   * @param {string} [data.infoBlock.transaction] TransactionID
+   * @param {string} [data.inventoryBlock.inventory] InventoryID
    * @param {S8} [data.inventoryBlock.type] Type
    */
   constructor (data = {}) {

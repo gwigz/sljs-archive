@@ -50,7 +50,7 @@ class AvatarPropertiesRequestBackend extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['avatar', Types.UUID], ['godLevel', Types.U8], ['webProfilesDisabled', Boolean]]) }]
   ])
@@ -63,10 +63,10 @@ class AvatarPropertiesRequestBackend extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.avatar] AvatarID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.avatar] AvatarID
    * @param {U8} [data.agentData.godLevel] GodLevel
-   * @param {BOOL} [data.agentData.webProfilesDisabled] WebProfilesDisabled
+   * @param {boolean} [data.agentData.webProfilesDisabled] WebProfilesDisabled
    */
   constructor (data = {}) {
     super(data)

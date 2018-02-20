@@ -50,7 +50,7 @@ class UpdateGroupInfo extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,16 +65,16 @@ class UpdateGroupInfo extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.groupData.group] GroupID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.groupData.group] GroupID
    * @param {Variable2} [data.groupData.charter] Charter
-   * @param {BOOL} [data.groupData.showInList] ShowInList
-   * @param {UUID} [data.groupData.insignia] InsigniaID
+   * @param {boolean} [data.groupData.showInList] ShowInList
+   * @param {string} [data.groupData.insignia] InsigniaID
    * @param {S32} [data.groupData.membershipFee] MembershipFee
-   * @param {BOOL} [data.groupData.openEnrollment] OpenEnrollment
-   * @param {BOOL} [data.groupData.allowPublish] AllowPublish
-   * @param {BOOL} [data.groupData.maturePublish] MaturePublish
+   * @param {boolean} [data.groupData.openEnrollment] OpenEnrollment
+   * @param {boolean} [data.groupData.allowPublish] AllowPublish
+   * @param {boolean} [data.groupData.maturePublish] MaturePublish
    */
   constructor (data = {}) {
     super(data)

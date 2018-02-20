@@ -50,7 +50,7 @@ class SimulatorViewerTimeMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['timeInfo', { quantity: 1, parameters: new Collection([['usecSinceStart', Types.U64], ['secPerDay', Types.U32], ['secPerYear', Types.U32], ['sunDirection', Types.Vector3], ['sunPhase', Types.F32], ['sunAngVelocity', Types.Vector3]]) }]
   ])

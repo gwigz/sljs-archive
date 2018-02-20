@@ -50,7 +50,7 @@ class AvatarGroupsReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,15 +67,15 @@ class AvatarGroupsReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.avatar] AvatarID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.avatar] AvatarID
    * @param {U64} [data.groupData.groupPowers] GroupPowers
-   * @param {BOOL} [data.groupData.acceptNotices] AcceptNotices
+   * @param {boolean} [data.groupData.acceptNotices] AcceptNotices
    * @param {Variable1} [data.groupData.groupTitle] GroupTitle
-   * @param {UUID} [data.groupData.group] GroupID
+   * @param {string} [data.groupData.group] GroupID
    * @param {Variable1} [data.groupData.groupName] GroupName
-   * @param {UUID} [data.groupData.groupInsignia] GroupInsigniaID
-   * @param {BOOL} [data.newGroupData.listInProfile] ListInProfile
+   * @param {string} [data.groupData.groupInsignia] GroupInsigniaID
+   * @param {boolean} [data.newGroupData.listInProfile] ListInProfile
    */
   constructor (data = {}) {
     super(data)

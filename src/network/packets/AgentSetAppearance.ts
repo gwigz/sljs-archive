@@ -50,7 +50,7 @@ class AgentSetAppearance extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['serialNum', Types.U32], ['size', Types.Vector3]]) }],
     // tslint:disable-next-line:max-line-length
@@ -69,11 +69,11 @@ class AgentSetAppearance extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.serialNum] SerialNum
    * @param {Vector3} [data.agentData.size] Size
-   * @param {UUID} [data.wearableData.cache] CacheID
+   * @param {string} [data.wearableData.cache] CacheID
    * @param {U8} [data.wearableData.textureIndex] TextureIndex
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    * @param {U8} [data.visualParam.paramValue] ParamValue

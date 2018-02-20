@@ -50,7 +50,7 @@ class GenericError extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,10 +65,10 @@ class GenericError extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.agent] AgentID
    * @param {S32} [data.data.code] Code
    * @param {Variable1} [data.data.token] Token
-   * @param {UUID} [data.data.id] ID
+   * @param {string} [data.data.id] ID
    * @param {Variable1} [data.data.system] System
    * @param {Variable2} [data.data.message] Message
    * @param {Variable2} [data.data.data] Data

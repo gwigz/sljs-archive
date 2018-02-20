@@ -50,7 +50,7 @@ class PacketAck extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['packets', { parameters: new Collection([['id', Types.U32]]) }]
   ])

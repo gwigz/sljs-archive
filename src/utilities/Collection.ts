@@ -2,7 +2,7 @@
  * An extended map with utility functions.
  * @extends Map
  */
-class Collection extends Map {
+class Collection extends Map<string, any> {
   /**
    * Returns all items in the collection as an array.
    * @returns {Array} Array of values
@@ -61,7 +61,7 @@ class Collection extends Map {
    * @param {string} key The matching key
    * @returns {Array} Array of keyed values
    */
-  public pluck (key): Array<any> {
+  public pluck (key: string): Array<any> {
     return this.toArray().reduce((index, object) => {
       if (!object[key]) { return index }
       index.push(object[key])
@@ -74,7 +74,7 @@ class Collection extends Map {
    * @param {string} key The matching key
    * @returns {object} Object containing grouped values
    */
-  public groupBy (key): any {
+  public groupBy (key: string): any {
     return this.toArray().reduce((index, object) => {
       const value = object[key]
       index[value] = index[value] || []
@@ -87,7 +87,7 @@ class Collection extends Map {
    * Get unique values.
    * @returns {Array} unique Array of unique values
    */
-  public unique (): Array<Set> {
+  public unique (): Array<Set<any>> {
     return [...new Set(this.toArray())]
   }
 }

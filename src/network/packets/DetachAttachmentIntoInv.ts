@@ -50,7 +50,7 @@ class DetachAttachmentIntoInv extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['objectData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['item', Types.UUID]]) }]
   ])
@@ -63,8 +63,8 @@ class DetachAttachmentIntoInv extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.objectData.agent] AgentID
-   * @param {UUID} [data.objectData.item] ItemID
+   * @param {string} [data.objectData.agent] AgentID
+   * @param {string} [data.objectData.item] ItemID
    */
   constructor (data = {}) {
     super(data)

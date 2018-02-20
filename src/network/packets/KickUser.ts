@@ -50,7 +50,7 @@ class KickUser extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['targetBlock', { quantity: 1, parameters: new Collection([['targetIP', Types.IP], ['targetPort', Types.Port]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,8 +67,8 @@ class KickUser extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {IP} [data.targetBlock.targetIP] TargetIP
    * @param {Port} [data.targetBlock.targetPort] TargetPort
-   * @param {UUID} [data.userInfo.agent] AgentID
-   * @param {UUID} [data.userInfo.session] SessionID
+   * @param {string} [data.userInfo.agent] AgentID
+   * @param {string} [data.userInfo.session] SessionID
    * @param {Variable2} [data.userInfo.reason] Reason
    */
   constructor (data = {}) {

@@ -50,7 +50,7 @@ class ObjectDuplicateOnRay extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['bypassRaycast', Boolean], ['rayEndIsIntersection', Boolean], ['copyCenters', Boolean], ['copyRotates', Boolean], ['rayTarget', Types.UUID], ['duplicateFlags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,16 +65,16 @@ class ObjectDuplicateOnRay extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.agentData.group] GroupID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.group] GroupID
    * @param {Vector3} [data.agentData.rayStart] RayStart
    * @param {Vector3} [data.agentData.rayEnd] RayEnd
-   * @param {BOOL} [data.agentData.bypassRaycast] BypassRaycast
-   * @param {BOOL} [data.agentData.rayEndIsIntersection] RayEndIsIntersection
-   * @param {BOOL} [data.agentData.copyCenters] CopyCenters
-   * @param {BOOL} [data.agentData.copyRotates] CopyRotates
-   * @param {UUID} [data.agentData.rayTarget] RayTargetID
+   * @param {boolean} [data.agentData.bypassRaycast] BypassRaycast
+   * @param {boolean} [data.agentData.rayEndIsIntersection] RayEndIsIntersection
+   * @param {boolean} [data.agentData.copyCenters] CopyCenters
+   * @param {boolean} [data.agentData.copyRotates] CopyRotates
+   * @param {string} [data.agentData.rayTarget] RayTargetID
    * @param {U32} [data.agentData.duplicateFlags] DuplicateFlags
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */

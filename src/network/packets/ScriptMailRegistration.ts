@@ -50,7 +50,7 @@ class ScriptMailRegistration extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['targetIP', Types.Variable1], ['targetPort', Types.Port], ['task', Types.UUID], ['flags', Types.U32]]) }]
   ])
@@ -65,7 +65,7 @@ class ScriptMailRegistration extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.dataBlock.targetIP] TargetIP
    * @param {Port} [data.dataBlock.targetPort] TargetPort
-   * @param {UUID} [data.dataBlock.task] TaskID
+   * @param {string} [data.dataBlock.task] TaskID
    * @param {U32} [data.dataBlock.flags] Flags
    */
   constructor (data = {}) {

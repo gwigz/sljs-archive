@@ -50,7 +50,7 @@ class ParcelPropertiesUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,8 +65,8 @@ class ParcelPropertiesUpdate extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
    * @param {S32} [data.parcelData.local] LocalID
    * @param {U32} [data.parcelData.flags] Flags
    * @param {U32} [data.parcelData.parcelFlags] ParcelFlags
@@ -75,14 +75,14 @@ class ParcelPropertiesUpdate extends Packet {
    * @param {Variable1} [data.parcelData.desc] Desc
    * @param {Variable1} [data.parcelData.musicURL] MusicURL
    * @param {Variable1} [data.parcelData.mediaURL] MediaURL
-   * @param {UUID} [data.parcelData.media] MediaID
+   * @param {string} [data.parcelData.media] MediaID
    * @param {U8} [data.parcelData.mediaAutoScale] MediaAutoScale
-   * @param {UUID} [data.parcelData.group] GroupID
+   * @param {string} [data.parcelData.group] GroupID
    * @param {S32} [data.parcelData.passPrice] PassPrice
    * @param {F32} [data.parcelData.passHours] PassHours
    * @param {U8} [data.parcelData.category] Category
-   * @param {UUID} [data.parcelData.authBuyer] AuthBuyerID
-   * @param {UUID} [data.parcelData.snapshot] SnapshotID
+   * @param {string} [data.parcelData.authBuyer] AuthBuyerID
+   * @param {string} [data.parcelData.snapshot] SnapshotID
    * @param {Vector3} [data.parcelData.userLocation] UserLocation
    * @param {Vector3} [data.parcelData.userLookAt] UserLookAt
    * @param {U8} [data.parcelData.landingType] LandingType

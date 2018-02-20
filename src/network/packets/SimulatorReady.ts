@@ -50,7 +50,7 @@ class SimulatorReady extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['simulatorBlock', { quantity: 1, parameters: new Collection([['simName', Types.Variable1], ['simAccess', Types.U8], ['regionFlags', Types.U32], ['region', Types.UUID], ['estate', Types.U32], ['parentEstate', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -68,10 +68,10 @@ class SimulatorReady extends Packet {
    * @param {Variable1} [data.simulatorBlock.simName] SimName
    * @param {U8} [data.simulatorBlock.simAccess] SimAccess
    * @param {U32} [data.simulatorBlock.regionFlags] RegionFlags
-   * @param {UUID} [data.simulatorBlock.region] RegionID
+   * @param {string} [data.simulatorBlock.region] RegionID
    * @param {U32} [data.simulatorBlock.estate] EstateID
    * @param {U32} [data.simulatorBlock.parentEstate] ParentEstateID
-   * @param {BOOL} [data.telehubBlock.hasTelehub] HasTelehub
+   * @param {boolean} [data.telehubBlock.hasTelehub] HasTelehub
    * @param {Vector3} [data.telehubBlock.telehubPos] TelehubPos
    */
   constructor (data = {}) {

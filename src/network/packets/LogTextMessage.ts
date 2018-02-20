@@ -50,7 +50,7 @@ class LogTextMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { parameters: new Collection([['fromAgentId', Types.UUID], ['toAgentId', Types.UUID], ['globalX', Types.F64], ['globalY', Types.F64], ['time', Types.U32], ['message', Types.Variable2]]) }]
   ])
@@ -63,8 +63,8 @@ class LogTextMessage extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.dataBlock.fromAgentId] FromAgentId
-   * @param {UUID} [data.dataBlock.toAgentId] ToAgentId
+   * @param {string} [data.dataBlock.fromAgentId] FromAgentId
+   * @param {string} [data.dataBlock.toAgentId] ToAgentId
    * @param {F64} [data.dataBlock.globalX] GlobalX
    * @param {F64} [data.dataBlock.globalY] GlobalY
    * @param {U32} [data.dataBlock.time] Time

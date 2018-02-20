@@ -50,7 +50,7 @@ class GroupProfileReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,23 +65,23 @@ class GroupProfileReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.groupData.group] GroupID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.groupData.group] GroupID
    * @param {Variable1} [data.groupData.name] Name
    * @param {Variable2} [data.groupData.charter] Charter
-   * @param {BOOL} [data.groupData.showInList] ShowInList
+   * @param {boolean} [data.groupData.showInList] ShowInList
    * @param {Variable1} [data.groupData.memberTitle] MemberTitle
    * @param {U64} [data.groupData.powersMask] PowersMask
-   * @param {UUID} [data.groupData.insignia] InsigniaID
-   * @param {UUID} [data.groupData.founder] FounderID
+   * @param {string} [data.groupData.insignia] InsigniaID
+   * @param {string} [data.groupData.founder] FounderID
    * @param {S32} [data.groupData.membershipFee] MembershipFee
-   * @param {BOOL} [data.groupData.openEnrollment] OpenEnrollment
+   * @param {boolean} [data.groupData.openEnrollment] OpenEnrollment
    * @param {S32} [data.groupData.money] Money
    * @param {S32} [data.groupData.groupMembershipCount] GroupMembershipCount
    * @param {S32} [data.groupData.groupRolesCount] GroupRolesCount
-   * @param {BOOL} [data.groupData.allowPublish] AllowPublish
-   * @param {BOOL} [data.groupData.maturePublish] MaturePublish
-   * @param {UUID} [data.groupData.ownerRole] OwnerRole
+   * @param {boolean} [data.groupData.allowPublish] AllowPublish
+   * @param {boolean} [data.groupData.maturePublish] MaturePublish
+   * @param {string} [data.groupData.ownerRole] OwnerRole
    */
   constructor (data = {}) {
     super(data)

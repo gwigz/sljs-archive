@@ -50,7 +50,7 @@ class GroupRoleMembersReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID], ['request', Types.UUID], ['totalPairs', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,12 +65,12 @@ class GroupRoleMembersReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.group] GroupID
-   * @param {UUID} [data.agentData.request] RequestID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.group] GroupID
+   * @param {string} [data.agentData.request] RequestID
    * @param {U32} [data.agentData.totalPairs] TotalPairs
-   * @param {UUID} [data.memberData.role] RoleID
-   * @param {UUID} [data.memberData.member] MemberID
+   * @param {string} [data.memberData.role] RoleID
+   * @param {string} [data.memberData.member] MemberID
    */
   constructor (data = {}) {
     super(data)

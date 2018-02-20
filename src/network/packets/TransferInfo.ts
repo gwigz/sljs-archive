@@ -50,7 +50,7 @@ class TransferInfo extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['transferInfo', { quantity: 1, parameters: new Collection([['transfer', Types.UUID], ['channelType', Types.S32], ['targetType', Types.S32], ['status', Types.S32], ['size', Types.S32], ['params', Types.Variable2]]) }]
   ])
@@ -63,7 +63,7 @@ class TransferInfo extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.transferInfo.transfer] TransferID
+   * @param {string} [data.transferInfo.transfer] TransferID
    * @param {S32} [data.transferInfo.channelType] ChannelType
    * @param {S32} [data.transferInfo.targetType] TargetType
    * @param {S32} [data.transferInfo.status] Status

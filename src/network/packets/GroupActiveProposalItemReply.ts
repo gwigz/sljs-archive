@@ -50,7 +50,7 @@ class GroupActiveProposalItemReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,16 +67,16 @@ class GroupActiveProposalItemReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.group] GroupID
-   * @param {UUID} [data.transactionData.transaction] TransactionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.group] GroupID
+   * @param {string} [data.transactionData.transaction] TransactionID
    * @param {U32} [data.transactionData.totalNumItems] TotalNumItems
-   * @param {UUID} [data.proposalData.vote] VoteID
-   * @param {UUID} [data.proposalData.voteInitiator] VoteInitiator
+   * @param {string} [data.proposalData.vote] VoteID
+   * @param {string} [data.proposalData.voteInitiator] VoteInitiator
    * @param {Variable1} [data.proposalData.terseDate] TerseDateID
    * @param {Variable1} [data.proposalData.startDateTime] StartDateTime
    * @param {Variable1} [data.proposalData.endDateTime] EndDateTime
-   * @param {BOOL} [data.proposalData.alreadyVoted] AlreadyVoted
+   * @param {boolean} [data.proposalData.alreadyVoted] AlreadyVoted
    * @param {Variable1} [data.proposalData.voteCast] VoteCast
    * @param {F32} [data.proposalData.majority] Majority
    * @param {S32} [data.proposalData.quorum] Quorum

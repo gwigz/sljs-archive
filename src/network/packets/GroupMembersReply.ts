@@ -50,7 +50,7 @@ class GroupMembersReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,16 +67,16 @@ class GroupMembersReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.groupData.group] GroupID
-   * @param {UUID} [data.groupData.request] RequestID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.groupData.group] GroupID
+   * @param {string} [data.groupData.request] RequestID
    * @param {S32} [data.groupData.memberCount] MemberCount
-   * @param {UUID} [data.memberData.agent] AgentID
+   * @param {string} [data.memberData.agent] AgentID
    * @param {S32} [data.memberData.contribution] Contribution
    * @param {Variable1} [data.memberData.onlineStatus] OnlineStatus
    * @param {U64} [data.memberData.agentPowers] AgentPowers
    * @param {Variable1} [data.memberData.title] Title
-   * @param {BOOL} [data.memberData.isOwner] IsOwner
+   * @param {boolean} [data.memberData.isOwner] IsOwner
    */
   constructor (data = {}) {
     super(data)

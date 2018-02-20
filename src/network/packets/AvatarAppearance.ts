@@ -50,7 +50,7 @@ class AvatarAppearance extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['sender', { quantity: 1, parameters: new Collection([['id', Types.UUID], ['isTrial', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,8 +67,8 @@ class AvatarAppearance extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.sender.id] ID
-   * @param {BOOL} [data.sender.isTrial] IsTrial
+   * @param {string} [data.sender.id] ID
+   * @param {boolean} [data.sender.isTrial] IsTrial
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    * @param {U8} [data.visualParam.paramValue] ParamValue
    */

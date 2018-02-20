@@ -50,7 +50,7 @@ class SendPostcard extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['asset', Types.UUID], ['posGlobal', Types.Vector3D], ['to', Types.Variable1], ['from', Types.Variable1], ['name', Types.Variable1], ['subject', Types.Variable1], ['msg', Types.Variable2], ['allowPublish', Boolean], ['maturePublish', Boolean]]) }]
   ])
@@ -63,17 +63,17 @@ class SendPostcard extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.agentData.asset] AssetID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.asset] AssetID
    * @param {Vector3D} [data.agentData.posGlobal] PosGlobal
    * @param {Variable1} [data.agentData.to] To
    * @param {Variable1} [data.agentData.from] From
    * @param {Variable1} [data.agentData.name] Name
    * @param {Variable1} [data.agentData.subject] Subject
    * @param {Variable2} [data.agentData.msg] Msg
-   * @param {BOOL} [data.agentData.allowPublish] AllowPublish
-   * @param {BOOL} [data.agentData.maturePublish] MaturePublish
+   * @param {boolean} [data.agentData.allowPublish] AllowPublish
+   * @param {boolean} [data.agentData.maturePublish] MaturePublish
    */
   constructor (data = {}) {
     super(data)

@@ -50,7 +50,7 @@ class MapBlockReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['flags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,7 +65,7 @@ class MapBlockReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.agent] AgentID
    * @param {U32} [data.agentData.flags] Flags
    * @param {U16} [data.data.x] X
    * @param {U16} [data.data.y] Y
@@ -74,7 +74,7 @@ class MapBlockReply extends Packet {
    * @param {U32} [data.data.regionFlags] RegionFlags
    * @param {U8} [data.data.waterHeight] WaterHeight
    * @param {U8} [data.data.agents] Agents
-   * @param {UUID} [data.data.mapImage] MapImageID
+   * @param {string} [data.data.mapImage] MapImageID
    */
   constructor (data = {}) {
     super(data)

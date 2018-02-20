@@ -50,7 +50,7 @@ class LiveHelpGroupRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['requestData', { quantity: 1, parameters: new Collection([['request', Types.UUID], ['agent', Types.UUID]]) }]
   ])
@@ -63,8 +63,8 @@ class LiveHelpGroupRequest extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.requestData.request] RequestID
-   * @param {UUID} [data.requestData.agent] AgentID
+   * @param {string} [data.requestData.request] RequestID
+   * @param {string} [data.requestData.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

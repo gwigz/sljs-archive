@@ -50,7 +50,7 @@ class TeleportFailed extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['info', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['reason', Types.Variable1]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,7 +65,7 @@ class TeleportFailed extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.info.agent] AgentID
+   * @param {string} [data.info.agent] AgentID
    * @param {Variable1} [data.info.reason] Reason
    * @param {Variable1} [data.alertInfo.message] Message
    * @param {Variable1} [data.alertInfo.extraParams] ExtraParams

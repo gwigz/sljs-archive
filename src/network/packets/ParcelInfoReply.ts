@@ -50,7 +50,7 @@ class ParcelInfoReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,9 +65,9 @@ class ParcelInfoReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.data.parcel] ParcelID
-   * @param {UUID} [data.data.owner] OwnerID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.data.parcel] ParcelID
+   * @param {string} [data.data.owner] OwnerID
    * @param {Variable1} [data.data.name] Name
    * @param {Variable1} [data.data.desc] Desc
    * @param {S32} [data.data.actualArea] ActualArea
@@ -77,7 +77,7 @@ class ParcelInfoReply extends Packet {
    * @param {F32} [data.data.globalY] GlobalY
    * @param {F32} [data.data.globalZ] GlobalZ
    * @param {Variable1} [data.data.simName] SimName
-   * @param {UUID} [data.data.snapshot] SnapshotID
+   * @param {string} [data.data.snapshot] SnapshotID
    * @param {F32} [data.data.dwell] Dwell
    * @param {S32} [data.data.salePrice] SalePrice
    * @param {S32} [data.data.auction] AuctionID

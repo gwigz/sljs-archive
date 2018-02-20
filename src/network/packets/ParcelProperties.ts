@@ -50,7 +50,7 @@ class ParcelProperties extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['parcelData', { quantity: 1, parameters: new Collection([['requestResult', Types.S32], ['sequence', Types.S32], ['snapSelection', Boolean], ['selfCount', Types.S32], ['otherCount', Types.S32], ['publicCount', Types.S32], ['local', Types.S32], ['owner', Types.UUID], ['isGroupOwned', Boolean], ['auction', Types.U32], ['claimDate', Types.S32], ['claimPrice', Types.S32], ['rentPrice', Types.S32], ['aABBMin', Types.Vector3], ['aABBMax', Types.Vector3], ['bitmap', Types.Variable2], ['area', Types.S32], ['status', Types.U8], ['simWideMaxPrims', Types.S32], ['simWideTotalPrims', Types.S32], ['maxPrims', Types.S32], ['totalPrims', Types.S32], ['ownerPrims', Types.S32], ['groupPrims', Types.S32], ['otherPrims', Types.S32], ['selectedPrims', Types.S32], ['parcelPrimBonus', Types.F32], ['otherCleanTime', Types.S32], ['parcelFlags', Types.U32], ['salePrice', Types.S32], ['name', Types.Variable1], ['desc', Types.Variable1], ['musicURL', Types.Variable1], ['mediaURL', Types.Variable1], ['media', Types.UUID], ['mediaAutoScale', Types.U8], ['group', Types.UUID], ['passPrice', Types.S32], ['passHours', Types.F32], ['category', Types.U8], ['authBuyer', Types.UUID], ['snapshot', Types.UUID], ['userLocation', Types.Vector3], ['userLookAt', Types.Vector3], ['landingType', Types.U8], ['regionPushOverride', Boolean], ['regionDenyAnonymous', Boolean], ['regionDenyIdentified', Boolean], ['regionDenyTransacted', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,13 +67,13 @@ class ParcelProperties extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {S32} [data.parcelData.requestResult] RequestResult
    * @param {S32} [data.parcelData.sequence] SequenceID
-   * @param {BOOL} [data.parcelData.snapSelection] SnapSelection
+   * @param {boolean} [data.parcelData.snapSelection] SnapSelection
    * @param {S32} [data.parcelData.selfCount] SelfCount
    * @param {S32} [data.parcelData.otherCount] OtherCount
    * @param {S32} [data.parcelData.publicCount] PublicCount
    * @param {S32} [data.parcelData.local] LocalID
-   * @param {UUID} [data.parcelData.owner] OwnerID
-   * @param {BOOL} [data.parcelData.isGroupOwned] IsGroupOwned
+   * @param {string} [data.parcelData.owner] OwnerID
+   * @param {boolean} [data.parcelData.isGroupOwned] IsGroupOwned
    * @param {U32} [data.parcelData.auction] AuctionID
    * @param {S32} [data.parcelData.claimDate] ClaimDate
    * @param {S32} [data.parcelData.claimPrice] ClaimPrice
@@ -99,22 +99,22 @@ class ParcelProperties extends Packet {
    * @param {Variable1} [data.parcelData.desc] Desc
    * @param {Variable1} [data.parcelData.musicURL] MusicURL
    * @param {Variable1} [data.parcelData.mediaURL] MediaURL
-   * @param {UUID} [data.parcelData.media] MediaID
+   * @param {string} [data.parcelData.media] MediaID
    * @param {U8} [data.parcelData.mediaAutoScale] MediaAutoScale
-   * @param {UUID} [data.parcelData.group] GroupID
+   * @param {string} [data.parcelData.group] GroupID
    * @param {S32} [data.parcelData.passPrice] PassPrice
    * @param {F32} [data.parcelData.passHours] PassHours
    * @param {U8} [data.parcelData.category] Category
-   * @param {UUID} [data.parcelData.authBuyer] AuthBuyerID
-   * @param {UUID} [data.parcelData.snapshot] SnapshotID
+   * @param {string} [data.parcelData.authBuyer] AuthBuyerID
+   * @param {string} [data.parcelData.snapshot] SnapshotID
    * @param {Vector3} [data.parcelData.userLocation] UserLocation
    * @param {Vector3} [data.parcelData.userLookAt] UserLookAt
    * @param {U8} [data.parcelData.landingType] LandingType
-   * @param {BOOL} [data.parcelData.regionPushOverride] RegionPushOverride
-   * @param {BOOL} [data.parcelData.regionDenyAnonymous] RegionDenyAnonymous
-   * @param {BOOL} [data.parcelData.regionDenyIdentified] RegionDenyIdentified
-   * @param {BOOL} [data.parcelData.regionDenyTransacted] RegionDenyTransacted
-   * @param {BOOL} [data.ageVerificationBlock.regionDenyAgeUnverified] RegionDenyAgeUnverified
+   * @param {boolean} [data.parcelData.regionPushOverride] RegionPushOverride
+   * @param {boolean} [data.parcelData.regionDenyAnonymous] RegionDenyAnonymous
+   * @param {boolean} [data.parcelData.regionDenyIdentified] RegionDenyIdentified
+   * @param {boolean} [data.parcelData.regionDenyTransacted] RegionDenyTransacted
+   * @param {boolean} [data.ageVerificationBlock.regionDenyAgeUnverified] RegionDenyAgeUnverified
    */
   constructor (data = {}) {
     super(data)

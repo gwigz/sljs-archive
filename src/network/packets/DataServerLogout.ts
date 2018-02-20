@@ -50,7 +50,7 @@ class DataServerLogout extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['userData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['viewerIP', Types.IP], ['disconnect', Boolean], ['session', Types.UUID]]) }]
   ])
@@ -63,10 +63,10 @@ class DataServerLogout extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.userData.agent] AgentID
+   * @param {string} [data.userData.agent] AgentID
    * @param {IP} [data.userData.viewerIP] ViewerIP
-   * @param {BOOL} [data.userData.disconnect] Disconnect
-   * @param {UUID} [data.userData.session] SessionID
+   * @param {boolean} [data.userData.disconnect] Disconnect
+   * @param {string} [data.userData.session] SessionID
    */
   constructor (data = {}) {
     super(data)

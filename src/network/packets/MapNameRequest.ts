@@ -50,7 +50,7 @@ class MapNameRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['flags', Types.U32], ['estate', Types.U32], ['godlike', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,11 +65,11 @@ class MapNameRequest extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.flags] Flags
    * @param {U32} [data.agentData.estate] EstateID
-   * @param {BOOL} [data.agentData.godlike] Godlike
+   * @param {boolean} [data.agentData.godlike] Godlike
    * @param {Variable1} [data.nameData.name] Name
    */
   constructor (data = {}) {

@@ -50,7 +50,7 @@ class AvatarPropertiesUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,14 +65,14 @@ class AvatarPropertiesUpdate extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.propertiesData.image] ImageID
-   * @param {UUID} [data.propertiesData.firstLifeImage] FLImageID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.propertiesData.image] ImageID
+   * @param {string} [data.propertiesData.firstLifeImage] FLImageID
    * @param {Variable2} [data.propertiesData.aboutText] AboutText
    * @param {Variable1} [data.propertiesData.firstLifeAboutText] FLAboutText
-   * @param {BOOL} [data.propertiesData.allowPublish] AllowPublish
-   * @param {BOOL} [data.propertiesData.maturePublish] MaturePublish
+   * @param {boolean} [data.propertiesData.allowPublish] AllowPublish
+   * @param {boolean} [data.propertiesData.maturePublish] MaturePublish
    * @param {Variable1} [data.propertiesData.profileURL] ProfileURL
    */
   constructor (data = {}) {

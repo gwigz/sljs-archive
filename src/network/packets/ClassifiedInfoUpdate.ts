@@ -50,7 +50,7 @@ class ClassifiedInfoUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,15 +65,15 @@ class ClassifiedInfoUpdate extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.data.classified] ClassifiedID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.data.classified] ClassifiedID
    * @param {U32} [data.data.category] Category
    * @param {Variable1} [data.data.name] Name
    * @param {Variable2} [data.data.desc] Desc
-   * @param {UUID} [data.data.parcel] ParcelID
+   * @param {string} [data.data.parcel] ParcelID
    * @param {U32} [data.data.parentEstate] ParentEstate
-   * @param {UUID} [data.data.snapshot] SnapshotID
+   * @param {string} [data.data.snapshot] SnapshotID
    * @param {Vector3D} [data.data.posGlobal] PosGlobal
    * @param {U8} [data.data.classifiedFlags] ClassifiedFlags
    * @param {S32} [data.data.priceForListing] PriceForListing

@@ -1,16 +1,28 @@
-/* tslint:disable */
-
-export AgentDataUpdate from './AgentDataUpdate'
-export AgentMovementComplete from './AgentMovementComplete'
-export ChatFromSimulator from './ChatFromSimulator'
-export HealthMessage from './HealthMessage'
-export ImprovedTerseObjectUpdate from './ImprovedTerseObjectUpdate'
-export KillObject from './KillObject'
-export ObjectUpdate from './ObjectUpdate'
-export ObjectUpdateCached from './ObjectUpdateCached'
-export ObjectUpdateCompressed from './ObjectUpdateCompressed'
-export RegionHandshake from './RegionHandshake'
-export StartPingCheck from './StartPingCheck'
+import AgentDataUpdate from './AgentDataUpdate'
+import AgentMovementComplete from './AgentMovementComplete'
+import ChatFromSimulator from './ChatFromSimulator'
+import HealthMessage from './HealthMessage'
+import ImprovedTerseObjectUpdate from './ImprovedTerseObjectUpdate'
+import KillObject from './KillObject'
+import ObjectUpdate from './ObjectUpdate'
+import ObjectUpdateCached from './ObjectUpdateCached'
+import ObjectUpdateCompressed from './ObjectUpdateCompressed'
+import RegionHandshake from './RegionHandshake'
+import StartPingCheck from './StartPingCheck'
 
 // CloseCircuit
 // OpenCircuit
+
+export {
+  AgentDataUpdate,
+  AgentMovementComplete,
+  ChatFromSimulator,
+  HealthMessage,
+  ImprovedTerseObjectUpdate,
+  KillObject,
+  ObjectUpdate,
+  ObjectUpdateCached,
+  ObjectUpdateCompressed,
+  RegionHandshake,
+  StartPingCheck
+}

@@ -50,7 +50,7 @@ class SetSimStatusInDatabase extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['region', Types.UUID], ['hostName', Types.Variable1], ['x', Types.S32], ['y', Types.S32], ['pID', Types.S32], ['agentCount', Types.S32], ['timeToLive', Types.S32], ['status', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class SetSimStatusInDatabase extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.data.region] RegionID
+   * @param {string} [data.data.region] RegionID
    * @param {Variable1} [data.data.hostName] HostName
    * @param {S32} [data.data.x] X
    * @param {S32} [data.data.y] Y

@@ -50,7 +50,7 @@ class FetchInventoryDescendents extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,13 +65,13 @@ class FetchInventoryDescendents extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.inventoryData.folder] FolderID
-   * @param {UUID} [data.inventoryData.owner] OwnerID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.inventoryData.folder] FolderID
+   * @param {string} [data.inventoryData.owner] OwnerID
    * @param {S32} [data.inventoryData.sortOrder] SortOrder
-   * @param {BOOL} [data.inventoryData.fetchFolders] FetchFolders
-   * @param {BOOL} [data.inventoryData.fetchItems] FetchItems
+   * @param {boolean} [data.inventoryData.fetchFolders] FetchFolders
+   * @param {boolean} [data.inventoryData.fetchItems] FetchItems
    */
   constructor (data = {}) {
     super(data)

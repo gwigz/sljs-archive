@@ -50,7 +50,7 @@ class DirPlacesReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -69,12 +69,12 @@ class DirPlacesReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.queryData.query] QueryID
-   * @param {UUID} [data.queryReplies.parcel] ParcelID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.queryData.query] QueryID
+   * @param {string} [data.queryReplies.parcel] ParcelID
    * @param {Variable1} [data.queryReplies.name] Name
-   * @param {BOOL} [data.queryReplies.forSale] ForSale
-   * @param {BOOL} [data.queryReplies.auction] Auction
+   * @param {boolean} [data.queryReplies.forSale] ForSale
+   * @param {boolean} [data.queryReplies.auction] Auction
    * @param {F32} [data.queryReplies.dwell] Dwell
    * @param {U32} [data.statusData.status] Status
    */

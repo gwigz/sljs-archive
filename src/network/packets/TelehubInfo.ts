@@ -50,7 +50,7 @@ class TelehubInfo extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['telehubBlock', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['objectName', Types.Variable1], ['telehubPos', Types.Vector3], ['telehubRot', Types.Quaternion]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,7 +65,7 @@ class TelehubInfo extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.telehubBlock.object] ObjectID
+   * @param {string} [data.telehubBlock.object] ObjectID
    * @param {Variable1} [data.telehubBlock.objectName] ObjectName
    * @param {Vector3} [data.telehubBlock.telehubPos] TelehubPos
    * @param {Quaternion} [data.telehubBlock.telehubRot] TelehubRot

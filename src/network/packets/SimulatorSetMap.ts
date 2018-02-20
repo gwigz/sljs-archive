@@ -50,7 +50,7 @@ class SimulatorSetMap extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['mapData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['type', Types.S32], ['mapImage', Types.UUID]]) }]
   ])
@@ -65,7 +65,7 @@ class SimulatorSetMap extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U64} [data.mapData.regionHandle] RegionHandle
    * @param {S32} [data.mapData.type] Type
-   * @param {UUID} [data.mapData.mapImage] MapImage
+   * @param {string} [data.mapData.mapImage] MapImage
    */
   constructor (data = {}) {
     super(data)

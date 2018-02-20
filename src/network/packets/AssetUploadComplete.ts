@@ -50,7 +50,7 @@ class AssetUploadComplete extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['assetBlock', { quantity: 1, parameters: new Collection([['uUID', Types.UUID], ['type', Types.S8], ['success', Boolean]]) }]
   ])
@@ -63,9 +63,9 @@ class AssetUploadComplete extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.assetBlock.uUID] UUID
+   * @param {string} [data.assetBlock.uUID] UUID
    * @param {S8} [data.assetBlock.type] Type
-   * @param {BOOL} [data.assetBlock.success] Success
+   * @param {boolean} [data.assetBlock.success] Success
    */
   constructor (data = {}) {
     super(data)

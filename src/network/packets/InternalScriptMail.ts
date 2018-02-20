@@ -50,7 +50,7 @@ class InternalScriptMail extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['from', Types.Variable1], ['to', Types.UUID], ['subject', Types.Variable1], ['body', Types.Variable2]]) }]
   ])
@@ -64,7 +64,7 @@ class InternalScriptMail extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.dataBlock.from] From
-   * @param {UUID} [data.dataBlock.to] To
+   * @param {string} [data.dataBlock.to] To
    * @param {Variable1} [data.dataBlock.subject] Subject
    * @param {Variable2} [data.dataBlock.body] Body
    */

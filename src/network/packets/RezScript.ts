@@ -50,7 +50,7 @@ class RezScript extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,23 +67,23 @@ class RezScript extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.agentData.group] GroupID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.group] GroupID
    * @param {U32} [data.updateBlock.objectLocal] ObjectLocalID
-   * @param {BOOL} [data.updateBlock.enabled] Enabled
-   * @param {UUID} [data.inventoryBlock.item] ItemID
-   * @param {UUID} [data.inventoryBlock.folder] FolderID
-   * @param {UUID} [data.inventoryBlock.creator] CreatorID
-   * @param {UUID} [data.inventoryBlock.owner] OwnerID
-   * @param {UUID} [data.inventoryBlock.group] GroupID
+   * @param {boolean} [data.updateBlock.enabled] Enabled
+   * @param {string} [data.inventoryBlock.item] ItemID
+   * @param {string} [data.inventoryBlock.folder] FolderID
+   * @param {string} [data.inventoryBlock.creator] CreatorID
+   * @param {string} [data.inventoryBlock.owner] OwnerID
+   * @param {string} [data.inventoryBlock.group] GroupID
    * @param {U32} [data.inventoryBlock.baseMask] BaseMask
    * @param {U32} [data.inventoryBlock.ownerMask] OwnerMask
    * @param {U32} [data.inventoryBlock.groupMask] GroupMask
    * @param {U32} [data.inventoryBlock.everyoneMask] EveryoneMask
    * @param {U32} [data.inventoryBlock.nextOwnerMask] NextOwnerMask
-   * @param {BOOL} [data.inventoryBlock.groupOwned] GroupOwned
-   * @param {UUID} [data.inventoryBlock.transaction] TransactionID
+   * @param {boolean} [data.inventoryBlock.groupOwned] GroupOwned
+   * @param {string} [data.inventoryBlock.transaction] TransactionID
    * @param {S8} [data.inventoryBlock.type] Type
    * @param {S8} [data.inventoryBlock.invType] InvType
    * @param {U32} [data.inventoryBlock.flags] Flags

@@ -50,7 +50,7 @@ class ParcelRename extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['parcelData', { parameters: new Collection([['parcel', Types.UUID], ['newName', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class ParcelRename extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.parcelData.parcel] ParcelID
+   * @param {string} [data.parcelData.parcel] ParcelID
    * @param {Variable1} [data.parcelData.newName] NewName
    */
   constructor (data = {}) {

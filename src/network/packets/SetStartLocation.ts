@@ -50,7 +50,7 @@ class SetStartLocation extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['startLocationData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['region', Types.UUID], ['location', Types.U32], ['regionHandle', Types.U64], ['locationPos', Types.Vector3], ['locationLookAt', Types.Vector3]]) }]
   ])
@@ -63,8 +63,8 @@ class SetStartLocation extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.startLocationData.agent] AgentID
-   * @param {UUID} [data.startLocationData.region] RegionID
+   * @param {string} [data.startLocationData.agent] AgentID
+   * @param {string} [data.startLocationData.region] RegionID
    * @param {U32} [data.startLocationData.location] LocationID
    * @param {U64} [data.startLocationData.regionHandle] RegionHandle
    * @param {Vector3} [data.startLocationData.locationPos] LocationPos

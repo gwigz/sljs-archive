@@ -50,7 +50,7 @@ class AttachedSound extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['sound', Types.UUID], ['object', Types.UUID], ['owner', Types.UUID], ['gain', Types.F32], ['flags', Types.U8]]) }]
   ])
@@ -63,9 +63,9 @@ class AttachedSound extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.dataBlock.sound] SoundID
-   * @param {UUID} [data.dataBlock.object] ObjectID
-   * @param {UUID} [data.dataBlock.owner] OwnerID
+   * @param {string} [data.dataBlock.sound] SoundID
+   * @param {string} [data.dataBlock.object] ObjectID
+   * @param {string} [data.dataBlock.owner] OwnerID
    * @param {F32} [data.dataBlock.gain] Gain
    * @param {U8} [data.dataBlock.flags] Flags
    */

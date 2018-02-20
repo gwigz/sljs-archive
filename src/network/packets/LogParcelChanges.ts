@@ -50,7 +50,7 @@ class LogParcelChanges extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,14 +67,14 @@ class LogParcelChanges extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.agent] AgentID
    * @param {U64} [data.regionData.regionHandle] RegionHandle
-   * @param {UUID} [data.parcelData.parcel] ParcelID
-   * @param {UUID} [data.parcelData.owner] OwnerID
-   * @param {BOOL} [data.parcelData.isOwnerGroup] IsOwnerGroup
+   * @param {string} [data.parcelData.parcel] ParcelID
+   * @param {string} [data.parcelData.owner] OwnerID
+   * @param {boolean} [data.parcelData.isOwnerGroup] IsOwnerGroup
    * @param {S32} [data.parcelData.actualArea] ActualArea
    * @param {S8} [data.parcelData.action] Action
-   * @param {UUID} [data.parcelData.transaction] TransactionID
+   * @param {string} [data.parcelData.transaction] TransactionID
    */
   constructor (data = {}) {
     super(data)

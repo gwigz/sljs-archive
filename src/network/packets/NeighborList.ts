@@ -50,7 +50,7 @@ class NeighborList extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['neighborBlock', { quantity: 4, parameters: new Collection([['ip', Types.IP], ['port', Types.Port], ['publicIP', Types.IP], ['publicPort', Types.Port], ['region', Types.UUID], ['name', Types.Variable1], ['simAccess', Types.U8]]) }]
   ])
@@ -67,7 +67,7 @@ class NeighborList extends Packet {
    * @param {Port} [data.neighborBlock.port] Port
    * @param {IP} [data.neighborBlock.publicIP] PublicIP
    * @param {Port} [data.neighborBlock.publicPort] PublicPort
-   * @param {UUID} [data.neighborBlock.region] RegionID
+   * @param {string} [data.neighborBlock.region] RegionID
    * @param {Variable1} [data.neighborBlock.name] Name
    * @param {U8} [data.neighborBlock.simAccess] SimAccess
    */

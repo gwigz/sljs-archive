@@ -50,7 +50,7 @@ class UpdateSimulator extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['simulatorInfo', { quantity: 1, parameters: new Collection([['region', Types.UUID], ['simName', Types.Variable1], ['estate', Types.U32], ['simAccess', Types.U8]]) }]
   ])
@@ -63,7 +63,7 @@ class UpdateSimulator extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.simulatorInfo.region] RegionID
+   * @param {string} [data.simulatorInfo.region] RegionID
    * @param {Variable1} [data.simulatorInfo.simName] SimName
    * @param {U32} [data.simulatorInfo.estate] EstateID
    * @param {U8} [data.simulatorInfo.simAccess] SimAccess

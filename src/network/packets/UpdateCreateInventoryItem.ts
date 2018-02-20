@@ -50,7 +50,7 @@ class UpdateCreateInventoryItem extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['simApproved', Boolean], ['transaction', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,22 +65,22 @@ class UpdateCreateInventoryItem extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {BOOL} [data.agentData.simApproved] SimApproved
-   * @param {UUID} [data.agentData.transaction] TransactionID
-   * @param {UUID} [data.inventoryData.item] ItemID
-   * @param {UUID} [data.inventoryData.folder] FolderID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {boolean} [data.agentData.simApproved] SimApproved
+   * @param {string} [data.agentData.transaction] TransactionID
+   * @param {string} [data.inventoryData.item] ItemID
+   * @param {string} [data.inventoryData.folder] FolderID
    * @param {U32} [data.inventoryData.callback] CallbackID
-   * @param {UUID} [data.inventoryData.creator] CreatorID
-   * @param {UUID} [data.inventoryData.owner] OwnerID
-   * @param {UUID} [data.inventoryData.group] GroupID
+   * @param {string} [data.inventoryData.creator] CreatorID
+   * @param {string} [data.inventoryData.owner] OwnerID
+   * @param {string} [data.inventoryData.group] GroupID
    * @param {U32} [data.inventoryData.baseMask] BaseMask
    * @param {U32} [data.inventoryData.ownerMask] OwnerMask
    * @param {U32} [data.inventoryData.groupMask] GroupMask
    * @param {U32} [data.inventoryData.everyoneMask] EveryoneMask
    * @param {U32} [data.inventoryData.nextOwnerMask] NextOwnerMask
-   * @param {BOOL} [data.inventoryData.groupOwned] GroupOwned
-   * @param {UUID} [data.inventoryData.asset] AssetID
+   * @param {boolean} [data.inventoryData.groupOwned] GroupOwned
+   * @param {string} [data.inventoryData.asset] AssetID
    * @param {S8} [data.inventoryData.type] Type
    * @param {S8} [data.inventoryData.invType] InvType
    * @param {U32} [data.inventoryData.flags] Flags

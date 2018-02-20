@@ -50,7 +50,7 @@ class ScriptDialog extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['firstName', Types.Variable1], ['lastName', Types.Variable1], ['objectName', Types.Variable1], ['message', Types.Variable2], ['chatChannel', Types.S32], ['image', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,15 +67,15 @@ class ScriptDialog extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.data.object] ObjectID
+   * @param {string} [data.data.object] ObjectID
    * @param {Variable1} [data.data.firstName] FirstName
    * @param {Variable1} [data.data.lastName] LastName
    * @param {Variable1} [data.data.objectName] ObjectName
    * @param {Variable2} [data.data.message] Message
    * @param {S32} [data.data.chatChannel] ChatChannel
-   * @param {UUID} [data.data.image] ImageID
+   * @param {string} [data.data.image] ImageID
    * @param {Variable1} [data.buttons.buttonLabel] ButtonLabel
-   * @param {UUID} [data.ownerData.owner] OwnerID
+   * @param {string} [data.ownerData.owner] OwnerID
    */
   constructor (data = {}) {
     super(data)

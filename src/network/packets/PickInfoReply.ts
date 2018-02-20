@@ -50,7 +50,7 @@ class PickInfoReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,20 +65,20 @@ class PickInfoReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.data.pick] PickID
-   * @param {UUID} [data.data.creator] CreatorID
-   * @param {BOOL} [data.data.topPick] TopPick
-   * @param {UUID} [data.data.parcel] ParcelID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.data.pick] PickID
+   * @param {string} [data.data.creator] CreatorID
+   * @param {boolean} [data.data.topPick] TopPick
+   * @param {string} [data.data.parcel] ParcelID
    * @param {Variable1} [data.data.name] Name
    * @param {Variable2} [data.data.desc] Desc
-   * @param {UUID} [data.data.snapshot] SnapshotID
+   * @param {string} [data.data.snapshot] SnapshotID
    * @param {Variable1} [data.data.user] User
    * @param {Variable1} [data.data.originalName] OriginalName
    * @param {Variable1} [data.data.simName] SimName
    * @param {Vector3D} [data.data.posGlobal] PosGlobal
    * @param {S32} [data.data.sortOrder] SortOrder
-   * @param {BOOL} [data.data.enabled] Enabled
+   * @param {boolean} [data.data.enabled] Enabled
    */
   constructor (data = {}) {
     super(data)

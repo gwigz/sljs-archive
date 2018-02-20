@@ -50,7 +50,7 @@ class ChildAgentAlive extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['viewerCircuitCode', Types.U32], ['agent', Types.UUID], ['session', Types.UUID]]) }]
   ])
@@ -65,8 +65,8 @@ class ChildAgentAlive extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U64} [data.agentData.regionHandle] RegionHandle
    * @param {U32} [data.agentData.viewerCircuitCode] ViewerCircuitCode
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
    */
   constructor (data = {}) {
     super(data)

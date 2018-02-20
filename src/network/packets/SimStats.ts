@@ -50,7 +50,7 @@ class SimStats extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['region', { quantity: 1, parameters: new Collection([['regionX', Types.U32], ['regionY', Types.U32], ['regionFlags', Types.U32], ['objectCapacity', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length

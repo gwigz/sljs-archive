@@ -50,7 +50,7 @@ class ImagePacket extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['image', { quantity: 1, parameters: new Collection([['id', Types.UUID], ['packet', Types.U16]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,7 +65,7 @@ class ImagePacket extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.image.id] ID
+   * @param {string} [data.image.id] ID
    * @param {U16} [data.image.packet] Packet
    * @param {Variable2} [data.imageData.data] Data
    */

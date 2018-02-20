@@ -50,7 +50,7 @@ class AddCircuitCode extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['circuitCode', { quantity: 1, parameters: new Collection([['code', Types.U32], ['session', Types.UUID], ['agent', Types.UUID]]) }]
   ])
@@ -64,8 +64,8 @@ class AddCircuitCode extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.circuitCode.code] Code
-   * @param {UUID} [data.circuitCode.session] SessionID
-   * @param {UUID} [data.circuitCode.agent] AgentID
+   * @param {string} [data.circuitCode.session] SessionID
+   * @param {string} [data.circuitCode.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

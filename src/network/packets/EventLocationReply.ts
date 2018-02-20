@@ -50,7 +50,7 @@ class EventLocationReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['queryData', { quantity: 1, parameters: new Collection([['query', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,9 +65,9 @@ class EventLocationReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.queryData.query] QueryID
-   * @param {BOOL} [data.eventData.success] Success
-   * @param {UUID} [data.eventData.region] RegionID
+   * @param {string} [data.queryData.query] QueryID
+   * @param {boolean} [data.eventData.success] Success
+   * @param {string} [data.eventData.region] RegionID
    * @param {Vector3} [data.eventData.regionPos] RegionPos
    */
   constructor (data = {}) {

@@ -50,7 +50,7 @@ class AvatarAnimation extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['sender', { quantity: 1, parameters: new Collection([['id', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -69,10 +69,10 @@ class AvatarAnimation extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.sender.id] ID
-   * @param {UUID} [data.animationList.anim] AnimID
+   * @param {string} [data.sender.id] ID
+   * @param {string} [data.animationList.anim] AnimID
    * @param {S32} [data.animationList.animSequence] AnimSequenceID
-   * @param {UUID} [data.animationSourceList.object] ObjectID
+   * @param {string} [data.animationSourceList.object] ObjectID
    * @param {Variable1} [data.physicalAvatarEventList.typeData] TypeData
    */
   constructor (data = {}) {

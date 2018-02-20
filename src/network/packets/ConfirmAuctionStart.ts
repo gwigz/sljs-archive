@@ -50,7 +50,7 @@ class ConfirmAuctionStart extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['auctionData', { quantity: 1, parameters: new Collection([['parcel', Types.UUID], ['auction', Types.U32]]) }]
   ])
@@ -63,7 +63,7 @@ class ConfirmAuctionStart extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.auctionData.parcel] ParcelID
+   * @param {string} [data.auctionData.parcel] ParcelID
    * @param {U32} [data.auctionData.auction] AuctionID
    */
   constructor (data = {}) {

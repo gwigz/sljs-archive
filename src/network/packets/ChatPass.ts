@@ -50,7 +50,7 @@ class ChatPass extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['chatData', { quantity: 1, parameters: new Collection([['channel', Types.S32], ['position', Types.Vector3], ['id', Types.UUID], ['owner', Types.UUID], ['name', Types.Variable1], ['sourceType', Types.U8], ['type', Types.U8], ['radius', Types.F32], ['simAccess', Types.U8], ['message', Types.Variable2]]) }]
   ])
@@ -65,8 +65,8 @@ class ChatPass extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {S32} [data.chatData.channel] Channel
    * @param {Vector3} [data.chatData.position] Position
-   * @param {UUID} [data.chatData.id] ID
-   * @param {UUID} [data.chatData.owner] OwnerID
+   * @param {string} [data.chatData.id] ID
+   * @param {string} [data.chatData.owner] OwnerID
    * @param {Variable1} [data.chatData.name] Name
    * @param {U8} [data.chatData.sourceType] SourceType
    * @param {U8} [data.chatData.type] Type

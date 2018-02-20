@@ -50,7 +50,7 @@ class ForceObjectSelect extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['header', { quantity: 1, parameters: new Collection([['resetList', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,7 +65,7 @@ class ForceObjectSelect extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {BOOL} [data.header.resetList] ResetList
+   * @param {boolean} [data.header.resetList] ResetList
    * @param {U32} [data.data.local] LocalID
    */
   constructor (data = {}) {

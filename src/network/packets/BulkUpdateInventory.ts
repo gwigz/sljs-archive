@@ -50,7 +50,7 @@ class BulkUpdateInventory extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['transaction', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,25 +67,25 @@ class BulkUpdateInventory extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.transaction] TransactionID
-   * @param {UUID} [data.folderData.folder] FolderID
-   * @param {UUID} [data.folderData.parent] ParentID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.transaction] TransactionID
+   * @param {string} [data.folderData.folder] FolderID
+   * @param {string} [data.folderData.parent] ParentID
    * @param {S8} [data.folderData.type] Type
    * @param {Variable1} [data.folderData.name] Name
-   * @param {UUID} [data.itemData.item] ItemID
+   * @param {string} [data.itemData.item] ItemID
    * @param {U32} [data.itemData.callback] CallbackID
-   * @param {UUID} [data.itemData.folder] FolderID
-   * @param {UUID} [data.itemData.creator] CreatorID
-   * @param {UUID} [data.itemData.owner] OwnerID
-   * @param {UUID} [data.itemData.group] GroupID
+   * @param {string} [data.itemData.folder] FolderID
+   * @param {string} [data.itemData.creator] CreatorID
+   * @param {string} [data.itemData.owner] OwnerID
+   * @param {string} [data.itemData.group] GroupID
    * @param {U32} [data.itemData.baseMask] BaseMask
    * @param {U32} [data.itemData.ownerMask] OwnerMask
    * @param {U32} [data.itemData.groupMask] GroupMask
    * @param {U32} [data.itemData.everyoneMask] EveryoneMask
    * @param {U32} [data.itemData.nextOwnerMask] NextOwnerMask
-   * @param {BOOL} [data.itemData.groupOwned] GroupOwned
-   * @param {UUID} [data.itemData.asset] AssetID
+   * @param {boolean} [data.itemData.groupOwned] GroupOwned
+   * @param {string} [data.itemData.asset] AssetID
    * @param {S8} [data.itemData.type] Type
    * @param {S8} [data.itemData.invType] InvType
    * @param {U32} [data.itemData.flags] Flags

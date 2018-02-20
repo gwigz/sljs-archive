@@ -50,7 +50,7 @@ class LogFailedMoneyTransaction extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['transactionData', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['transactionTime', Types.U32], ['transactionType', Types.S32], ['source', Types.UUID], ['dest', Types.UUID], ['flags', Types.U8], ['amount', Types.S32], ['simulatorIP', Types.IP], ['gridX', Types.U32], ['gridY', Types.U32], ['failureType', Types.U8]]) }]
   ])
@@ -63,11 +63,11 @@ class LogFailedMoneyTransaction extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.transactionData.transaction] TransactionID
+   * @param {string} [data.transactionData.transaction] TransactionID
    * @param {U32} [data.transactionData.transactionTime] TransactionTime
    * @param {S32} [data.transactionData.transactionType] TransactionType
-   * @param {UUID} [data.transactionData.source] SourceID
-   * @param {UUID} [data.transactionData.dest] DestID
+   * @param {string} [data.transactionData.source] SourceID
+   * @param {string} [data.transactionData.dest] DestID
    * @param {U8} [data.transactionData.flags] Flags
    * @param {S32} [data.transactionData.amount] Amount
    * @param {IP} [data.transactionData.simulatorIP] SimulatorIP

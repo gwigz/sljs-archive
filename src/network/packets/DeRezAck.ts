@@ -50,7 +50,7 @@ class DeRezAck extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['transactionData', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['success', Boolean]]) }]
   ])
@@ -63,8 +63,8 @@ class DeRezAck extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.transactionData.transaction] TransactionID
-   * @param {BOOL} [data.transactionData.success] Success
+   * @param {string} [data.transactionData.transaction] TransactionID
+   * @param {boolean} [data.transactionData.success] Success
    */
   constructor (data = {}) {
     super(data)

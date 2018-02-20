@@ -50,7 +50,7 @@ class ObjectUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['timeDilation', Types.U16]]) }],
     // tslint:disable-next-line:max-line-length
@@ -69,7 +69,7 @@ class ObjectUpdate extends Packet {
    * @param {U16} [data.regionData.timeDilation] TimeDilation
    * @param {U32} [data.objectData.id] ID
    * @param {U8} [data.objectData.state] State
-   * @param {UUID} [data.objectData.uuid] FullID
+   * @param {string} [data.objectData.uuid] FullID
    * @param {U32} [data.objectData.crc] CRC
    * @param {U8} [data.objectData.pCode] PCode
    * @param {U8} [data.objectData.material] Material
@@ -105,8 +105,8 @@ class ObjectUpdate extends Packet {
    * @param {Variable1} [data.objectData.mediaURL] MediaURL
    * @param {Variable1} [data.objectData.psBlock] PSBlock
    * @param {Variable1} [data.objectData.extraParams] ExtraParams
-   * @param {UUID} [data.objectData.sound] Sound
-   * @param {UUID} [data.objectData.owner] OwnerID
+   * @param {string} [data.objectData.sound] Sound
+   * @param {string} [data.objectData.owner] OwnerID
    * @param {F32} [data.objectData.gain] Gain
    * @param {U8} [data.objectData.flags] Flags
    * @param {F32} [data.objectData.radius] Radius

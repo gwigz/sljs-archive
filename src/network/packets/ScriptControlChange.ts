@@ -50,7 +50,7 @@ class ScriptControlChange extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { parameters: new Collection([['takeControls', Boolean], ['controls', Types.U32], ['passToAgent', Boolean]]) }]
   ])
@@ -63,9 +63,9 @@ class ScriptControlChange extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {BOOL} [data.data.takeControls] TakeControls
+   * @param {boolean} [data.data.takeControls] TakeControls
    * @param {U32} [data.data.controls] Controls
-   * @param {BOOL} [data.data.passToAgent] PassToAgent
+   * @param {boolean} [data.data.passToAgent] PassToAgent
    */
   constructor (data = {}) {
     super(data)

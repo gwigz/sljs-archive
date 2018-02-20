@@ -50,7 +50,7 @@ class DeRezObject extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,12 +67,12 @@ class DeRezObject extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {UUID} [data.agentBlock.group] GroupID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {string} [data.agentBlock.group] GroupID
    * @param {U8} [data.agentBlock.destination] Destination
-   * @param {UUID} [data.agentBlock.destination] DestinationID
-   * @param {UUID} [data.agentBlock.transaction] TransactionID
+   * @param {string} [data.agentBlock.destination] DestinationID
+   * @param {string} [data.agentBlock.transaction] TransactionID
    * @param {U8} [data.agentBlock.packetCount] PacketCount
    * @param {U8} [data.agentBlock.packetNumber] PacketNumber
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID

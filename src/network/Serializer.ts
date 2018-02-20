@@ -112,7 +112,7 @@ class Serializer {
     return Buffer.from(array)
   }
 
-  public parse (block: string, format: any, data = {}: any): Buffer {
+  public parse (block: string, format: any, data: any = {}): Buffer {
     const array = []
 
     // Attempt to fill optional parts of agent data blocks.

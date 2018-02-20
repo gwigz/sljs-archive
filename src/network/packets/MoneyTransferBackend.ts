@@ -50,7 +50,7 @@ class MoneyTransferBackend extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['moneyData', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['transactionTime', Types.U32], ['source', Types.UUID], ['dest', Types.UUID], ['flags', Types.U8], ['amount', Types.S32], ['aggregatePermNextOwner', Types.U8], ['aggregatePermInventory', Types.U8], ['transactionType', Types.S32], ['region', Types.UUID], ['gridX', Types.U32], ['gridY', Types.U32], ['description', Types.Variable1]]) }]
   ])
@@ -63,16 +63,16 @@ class MoneyTransferBackend extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.moneyData.transaction] TransactionID
+   * @param {string} [data.moneyData.transaction] TransactionID
    * @param {U32} [data.moneyData.transactionTime] TransactionTime
-   * @param {UUID} [data.moneyData.source] SourceID
-   * @param {UUID} [data.moneyData.dest] DestID
+   * @param {string} [data.moneyData.source] SourceID
+   * @param {string} [data.moneyData.dest] DestID
    * @param {U8} [data.moneyData.flags] Flags
    * @param {S32} [data.moneyData.amount] Amount
    * @param {U8} [data.moneyData.aggregatePermNextOwner] AggregatePermNextOwner
    * @param {U8} [data.moneyData.aggregatePermInventory] AggregatePermInventory
    * @param {S32} [data.moneyData.transactionType] TransactionType
-   * @param {UUID} [data.moneyData.region] RegionID
+   * @param {string} [data.moneyData.region] RegionID
    * @param {U32} [data.moneyData.gridX] GridX
    * @param {U32} [data.moneyData.gridY] GridY
    * @param {Variable1} [data.moneyData.description] Description

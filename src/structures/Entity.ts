@@ -47,7 +47,7 @@ class Entity {
 
     /**
      * UUID for this Entity.
-     * @type {UUID}
+     * @type {string}
      */
     this.key = data.key || UUID.null
 

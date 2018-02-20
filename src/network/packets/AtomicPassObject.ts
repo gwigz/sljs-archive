@@ -50,7 +50,7 @@ class AtomicPassObject extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['taskData', { quantity: 1, parameters: new Collection([['task', Types.UUID], ['attachmentNeedsSave', Boolean]]) }]
   ])
@@ -63,8 +63,8 @@ class AtomicPassObject extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.taskData.task] TaskID
-   * @param {BOOL} [data.taskData.attachmentNeedsSave] AttachmentNeedsSave
+   * @param {string} [data.taskData.task] TaskID
+   * @param {boolean} [data.taskData.attachmentNeedsSave] AttachmentNeedsSave
    */
   constructor (data = {}) {
     super(data)

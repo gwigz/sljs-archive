@@ -50,7 +50,7 @@ class AssetUploadRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['assetBlock', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['type', Types.S8], ['tempfile', Boolean], ['storeLocal', Boolean], ['assetData', Types.Variable2]]) }]
   ])
@@ -63,10 +63,10 @@ class AssetUploadRequest extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.assetBlock.transaction] TransactionID
+   * @param {string} [data.assetBlock.transaction] TransactionID
    * @param {S8} [data.assetBlock.type] Type
-   * @param {BOOL} [data.assetBlock.tempfile] Tempfile
-   * @param {BOOL} [data.assetBlock.storeLocal] StoreLocal
+   * @param {boolean} [data.assetBlock.tempfile] Tempfile
+   * @param {boolean} [data.assetBlock.storeLocal] StoreLocal
    * @param {Variable2} [data.assetBlock.assetData] AssetData
    */
   constructor (data = {}) {

@@ -50,7 +50,7 @@ class TestMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['testBlock1', { quantity: 1, parameters: new Collection([['test1', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length

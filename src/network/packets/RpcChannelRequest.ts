@@ -50,7 +50,7 @@ class RpcChannelRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['gridX', Types.U32], ['gridY', Types.U32], ['task', Types.UUID], ['item', Types.UUID]]) }]
   ])
@@ -65,8 +65,8 @@ class RpcChannelRequest extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.dataBlock.gridX] GridX
    * @param {U32} [data.dataBlock.gridY] GridY
-   * @param {UUID} [data.dataBlock.task] TaskID
-   * @param {UUID} [data.dataBlock.item] ItemID
+   * @param {string} [data.dataBlock.task] TaskID
+   * @param {string} [data.dataBlock.item] ItemID
    */
   constructor (data = {}) {
     super(data)

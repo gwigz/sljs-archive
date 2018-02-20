@@ -50,7 +50,7 @@ class AgentUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['bodyRotation', Types.Quaternion], ['headRotation', Types.Quaternion], ['state', Types.U8], ['cameraCenter', Types.Vector3], ['cameraAtAxis', Types.Vector3], ['cameraLeftAxis', Types.Vector3], ['cameraUpAxis', Types.Vector3], ['far', Types.F32], ['controlFlags', Types.U32], ['flags', Types.U8]]) }]
   ])
@@ -63,8 +63,8 @@ class AgentUpdate extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
    * @param {Quaternion} [data.agentData.bodyRotation] BodyRotation
    * @param {Quaternion} [data.agentData.headRotation] HeadRotation
    * @param {U8} [data.agentData.state] State

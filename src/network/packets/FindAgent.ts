@@ -50,7 +50,7 @@ class FindAgent extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentBlock', { quantity: 1, parameters: new Collection([['hunter', Types.UUID], ['prey', Types.UUID], ['spaceIP', Types.IP]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,8 +65,8 @@ class FindAgent extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentBlock.hunter] Hunter
-   * @param {UUID} [data.agentBlock.prey] Prey
+   * @param {string} [data.agentBlock.hunter] Hunter
+   * @param {string} [data.agentBlock.prey] Prey
    * @param {IP} [data.agentBlock.spaceIP] SpaceIP
    * @param {F64} [data.locationBlock.globalX] GlobalX
    * @param {F64} [data.locationBlock.globalY] GlobalY

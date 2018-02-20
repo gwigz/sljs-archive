@@ -50,7 +50,7 @@ class ParcelAccessListReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['sequence', Types.S32], ['flags', Types.U32], ['local', Types.S32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,11 +65,11 @@ class ParcelAccessListReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.data.agent] AgentID
+   * @param {string} [data.data.agent] AgentID
    * @param {S32} [data.data.sequence] SequenceID
    * @param {U32} [data.data.flags] Flags
    * @param {S32} [data.data.local] LocalID
-   * @param {UUID} [data.list.id] ID
+   * @param {string} [data.list.id] ID
    * @param {S32} [data.list.time] Time
    * @param {U32} [data.list.flags] Flags
    */

@@ -50,7 +50,7 @@ class RemoveNameValuePair extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['taskData', { quantity: 1, parameters: new Collection([['id', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,7 +65,7 @@ class RemoveNameValuePair extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.taskData.id] ID
+   * @param {string} [data.taskData.id] ID
    * @param {Variable2} [data.nameValueData.nVPair] NVPair
    */
   constructor (data = {}) {

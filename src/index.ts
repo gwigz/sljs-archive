@@ -1,7 +1,14 @@
 /* tslint:disable */
 
-export Client from './Client'
+import Client from './Client'
 
-export * as Constants from './utilities/Constants'
-export * as Packets from './network/packets'
-export * as Types from './network/types'
+import * as Constants from './utilities/Constants'
+import * as Packets from './network/packets'
+import * as Types from './network/types'
+
+export {
+  Client,
+  Constants,
+  Packets,
+  Types
+}

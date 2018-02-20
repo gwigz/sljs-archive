@@ -50,7 +50,7 @@ class SimulatorLoad extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['simulatorLoad', { quantity: 1, parameters: new Collection([['timeDilation', Types.F32], ['agentCount', Types.S32], ['canAcceptAgents', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,7 +67,7 @@ class SimulatorLoad extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {F32} [data.simulatorLoad.timeDilation] TimeDilation
    * @param {S32} [data.simulatorLoad.agentCount] AgentCount
-   * @param {BOOL} [data.simulatorLoad.canAcceptAgents] CanAcceptAgents
+   * @param {boolean} [data.simulatorLoad.canAcceptAgents] CanAcceptAgents
    * @param {U32} [data.agentList.circuitCode] CircuitCode
    * @param {U8} [data.agentList.x] X
    * @param {U8} [data.agentList.y] Y

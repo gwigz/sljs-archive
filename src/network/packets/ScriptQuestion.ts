@@ -50,7 +50,7 @@ class ScriptQuestion extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['task', Types.UUID], ['item', Types.UUID], ['objectName', Types.Variable1], ['objectOwner', Types.Variable1], ['questions', Types.S32]]) }]
   ])
@@ -63,8 +63,8 @@ class ScriptQuestion extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.data.task] TaskID
-   * @param {UUID} [data.data.item] ItemID
+   * @param {string} [data.data.task] TaskID
+   * @param {string} [data.data.item] ItemID
    * @param {Variable1} [data.data.objectName] ObjectName
    * @param {Variable1} [data.data.objectOwner] ObjectOwner
    * @param {S32} [data.data.questions] Questions

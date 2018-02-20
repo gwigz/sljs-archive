@@ -50,7 +50,7 @@ class SaveAssetIntoInventory extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,9 +65,9 @@ class SaveAssetIntoInventory extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.inventoryData.item] ItemID
-   * @param {UUID} [data.inventoryData.newAsset] NewAssetID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.inventoryData.item] ItemID
+   * @param {string} [data.inventoryData.newAsset] NewAssetID
    */
   constructor (data = {}) {
     super(data)

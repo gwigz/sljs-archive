@@ -50,7 +50,7 @@ class UserReportInternal extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['reportData', { quantity: 1, parameters: new Collection([['reportType', Types.U8], ['category', Types.U8], ['reporter', Types.UUID], ['viewerPosition', Types.Vector3], ['agentPosition', Types.Vector3], ['screenshot', Types.UUID], ['object', Types.UUID], ['owner', Types.UUID], ['lastOwner', Types.UUID], ['creator', Types.UUID], ['region', Types.UUID], ['abuser', Types.UUID], ['abuseRegionName', Types.Variable1], ['abuseRegion', Types.UUID], ['summary', Types.Variable1], ['details', Types.Variable2], ['versionString', Types.Variable1]]) }]
   ])
@@ -65,18 +65,18 @@ class UserReportInternal extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U8} [data.reportData.reportType] ReportType
    * @param {U8} [data.reportData.category] Category
-   * @param {UUID} [data.reportData.reporter] ReporterID
+   * @param {string} [data.reportData.reporter] ReporterID
    * @param {Vector3} [data.reportData.viewerPosition] ViewerPosition
    * @param {Vector3} [data.reportData.agentPosition] AgentPosition
-   * @param {UUID} [data.reportData.screenshot] ScreenshotID
-   * @param {UUID} [data.reportData.object] ObjectID
-   * @param {UUID} [data.reportData.owner] OwnerID
-   * @param {UUID} [data.reportData.lastOwner] LastOwnerID
-   * @param {UUID} [data.reportData.creator] CreatorID
-   * @param {UUID} [data.reportData.region] RegionID
-   * @param {UUID} [data.reportData.abuser] AbuserID
+   * @param {string} [data.reportData.screenshot] ScreenshotID
+   * @param {string} [data.reportData.object] ObjectID
+   * @param {string} [data.reportData.owner] OwnerID
+   * @param {string} [data.reportData.lastOwner] LastOwnerID
+   * @param {string} [data.reportData.creator] CreatorID
+   * @param {string} [data.reportData.region] RegionID
+   * @param {string} [data.reportData.abuser] AbuserID
    * @param {Variable1} [data.reportData.abuseRegionName] AbuseRegionName
-   * @param {UUID} [data.reportData.abuseRegion] AbuseRegionID
+   * @param {string} [data.reportData.abuseRegion] AbuseRegionID
    * @param {Variable1} [data.reportData.summary] Summary
    * @param {Variable2} [data.reportData.details] Details
    * @param {Variable1} [data.reportData.versionString] VersionString

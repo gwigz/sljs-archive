@@ -50,7 +50,7 @@ class ImprovedInstantMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,16 +65,16 @@ class ImprovedInstantMessage extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {BOOL} [data.messageBlock.fromGroup] FromGroup
-   * @param {UUID} [data.messageBlock.toAgent] ToAgentID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {boolean} [data.messageBlock.fromGroup] FromGroup
+   * @param {string} [data.messageBlock.toAgent] ToAgentID
    * @param {U32} [data.messageBlock.parentEstate] ParentEstateID
-   * @param {UUID} [data.messageBlock.region] RegionID
+   * @param {string} [data.messageBlock.region] RegionID
    * @param {Vector3} [data.messageBlock.position] Position
    * @param {U8} [data.messageBlock.offline] Offline
    * @param {U8} [data.messageBlock.dialog] Dialog
-   * @param {UUID} [data.messageBlock.id] ID
+   * @param {string} [data.messageBlock.id] ID
    * @param {U32} [data.messageBlock.timestamp] Timestamp
    * @param {Variable1} [data.messageBlock.fromAgentName] FromAgentName
    * @param {Variable2} [data.messageBlock.message] Message

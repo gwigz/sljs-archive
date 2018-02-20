@@ -50,7 +50,7 @@ class ChatFromSimulator extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['chatData', { quantity: 1, parameters: new Collection([['fromName', Types.Variable1], ['source', Types.UUID], ['owner', Types.UUID], ['sourceType', Types.U8], ['chatType', Types.U8], ['audible', Types.U8], ['position', Types.Vector3], ['message', Types.Variable2]]) }]
   ])
@@ -64,8 +64,8 @@ class ChatFromSimulator extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.chatData.fromName] FromName
-   * @param {UUID} [data.chatData.source] SourceID
-   * @param {UUID} [data.chatData.owner] OwnerID
+   * @param {string} [data.chatData.source] SourceID
+   * @param {string} [data.chatData.owner] OwnerID
    * @param {U8} [data.chatData.sourceType] SourceType
    * @param {U8} [data.chatData.chatType] ChatType
    * @param {U8} [data.chatData.audible] Audible

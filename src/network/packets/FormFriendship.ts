@@ -50,7 +50,7 @@ class FormFriendship extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentBlock', { quantity: 1, parameters: new Collection([['source', Types.UUID], ['dest', Types.UUID]]) }]
   ])
@@ -63,8 +63,8 @@ class FormFriendship extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentBlock.source] SourceID
-   * @param {UUID} [data.agentBlock.dest] DestID
+   * @param {string} [data.agentBlock.source] SourceID
+   * @param {string} [data.agentBlock.dest] DestID
    */
   constructor (data = {}) {
     super(data)

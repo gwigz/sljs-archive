@@ -50,7 +50,7 @@ class SystemMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['methodData', { quantity: 1, parameters: new Collection([['method', Types.Variable1], ['invoice', Types.UUID], ['digest', Types.Fixed32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -66,7 +66,7 @@ class SystemMessage extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.methodData.method] Method
-   * @param {UUID} [data.methodData.invoice] Invoice
+   * @param {string} [data.methodData.invoice] Invoice
    * @param {Fixed32} [data.methodData.digest] Digest
    * @param {Variable1} [data.paramList.parameter] Parameter
    */

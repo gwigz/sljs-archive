@@ -50,7 +50,7 @@ class TeleportLocal extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['info', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['location', Types.U32], ['position', Types.Vector3], ['lookAt', Types.Vector3], ['teleportFlags', Types.U32]]) }]
   ])
@@ -63,7 +63,7 @@ class TeleportLocal extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.info.agent] AgentID
+   * @param {string} [data.info.agent] AgentID
    * @param {U32} [data.info.location] LocationID
    * @param {Vector3} [data.info.position] Position
    * @param {Vector3} [data.info.lookAt] LookAt

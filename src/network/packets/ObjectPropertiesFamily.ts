@@ -50,7 +50,7 @@ class ObjectPropertiesFamily extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['objectData', { quantity: 1, parameters: new Collection([['requestFlags', Types.U32], ['object', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['ownershipCost', Types.S32], ['saleType', Types.U8], ['salePrice', Types.S32], ['category', Types.U32], ['lastOwner', Types.UUID], ['name', Types.Variable1], ['description', Types.Variable1]]) }]
   ])
@@ -64,9 +64,9 @@ class ObjectPropertiesFamily extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.objectData.requestFlags] RequestFlags
-   * @param {UUID} [data.objectData.object] ObjectID
-   * @param {UUID} [data.objectData.owner] OwnerID
-   * @param {UUID} [data.objectData.group] GroupID
+   * @param {string} [data.objectData.object] ObjectID
+   * @param {string} [data.objectData.owner] OwnerID
+   * @param {string} [data.objectData.group] GroupID
    * @param {U32} [data.objectData.baseMask] BaseMask
    * @param {U32} [data.objectData.ownerMask] OwnerMask
    * @param {U32} [data.objectData.groupMask] GroupMask
@@ -76,7 +76,7 @@ class ObjectPropertiesFamily extends Packet {
    * @param {U8} [data.objectData.saleType] SaleType
    * @param {S32} [data.objectData.salePrice] SalePrice
    * @param {U32} [data.objectData.category] Category
-   * @param {UUID} [data.objectData.lastOwner] LastOwnerID
+   * @param {string} [data.objectData.lastOwner] LastOwnerID
    * @param {Variable1} [data.objectData.name] Name
    * @param {Variable1} [data.objectData.description] Description
    */

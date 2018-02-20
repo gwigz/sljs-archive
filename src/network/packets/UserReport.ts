@@ -50,7 +50,7 @@ class UserReport extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,17 +65,17 @@ class UserReport extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
    * @param {U8} [data.reportData.reportType] ReportType
    * @param {U8} [data.reportData.category] Category
    * @param {Vector3} [data.reportData.position] Position
    * @param {U8} [data.reportData.checkFlags] CheckFlags
-   * @param {UUID} [data.reportData.screenshot] ScreenshotID
-   * @param {UUID} [data.reportData.object] ObjectID
-   * @param {UUID} [data.reportData.abuser] AbuserID
+   * @param {string} [data.reportData.screenshot] ScreenshotID
+   * @param {string} [data.reportData.object] ObjectID
+   * @param {string} [data.reportData.abuser] AbuserID
    * @param {Variable1} [data.reportData.abuseRegionName] AbuseRegionName
-   * @param {UUID} [data.reportData.abuseRegion] AbuseRegionID
+   * @param {string} [data.reportData.abuseRegion] AbuseRegionID
    * @param {Variable1} [data.reportData.summary] Summary
    * @param {Variable2} [data.reportData.details] Details
    * @param {Variable1} [data.reportData.versionString] VersionString

@@ -50,7 +50,7 @@ class AvatarPropertiesReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,11 +65,11 @@ class AvatarPropertiesReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.avatar] AvatarID
-   * @param {UUID} [data.propertiesData.image] ImageID
-   * @param {UUID} [data.propertiesData.firstLifeImage] FLImageID
-   * @param {UUID} [data.propertiesData.partner] PartnerID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.avatar] AvatarID
+   * @param {string} [data.propertiesData.image] ImageID
+   * @param {string} [data.propertiesData.firstLifeImage] FLImageID
+   * @param {string} [data.propertiesData.partner] PartnerID
    * @param {Variable2} [data.propertiesData.aboutText] AboutText
    * @param {Variable1} [data.propertiesData.firstLifeAboutText] FLAboutText
    * @param {Variable1} [data.propertiesData.bornOn] BornOn

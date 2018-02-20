@@ -50,7 +50,7 @@ class MergeParcel extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['masterParcelData', { quantity: 1, parameters: new Collection([['master', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,8 +65,8 @@ class MergeParcel extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.masterParcelData.master] MasterID
-   * @param {UUID} [data.slaveParcelData.slave] SlaveID
+   * @param {string} [data.masterParcelData.master] MasterID
+   * @param {string} [data.slaveParcelData.slave] SlaveID
    */
   constructor (data = {}) {
     super(data)

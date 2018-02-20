@@ -50,7 +50,7 @@ class ScriptSensorReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['requester', { quantity: 1, parameters: new Collection([['source', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,10 +65,10 @@ class ScriptSensorReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.requester.source] SourceID
-   * @param {UUID} [data.sensedData.object] ObjectID
-   * @param {UUID} [data.sensedData.owner] OwnerID
-   * @param {UUID} [data.sensedData.group] GroupID
+   * @param {string} [data.requester.source] SourceID
+   * @param {string} [data.sensedData.object] ObjectID
+   * @param {string} [data.sensedData.owner] OwnerID
+   * @param {string} [data.sensedData.group] GroupID
    * @param {Vector3} [data.sensedData.position] Position
    * @param {Vector3} [data.sensedData.velocity] Velocity
    * @param {Quaternion} [data.sensedData.rotation] Rotation

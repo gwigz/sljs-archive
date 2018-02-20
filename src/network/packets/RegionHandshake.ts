@@ -50,7 +50,7 @@ class RegionHandshake extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['regionInfo', { quantity: 1, parameters: new Collection([['regionFlags', Types.U32], ['simAccess', Types.U8], ['simName', Types.Variable1], ['simOwner', Types.UUID], ['isEstateManager', Boolean], ['waterHeight', Types.F32], ['billableFactor', Types.F32], ['cache', Types.UUID], ['terrainBase0', Types.UUID], ['terrainBase1', Types.UUID], ['terrainBase2', Types.UUID], ['terrainBase3', Types.UUID], ['terrainDetail0', Types.UUID], ['terrainDetail1', Types.UUID], ['terrainDetail2', Types.UUID], ['terrainDetail3', Types.UUID], ['terrainStartHeight00', Types.F32], ['terrainStartHeight01', Types.F32], ['terrainStartHeight10', Types.F32], ['terrainStartHeight11', Types.F32], ['terrainHeightRange00', Types.F32], ['terrainHeightRange01', Types.F32], ['terrainHeightRange10', Types.F32], ['terrainHeightRange11', Types.F32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -70,19 +70,19 @@ class RegionHandshake extends Packet {
    * @param {U32} [data.regionInfo.regionFlags] RegionFlags
    * @param {U8} [data.regionInfo.simAccess] SimAccess
    * @param {Variable1} [data.regionInfo.simName] SimName
-   * @param {UUID} [data.regionInfo.simOwner] SimOwner
-   * @param {BOOL} [data.regionInfo.isEstateManager] IsEstateManager
+   * @param {string} [data.regionInfo.simOwner] SimOwner
+   * @param {boolean} [data.regionInfo.isEstateManager] IsEstateManager
    * @param {F32} [data.regionInfo.waterHeight] WaterHeight
    * @param {F32} [data.regionInfo.billableFactor] BillableFactor
-   * @param {UUID} [data.regionInfo.cache] CacheID
-   * @param {UUID} [data.regionInfo.terrainBase0] TerrainBase0
-   * @param {UUID} [data.regionInfo.terrainBase1] TerrainBase1
-   * @param {UUID} [data.regionInfo.terrainBase2] TerrainBase2
-   * @param {UUID} [data.regionInfo.terrainBase3] TerrainBase3
-   * @param {UUID} [data.regionInfo.terrainDetail0] TerrainDetail0
-   * @param {UUID} [data.regionInfo.terrainDetail1] TerrainDetail1
-   * @param {UUID} [data.regionInfo.terrainDetail2] TerrainDetail2
-   * @param {UUID} [data.regionInfo.terrainDetail3] TerrainDetail3
+   * @param {string} [data.regionInfo.cache] CacheID
+   * @param {string} [data.regionInfo.terrainBase0] TerrainBase0
+   * @param {string} [data.regionInfo.terrainBase1] TerrainBase1
+   * @param {string} [data.regionInfo.terrainBase2] TerrainBase2
+   * @param {string} [data.regionInfo.terrainBase3] TerrainBase3
+   * @param {string} [data.regionInfo.terrainDetail0] TerrainDetail0
+   * @param {string} [data.regionInfo.terrainDetail1] TerrainDetail1
+   * @param {string} [data.regionInfo.terrainDetail2] TerrainDetail2
+   * @param {string} [data.regionInfo.terrainDetail3] TerrainDetail3
    * @param {F32} [data.regionInfo.terrainStartHeight00] TerrainStartHeight00
    * @param {F32} [data.regionInfo.terrainStartHeight01] TerrainStartHeight01
    * @param {F32} [data.regionInfo.terrainStartHeight10] TerrainStartHeight10
@@ -91,7 +91,7 @@ class RegionHandshake extends Packet {
    * @param {F32} [data.regionInfo.terrainHeightRange01] TerrainHeightRange01
    * @param {F32} [data.regionInfo.terrainHeightRange10] TerrainHeightRange10
    * @param {F32} [data.regionInfo.terrainHeightRange11] TerrainHeightRange11
-   * @param {UUID} [data.regionInfo2.region] RegionID
+   * @param {string} [data.regionInfo2.region] RegionID
    * @param {S32} [data.regionInfo3.cPUClass] CPUClassID
    * @param {S32} [data.regionInfo3.cPURatio] CPURatio
    * @param {Variable1} [data.regionInfo3.coloName] ColoName

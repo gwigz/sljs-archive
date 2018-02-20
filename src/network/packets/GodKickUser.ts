@@ -50,7 +50,7 @@ class GodKickUser extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['userInfo', { quantity: 1, parameters: new Collection([['god', Types.UUID], ['godSession', Types.UUID], ['agent', Types.UUID], ['kickFlags', Types.U32], ['reason', Types.Variable2]]) }]
   ])
@@ -63,9 +63,9 @@ class GodKickUser extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.userInfo.god] GodID
-   * @param {UUID} [data.userInfo.godSession] GodSessionID
-   * @param {UUID} [data.userInfo.agent] AgentID
+   * @param {string} [data.userInfo.god] GodID
+   * @param {string} [data.userInfo.godSession] GodSessionID
+   * @param {string} [data.userInfo.agent] AgentID
    * @param {U32} [data.userInfo.kickFlags] KickFlags
    * @param {Variable2} [data.userInfo.reason] Reason
    */

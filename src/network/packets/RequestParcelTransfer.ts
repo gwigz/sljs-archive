@@ -50,7 +50,7 @@ class RequestParcelTransfer extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['transactionTime', Types.U32], ['source', Types.UUID], ['dest', Types.UUID], ['owner', Types.UUID], ['flags', Types.U8], ['transactionType', Types.S32], ['amount', Types.S32], ['billableArea', Types.S32], ['actualArea', Types.S32], ['final', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,18 +65,18 @@ class RequestParcelTransfer extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.data.transaction] TransactionID
+   * @param {string} [data.data.transaction] TransactionID
    * @param {U32} [data.data.transactionTime] TransactionTime
-   * @param {UUID} [data.data.source] SourceID
-   * @param {UUID} [data.data.dest] DestID
-   * @param {UUID} [data.data.owner] OwnerID
+   * @param {string} [data.data.source] SourceID
+   * @param {string} [data.data.dest] DestID
+   * @param {string} [data.data.owner] OwnerID
    * @param {U8} [data.data.flags] Flags
    * @param {S32} [data.data.transactionType] TransactionType
    * @param {S32} [data.data.amount] Amount
    * @param {S32} [data.data.billableArea] BillableArea
    * @param {S32} [data.data.actualArea] ActualArea
-   * @param {BOOL} [data.data.final] Final
-   * @param {UUID} [data.regionData.region] RegionID
+   * @param {boolean} [data.data.final] Final
+   * @param {string} [data.regionData.region] RegionID
    * @param {U32} [data.regionData.gridX] GridX
    * @param {U32} [data.regionData.gridY] GridY
    */

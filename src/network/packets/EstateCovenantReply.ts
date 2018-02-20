@@ -50,7 +50,7 @@ class EstateCovenantReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['covenant', Types.UUID], ['covenantTimestamp', Types.U32], ['estateName', Types.Variable1], ['estateOwner', Types.UUID]]) }]
   ])
@@ -63,10 +63,10 @@ class EstateCovenantReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.data.covenant] CovenantID
+   * @param {string} [data.data.covenant] CovenantID
    * @param {U32} [data.data.covenantTimestamp] CovenantTimestamp
    * @param {Variable1} [data.data.estateName] EstateName
-   * @param {UUID} [data.data.estateOwner] EstateOwnerID
+   * @param {string} [data.data.estateOwner] EstateOwnerID
    */
   constructor (data = {}) {
     super(data)

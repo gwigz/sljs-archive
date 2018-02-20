@@ -50,7 +50,7 @@ class MoveInventoryFolder extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['stamp', Boolean]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,11 +65,11 @@ class MoveInventoryFolder extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {BOOL} [data.agentData.stamp] Stamp
-   * @param {UUID} [data.inventoryData.folder] FolderID
-   * @param {UUID} [data.inventoryData.parent] ParentID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {boolean} [data.agentData.stamp] Stamp
+   * @param {string} [data.inventoryData.folder] FolderID
+   * @param {string} [data.inventoryData.parent] ParentID
    */
   constructor (data = {}) {
     super(data)

@@ -50,7 +50,7 @@ class GroupDataUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentGroupData', { parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID], ['agentPowers', Types.U64], ['groupTitle', Types.Variable1]]) }]
   ])
@@ -63,8 +63,8 @@ class GroupDataUpdate extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentGroupData.agent] AgentID
-   * @param {UUID} [data.agentGroupData.group] GroupID
+   * @param {string} [data.agentGroupData.agent] AgentID
+   * @param {string} [data.agentGroupData.group] GroupID
    * @param {U64} [data.agentGroupData.agentPowers] AgentPowers
    * @param {Variable1} [data.agentGroupData.groupTitle] GroupTitle
    */

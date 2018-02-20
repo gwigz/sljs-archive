@@ -50,7 +50,7 @@ class TeleportLureRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['info', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['lure', Types.UUID], ['teleportFlags', Types.U32]]) }]
   ])
@@ -63,9 +63,9 @@ class TeleportLureRequest extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.info.agent] AgentID
-   * @param {UUID} [data.info.session] SessionID
-   * @param {UUID} [data.info.lure] LureID
+   * @param {string} [data.info.agent] AgentID
+   * @param {string} [data.info.session] SessionID
+   * @param {string} [data.info.lure] LureID
    * @param {U32} [data.info.teleportFlags] TeleportFlags
    */
   constructor (data = {}) {

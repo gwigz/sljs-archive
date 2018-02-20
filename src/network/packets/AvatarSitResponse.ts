@@ -50,7 +50,7 @@ class AvatarSitResponse extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['sitObject', { quantity: 1, parameters: new Collection([['id', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,13 +65,13 @@ class AvatarSitResponse extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.sitObject.id] ID
-   * @param {BOOL} [data.sitTransform.autoPilot] AutoPilot
+   * @param {string} [data.sitObject.id] ID
+   * @param {boolean} [data.sitTransform.autoPilot] AutoPilot
    * @param {Vector3} [data.sitTransform.sitPosition] SitPosition
    * @param {Quaternion} [data.sitTransform.sitRotation] SitRotation
    * @param {Vector3} [data.sitTransform.cameraEyeOffset] CameraEyeOffset
    * @param {Vector3} [data.sitTransform.cameraAtOffset] CameraAtOffset
-   * @param {BOOL} [data.sitTransform.forceMouselook] ForceMouselook
+   * @param {boolean} [data.sitTransform.forceMouselook] ForceMouselook
    */
   constructor (data = {}) {
     super(data)

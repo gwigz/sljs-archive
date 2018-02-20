@@ -50,7 +50,7 @@ class ScriptTeleportRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['objectName', Types.Variable1], ['simName', Types.Variable1], ['simPosition', Types.Vector3], ['lookAt', Types.Vector3]]) }]
   ])

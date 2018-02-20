@@ -50,7 +50,7 @@ class GroupNoticesListReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,13 +65,13 @@ class GroupNoticesListReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.group] GroupID
-   * @param {UUID} [data.data.notice] NoticeID
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.group] GroupID
+   * @param {string} [data.data.notice] NoticeID
    * @param {U32} [data.data.timestamp] Timestamp
    * @param {Variable2} [data.data.fromName] FromName
    * @param {Variable2} [data.data.subject] Subject
-   * @param {BOOL} [data.data.hasAttachment] HasAttachment
+   * @param {boolean} [data.data.hasAttachment] HasAttachment
    * @param {U8} [data.data.assetType] AssetType
    */
   constructor (data = {}) {

@@ -50,7 +50,7 @@ class CoarseLocationUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['location', { parameters: new Collection([['x', Types.U8], ['y', Types.U8], ['z', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
@@ -72,7 +72,7 @@ class CoarseLocationUpdate extends Packet {
    * @param {U8} [data.location.z] Z
    * @param {S16} [data.index.you] You
    * @param {S16} [data.index.prey] Prey
-   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.agent] AgentID
    */
   constructor (data = {}) {
     super(data)

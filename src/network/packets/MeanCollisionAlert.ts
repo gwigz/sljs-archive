@@ -50,7 +50,7 @@ class MeanCollisionAlert extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['meanCollision', { parameters: new Collection([['victim', Types.UUID], ['perp', Types.UUID], ['time', Types.U32], ['mag', Types.F32], ['type', Types.U8]]) }]
   ])
@@ -63,8 +63,8 @@ class MeanCollisionAlert extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.meanCollision.victim] Victim
-   * @param {UUID} [data.meanCollision.perp] Perp
+   * @param {string} [data.meanCollision.victim] Victim
+   * @param {string} [data.meanCollision.perp] Perp
    * @param {U32} [data.meanCollision.time] Time
    * @param {F32} [data.meanCollision.mag] Mag
    * @param {U8} [data.meanCollision.type] Type

@@ -50,7 +50,7 @@ class RegionPresenceResponse extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['regionData', { parameters: new Collection([['region', Types.UUID], ['regionHandle', Types.U64], ['internalRegionIP', Types.IP], ['externalRegionIP', Types.IP], ['regionPort', Types.Port], ['validUntil', Types.F64], ['message', Types.Variable1]]) }]
   ])
@@ -63,7 +63,7 @@ class RegionPresenceResponse extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.regionData.region] RegionID
+   * @param {string} [data.regionData.region] RegionID
    * @param {U64} [data.regionData.regionHandle] RegionHandle
    * @param {IP} [data.regionData.internalRegionIP] InternalRegionIP
    * @param {IP} [data.regionData.externalRegionIP] ExternalRegionIP

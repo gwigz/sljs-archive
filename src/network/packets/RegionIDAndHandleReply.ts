@@ -50,7 +50,7 @@ class RegionIDAndHandleReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['replyBlock', { quantity: 1, parameters: new Collection([['region', Types.UUID], ['regionHandle', Types.U64]]) }]
   ])
@@ -63,7 +63,7 @@ class RegionIDAndHandleReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.replyBlock.region] RegionID
+   * @param {string} [data.replyBlock.region] RegionID
    * @param {U64} [data.replyBlock.regionHandle] RegionHandle
    */
   constructor (data = {}) {

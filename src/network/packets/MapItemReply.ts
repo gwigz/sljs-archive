@@ -50,7 +50,7 @@ class MapItemReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['flags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,12 +67,12 @@ class MapItemReply extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.agent] AgentID
    * @param {U32} [data.agentData.flags] Flags
    * @param {U32} [data.requestData.itemType] ItemType
    * @param {U32} [data.data.x] X
    * @param {U32} [data.data.y] Y
-   * @param {UUID} [data.data.id] ID
+   * @param {string} [data.data.id] ID
    * @param {S32} [data.data.extra] Extra
    * @param {S32} [data.data.extra2] Extra2
    * @param {Variable1} [data.data.name] Name

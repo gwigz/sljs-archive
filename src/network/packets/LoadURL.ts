@@ -50,7 +50,7 @@ class LoadURL extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['data', { quantity: 1, parameters: new Collection([['objectName', Types.Variable1], ['object', Types.UUID], ['owner', Types.UUID], ['ownerIsGroup', Boolean], ['message', Types.Variable1], ['url', Types.Variable1]]) }]
   ])
@@ -64,9 +64,9 @@ class LoadURL extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.data.objectName] ObjectName
-   * @param {UUID} [data.data.object] ObjectID
-   * @param {UUID} [data.data.owner] OwnerID
-   * @param {BOOL} [data.data.ownerIsGroup] OwnerIsGroup
+   * @param {string} [data.data.object] ObjectID
+   * @param {string} [data.data.owner] OwnerID
+   * @param {boolean} [data.data.ownerIsGroup] OwnerIsGroup
    * @param {Variable1} [data.data.message] Message
    * @param {Variable1} [data.data.url] URL
    */

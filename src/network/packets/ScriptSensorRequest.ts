@@ -50,7 +50,7 @@ class ScriptSensorRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['requester', { quantity: 1, parameters: new Collection([['source', Types.UUID], ['request', Types.UUID], ['search', Types.UUID], ['searchPos', Types.Vector3], ['searchDir', Types.Quaternion], ['searchName', Types.Variable1], ['type', Types.S32], ['range', Types.F32], ['arc', Types.F32], ['regionHandle', Types.U64], ['searchRegions', Types.U8]]) }]
   ])
@@ -63,9 +63,9 @@ class ScriptSensorRequest extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.requester.source] SourceID
-   * @param {UUID} [data.requester.request] RequestID
-   * @param {UUID} [data.requester.search] SearchID
+   * @param {string} [data.requester.source] SourceID
+   * @param {string} [data.requester.request] RequestID
+   * @param {string} [data.requester.search] SearchID
    * @param {Vector3} [data.requester.searchPos] SearchPos
    * @param {Quaternion} [data.requester.searchDir] SearchDir
    * @param {Variable1} [data.requester.searchName] SearchName

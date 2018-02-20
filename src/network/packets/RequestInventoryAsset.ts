@@ -50,7 +50,7 @@ class RequestInventoryAsset extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['queryData', { quantity: 1, parameters: new Collection([['query', Types.UUID], ['agent', Types.UUID], ['owner', Types.UUID], ['item', Types.UUID]]) }]
   ])
@@ -63,10 +63,10 @@ class RequestInventoryAsset extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.queryData.query] QueryID
-   * @param {UUID} [data.queryData.agent] AgentID
-   * @param {UUID} [data.queryData.owner] OwnerID
-   * @param {UUID} [data.queryData.item] ItemID
+   * @param {string} [data.queryData.query] QueryID
+   * @param {string} [data.queryData.agent] AgentID
+   * @param {string} [data.queryData.owner] OwnerID
+   * @param {string} [data.queryData.item] ItemID
    */
   constructor (data = {}) {
     super(data)

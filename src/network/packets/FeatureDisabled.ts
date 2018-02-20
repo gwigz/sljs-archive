@@ -50,7 +50,7 @@ class FeatureDisabled extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['failureInfo', { quantity: 1, parameters: new Collection([['errorMessage', Types.Variable1], ['agent', Types.UUID], ['transaction', Types.UUID]]) }]
   ])
@@ -64,8 +64,8 @@ class FeatureDisabled extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.failureInfo.errorMessage] ErrorMessage
-   * @param {UUID} [data.failureInfo.agent] AgentID
-   * @param {UUID} [data.failureInfo.transaction] TransactionID
+   * @param {string} [data.failureInfo.agent] AgentID
+   * @param {string} [data.failureInfo.transaction] TransactionID
    */
   constructor (data = {}) {
     super(data)

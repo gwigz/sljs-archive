@@ -50,7 +50,7 @@ class ObjectProperties extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['objectData', { parameters: new Collection([['object', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['creationDate', Types.U64], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['ownershipCost', Types.S32], ['saleType', Types.U8], ['salePrice', Types.S32], ['aggregatePerms', Types.U8], ['aggregatePermTextures', Types.U8], ['aggregatePermTexturesOwner', Types.U8], ['category', Types.U32], ['inventorySerial', Types.S16], ['item', Types.UUID], ['folder', Types.UUID], ['fromTask', Types.UUID], ['lastOwner', Types.UUID], ['name', Types.Variable1], ['description', Types.Variable1], ['touchName', Types.Variable1], ['sitName', Types.Variable1], ['texture', Types.Variable1]]) }]
   ])
@@ -63,10 +63,10 @@ class ObjectProperties extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.objectData.object] ObjectID
-   * @param {UUID} [data.objectData.creator] CreatorID
-   * @param {UUID} [data.objectData.owner] OwnerID
-   * @param {UUID} [data.objectData.group] GroupID
+   * @param {string} [data.objectData.object] ObjectID
+   * @param {string} [data.objectData.creator] CreatorID
+   * @param {string} [data.objectData.owner] OwnerID
+   * @param {string} [data.objectData.group] GroupID
    * @param {U64} [data.objectData.creationDate] CreationDate
    * @param {U32} [data.objectData.baseMask] BaseMask
    * @param {U32} [data.objectData.ownerMask] OwnerMask
@@ -81,10 +81,10 @@ class ObjectProperties extends Packet {
    * @param {U8} [data.objectData.aggregatePermTexturesOwner] AggregatePermTexturesOwner
    * @param {U32} [data.objectData.category] Category
    * @param {S16} [data.objectData.inventorySerial] InventorySerial
-   * @param {UUID} [data.objectData.item] ItemID
-   * @param {UUID} [data.objectData.folder] FolderID
-   * @param {UUID} [data.objectData.fromTask] FromTaskID
-   * @param {UUID} [data.objectData.lastOwner] LastOwnerID
+   * @param {string} [data.objectData.item] ItemID
+   * @param {string} [data.objectData.folder] FolderID
+   * @param {string} [data.objectData.fromTask] FromTaskID
+   * @param {string} [data.objectData.lastOwner] LastOwnerID
    * @param {Variable1} [data.objectData.name] Name
    * @param {Variable1} [data.objectData.description] Description
    * @param {Variable1} [data.objectData.touchName] TouchName

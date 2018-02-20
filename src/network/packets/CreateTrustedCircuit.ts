@@ -50,7 +50,7 @@ class CreateTrustedCircuit extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['endPoint', Types.UUID], ['digest', Types.Fixed32]]) }]
   ])
@@ -63,7 +63,7 @@ class CreateTrustedCircuit extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.dataBlock.endPoint] EndPointID
+   * @param {string} [data.dataBlock.endPoint] EndPointID
    * @param {Fixed32} [data.dataBlock.digest] Digest
    */
   constructor (data = {}) {

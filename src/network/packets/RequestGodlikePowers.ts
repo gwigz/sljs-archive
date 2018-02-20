@@ -50,7 +50,7 @@ class RequestGodlikePowers extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,10 +65,10 @@ class RequestGodlikePowers extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.agentData.session] SessionID
-   * @param {BOOL} [data.requestBlock.godlike] Godlike
-   * @param {UUID} [data.requestBlock.token] Token
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.agentData.session] SessionID
+   * @param {boolean} [data.requestBlock.godlike] Godlike
+   * @param {string} [data.requestBlock.token] Token
    */
   constructor (data = {}) {
     super(data)

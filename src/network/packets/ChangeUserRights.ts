@@ -50,7 +50,7 @@ class ChangeUserRights extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
@@ -65,8 +65,8 @@ class ChangeUserRights extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.agentData.agent] AgentID
-   * @param {UUID} [data.rights.agentRelated] AgentRelated
+   * @param {string} [data.agentData.agent] AgentID
+   * @param {string} [data.rights.agentRelated] AgentRelated
    * @param {S32} [data.rights.relatedRights] RelatedRights
    */
   constructor (data = {}) {

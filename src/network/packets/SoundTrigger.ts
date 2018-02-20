@@ -50,7 +50,7 @@ class SoundTrigger extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['soundData', { quantity: 1, parameters: new Collection([['sound', Types.UUID], ['owner', Types.UUID], ['object', Types.UUID], ['parent', Types.UUID], ['handle', Types.U64], ['position', Types.Vector3], ['gain', Types.F32]]) }]
   ])
@@ -63,10 +63,10 @@ class SoundTrigger extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.soundData.sound] SoundID
-   * @param {UUID} [data.soundData.owner] OwnerID
-   * @param {UUID} [data.soundData.object] ObjectID
-   * @param {UUID} [data.soundData.parent] ParentID
+   * @param {string} [data.soundData.sound] SoundID
+   * @param {string} [data.soundData.owner] OwnerID
+   * @param {string} [data.soundData.object] ObjectID
+   * @param {string} [data.soundData.parent] ParentID
    * @param {U64} [data.soundData.handle] Handle
    * @param {Vector3} [data.soundData.position] Position
    * @param {F32} [data.soundData.gain] Gain

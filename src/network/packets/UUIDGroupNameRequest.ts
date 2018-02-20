@@ -50,7 +50,7 @@ class UUIDGroupNameRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['uUIDNameBlock', { parameters: new Collection([['id', Types.UUID]]) }]
   ])
@@ -63,7 +63,7 @@ class UUIDGroupNameRequest extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.uUIDNameBlock.id] ID
+   * @param {string} [data.uUIDNameBlock.id] ID
    */
   constructor (data = {}) {
     super(data)

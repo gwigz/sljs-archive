@@ -50,7 +50,7 @@ class ParcelMediaUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dataBlock', { quantity: 1, parameters: new Collection([['mediaURL', Types.Variable1], ['media', Types.UUID], ['mediaAutoScale', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
@@ -66,7 +66,7 @@ class ParcelMediaUpdate extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {Variable1} [data.dataBlock.mediaURL] MediaURL
-   * @param {UUID} [data.dataBlock.media] MediaID
+   * @param {string} [data.dataBlock.media] MediaID
    * @param {U8} [data.dataBlock.mediaAutoScale] MediaAutoScale
    * @param {Variable1} [data.dataBlockExtended.mediaType] MediaType
    * @param {Variable1} [data.dataBlockExtended.mediaDesc] MediaDesc

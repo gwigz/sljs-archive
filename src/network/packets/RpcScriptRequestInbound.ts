@@ -50,7 +50,7 @@ class RpcScriptRequestInbound extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['targetBlock', { quantity: 1, parameters: new Collection([['gridX', Types.U32], ['gridY', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
@@ -67,9 +67,9 @@ class RpcScriptRequestInbound extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.targetBlock.gridX] GridX
    * @param {U32} [data.targetBlock.gridY] GridY
-   * @param {UUID} [data.dataBlock.task] TaskID
-   * @param {UUID} [data.dataBlock.item] ItemID
-   * @param {UUID} [data.dataBlock.channel] ChannelID
+   * @param {string} [data.dataBlock.task] TaskID
+   * @param {string} [data.dataBlock.item] ItemID
+   * @param {string} [data.dataBlock.channel] ChannelID
    * @param {U32} [data.dataBlock.intValue] IntValue
    * @param {Variable2} [data.dataBlock.stringValue] StringValue
    */

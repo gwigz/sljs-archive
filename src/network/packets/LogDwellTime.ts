@@ -50,7 +50,7 @@ class LogDwellTime extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection<string, any> = new Collection([
+  public static format: Collection = new Collection([
     // tslint:disable-next-line:max-line-length
     ['dwellInfo', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['duration', Types.F32], ['simName', Types.Variable1], ['regionX', Types.U32], ['regionY', Types.U32], ['avgAgentsInView', Types.U8], ['avgViewerFPS', Types.U8]]) }]
   ])
@@ -63,8 +63,8 @@ class LogDwellTime extends Packet {
    * requirements itself.
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
-   * @param {UUID} [data.dwellInfo.agent] AgentID
-   * @param {UUID} [data.dwellInfo.session] SessionID
+   * @param {string} [data.dwellInfo.agent] AgentID
+   * @param {string} [data.dwellInfo.session] SessionID
    * @param {F32} [data.dwellInfo.duration] Duration
    * @param {Variable1} [data.dwellInfo.simName] SimName
    * @param {U32} [data.dwellInfo.regionX] RegionX
