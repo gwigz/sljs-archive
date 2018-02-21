@@ -21,7 +21,7 @@ class Variable1 extends Variable {
    * @param {number} start Position to read from
    * @returns {string}
    */
-  public static fromBuffer (buffer: Buffer, start: ?number): string {
+  public static fromBuffer (buffer: Buffer, start?: number): string {
     return super.fromPrefixedBuffer(this.prefix, buffer, start)
   }
 }

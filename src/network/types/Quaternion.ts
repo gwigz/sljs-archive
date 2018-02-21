@@ -43,8 +43,8 @@ class Quaternion {
     position: number = 0,
     normalized: boolean = true,
     type = F32,
-    lower: ?number,
-    upper: ?number
+    lower?: number,
+    upper?: number
   ): Array<number> {
     if (!type) {
       type = F32

@@ -31,7 +31,7 @@ class Vector3 {
    * @param {number} upper Upper limit for optional type convertion
    * @returns {number[]}
    */
-  public static fromBuffer (buffer: Buffer, position = 0, type = F32, lower: ?number, upper: ?number): Array<number> {
+  public static fromBuffer (buffer: Buffer, position = 0, type = F32, lower?: number, upper?: number): Array<number> {
     const output = [
       type.fromBuffer(buffer, position),
       type.fromBuffer(buffer, position + type.size),

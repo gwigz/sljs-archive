@@ -1,6 +1,6 @@
 {
   "extends": [
-    "tslint:recommended",
+    "tslint:latest",
     "tslint-eslint-rules"
   ],
   "rules": {
@@ -9,6 +9,17 @@
     "space-before-function-paren": [true, "always"],
     "array-type": [true, "generic"],
     "typedef": [true, "call-signature", "property-declaration"],
+    "whitespace": {
+      "options": [
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type",
+        "check-typecast",
+        "check-rest-spread"
+      ]
+    },
     "triple-equals": true,
     "no-empty": true,
     "no-invalid-this": true,

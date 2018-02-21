@@ -8,7 +8,7 @@ import PacketLookup from './helpers/PacketLookup'
 import * as Types from './types'
 
 interface IPacket {
-  new (data: ?any): Packet
+  new (data?: any): Packet
 }
 
 /**
