@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ObjectUpdateCached extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['timeDilation', Types.U16]]) }],
+    ['regionData', { quantity: 1, parameters: new Collection<string, any>([['regionHandle', Types.U64], ['timeDilation', Types.U16]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { parameters: new Collection([['id', Types.U32], ['crc', Types.U32], ['updateFlags', Types.U32]]) }]
+    ['objectData', { parameters: new Collection<string, any>([['id', Types.U32], ['crc', Types.U32], ['updateFlags', Types.U32]]) }]
   ])
 
   /**

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ScriptControlChange extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['data', { parameters: new Collection([['takeControls', Boolean], ['controls', Types.U32], ['passToAgent', Boolean]]) }]
+    ['data', { parameters: new Collection<string, any>([['takeControls', Types.Boolean], ['controls', Types.U32], ['passToAgent', Types.Boolean]]) }]
   ])
 
   /**

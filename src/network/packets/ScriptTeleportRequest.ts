@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ScriptTeleportRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['objectName', Types.Variable1], ['simName', Types.Variable1], ['simPosition', Types.Vector3], ['lookAt', Types.Vector3]]) }]
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['objectName', Types.Variable1], ['simName', Types.Variable1], ['simPosition', Types.Vector3], ['lookAt', Types.Vector3]]) }]
   ])
 
   /**

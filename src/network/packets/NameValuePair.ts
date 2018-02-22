@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class NameValuePair extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['taskData', { quantity: 1, parameters: new Collection([['id', Types.UUID]]) }],
+    ['taskData', { quantity: 1, parameters: new Collection<string, any>([['id', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['nameValueData', { parameters: new Collection([['nVPair', Types.Variable2]]) }]
+    ['nameValueData', { parameters: new Collection<string, any>([['nVPair', Types.Variable2]]) }]
   ])
 
   /**

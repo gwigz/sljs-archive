@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class PayPriceReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['objectData', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['defaultPayPrice', Types.S32]]) }],
+    ['objectData', { quantity: 1, parameters: new Collection<string, any>([['object', Types.UUID], ['defaultPayPrice', Types.S32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['buttonData', { parameters: new Collection([['payButton', Types.S32]]) }]
+    ['buttonData', { parameters: new Collection<string, any>([['payButton', Types.S32]]) }]
   ])
 
   /**

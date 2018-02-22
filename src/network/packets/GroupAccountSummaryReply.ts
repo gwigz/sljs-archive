@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class GroupAccountSummaryReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['moneyData', { quantity: 1, parameters: new Collection([['request', Types.UUID], ['intervalDays', Types.S32], ['currentInterval', Types.S32], ['startDate', Types.Variable1], ['balance', Types.S32], ['totalCredits', Types.S32], ['totalDebits', Types.S32], ['objectTaxCurrent', Types.S32], ['lightTaxCurrent', Types.S32], ['landTaxCurrent', Types.S32], ['groupTaxCurrent', Types.S32], ['parcelDirFeeCurrent', Types.S32], ['objectTaxEstimate', Types.S32], ['lightTaxEstimate', Types.S32], ['landTaxEstimate', Types.S32], ['groupTaxEstimate', Types.S32], ['parcelDirFeeEstimate', Types.S32], ['nonExemptMembers', Types.S32], ['lastTaxDate', Types.Variable1], ['taxDate', Types.Variable1]]) }]
+    ['moneyData', { quantity: 1, parameters: new Collection<string, any>([['request', Types.UUID], ['intervalDays', Types.S32], ['currentInterval', Types.S32], ['startDate', Types.Variable1], ['balance', Types.S32], ['totalCredits', Types.S32], ['totalDebits', Types.S32], ['objectTaxCurrent', Types.S32], ['lightTaxCurrent', Types.S32], ['landTaxCurrent', Types.S32], ['groupTaxCurrent', Types.S32], ['parcelDirFeeCurrent', Types.S32], ['objectTaxEstimate', Types.S32], ['lightTaxEstimate', Types.S32], ['landTaxEstimate', Types.S32], ['groupTaxEstimate', Types.S32], ['parcelDirFeeEstimate', Types.S32], ['nonExemptMembers', Types.S32], ['lastTaxDate', Types.Variable1], ['taxDate', Types.Variable1]]) }]
   ])
 
   /**

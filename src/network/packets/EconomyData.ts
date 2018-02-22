@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class EconomyData extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['info', { quantity: 1, parameters: new Collection([['objectCapacity', Types.S32], ['objectCount', Types.S32], ['priceEnergyUnit', Types.S32], ['priceObjectClaim', Types.S32], ['pricePublicObjectDecay', Types.S32], ['pricePublicObjectDelete', Types.S32], ['priceParcelClaim', Types.S32], ['priceParcelClaimFactor', Types.F32], ['priceUpload', Types.S32], ['priceRentLight', Types.S32], ['teleportMinPrice', Types.S32], ['teleportPriceExponent', Types.F32], ['energyEfficiency', Types.F32], ['priceObjectRent', Types.F32], ['priceObjectScaleFactor', Types.F32], ['priceParcelRent', Types.S32], ['priceGroupCreate', Types.S32]]) }]
+    ['info', { quantity: 1, parameters: new Collection<string, any>([['objectCapacity', Types.S32], ['objectCount', Types.S32], ['priceEnergyUnit', Types.S32], ['priceObjectClaim', Types.S32], ['pricePublicObjectDecay', Types.S32], ['pricePublicObjectDelete', Types.S32], ['priceParcelClaim', Types.S32], ['priceParcelClaimFactor', Types.F32], ['priceUpload', Types.S32], ['priceRentLight', Types.S32], ['teleportMinPrice', Types.S32], ['teleportPriceExponent', Types.F32], ['energyEfficiency', Types.F32], ['priceObjectRent', Types.F32], ['priceObjectScaleFactor', Types.F32], ['priceParcelRent', Types.S32], ['priceGroupCreate', Types.S32]]) }]
   ])
 
   /**

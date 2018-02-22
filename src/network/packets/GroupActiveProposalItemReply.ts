@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class GroupActiveProposalItemReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['transactionData', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['totalNumItems', Types.U32]]) }],
+    ['transactionData', { quantity: 1, parameters: new Collection<string, any>([['transaction', Types.UUID], ['totalNumItems', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['proposalData', { parameters: new Collection([['vote', Types.UUID], ['voteInitiator', Types.UUID], ['terseDate', Types.Variable1], ['startDateTime', Types.Variable1], ['endDateTime', Types.Variable1], ['alreadyVoted', Boolean], ['voteCast', Types.Variable1], ['majority', Types.F32], ['quorum', Types.S32], ['proposalText', Types.Variable1]]) }]
+    ['proposalData', { parameters: new Collection<string, any>([['vote', Types.UUID], ['voteInitiator', Types.UUID], ['terseDate', Types.Variable1], ['startDateTime', Types.Variable1], ['endDateTime', Types.Variable1], ['alreadyVoted', Types.Boolean], ['voteCast', Types.Variable1], ['majority', Types.F32], ['quorum', Types.S32], ['proposalText', Types.Variable1]]) }]
   ])
 
   /**

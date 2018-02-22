@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class UpdateGroupInfo extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['groupData', { quantity: 1, parameters: new Collection([['group', Types.UUID], ['charter', Types.Variable2], ['showInList', Boolean], ['insignia', Types.UUID], ['membershipFee', Types.S32], ['openEnrollment', Boolean], ['allowPublish', Boolean], ['maturePublish', Boolean]]) }]
+    ['groupData', { quantity: 1, parameters: new Collection<string, any>([['group', Types.UUID], ['charter', Types.Variable2], ['showInList', Types.Boolean], ['insignia', Types.UUID], ['membershipFee', Types.S32], ['openEnrollment', Types.Boolean], ['allowPublish', Types.Boolean], ['maturePublish', Types.Boolean]]) }]
   ])
 
   /**

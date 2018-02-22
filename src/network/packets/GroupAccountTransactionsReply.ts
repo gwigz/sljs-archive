@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class GroupAccountTransactionsReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['moneyData', { quantity: 1, parameters: new Collection([['request', Types.UUID], ['intervalDays', Types.S32], ['currentInterval', Types.S32], ['startDate', Types.Variable1]]) }],
+    ['moneyData', { quantity: 1, parameters: new Collection<string, any>([['request', Types.UUID], ['intervalDays', Types.S32], ['currentInterval', Types.S32], ['startDate', Types.Variable1]]) }],
     // tslint:disable-next-line:max-line-length
-    ['historyData', { parameters: new Collection([['time', Types.Variable1], ['user', Types.Variable1], ['type', Types.S32], ['item', Types.Variable1], ['amount', Types.S32]]) }]
+    ['historyData', { parameters: new Collection<string, any>([['time', Types.Variable1], ['user', Types.Variable1], ['type', Types.S32], ['item', Types.Variable1], ['amount', Types.S32]]) }]
   ])
 
   /**

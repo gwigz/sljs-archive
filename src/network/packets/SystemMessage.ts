@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class SystemMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['methodData', { quantity: 1, parameters: new Collection([['method', Types.Variable1], ['invoice', Types.UUID], ['digest', Types.Fixed32]]) }],
+    ['methodData', { quantity: 1, parameters: new Collection<string, any>([['method', Types.Variable1], ['invoice', Types.UUID], ['digest', Types.Fixed32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['paramList', { parameters: new Collection([['parameter', Types.Variable1]]) }]
+    ['paramList', { parameters: new Collection<string, any>([['parameter', Types.Variable1]]) }]
   ])
 
   /**

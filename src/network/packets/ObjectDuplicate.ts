@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class ObjectDuplicate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['sharedData', { quantity: 1, parameters: new Collection([['offset', Types.Vector3], ['duplicateFlags', Types.U32]]) }],
+    ['sharedData', { quantity: 1, parameters: new Collection<string, any>([['offset', Types.Vector3], ['duplicateFlags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { parameters: new Collection([['objectLocal', Types.U32]]) }]
+    ['objectData', { parameters: new Collection<string, any>([['objectLocal', Types.U32]]) }]
   ])
 
   /**

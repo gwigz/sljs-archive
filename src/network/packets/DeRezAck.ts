@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class DeRezAck extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['transactionData', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['success', Boolean]]) }]
+    ['transactionData', { quantity: 1, parameters: new Collection<string, any>([['transaction', Types.UUID], ['success', Types.Boolean]]) }]
   ])
 
   /**

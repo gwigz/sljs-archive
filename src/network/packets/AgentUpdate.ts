@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class AgentUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['bodyRotation', Types.Quaternion], ['headRotation', Types.Quaternion], ['state', Types.U8], ['cameraCenter', Types.Vector3], ['cameraAtAxis', Types.Vector3], ['cameraLeftAxis', Types.Vector3], ['cameraUpAxis', Types.Vector3], ['far', Types.F32], ['controlFlags', Types.U32], ['flags', Types.U8]]) }]
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['bodyRotation', Types.Quaternion], ['headRotation', Types.Quaternion], ['state', Types.U8], ['cameraCenter', Types.Vector3], ['cameraAtAxis', Types.Vector3], ['cameraLeftAxis', Types.Vector3], ['cameraUpAxis', Types.Vector3], ['far', Types.F32], ['controlFlags', Types.U32], ['flags', Types.U8]]) }]
   ])
 
   /**

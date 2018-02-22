@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class EventInfoReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['eventData', { quantity: 1, parameters: new Collection([['event', Types.U32], ['creator', Types.Variable1], ['name', Types.Variable1], ['category', Types.Variable1], ['desc', Types.Variable2], ['date', Types.Variable1], ['dateUTC', Types.U32], ['duration', Types.U32], ['cover', Types.U32], ['amount', Types.U32], ['simName', Types.Variable1], ['globalPos', Types.Vector3D], ['eventFlags', Types.U32]]) }]
+    ['eventData', { quantity: 1, parameters: new Collection<string, any>([['event', Types.U32], ['creator', Types.Variable1], ['name', Types.Variable1], ['category', Types.Variable1], ['desc', Types.Variable2], ['date', Types.Variable1], ['dateUTC', Types.U32], ['duration', Types.U32], ['cover', Types.U32], ['amount', Types.U32], ['simName', Types.Variable1], ['globalPos', Types.Vector3D], ['eventFlags', Types.U32]]) }]
   ])
 
   /**

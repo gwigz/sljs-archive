@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class LogParcelChanges extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['regionData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64]]) }],
+    ['regionData', { quantity: 1, parameters: new Collection<string, any>([['regionHandle', Types.U64]]) }],
     // tslint:disable-next-line:max-line-length
-    ['parcelData', { parameters: new Collection([['parcel', Types.UUID], ['owner', Types.UUID], ['isOwnerGroup', Boolean], ['actualArea', Types.S32], ['action', Types.S8], ['transaction', Types.UUID]]) }]
+    ['parcelData', { parameters: new Collection<string, any>([['parcel', Types.UUID], ['owner', Types.UUID], ['isOwnerGroup', Types.Boolean], ['actualArea', Types.S32], ['action', Types.S8], ['transaction', Types.UUID]]) }]
   ])
 
   /**

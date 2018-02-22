@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class ScriptDialog extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['firstName', Types.Variable1], ['lastName', Types.Variable1], ['objectName', Types.Variable1], ['message', Types.Variable2], ['chatChannel', Types.S32], ['image', Types.UUID]]) }],
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['object', Types.UUID], ['firstName', Types.Variable1], ['lastName', Types.Variable1], ['objectName', Types.Variable1], ['message', Types.Variable2], ['chatChannel', Types.S32], ['image', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['buttons', { parameters: new Collection([['buttonLabel', Types.Variable1]]) }],
+    ['buttons', { parameters: new Collection<string, any>([['buttonLabel', Types.Variable1]]) }],
     // tslint:disable-next-line:max-line-length
-    ['ownerData', { parameters: new Collection([['owner', Types.UUID]]) }]
+    ['ownerData', { parameters: new Collection<string, any>([['owner', Types.UUID]]) }]
   ])
 
   /**

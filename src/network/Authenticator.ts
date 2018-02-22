@@ -5,16 +5,21 @@ import * as XMLRPC from 'xmlrpc'
 import { Constants } from '../utilities'
 
 class Authenticator {
-  constructor (channel, version) {
+  private readonly channel: string
+  private readonly version: string
+  private readonly agent: string
+  private readonly digest: string
+
+  constructor (channel: string, version: string) {
     this.channel = channel
-    this.verison = version
+    this.version = version
     this.agent = `${channel} ${version}`
 
     // TODO: Figure out better method of doing this, for callers file?
     this.digest = Crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
   }
 
-  public async login (username: string, password: string, start: string = 'last'): void {
+  public login (username: string, password: string, start: string = 'last'): Promise<any> {
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',
@@ -38,7 +43,7 @@ class Authenticator {
       first: username.split(' ')[0],
       last: username.split(' ')[1] || 'Resident',
       passwd: `$1$${Crypto.createHash('md5').update(password).digest('hex')}`,
-      start,
+      start: start,
       channel: this.channel,
       version: this.version,
       platform: system.platform,
@@ -47,13 +52,13 @@ class Authenticator {
       agree_to_tos: true,
       read_critical: true,
       viewer_digest: this.digest,
-      options
+      options: options
     }
 
     const client = XMLRPC.createSecureClient({
       url: Constants.Endpoints.LOGIN_URL,
       headers: { 'User-Agent': this.agent },
-      rejectUnauthorized: false
+      // rejectUnauthorized: false
     })
 
     return new Promise((resolve) => {

@@ -1,4 +1,4 @@
-import Client from '..'
+import { Client } from '..'
 
 /**
  * Represents the agents camera, which contains and controls camera position
@@ -7,7 +7,7 @@ import Client from '..'
 class Camera {
   public readonly client: Client
 
-  constructor (client) {
+  constructor (client: Client) {
     /**
      * The Client that instantiated this Camera object.
      * @name Camera#client

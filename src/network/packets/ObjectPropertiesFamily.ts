@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ObjectPropertiesFamily extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['objectData', { quantity: 1, parameters: new Collection([['requestFlags', Types.U32], ['object', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['ownershipCost', Types.S32], ['saleType', Types.U8], ['salePrice', Types.S32], ['category', Types.U32], ['lastOwner', Types.UUID], ['name', Types.Variable1], ['description', Types.Variable1]]) }]
+    ['objectData', { quantity: 1, parameters: new Collection<string, any>([['requestFlags', Types.U32], ['object', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['ownershipCost', Types.S32], ['saleType', Types.U8], ['salePrice', Types.S32], ['category', Types.U32], ['lastOwner', Types.UUID], ['name', Types.Variable1], ['description', Types.Variable1]]) }]
   ])
 
   /**

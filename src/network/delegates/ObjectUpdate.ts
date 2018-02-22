@@ -1,10 +1,10 @@
-import Delegate from './Delegate'
-
 import { Entity } from '../../structures'
 import { Constants } from '../../utilities'
 
+import Delegate from './Delegate'
+
 class ObjectUpdate extends Delegate {
-  public async handle (packet): void {
+  public handle (packet): void {
     const handle = packet.data.regionData[0].regionHandle
     const region = this.region(handle)
 
@@ -23,7 +23,7 @@ class ObjectUpdate extends Delegate {
     }
   }
 
-  public async update (entity, data): Entity {
+  public update (entity, data): Entity {
     // data.data
     // data.objectData
     // data.extraParams
@@ -39,8 +39,8 @@ class ObjectUpdate extends Delegate {
     return entity
   }
 
-  public async insert (data, region): Entity {
-    const entity = new Entity(this.client, await this.update({}, data))
+  public insert (data, region): Entity {
+    const entity = new Entity(this.client, this.update({}, data))
 
     // Pass to regions entity collection.
     region.objects.set(entity.id, entity)

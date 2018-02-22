@@ -1,8 +1,20 @@
 import { Collection } from '../utilities'
 import { PacketAck } from './packets'
 
+import Circuit from './Circuit'
+
+interface IAcknowledgerPackets {
+  seen: Collection<number, number>,
+  queued: Set<number>
+}
+
 class Acknowledger {
-  constructor (circuit) {
+  public readonly circuit: Circuit
+
+  private acknowledge: PacketAck
+  private packets: IAcknowledgerPackets
+
+  constructor (circuit: Circuit) {
     /**
      * Circuit instance that instantiated this Acknowledger.
      *
@@ -12,15 +24,15 @@ class Acknowledger {
      */
     Object.defineProperty(this, 'circuit', { value: circuit })
 
-    this.packet = new PacketAck({ packets: [] })
-
-    this.timer = setInterval(this.tick.bind(this), 100)
-    this.pruner = setInterval(this.prune.bind(this), 1000)
+    this.acknowledge = new PacketAck({ packets: [] })
 
     this.packets = {
       seen: new Collection,
       queued: new Set
     }
+
+    setInterval(this.tick.bind(this), 100)
+    setInterval(this.prune.bind(this), 1000)
   }
 
   public seen (number): boolean {
@@ -35,15 +47,18 @@ class Acknowledger {
     if (this.packets.queued.size) {
       const uptime = process.uptime()
 
-      this.packet.data.packets = []
+      // Clean array, this could probably be done better?
+      this.acknowledge.data.packets = []
 
       for (const sequence of this.packets.queued) {
         this.packets.queued.delete(sequence)
         this.packets.seen.set(sequence, uptime)
-        this.packet.data.packets.push({ id: sequence })
+
+        // Not sure if we handle limits correctly here.
+        this.acknowledge.data.packets.push({ id: sequence })
       }
 
-      this.circuit.send(this.packet)
+      this.circuit.send(this.acknowledge)
     }
   }
 

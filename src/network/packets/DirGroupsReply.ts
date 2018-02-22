@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class DirGroupsReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['queryData', { quantity: 1, parameters: new Collection([['query', Types.UUID]]) }],
+    ['queryData', { quantity: 1, parameters: new Collection<string, any>([['query', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['queryReplies', { parameters: new Collection([['group', Types.UUID], ['groupName', Types.Variable1], ['members', Types.S32], ['searchOrder', Types.F32]]) }]
+    ['queryReplies', { parameters: new Collection<string, any>([['group', Types.UUID], ['groupName', Types.Variable1], ['members', Types.S32], ['searchOrder', Types.F32]]) }]
   ])
 
   /**

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class AgentAlertMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['alertData', { quantity: 1, parameters: new Collection([['modal', Boolean], ['message', Types.Variable1]]) }]
+    ['alertData', { quantity: 1, parameters: new Collection<string, any>([['modal', Types.Boolean], ['message', Types.Variable1]]) }]
   ])
 
   /**

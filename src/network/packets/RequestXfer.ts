@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class RequestXfer extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['xfer', { quantity: 1, parameters: new Collection([['id', Types.U64], ['filename', Types.Variable1], ['filePath', Types.U8], ['deleteOnCompletion', Boolean], ['useBigPackets', Boolean], ['vFile', Types.UUID], ['vFileType', Types.S16]]) }]
+    ['xfer', { quantity: 1, parameters: new Collection<string, any>([['id', Types.U64], ['filename', Types.Variable1], ['filePath', Types.U8], ['deleteOnCompletion', Types.Boolean], ['useBigPackets', Types.Boolean], ['vFile', Types.UUID], ['vFileType', Types.S16]]) }]
   ])
 
   /**

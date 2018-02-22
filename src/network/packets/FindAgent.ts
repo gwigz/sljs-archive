@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class FindAgent extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentBlock', { quantity: 1, parameters: new Collection([['hunter', Types.UUID], ['prey', Types.UUID], ['spaceIP', Types.IP]]) }],
+    ['agentBlock', { quantity: 1, parameters: new Collection<string, any>([['hunter', Types.UUID], ['prey', Types.UUID], ['spaceIP', Types.IP]]) }],
     // tslint:disable-next-line:max-line-length
-    ['locationBlock', { parameters: new Collection([['globalX', Types.F64], ['globalY', Types.F64]]) }]
+    ['locationBlock', { parameters: new Collection<string, any>([['globalX', Types.F64], ['globalY', Types.F64]]) }]
   ])
 
   /**

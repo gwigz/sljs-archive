@@ -1,10 +1,24 @@
+import * as Long from 'long'
+
+import { Circuit, Core, Packets } from '..'
+import { Client } from '../..'
 import { Region } from '../../structures'
 
-class Delegate {
-  constructor (circuit) {
+interface IDelegeateOptions {
+  circuit: Circuit,
+  client: Client,
+  core: Core
+}
+
+abstract class Delegate {
+  public readonly circuit: Circuit
+  public readonly client: Client
+  public readonly core: Core
+
+  constructor (circuit: IDelegeateOptions) {
     Object.defineProperty(this, 'circuit', { value: circuit })
-    Object.defineProperty(this, 'core', { value: this.circuit.core })
     Object.defineProperty(this, 'client', { value: this.core.client })
+    Object.defineProperty(this, 'core', { value: this.circuit.core })
   }
 
   /**
@@ -23,9 +37,7 @@ class Delegate {
    *
    * @param {Packet} packet Parsed packet object
    */
-  public async handle (): void {
-    // ...
-  }
+  public abstract handle (packet: Packets.Packet): void
 
   /**
    * Attempts to fetch region by region handle.
@@ -33,7 +45,7 @@ class Delegate {
    * @param {Long} handle Region handle
    * @returns {?Region}
    */
-  public region (handle): ?Region {
+  protected region (handle: Long): Region|null {
     // This is kinda ugly, I know.
     return this.client.regions.get(`${handle.getHighBits()}${handle.getLowBits()}`)
   }

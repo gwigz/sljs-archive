@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class AvatarGroupsReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['groupData', { parameters: new Collection([['groupPowers', Types.U64], ['acceptNotices', Boolean], ['groupTitle', Types.Variable1], ['group', Types.UUID], ['groupName', Types.Variable1], ['groupInsignia', Types.UUID]]) }],
+    ['groupData', { parameters: new Collection<string, any>([['groupPowers', Types.U64], ['acceptNotices', Types.Boolean], ['groupTitle', Types.Variable1], ['group', Types.UUID], ['groupName', Types.Variable1], ['groupInsignia', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['newGroupData', { quantity: 1, parameters: new Collection([['listInProfile', Boolean]]) }]
+    ['newGroupData', { quantity: 1, parameters: new Collection<string, any>([['listInProfile', Types.Boolean]]) }]
   ])
 
   /**

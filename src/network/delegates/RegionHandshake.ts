@@ -2,7 +2,7 @@ import { RegionHandshakeReply } from '../packets'
 import Delegate from './Delegate'
 
 class RegionHandshake extends Delegate {
-  public async handle (): void {
+  public handle (): void {
     // RegionInfo
     // { RegionFlags U32 }
     // { SimAccess U8 }

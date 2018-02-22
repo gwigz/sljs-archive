@@ -1,8 +1,4 @@
-/**
- * An extended map with utility functions.
- * @extends Map
- */
-class Collection extends Map<string, any> {
+class Collection<K, V> extends Map<K, V> {
   /**
    * Returns all items in the collection as an array.
    * @returns {Array} Array of values

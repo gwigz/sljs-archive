@@ -1,5 +1,3 @@
-import Packet from './Packet'
-
 import AbortXfer from './AbortXfer'
 import AcceptCallingCard from './AcceptCallingCard'
 import AcceptFriendship from './AcceptFriendship'
@@ -279,6 +277,7 @@ import OfferCallingCard from './OfferCallingCard'
 import OfflineNotification from './OfflineNotification'
 import OnlineNotification from './OnlineNotification'
 import OpenCircuit from './OpenCircuit'
+import Packet from './Packet'
 import PacketAck from './PacketAck'
 import ParcelAccessListReply from './ParcelAccessListReply'
 import ParcelAccessListRequest from './ParcelAccessListRequest'
@@ -916,5 +915,5 @@ export {
   VelocityInterpolateOn,
   ViewerEffect,
   ViewerFrozenMessage,
-  ViewerStartAuction,
+  ViewerStartAuction
 }

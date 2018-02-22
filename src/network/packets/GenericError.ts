@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class GenericError extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['code', Types.S32], ['token', Types.Variable1], ['id', Types.UUID], ['system', Types.Variable1], ['message', Types.Variable2], ['data', Types.Variable2]]) }]
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['code', Types.S32], ['token', Types.Variable1], ['id', Types.UUID], ['system', Types.Variable1], ['message', Types.Variable2], ['data', Types.Variable2]]) }]
   ])
 
   /**

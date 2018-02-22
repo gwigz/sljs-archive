@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ChatPass extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['chatData', { quantity: 1, parameters: new Collection([['channel', Types.S32], ['position', Types.Vector3], ['id', Types.UUID], ['owner', Types.UUID], ['name', Types.Variable1], ['sourceType', Types.U8], ['type', Types.U8], ['radius', Types.F32], ['simAccess', Types.U8], ['message', Types.Variable2]]) }]
+    ['chatData', { quantity: 1, parameters: new Collection<string, any>([['channel', Types.S32], ['position', Types.Vector3], ['id', Types.UUID], ['owner', Types.UUID], ['name', Types.Variable1], ['sourceType', Types.U8], ['type', Types.U8], ['radius', Types.F32], ['simAccess', Types.U8], ['message', Types.Variable2]]) }]
   ])
 
   /**

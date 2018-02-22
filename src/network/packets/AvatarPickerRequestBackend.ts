@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class AvatarPickerRequestBackend extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['query', Types.UUID], ['godLevel', Types.U8]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['query', Types.UUID], ['godLevel', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['name', Types.Variable1]]) }]
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['name', Types.Variable1]]) }]
   ])
 
   /**

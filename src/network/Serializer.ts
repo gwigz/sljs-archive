@@ -1,6 +1,5 @@
-import Packet from './packets/Packet'
-
 import { Constants } from '../utilities'
+import { Packet } from './packets'
 import { U8 } from './types'
 
 import Circuit from './Circuit'
@@ -27,20 +26,21 @@ class Serializer {
       throw new Error('Serializer is only able to convert instances of Packet.')
     }
 
-    const array = [this.header(packet.constructor)]
+    const PacketConstructor = packet.constructor as typeof Packet
+    const array = [this.header(PacketConstructor)]
 
-    if (packet.constructor.format) {
+    if (PacketConstructor.format) {
       // Support skipping the block name in parameters.
-      if (packet.constructor.format.size === 1) {
-        const [[block, format]] = packet.constructor.format
+      if (PacketConstructor.format.size === 1) {
+        const [[block, format]] = PacketConstructor.format
 
         // Try and assume this correctly.
-        if (!(block in packet.data) || Object.keys(packet.data) > 1) {
+        if (!(block in packet.data) || Object.keys(packet.data).length > 1) {
           return Buffer.concat(array.concat(this.parse(block, format, packet.data)))
         }
       }
 
-      for (const [block, format] of packet.constructor.format) {
+      for (const [block, format] of PacketConstructor.format) {
         if (!(block in packet.data)) {
           if (block === 'agentData') {
             packet.data[block] = [{}]
@@ -76,7 +76,7 @@ class Serializer {
     return Buffer.concat(array)
   }
 
-  public header (packet: Packet): Buffer {
+  public header (PacketConstructor: typeof Packet): Buffer {
     const index = this.index++
 
     // First, append flags and packet sequence number/index.
@@ -91,22 +91,22 @@ class Serializer {
     ]
 
     // Logic for additional header bytes dependant on packet type/frequency.
-    if (packet.frequency !== 2) {
+    if (PacketConstructor.frequency !== 2) {
       array.push(0xFF)
 
-      if (packet.frequency !== 1) {
+      if (PacketConstructor.frequency !== 1) {
         array.push(0xFF)
       }
 
-      if (packet.frequency === 0) {
-        array.push((packet.id >> 8) & 0xFF)
-      } else if (packet.frequency === 3) {
+      if (PacketConstructor.frequency === 0) {
+        array.push((PacketConstructor.id >> 8) & 0xFF)
+      } else if (PacketConstructor.frequency === 3) {
         array.push(0xFF)
       }
     }
 
     // Append remaining section of the packet identifier.
-    array.push(packet.id & 0xFF)
+    array.push(PacketConstructor.id & 0xFF)
 
     // Pass buffer object.
     return Buffer.from(array)

@@ -1,5 +1,5 @@
 class S16 {
-  public readonly static size: number = 2
+  public static readonly size: number = 2
 
   /**
    * Converts integer input into a buffer representing an 16-bit signed integer.

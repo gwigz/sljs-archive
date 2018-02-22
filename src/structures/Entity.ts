@@ -1,17 +1,44 @@
+import { Client } from '..'
 import { Quaternion, U8, UUID, Vector3 } from '../network/types'
 
+interface IEntityOptions {
+  id: number,
+  key: string,
+  parent?: number,
+  state?: number,
+  owner?: string,
+  flags?: number,
+  position?: Array<number>,
+  velocity?: Array<number>,
+  rotation?: Array<number>,
+  scale?: Array<number>,
+  text?: any,
+  material?: number, // Constants.ObjectMaterials
+  tree?: number, // Constants.ObjectTrees
+  action?: number, // Constants.ObjectActions
+  children?: Array<number>
+}
+
 class Entity {
-  public id: string
+  public id: number
+  public key: string
   public parent: number
   public state: number
-  public owner: UUID
+  public owner: string
   public flags: number
   public position: Array<number>
+  public velocity: Array<number>
   public rotation: Array<number>
-  public size: Array<number>
-  public text: ?any
+  public scale: Array<number>
+  public text?: { value: string, color: Array<number> }
+  public material: number // Constants.ObjectMaterials
+  public tree?: number // Constants.ObjectTrees
+  public action: number // Constants.ObjectActions
+  public children: Array<number>
 
-  constructor (client, data) {
+  public readonly client: Client
+
+  constructor (client: Client, data: IEntityOptions) {
     /**
      * The Client that instantiated this Entity.
      *
@@ -24,7 +51,7 @@ class Entity {
     this.setup(data)
   }
 
-  public setup (data): void {
+  public setup (data: IEntityOptions): void {
     /**
      * Local ID for this Entity.
      * @type {number}
@@ -32,10 +59,16 @@ class Entity {
     this.id = data.id
 
     /**
-     * Entity parent, undefined if root.
+     * UUID for this Entity.
+     * @type {string}
+     */
+    this.key = data.key || UUID.zero
+
+    /**
+     * Entity parent, null if root.
      * @type {?number}
      */
-    this.parent = data.parent || undefined
+    this.parent = data.parent || null
 
     /**
      * Entity state, which probably refers to an attachment point index for
@@ -43,19 +76,13 @@ class Entity {
      *
      * @type {?number}
      */
-    this.state = data.state || undefined
-
-    /**
-     * UUID for this Entity.
-     * @type {string}
-     */
-    this.key = data.key || UUID.null
+    this.state = data.state || null
 
     /**
      * Owners UUID for this Entity.
-     * @type {?UUID}
+     * @type {string}
      */
-    this.owner = data.owner || undefined
+    this.owner = data.owner || UUID.zero
 
     /**
      * Entity flags, see `Constants.ObjectFlags` for context.
@@ -67,7 +94,13 @@ class Entity {
      * Current position of Entity.
      * @type {number[]}
      */
-    this.position = data.position || undefined
+    this.position = data.position || null
+
+    /**
+     * Current velocity of Entity.
+     * @type {number[]}
+     */
+    this.velocity = data.velocity || Vector3.zero
 
     /**
      * Current rotation of Entity.
@@ -85,7 +118,7 @@ class Entity {
      * Floating text, object contains text and color values.
      * @type {?any}
      */
-    this.text = data.text || undefined
+    this.text = data.text || null
 
     // Change buffer value to string.
     if (typeof data.text === 'object' && data.text.value instanceof Buffer) {
@@ -95,10 +128,10 @@ class Entity {
     // Change buffer value to vector.
     if (typeof data.text === 'object' && data.text.color instanceof Buffer) {
       this.text.color = [
-        U8.fromBuffer(this.text.color, 0),
-        U8.fromBuffer(this.text.color, 1),
-        U8.fromBuffer(this.text.color, 2),
-        U8.fromBuffer(this.text.color, 3)
+        U8.fromBuffer(data.text.color, 0),
+        U8.fromBuffer(data.text.color, 1),
+        U8.fromBuffer(data.text.color, 2),
+        U8.fromBuffer(data.text.color, 3)
       ]
     }
 
@@ -110,9 +143,9 @@ class Entity {
 
     /**
      * Tree type, see `Constants.ObjectTrees` for context.
-     * @type {?number}
+     * @type {number}
      */
-    this.tree = data.tree || undefined
+    this.tree = data.tree || 0
 
     /**
      * Default click action, see `Constants.ObjectActions` for context.
@@ -128,10 +161,6 @@ class Entity {
   }
 
   get distance (): number {
-    if (this.self) {
-      return 0.0
-    }
-
     return Vector3.distance(this.client.agent.position, this.position)
   }
 }

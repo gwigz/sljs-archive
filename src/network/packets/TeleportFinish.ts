@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class TeleportFinish extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['info', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['location', Types.U32], ['simIP', Types.IP], ['simPort', Types.Port], ['regionHandle', Types.U64], ['seedCapability', Types.Variable2], ['simAccess', Types.U8], ['teleportFlags', Types.U32]]) }]
+    ['info', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['location', Types.U32], ['simIP', Types.IP], ['simPort', Types.Port], ['regionHandle', Types.U64], ['seedCapability', Types.Variable2], ['simAccess', Types.U8], ['teleportFlags', Types.U32]]) }]
   ])
 
   /**

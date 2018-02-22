@@ -1,4 +1,5 @@
 import Acknowledger from './Acknowledger'
+import Core from './Core'
 import Deserializer from './Deserializer'
 import Serializer from './Serializer'
 
@@ -9,21 +10,41 @@ import { Constants } from '../utilities'
 
 import { CompleteAgentMovement, UseCircuitCode } from './packets'
 
+interface ICircuitOptions {
+  id: number,
+  address: string,
+  port: number
+}
+
 class Circuit {
-  constructor (core, { id, address, port } = {}) {
+  public readonly core: Core
+
+  public readonly id: number
+  public readonly address: string
+  public readonly port: number
+
+  public readonly acknowledger: Acknowledger
+  public readonly deserializer: Deserializer
+  public readonly serializer: Serializer
+
+  protected delegates: any
+  protected dead: boolean
+
+  constructor (core: Core, data: ICircuitOptions) {
     /**
      * Core instance that instantiated this Circuit.
      *
      * @name Circuit#core
-     * @type {Core}
+     * @type {Circuit}
      * @readonly
      */
     Object.defineProperty(this, 'core', { value: core })
 
-    this.id = id
-    this.address = address
-    this.port = port
+    this.id = data.id
+    this.address = data.address
+    this.port = data.port
     this.dead = true
+
     this.acknowledger = new Acknowledger(this)
     this.deserializer = new Deserializer
     this.serializer = new Serializer(this)
@@ -47,7 +68,7 @@ class Circuit {
 
     for (const packet of [...args]) {
       try {
-        this.core.emit('sending', packet.constructor.name)
+        // this.core.emit('sending', packet.constructor.name)
         this.core.send(this, this.serializer.convert(packet))
       } catch (error) {
         this.core.client.emit(Constants.Events.ERROR, error)
@@ -55,7 +76,7 @@ class Circuit {
     }
   }
 
-  public async receive (buffer): void {
+  public receive (buffer): void {
     if (buffer.reliable) {
       if (this.acknowledger.seen(buffer.sequence)) {
         return
@@ -70,12 +91,12 @@ class Circuit {
       return
     }
 
-    this.core.emit('received', Packet.name)
+    // this.core.emit('received', Packet.constructor.name)
 
-    if (Packet.name in this.delegates
-      && this.delegates[Packet.name].waiting
+    if (Packet.constructor.name in this.delegates
+      && this.delegates[Packet.constructor.name].waiting
     ) {
-      this.delegates[Packet.name]
+      this.delegates[Packet.constructor.name]
         .handle(this.deserializer.convert(Packet, buffer))
         .catch(console.error)
     }
@@ -98,8 +119,8 @@ class Circuit {
     )
   }
 
-  public register (delegates): void {
-    for (const Delegate of Object.values(delegates)) {
+  public register (delegates: any): void {
+    for (const Delegate of Object.values(delegates) as Array<typeof Delegates.Delegate>) {
       this.delegates[Delegate.name] = new Delegate(this)
     }
   }

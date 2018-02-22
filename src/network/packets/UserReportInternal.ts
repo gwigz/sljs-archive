@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class UserReportInternal extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['reportData', { quantity: 1, parameters: new Collection([['reportType', Types.U8], ['category', Types.U8], ['reporter', Types.UUID], ['viewerPosition', Types.Vector3], ['agentPosition', Types.Vector3], ['screenshot', Types.UUID], ['object', Types.UUID], ['owner', Types.UUID], ['lastOwner', Types.UUID], ['creator', Types.UUID], ['region', Types.UUID], ['abuser', Types.UUID], ['abuseRegionName', Types.Variable1], ['abuseRegion', Types.UUID], ['summary', Types.Variable1], ['details', Types.Variable2], ['versionString', Types.Variable1]]) }]
+    ['reportData', { quantity: 1, parameters: new Collection<string, any>([['reportType', Types.U8], ['category', Types.U8], ['reporter', Types.UUID], ['viewerPosition', Types.Vector3], ['agentPosition', Types.Vector3], ['screenshot', Types.UUID], ['object', Types.UUID], ['owner', Types.UUID], ['lastOwner', Types.UUID], ['creator', Types.UUID], ['region', Types.UUID], ['abuser', Types.UUID], ['abuseRegionName', Types.Variable1], ['abuseRegion', Types.UUID], ['summary', Types.Variable1], ['details', Types.Variable2], ['versionString', Types.Variable1]]) }]
   ])
 
   /**

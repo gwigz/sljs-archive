@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class GroupRoleDataReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['groupData', { quantity: 1, parameters: new Collection([['group', Types.UUID], ['request', Types.UUID], ['roleCount', Types.S32]]) }],
+    ['groupData', { quantity: 1, parameters: new Collection<string, any>([['group', Types.UUID], ['request', Types.UUID], ['roleCount', Types.S32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['roleData', { parameters: new Collection([['role', Types.UUID], ['name', Types.Variable1], ['title', Types.Variable1], ['description', Types.Variable1], ['powers', Types.U64], ['members', Types.U32]]) }]
+    ['roleData', { parameters: new Collection<string, any>([['role', Types.UUID], ['name', Types.Variable1], ['title', Types.Variable1], ['description', Types.Variable1], ['powers', Types.U64], ['members', Types.U32]]) }]
   ])
 
   /**

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ParcelInfoReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['parcel', Types.UUID], ['owner', Types.UUID], ['name', Types.Variable1], ['desc', Types.Variable1], ['actualArea', Types.S32], ['billableArea', Types.S32], ['flags', Types.U8], ['globalX', Types.F32], ['globalY', Types.F32], ['globalZ', Types.F32], ['simName', Types.Variable1], ['snapshot', Types.UUID], ['dwell', Types.F32], ['salePrice', Types.S32], ['auction', Types.S32]]) }]
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['parcel', Types.UUID], ['owner', Types.UUID], ['name', Types.Variable1], ['desc', Types.Variable1], ['actualArea', Types.S32], ['billableArea', Types.S32], ['flags', Types.U8], ['globalX', Types.F32], ['globalY', Types.F32], ['globalZ', Types.F32], ['simName', Types.Variable1], ['snapshot', Types.UUID], ['dwell', Types.F32], ['salePrice', Types.S32], ['auction', Types.S32]]) }]
   ])
 
   /**

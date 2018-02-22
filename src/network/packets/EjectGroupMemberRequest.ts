@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class EjectGroupMemberRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['groupData', { quantity: 1, parameters: new Collection([['group', Types.UUID]]) }],
+    ['groupData', { quantity: 1, parameters: new Collection<string, any>([['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['ejectData', { parameters: new Collection([['ejectee', Types.UUID]]) }]
+    ['ejectData', { parameters: new Collection<string, any>([['ejectee', Types.UUID]]) }]
   ])
 
   /**

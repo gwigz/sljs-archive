@@ -1,5 +1,7 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
+
+import * as Types from '../types'
 
 /**
  * SimStatus Packet
@@ -48,9 +50,9 @@ class SimStatus extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['simStatus', { quantity: 1, parameters: new Collection([['canAcceptAgents', Boolean], ['canAcceptTasks', Boolean]]) }]
+    ['simStatus', { quantity: 1, parameters: new Collection<string, any>([['canAcceptAgents', Types.Boolean], ['canAcceptTasks', Types.Boolean]]) }]
   ])
 
   /**

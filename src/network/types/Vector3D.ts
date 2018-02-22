@@ -1,5 +1,5 @@
 class Vector3D {
-  public readonly static size: number = 24
+  public static readonly size: number = 24
 
   /**
    * Converts array input into a buffer representing a 3 point vector.
@@ -7,7 +7,7 @@ class Vector3D {
    * @param {number[]} vector Should contain 3 values
    * @returns {Buffer}
    */
-  public static toBuffer (vector: Array<number>): number {
+  public static toBuffer (vector: Array<number>): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeDoubleLE(vector[0], 0)

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class RegionInfo extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['regionInfo', { quantity: 1, parameters: new Collection([['simName', Types.Variable1], ['estate', Types.U32], ['parentEstate', Types.U32], ['regionFlags', Types.U32], ['simAccess', Types.U8], ['maxAgents', Types.U8], ['billableFactor', Types.F32], ['objectBonusFactor', Types.F32], ['waterHeight', Types.F32], ['terrainRaiseLimit', Types.F32], ['terrainLowerLimit', Types.F32], ['pricePerMeter', Types.S32], ['redirectGridX', Types.S32], ['redirectGridY', Types.S32], ['useEstateSun', Boolean], ['sunHour', Types.F32]]) }],
+    ['regionInfo', { quantity: 1, parameters: new Collection<string, any>([['simName', Types.Variable1], ['estate', Types.U32], ['parentEstate', Types.U32], ['regionFlags', Types.U32], ['simAccess', Types.U8], ['maxAgents', Types.U8], ['billableFactor', Types.F32], ['objectBonusFactor', Types.F32], ['waterHeight', Types.F32], ['terrainRaiseLimit', Types.F32], ['terrainLowerLimit', Types.F32], ['pricePerMeter', Types.S32], ['redirectGridX', Types.S32], ['redirectGridY', Types.S32], ['useEstateSun', Types.Boolean], ['sunHour', Types.F32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['regionInfo2', { quantity: 1, parameters: new Collection([['productSKU', Types.Variable1], ['productName', Types.Variable1], ['maxAgents32', Types.U32], ['hardMaxAgents', Types.U32], ['hardMaxObjects', Types.U32]]) }]
+    ['regionInfo2', { quantity: 1, parameters: new Collection<string, any>([['productSKU', Types.Variable1], ['productName', Types.Variable1], ['maxAgents32', Types.U32], ['hardMaxAgents', Types.U32], ['hardMaxObjects', Types.U32]]) }]
   ])
 
   /**

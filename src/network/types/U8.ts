@@ -1,5 +1,5 @@
 class U8 {
-  public readonly static size: number = 1
+  public static readonly size: number = 1
 
   /**
    * Converts integer input into a buffer representing an 8-bit unsigned

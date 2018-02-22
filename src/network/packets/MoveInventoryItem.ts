@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class MoveInventoryItem extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['stamp', Boolean]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['stamp', Types.Boolean]]) }],
     // tslint:disable-next-line:max-line-length
-    ['inventoryData', { parameters: new Collection([['item', Types.UUID], ['folder', Types.UUID], ['newName', Types.Variable1]]) }]
+    ['inventoryData', { parameters: new Collection<string, any>([['item', Types.UUID], ['folder', Types.UUID], ['newName', Types.Variable1]]) }]
   ])
 
   /**

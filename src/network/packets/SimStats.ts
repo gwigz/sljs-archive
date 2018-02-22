@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class SimStats extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['region', { quantity: 1, parameters: new Collection([['regionX', Types.U32], ['regionY', Types.U32], ['regionFlags', Types.U32], ['objectCapacity', Types.U32]]) }],
+    ['region', { quantity: 1, parameters: new Collection<string, any>([['regionX', Types.U32], ['regionY', Types.U32], ['regionFlags', Types.U32], ['objectCapacity', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['stat', { parameters: new Collection([['stat', Types.U32], ['statValue', Types.F32]]) }],
+    ['stat', { parameters: new Collection<string, any>([['stat', Types.U32], ['statValue', Types.F32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['pidStat', { quantity: 1, parameters: new Collection([['pID', Types.S32]]) }]
+    ['pidStat', { quantity: 1, parameters: new Collection<string, any>([['pID', Types.S32]]) }]
   ])
 
   /**

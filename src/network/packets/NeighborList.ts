@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class NeighborList extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['neighborBlock', { quantity: 4, parameters: new Collection([['ip', Types.IP], ['port', Types.Port], ['publicIP', Types.IP], ['publicPort', Types.Port], ['region', Types.UUID], ['name', Types.Variable1], ['simAccess', Types.U8]]) }]
+    ['neighborBlock', { quantity: 4, parameters: new Collection<string, any>([['ip', Types.IP], ['port', Types.Port], ['publicIP', Types.IP], ['publicPort', Types.Port], ['region', Types.UUID], ['name', Types.Variable1], ['simAccess', Types.U8]]) }]
   ])
 
   /**

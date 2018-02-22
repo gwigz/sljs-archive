@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,23 +50,23 @@ class ChildAgentUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['viewerCircuitCode', Types.U32], ['agent', Types.UUID], ['session', Types.UUID], ['agentPos', Types.Vector3], ['agentVel', Types.Vector3], ['center', Types.Vector3], ['size', Types.Vector3], ['atAxis', Types.Vector3], ['leftAxis', Types.Vector3], ['upAxis', Types.Vector3], ['changedGrid', Boolean], ['far', Types.F32], ['aspect', Types.F32], ['throttles', Types.Variable1], ['locomotionState', Types.U32], ['headRotation', Types.Quaternion], ['bodyRotation', Types.Quaternion], ['controlFlags', Types.U32], ['energyLevel', Types.F32], ['godLevel', Types.U8], ['alwaysRun', Boolean], ['preyAgent', Types.UUID], ['agentAccess', Types.U8], ['agentTextures', Types.Variable2], ['activeGroup', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['regionHandle', Types.U64], ['viewerCircuitCode', Types.U32], ['agent', Types.UUID], ['session', Types.UUID], ['agentPos', Types.Vector3], ['agentVel', Types.Vector3], ['center', Types.Vector3], ['size', Types.Vector3], ['atAxis', Types.Vector3], ['leftAxis', Types.Vector3], ['upAxis', Types.Vector3], ['changedGrid', Types.Boolean], ['far', Types.F32], ['aspect', Types.F32], ['throttles', Types.Variable1], ['locomotionState', Types.U32], ['headRotation', Types.Quaternion], ['bodyRotation', Types.Quaternion], ['controlFlags', Types.U32], ['energyLevel', Types.F32], ['godLevel', Types.U8], ['alwaysRun', Types.Boolean], ['preyAgent', Types.UUID], ['agentAccess', Types.U8], ['agentTextures', Types.Variable2], ['activeGroup', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['groupData', { parameters: new Collection([['group', Types.UUID], ['groupPowers', Types.U64], ['acceptNotices', Boolean]]) }],
+    ['groupData', { parameters: new Collection<string, any>([['group', Types.UUID], ['groupPowers', Types.U64], ['acceptNotices', Types.Boolean]]) }],
     // tslint:disable-next-line:max-line-length
-    ['animationData', { parameters: new Collection([['animation', Types.UUID], ['object', Types.UUID]]) }],
+    ['animationData', { parameters: new Collection<string, any>([['animation', Types.UUID], ['object', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['granterBlock', { parameters: new Collection([['granter', Types.UUID]]) }],
+    ['granterBlock', { parameters: new Collection<string, any>([['granter', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['nVPairData', { parameters: new Collection([['nVPairs', Types.Variable2]]) }],
+    ['nVPairData', { parameters: new Collection<string, any>([['nVPairs', Types.Variable2]]) }],
     // tslint:disable-next-line:max-line-length
-    ['visualParam', { parameters: new Collection([['paramValue', Types.U8]]) }],
+    ['visualParam', { parameters: new Collection<string, any>([['paramValue', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
-    ['agentAccess', { parameters: new Collection([['agentLegacyAccess', Types.U8], ['agentMaxAccess', Types.U8]]) }],
+    ['agentAccess', { parameters: new Collection<string, any>([['agentLegacyAccess', Types.U8], ['agentMaxAccess', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
-    ['agentInfo', { parameters: new Collection([['flags', Types.U32]]) }]
+    ['agentInfo', { parameters: new Collection<string, any>([['flags', Types.U32]]) }]
   ])
 
   /**

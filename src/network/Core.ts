@@ -1,9 +1,11 @@
-import Circuit from './Circuit'
-import Socket from './Socket'
+import { Client } from '..'
 
-import { Agent } from '../structures'
+import { Agent, Entities, Region } from '../structures'
 import { Collection, Constants, EventEmitter } from '../utilities'
 import { LogoutRequest } from './packets'
+
+import Circuit from './Circuit'
+import Socket from './Socket'
 
 /**
  * The core handles connecting to a Simulator, processing and sending
@@ -11,8 +13,10 @@ import { LogoutRequest } from './packets'
  */
 class Core extends EventEmitter {
   public socket: Socket
-  public circuit: ?Circuit
+  public circuits: Collection<string, Circuit>
+  public circuit: Circuit
   public status: number
+
   public readonly client: Client
 
   /**
@@ -59,11 +63,11 @@ class Core extends EventEmitter {
     return this.client.agent
   }
 
-  get region (): Collection {
+  get region (): Region {
     return this.client.region
   }
 
-  get objects (): Collection {
+  get objects (): Entities {
     return this.client.region.objects
   }
 
@@ -74,7 +78,7 @@ class Core extends EventEmitter {
    * @param {...Packet} packets Packet to send
    * @returns {Promise}
    */
-  public send (circuit, ...packets): Promise {
+  public send (circuit, ...packets): Promise<void> {
     return this.socket.send(circuit, ...packets)
   }
 

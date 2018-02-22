@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class SimulatorViewerTimeMessage extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['timeInfo', { quantity: 1, parameters: new Collection([['usecSinceStart', Types.U64], ['secPerDay', Types.U32], ['secPerYear', Types.U32], ['sunDirection', Types.Vector3], ['sunPhase', Types.F32], ['sunAngVelocity', Types.Vector3]]) }]
+    ['timeInfo', { quantity: 1, parameters: new Collection<string, any>([['usecSinceStart', Types.U64], ['secPerDay', Types.U32], ['secPerYear', Types.U32], ['sunDirection', Types.Vector3], ['sunPhase', Types.F32], ['sunAngVelocity', Types.Vector3]]) }]
   ])
 
   /**

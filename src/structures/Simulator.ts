@@ -1,19 +1,24 @@
-import Client from '..'
+import { Client } from '..'
 
-/**
- * Represents a simulator.
- */
+interface ISimulatorOptions {
+  ip: string,
+  port: number,
+  circuit: number,
+  uri?: string,
+  channel?: string
+}
+
 class Simulator {
   public ip: string
   public port: number
   public circuit: number
 
-  public uri: ?string
-  public channel: ?string
+  public uri?: string
+  public channel?: string
 
   public readonly client: Client
 
-  constructor (client: Client, data) {
+  constructor (client: Client, data: ISimulatorOptions) {
     /**
      * The Client that instantiated this Simulator object.
      * @name Simulator#client
@@ -25,7 +30,7 @@ class Simulator {
     this.setup(data)
   }
 
-  public setup (data): void {
+  public setup (data: ISimulatorOptions): void {
     /**
      * IP address of this Simulator.
      * @type {string}

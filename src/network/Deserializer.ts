@@ -7,10 +7,6 @@ import PacketLookup from './helpers/PacketLookup'
 
 import * as Types from './types'
 
-interface IPacket {
-  new (data?: any): Packet
-}
-
 /**
  * @link http://wiki.secondlife.com/wiki/Packet_Layout
  * @link http://wiki.secondlife.com/wiki/Message_Layout
@@ -21,17 +17,17 @@ class Deserializer {
     return new PacketBuffer(buffer)
   }
 
-  public lookup (buffer: PacketBuffer): Packet {
+  public lookup (buffer: PacketBuffer): typeof Packet|null {
     return PacketLookup.find(buffer.id)
   }
 
-  public convert (Packet: IPacket, buffer: PacketBuffer): Packet {
-    const packet: Packet = new Packet
+  public convert (PacketConstructor: typeof Packet, buffer: PacketBuffer): Packet {
+    const packet: Packet = new PacketConstructor
 
     packet.index = buffer.sequence
     packet.reliable = buffer.reliable
 
-    if (Packet.format === undefined) {
+    if (PacketConstructor.format === undefined) {
       return packet
     }
 
@@ -39,7 +35,7 @@ class Deserializer {
     buffer.prepare()
 
     // Parse everythiiiing...
-    for (const [block, format] of Packet.format) {
+    for (const [block, format] of PacketConstructor.format) {
       const quantity = format.quantity ? format.quantity : buffer.read(Types.U8)
 
       packet.data[block] = []

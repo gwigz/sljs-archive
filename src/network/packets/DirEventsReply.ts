@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,15 +50,15 @@ class DirEventsReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['queryData', { quantity: 1, parameters: new Collection([['query', Types.UUID]]) }],
+    ['queryData', { quantity: 1, parameters: new Collection<string, any>([['query', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['queryReplies', { parameters: new Collection([['owner', Types.UUID], ['name', Types.Variable1], ['event', Types.U32], ['date', Types.Variable1], ['unixTime', Types.U32], ['eventFlags', Types.U32]]) }],
+    ['queryReplies', { parameters: new Collection<string, any>([['owner', Types.UUID], ['name', Types.Variable1], ['event', Types.U32], ['date', Types.Variable1], ['unixTime', Types.U32], ['eventFlags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['statusData', { parameters: new Collection([['status', Types.U32]]) }]
+    ['statusData', { parameters: new Collection<string, any>([['status', Types.U32]]) }]
   ])
 
   /**

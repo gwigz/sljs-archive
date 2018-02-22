@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ChatFromSimulator extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['chatData', { quantity: 1, parameters: new Collection([['fromName', Types.Variable1], ['source', Types.UUID], ['owner', Types.UUID], ['sourceType', Types.U8], ['chatType', Types.U8], ['audible', Types.U8], ['position', Types.Vector3], ['message', Types.Variable2]]) }]
+    ['chatData', { quantity: 1, parameters: new Collection<string, any>([['fromName', Types.Variable1], ['source', Types.UUID], ['owner', Types.UUID], ['sourceType', Types.U8], ['chatType', Types.U8], ['audible', Types.U8], ['position', Types.Vector3], ['message', Types.Variable2]]) }]
   ])
 
   /**

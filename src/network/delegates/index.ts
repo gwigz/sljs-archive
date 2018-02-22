@@ -1,6 +1,7 @@
 import AgentDataUpdate from './AgentDataUpdate'
 import AgentMovementComplete from './AgentMovementComplete'
 import ChatFromSimulator from './ChatFromSimulator'
+import Delegate from './Delegate'
 import HealthMessage from './HealthMessage'
 import ImprovedTerseObjectUpdate from './ImprovedTerseObjectUpdate'
 import KillObject from './KillObject'
@@ -17,6 +18,7 @@ export {
   AgentDataUpdate,
   AgentMovementComplete,
   ChatFromSimulator,
+  Delegate,
   HealthMessage,
   ImprovedTerseObjectUpdate,
   KillObject,

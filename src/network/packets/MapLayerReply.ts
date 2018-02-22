@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class MapLayerReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['flags', Types.U32]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['flags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['layerData', { parameters: new Collection([['left', Types.U32], ['right', Types.U32], ['top', Types.U32], ['bottom', Types.U32], ['image', Types.UUID]]) }]
+    ['layerData', { parameters: new Collection<string, any>([['left', Types.U32], ['right', Types.U32], ['top', Types.U32], ['bottom', Types.U32], ['image', Types.UUID]]) }]
   ])
 
   /**

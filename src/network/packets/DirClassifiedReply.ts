@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,15 +50,15 @@ class DirClassifiedReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['queryData', { quantity: 1, parameters: new Collection([['query', Types.UUID]]) }],
+    ['queryData', { quantity: 1, parameters: new Collection<string, any>([['query', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['queryReplies', { parameters: new Collection([['classified', Types.UUID], ['name', Types.Variable1], ['classifiedFlags', Types.U8], ['creationDate', Types.U32], ['expirationDate', Types.U32], ['priceForListing', Types.S32]]) }],
+    ['queryReplies', { parameters: new Collection<string, any>([['classified', Types.UUID], ['name', Types.Variable1], ['classifiedFlags', Types.U8], ['creationDate', Types.U32], ['expirationDate', Types.U32], ['priceForListing', Types.S32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['statusData', { parameters: new Collection([['status', Types.U32]]) }]
+    ['statusData', { parameters: new Collection<string, any>([['status', Types.U32]]) }]
   ])
 
   /**

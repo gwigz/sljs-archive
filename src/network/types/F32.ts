@@ -1,5 +1,5 @@
 class F32 {
-  public readonly static size: number = 4
+  public static readonly size: number = 4
 
   /**
    * Converts number input into a buffer representing an 32-bit float.

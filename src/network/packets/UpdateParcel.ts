@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class UpdateParcel extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['parcelData', { quantity: 1, parameters: new Collection([['parcel', Types.UUID], ['regionHandle', Types.U64], ['owner', Types.UUID], ['groupOwned', Boolean], ['status', Types.U8], ['name', Types.Variable1], ['description', Types.Variable1], ['musicURL', Types.Variable1], ['regionX', Types.F32], ['regionY', Types.F32], ['actualArea', Types.S32], ['billableArea', Types.S32], ['showDir', Boolean], ['isForSale', Boolean], ['category', Types.U8], ['snapshot', Types.UUID], ['userLocation', Types.Vector3], ['salePrice', Types.S32], ['authorizedBuyer', Types.UUID], ['allowPublish', Boolean], ['maturePublish', Boolean]]) }]
+    ['parcelData', { quantity: 1, parameters: new Collection<string, any>([['parcel', Types.UUID], ['regionHandle', Types.U64], ['owner', Types.UUID], ['groupOwned', Types.Boolean], ['status', Types.U8], ['name', Types.Variable1], ['description', Types.Variable1], ['musicURL', Types.Variable1], ['regionX', Types.F32], ['regionY', Types.F32], ['actualArea', Types.S32], ['billableArea', Types.S32], ['showDir', Types.Boolean], ['isForSale', Types.Boolean], ['category', Types.U8], ['snapshot', Types.UUID], ['userLocation', Types.Vector3], ['salePrice', Types.S32], ['authorizedBuyer', Types.UUID], ['allowPublish', Types.Boolean], ['maturePublish', Types.Boolean]]) }]
   ])
 
   /**

@@ -1,3 +1,4 @@
+import Boolean from './Boolean'
 import F32 from './F32'
 import F64 from './F64'
 import Fixed32 from './Fixed32'
@@ -21,6 +22,7 @@ import Vector3D from './Vector3D'
 import Vector4 from './Vector4'
 
 export {
+  Boolean,
   F32,
   F64,
   Fixed32,

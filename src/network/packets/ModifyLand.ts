@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,15 +50,15 @@ class ModifyLand extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['modifyBlock', { quantity: 1, parameters: new Collection([['action', Types.U8], ['brushSize', Types.U8], ['seconds', Types.F32], ['height', Types.F32]]) }],
+    ['modifyBlock', { quantity: 1, parameters: new Collection<string, any>([['action', Types.U8], ['brushSize', Types.U8], ['seconds', Types.F32], ['height', Types.F32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['parcelData', { parameters: new Collection([['local', Types.S32], ['west', Types.F32], ['south', Types.F32], ['east', Types.F32], ['north', Types.F32]]) }],
+    ['parcelData', { parameters: new Collection<string, any>([['local', Types.S32], ['west', Types.F32], ['south', Types.F32], ['east', Types.F32], ['north', Types.F32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['modifyBlockExtended', { parameters: new Collection([['brushSize', Types.F32]]) }]
+    ['modifyBlockExtended', { parameters: new Collection<string, any>([['brushSize', Types.F32]]) }]
   ])
 
   /**

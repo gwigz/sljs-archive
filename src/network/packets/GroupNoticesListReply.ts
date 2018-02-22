@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class GroupNoticesListReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['data', { parameters: new Collection([['notice', Types.UUID], ['timestamp', Types.U32], ['fromName', Types.Variable2], ['subject', Types.Variable2], ['hasAttachment', Boolean], ['assetType', Types.U8]]) }]
+    ['data', { parameters: new Collection<string, any>([['notice', Types.UUID], ['timestamp', Types.U32], ['fromName', Types.Variable2], ['subject', Types.Variable2], ['hasAttachment', Types.Boolean], ['assetType', Types.U8]]) }]
   ])
 
   /**

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ImagePacket extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['image', { quantity: 1, parameters: new Collection([['id', Types.UUID], ['packet', Types.U16]]) }],
+    ['image', { quantity: 1, parameters: new Collection<string, any>([['id', Types.UUID], ['packet', Types.U16]]) }],
     // tslint:disable-next-line:max-line-length
-    ['imageData', { quantity: 1, parameters: new Collection([['data', Types.Variable2]]) }]
+    ['imageData', { quantity: 1, parameters: new Collection<string, any>([['data', Types.Variable2]]) }]
   ])
 
   /**

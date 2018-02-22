@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ScriptDataRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['dataBlock', { parameters: new Collection([['hash', Types.U64], ['requestType', Types.S8], ['request', Types.Variable2]]) }]
+    ['dataBlock', { parameters: new Collection<string, any>([['hash', Types.U64], ['requestType', Types.S8], ['request', Types.Variable2]]) }]
   ])
 
   /**

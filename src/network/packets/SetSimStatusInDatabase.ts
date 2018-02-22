@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class SetSimStatusInDatabase extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['region', Types.UUID], ['hostName', Types.Variable1], ['x', Types.S32], ['y', Types.S32], ['pID', Types.S32], ['agentCount', Types.S32], ['timeToLive', Types.S32], ['status', Types.Variable1]]) }]
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['region', Types.UUID], ['hostName', Types.Variable1], ['x', Types.S32], ['y', Types.S32], ['pID', Types.S32], ['agentCount', Types.S32], ['timeToLive', Types.S32], ['status', Types.Variable1]]) }]
   ])
 
   /**

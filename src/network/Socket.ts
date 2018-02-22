@@ -7,9 +7,9 @@ import Core from './Core'
 
 class Socket {
   public readonly core: Core
-  private socket: any
+  private socket: dgram.Socket
 
-  constructor (core: Core, type = 'udp4') {
+  constructor (core: Core) {
     /**
      * Core instance that instantiated this Socket.
      *
@@ -19,10 +19,10 @@ class Socket {
      */
     Object.defineProperty(this, 'core', { value: core })
 
-    this.socket = dgram.createSocket(type, this.receive.bind(this))
+    this.socket = dgram.createSocket('udp4', this.receive.bind(this))
   }
 
-  public send (circuit: Circuit, buffer: Buffer): void {
+  public send (circuit: Circuit, buffer: Buffer): Promise<void> {
     if (!(buffer instanceof Buffer)) {
       return null
     }
@@ -38,7 +38,7 @@ class Socket {
     })
   }
 
-  public async receive (buffer: Buffer, info: any): void {
+  public async receive (buffer: Buffer, info: any): Promise<void> {
     const circuit = this.core.circuits.get(`${info.address}:${info.port}`)
 
     if (circuit && buffer.length) {

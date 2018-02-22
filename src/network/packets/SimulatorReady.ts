@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class SimulatorReady extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['simulatorBlock', { quantity: 1, parameters: new Collection([['simName', Types.Variable1], ['simAccess', Types.U8], ['regionFlags', Types.U32], ['region', Types.UUID], ['estate', Types.U32], ['parentEstate', Types.U32]]) }],
+    ['simulatorBlock', { quantity: 1, parameters: new Collection<string, any>([['simName', Types.Variable1], ['simAccess', Types.U8], ['regionFlags', Types.U32], ['region', Types.UUID], ['estate', Types.U32], ['parentEstate', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['telehubBlock', { quantity: 1, parameters: new Collection([['hasTelehub', Boolean], ['telehubPos', Types.Vector3]]) }]
+    ['telehubBlock', { quantity: 1, parameters: new Collection<string, any>([['hasTelehub', Types.Boolean], ['telehubPos', Types.Vector3]]) }]
   ])
 
   /**

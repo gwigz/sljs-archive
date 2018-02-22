@@ -2,7 +2,7 @@ import PacketBuffer from '../helpers/PacketBuffer'
 import CompressedObjectValue from './CompressedObjectValue'
 import Delegate from './Delegate'
 
-import { Entity } from '../../structures'
+import { Entity, Region } from '../../structures'
 import { Collection, Constants } from '../../utilities'
 
 import * as Types from '../types'
@@ -21,7 +21,7 @@ const Flags = {
   MEDIA_URL: 0x200
 }
 
-const CompressedObjectProperties = new Collection([
+const CompressedObjectProperties = [
   ['type', Types.U8],
   ['state', Types.U8],
   ['crc', Types.U32],
@@ -36,9 +36,9 @@ const CompressedObjectProperties = new Collection([
   ['parent', new CompressedObjectValue(Types.U32, Flags.PARENT)],
   ['tree', new CompressedObjectValue(Types.U8, Flags.TREE_TYPE)],
   ['data', new CompressedObjectValue(Types.Variable1, Flags.SCRATCH_PAD)],
-  ['text.value', new CompressedObjectValue(Types.Text, Flags.TEXT_DATA)],
-  ['text.color', new CompressedObjectValue(Types.U32, Flags.TEXT)]
-])
+  ['text.value', new CompressedObjectValue(Types.Text, Flags.TEXT)],
+  // ['text.color', new CompressedObjectValue(Types.U32, Flags.TEXT)] <- this is 4 U8s
+]
 
 // ['media.url', new CompressedObjectValue(Types.Text, Flags.MEDIA_URL)],
 // ['particles', new CompressedObjectValue(Types.ParticleData, Flags.PARTICALS)],
@@ -70,7 +70,7 @@ const CompressedObjectProperties = new Collection([
 // ['animation', new CompressedObjectValue(Types.U32, Flags.TEXTURE_ANIMATION)]
 
 class ObjectUpdateCompressed extends Delegate {
-  public async handle (packet): void {
+  public handle (packet): void {
     const handle = packet.data.regionData[0].regionHandle
     const region = this.region(handle)
 
@@ -81,8 +81,8 @@ class ObjectUpdateCompressed extends Delegate {
     for (const data of packet.data.objectData) {
       const buffer = new PacketBuffer(data.data, true)
       const flags = data.updateFlags
-      const key = buffer.read(Types.UUID)
-      const id = buffer.read(Types.U32)
+      const key = buffer.read(Types.UUID) as string
+      const id = buffer.read(Types.U32) as number
       const entity = region.objects.get(id)
 
       if (entity) {
@@ -94,7 +94,7 @@ class ObjectUpdateCompressed extends Delegate {
     }
   }
 
-  public async update (entity: Entity, buffer: PacketBuffer): Entity {
+  public update (entity: Entity, buffer: PacketBuffer): Entity {
     const flags = Flags.NONE
 
     for (const [key, type] of CompressedObjectProperties) {
@@ -106,6 +106,7 @@ class ObjectUpdateCompressed extends Delegate {
         continue
       }
 
+      // TODO: This is shit, and unfinished.
       switch (key) {
         case 'velocity.angular':
         case 'data':
@@ -113,12 +114,25 @@ class ObjectUpdateCompressed extends Delegate {
           break
 
         case 'text.value':
+          if (!entity.text) {
+            entity.text = {
+              value: value,
+              color: Types.Vector4.zero
+            }
+          } else {
+            entity.text.value = value
+          }
+          break
+
         case 'text.color':
           if (!entity.text) {
-            entity.text = {}
+            entity.text = {
+              value: '',
+              color: value
+            }
+          } else {
+            entity.text.color = value
           }
-
-          entity.text[key] = value
           break
 
         default:
@@ -130,8 +144,11 @@ class ObjectUpdateCompressed extends Delegate {
     return entity
   }
 
-  public async insert (id: number, key: string, buffer: PacketBuffer, flags: number, region: number): Entity {
-    const entity = new Entity(this.client, await this.update({ id, key, flags }, buffer))
+  public insert (id: number, key: string, buffer: PacketBuffer, flags: number, region: Region): Entity {
+    const entity = this.update(
+      new Entity(this.client, { id, key, flags }),
+      buffer
+    )
 
     // Pass to entity collection.
     region.objects.set(entity.id, entity)

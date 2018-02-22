@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class ParcelSelectObjects extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['parcelData', { quantity: 1, parameters: new Collection([['local', Types.S32], ['returnType', Types.U32]]) }],
+    ['parcelData', { quantity: 1, parameters: new Collection<string, any>([['local', Types.S32], ['returnType', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['returnIDs', { parameters: new Collection([['return', Types.UUID]]) }]
+    ['returnIDs', { parameters: new Collection<string, any>([['return', Types.UUID]]) }]
   ])
 
   /**

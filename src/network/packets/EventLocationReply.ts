@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class EventLocationReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['queryData', { quantity: 1, parameters: new Collection([['query', Types.UUID]]) }],
+    ['queryData', { quantity: 1, parameters: new Collection<string, any>([['query', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['eventData', { quantity: 1, parameters: new Collection([['success', Boolean], ['region', Types.UUID], ['regionPos', Types.Vector3]]) }]
+    ['eventData', { quantity: 1, parameters: new Collection<string, any>([['success', Types.Boolean], ['region', Types.UUID], ['regionPos', Types.Vector3]]) }]
   ])
 
   /**

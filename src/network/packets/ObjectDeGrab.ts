@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class ObjectDeGrab extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { quantity: 1, parameters: new Collection([['local', Types.U32]]) }],
+    ['objectData', { quantity: 1, parameters: new Collection<string, any>([['local', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['surfaceInfo', { parameters: new Collection([['uVCoord', Types.Vector3], ['sTCoord', Types.Vector3], ['faceIndex', Types.S32], ['position', Types.Vector3], ['normal', Types.Vector3], ['binormal', Types.Vector3]]) }]
+    ['surfaceInfo', { parameters: new Collection<string, any>([['uVCoord', Types.Vector3], ['sTCoord', Types.Vector3], ['faceIndex', Types.S32], ['position', Types.Vector3], ['normal', Types.Vector3], ['binormal', Types.Vector3]]) }]
   ])
 
   /**

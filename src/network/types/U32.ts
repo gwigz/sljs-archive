@@ -1,5 +1,5 @@
 class U32 {
-  public readonly static size: number = 4
+  public static readonly size: number = 4
 
   /**
    * Converts integer input into a buffer representing an 32-bit unsigned

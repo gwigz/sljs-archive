@@ -1,15 +1,15 @@
 import * as Long from 'long'
 
 class U64 {
-  public readonly static size: number = 8
+  public static readonly size: number = 8
 
   /**
    * Converts Long input into a buffer representing an 64-bit unsigned integer.
    *
-   * @param {Long} integer Integer to convert
+   * @param {number|Long} integer Integer to convert
    * @returns {Buffer}
    */
-  public static toBuffer (integer: number): Buffer {
+  public static toBuffer (integer: number|Long): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     if (!(integer instanceof Long)) {
@@ -30,7 +30,7 @@ class U64 {
    * @param {number} position Position to read from
    * @returns {Long}
    */
-  public static fromBuffer (buffer: Buffer, position = 0): number {
+  public static fromBuffer (buffer: Buffer, position = 0): Long {
     return Long.fromBits(
       buffer.readInt32LE(position),
       buffer.readInt32LE(position + 4),

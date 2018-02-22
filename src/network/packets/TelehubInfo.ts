@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class TelehubInfo extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['telehubBlock', { quantity: 1, parameters: new Collection([['object', Types.UUID], ['objectName', Types.Variable1], ['telehubPos', Types.Vector3], ['telehubRot', Types.Quaternion]]) }],
+    ['telehubBlock', { quantity: 1, parameters: new Collection<string, any>([['object', Types.UUID], ['objectName', Types.Variable1], ['telehubPos', Types.Vector3], ['telehubRot', Types.Quaternion]]) }],
     // tslint:disable-next-line:max-line-length
-    ['spawnPointBlock', { parameters: new Collection([['spawnPointPos', Types.Vector3]]) }]
+    ['spawnPointBlock', { parameters: new Collection<string, any>([['spawnPointPos', Types.Vector3]]) }]
   ])
 
   /**

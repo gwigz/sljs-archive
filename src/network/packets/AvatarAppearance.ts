@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class AvatarAppearance extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['sender', { quantity: 1, parameters: new Collection([['id', Types.UUID], ['isTrial', Boolean]]) }],
+    ['sender', { quantity: 1, parameters: new Collection<string, any>([['id', Types.UUID], ['isTrial', Types.Boolean]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { quantity: 1, parameters: new Collection([['textureEntry', Types.Variable2]]) }],
+    ['objectData', { quantity: 1, parameters: new Collection<string, any>([['textureEntry', Types.Variable2]]) }],
     // tslint:disable-next-line:max-line-length
-    ['visualParam', { parameters: new Collection([['paramValue', Types.U8]]) }]
+    ['visualParam', { parameters: new Collection<string, any>([['paramValue', Types.U8]]) }]
   ])
 
   /**

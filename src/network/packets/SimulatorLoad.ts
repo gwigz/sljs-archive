@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class SimulatorLoad extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['simulatorLoad', { quantity: 1, parameters: new Collection([['timeDilation', Types.F32], ['agentCount', Types.S32], ['canAcceptAgents', Boolean]]) }],
+    ['simulatorLoad', { quantity: 1, parameters: new Collection<string, any>([['timeDilation', Types.F32], ['agentCount', Types.S32], ['canAcceptAgents', Types.Boolean]]) }],
     // tslint:disable-next-line:max-line-length
-    ['agentList', { parameters: new Collection([['circuitCode', Types.U32], ['x', Types.U8], ['y', Types.U8]]) }]
+    ['agentList', { parameters: new Collection<string, any>([['circuitCode', Types.U32], ['x', Types.U8], ['y', Types.U8]]) }]
   ])
 
   /**

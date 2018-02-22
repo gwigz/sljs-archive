@@ -1,5 +1,6 @@
 import { Authenticator, Core } from './network'
-import { Agent, Nearby } from './structures'
+import { Packet } from './network/packets'
+import { Agent, Nearby, Parcel, Region } from './structures'
 import { Collection, Constants, EventEmitter } from './utilities'
 
 /**
@@ -8,26 +9,25 @@ import { Collection, Constants, EventEmitter } from './utilities'
  */
 class Client extends EventEmitter {
   public agent: Agent
-  public regions: Collection
+  public regions: Collection<string, Region>
 
   public readonly nearby: Nearby
 
+  private core: Core
   private authenticator: Authenticator
 
   constructor () {
     super()
 
     /**
-     * Core instance that instantiated this Client.
-     *
-     * @name Client#core
      * @type {Core}
-     * @readonly
+     * @private
      */
-    Object.defineProperty(this, 'core', { value: new Core(this) })
+    this.core = new Core(this)
 
     /**
      * The interface for first circuit creation, via. XMLRPC authentication.
+     *
      * @type {Authenticator}
      * @private
      */
@@ -75,10 +75,10 @@ class Client extends EventEmitter {
    * value will be overwritten with a new object, watch the "teleport" event
    * to avoid any potential issues.
    *
-   * @returns {?Region}
+   * @returns {Region|null}
    */
-  get region (): ?Region {
-    return this.agent.region
+  get region (): Region {
+    return null // this.agent.region
   }
 
   /**
@@ -87,11 +87,11 @@ class Client extends EventEmitter {
    *
    * @returns {?Parcel}
    */
-  get parcel (): ?Parcel {
-    return this.agent.parcel
+  get parcel (): Parcel {
+    return null // this.agent.parcel
   }
 
-  public async connect (username: string, password: string): void {
+  public async connect (username: string, password: string): Promise<void> {
     if (this.status < Constants.Status.IDLE) {
       throw new Error(Constants.Errors.ALREADY_CONNECTED)
     }
@@ -108,7 +108,8 @@ class Client extends EventEmitter {
 
     const response = await this.authenticator.login(username, password)
 
-    if ('circuit_code' in response
+    if (typeof response === 'object'
+      && 'circuit_code' in response
       && 'agent_id' in response
       && 'session_id' in response
       && 'sim_ip' in response
@@ -134,10 +135,10 @@ class Client extends EventEmitter {
   /**
    * Sends Packet (or multiple) to currently active Circuit.
    *
-   * @param {...Packet} packets Packets to send
+   * @param {..Packet} packets Packets to send
    * @returns {?Promise}
    */
-  public send (...packets: Packet): void {
+  public send (...packets: Array<Packet>): void {
     if (this.core.circuit === undefined) {
       throw new Error(Constants.Errors.NOT_CONNECTED)
     }
@@ -160,7 +161,7 @@ class Client extends EventEmitter {
     return agent.message(message)
   }
 
-  public async disconnect (): void {
+  public async disconnect (): Promise<void> {
     await this.core.disconnect()
 
     // May want to emit some statistics here, later.

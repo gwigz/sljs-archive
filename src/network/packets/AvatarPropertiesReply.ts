@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class AvatarPropertiesReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['avatar', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['propertiesData', { quantity: 1, parameters: new Collection([['image', Types.UUID], ['firstLifeImage', Types.UUID], ['partner', Types.UUID], ['aboutText', Types.Variable2], ['firstLifeAboutText', Types.Variable1], ['bornOn', Types.Variable1], ['profileURL', Types.Variable1], ['charterMember', Types.Variable1], ['flags', Types.U32]]) }]
+    ['propertiesData', { quantity: 1, parameters: new Collection<string, any>([['image', Types.UUID], ['firstLifeImage', Types.UUID], ['partner', Types.UUID], ['aboutText', Types.Variable2], ['firstLifeAboutText', Types.Variable1], ['bornOn', Types.Variable1], ['profileURL', Types.Variable1], ['charterMember', Types.Variable1], ['flags', Types.U32]]) }]
   ])
 
   /**

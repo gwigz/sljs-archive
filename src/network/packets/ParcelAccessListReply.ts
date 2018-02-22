@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ParcelAccessListReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['sequence', Types.S32], ['flags', Types.U32], ['local', Types.S32]]) }],
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['sequence', Types.S32], ['flags', Types.U32], ['local', Types.S32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['list', { parameters: new Collection([['id', Types.UUID], ['time', Types.S32], ['flags', Types.U32]]) }]
+    ['list', { parameters: new Collection<string, any>([['id', Types.UUID], ['time', Types.S32], ['flags', Types.U32]]) }]
   ])
 
   /**

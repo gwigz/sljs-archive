@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class CoarseLocationUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['location', { parameters: new Collection([['x', Types.U8], ['y', Types.U8], ['z', Types.U8]]) }],
+    ['location', { parameters: new Collection<string, any>([['x', Types.U8], ['y', Types.U8], ['z', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
-    ['index', { quantity: 1, parameters: new Collection([['you', Types.S16], ['prey', Types.S16]]) }],
+    ['index', { quantity: 1, parameters: new Collection<string, any>([['you', Types.S16], ['prey', Types.S16]]) }],
     // tslint:disable-next-line:max-line-length
-    ['agentData', { parameters: new Collection([['agent', Types.UUID]]) }]
+    ['agentData', { parameters: new Collection<string, any>([['agent', Types.UUID]]) }]
   ])
 
   /**

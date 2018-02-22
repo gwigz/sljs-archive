@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class UseCircuitCode extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['circuitCode', { quantity: 1, parameters: new Collection([['code', Types.U32], ['session', Types.UUID], ['id', Types.UUID]]) }]
+    ['circuitCode', { quantity: 1, parameters: new Collection<string, any>([['code', Types.U32], ['session', Types.UUID], ['id', Types.UUID]]) }]
   ])
 
   /**

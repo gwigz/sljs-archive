@@ -59,6 +59,7 @@
     "ter-prefer-arrow-callback": true,
     "space-in-parens": [true, "never"],
     "object-literal-sort-keys": false,
+    "object-literal-shorthand": false,
     "new-parens": false,
     "variable-name": false,
     "no-bitwise": false

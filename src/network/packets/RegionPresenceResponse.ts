@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class RegionPresenceResponse extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['regionData', { parameters: new Collection([['region', Types.UUID], ['regionHandle', Types.U64], ['internalRegionIP', Types.IP], ['externalRegionIP', Types.IP], ['regionPort', Types.Port], ['validUntil', Types.F64], ['message', Types.Variable1]]) }]
+    ['regionData', { parameters: new Collection<string, any>([['region', Types.UUID], ['regionHandle', Types.U64], ['internalRegionIP', Types.IP], ['externalRegionIP', Types.IP], ['regionPort', Types.Port], ['validUntil', Types.F64], ['message', Types.Variable1]]) }]
   ])
 
   /**

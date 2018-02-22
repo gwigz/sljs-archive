@@ -1,13 +1,16 @@
 import { Constants } from '../../utilities'
+import { UUID } from '../types'
+
 import Delegate from './Delegate'
 
 class ChatFromSimulator extends Delegate {
-  public async handle (packet): void {
+  public handle (packet): void {
     for (const data of packet.data.chatData) {
       const chatter = {
         key: data.source,
         name: data.fromName.toString().slice(0, -1),
         type: data.sourceType,
+        owner: UUID.zero,
         position: data.position
       }
 
@@ -20,7 +23,7 @@ class ChatFromSimulator extends Delegate {
   }
 
   get waiting (): boolean {
-    return this.client.nearby.listeners('message', true)
+    return !!this.client.nearby.listenerCount('message')
   }
 }
 

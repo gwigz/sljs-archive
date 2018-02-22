@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ParcelPropertiesUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['parcelData', { quantity: 1, parameters: new Collection([['local', Types.S32], ['flags', Types.U32], ['parcelFlags', Types.U32], ['salePrice', Types.S32], ['name', Types.Variable1], ['desc', Types.Variable1], ['musicURL', Types.Variable1], ['mediaURL', Types.Variable1], ['media', Types.UUID], ['mediaAutoScale', Types.U8], ['group', Types.UUID], ['passPrice', Types.S32], ['passHours', Types.F32], ['category', Types.U8], ['authBuyer', Types.UUID], ['snapshot', Types.UUID], ['userLocation', Types.Vector3], ['userLookAt', Types.Vector3], ['landingType', Types.U8]]) }]
+    ['parcelData', { quantity: 1, parameters: new Collection<string, any>([['local', Types.S32], ['flags', Types.U32], ['parcelFlags', Types.U32], ['salePrice', Types.S32], ['name', Types.Variable1], ['desc', Types.Variable1], ['musicURL', Types.Variable1], ['mediaURL', Types.Variable1], ['media', Types.UUID], ['mediaAutoScale', Types.U8], ['group', Types.UUID], ['passPrice', Types.S32], ['passHours', Types.F32], ['category', Types.U8], ['authBuyer', Types.UUID], ['snapshot', Types.UUID], ['userLocation', Types.Vector3], ['userLookAt', Types.Vector3], ['landingType', Types.U8]]) }]
   ])
 
   /**

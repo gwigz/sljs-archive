@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ChildAgentPositionUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['regionHandle', Types.U64], ['viewerCircuitCode', Types.U32], ['agent', Types.UUID], ['session', Types.UUID], ['agentPos', Types.Vector3], ['agentVel', Types.Vector3], ['center', Types.Vector3], ['size', Types.Vector3], ['atAxis', Types.Vector3], ['leftAxis', Types.Vector3], ['upAxis', Types.Vector3], ['changedGrid', Boolean]]) }]
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['regionHandle', Types.U64], ['viewerCircuitCode', Types.U32], ['agent', Types.UUID], ['session', Types.UUID], ['agentPos', Types.Vector3], ['agentVel', Types.Vector3], ['center', Types.Vector3], ['size', Types.Vector3], ['atAxis', Types.Vector3], ['leftAxis', Types.Vector3], ['upAxis', Types.Vector3], ['changedGrid', Types.Boolean]]) }]
   ])
 
   /**

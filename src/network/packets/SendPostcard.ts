@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class SendPostcard extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['asset', Types.UUID], ['posGlobal', Types.Vector3D], ['to', Types.Variable1], ['from', Types.Variable1], ['name', Types.Variable1], ['subject', Types.Variable1], ['msg', Types.Variable2], ['allowPublish', Boolean], ['maturePublish', Boolean]]) }]
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['asset', Types.UUID], ['posGlobal', Types.Vector3D], ['to', Types.Variable1], ['from', Types.Variable1], ['name', Types.Variable1], ['subject', Types.Variable1], ['msg', Types.Variable2], ['allowPublish', Types.Boolean], ['maturePublish', Types.Boolean]]) }]
   ])
 
   /**

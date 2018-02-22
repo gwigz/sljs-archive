@@ -3,10 +3,10 @@ class Variable {
    * Converts a string to a buffer prefixed by length.
    *
    * @param {number} size Prefix size
-   * @param {string} value Limited length defined by
+   * @param {string|Buffer} value Input value
    * @returns {buffer}
    */
-  public static toPrefixedBuffer (size: number, value: string): Buffer {
+  public static toPrefixedBuffer (size: number, value: string|Buffer): Buffer {
     const max = 256 * (size * 8)
     const buffer = value instanceof Buffer ? value : Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
@@ -26,14 +26,14 @@ class Variable {
   }
 
   /**
-   * Converts buffer input into a string.
+   * Converts to correct length buffer.
    *
    * @param {number} size Prefix size
    * @param {Buffer} buffer Buffer to convert
    * @param {number} start Position to read from
-   * @returns {string}
+   * @returns {Buffer}
    */
-  public static fromPrefixedBuffer (size: number, buffer: Buffer, start: number): string {
+  public static fromPrefixedBuffer (size: number, buffer: Buffer, start: number): Buffer {
     const length = size === 1
       ? buffer.readUInt8(start)
       : buffer.readUInt16LE(start)

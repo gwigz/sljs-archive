@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class RegionHandshake extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['regionInfo', { quantity: 1, parameters: new Collection([['regionFlags', Types.U32], ['simAccess', Types.U8], ['simName', Types.Variable1], ['simOwner', Types.UUID], ['isEstateManager', Boolean], ['waterHeight', Types.F32], ['billableFactor', Types.F32], ['cache', Types.UUID], ['terrainBase0', Types.UUID], ['terrainBase1', Types.UUID], ['terrainBase2', Types.UUID], ['terrainBase3', Types.UUID], ['terrainDetail0', Types.UUID], ['terrainDetail1', Types.UUID], ['terrainDetail2', Types.UUID], ['terrainDetail3', Types.UUID], ['terrainStartHeight00', Types.F32], ['terrainStartHeight01', Types.F32], ['terrainStartHeight10', Types.F32], ['terrainStartHeight11', Types.F32], ['terrainHeightRange00', Types.F32], ['terrainHeightRange01', Types.F32], ['terrainHeightRange10', Types.F32], ['terrainHeightRange11', Types.F32]]) }],
+    ['regionInfo', { quantity: 1, parameters: new Collection<string, any>([['regionFlags', Types.U32], ['simAccess', Types.U8], ['simName', Types.Variable1], ['simOwner', Types.UUID], ['isEstateManager', Types.Boolean], ['waterHeight', Types.F32], ['billableFactor', Types.F32], ['cache', Types.UUID], ['terrainBase0', Types.UUID], ['terrainBase1', Types.UUID], ['terrainBase2', Types.UUID], ['terrainBase3', Types.UUID], ['terrainDetail0', Types.UUID], ['terrainDetail1', Types.UUID], ['terrainDetail2', Types.UUID], ['terrainDetail3', Types.UUID], ['terrainStartHeight00', Types.F32], ['terrainStartHeight01', Types.F32], ['terrainStartHeight10', Types.F32], ['terrainStartHeight11', Types.F32], ['terrainHeightRange00', Types.F32], ['terrainHeightRange01', Types.F32], ['terrainHeightRange10', Types.F32], ['terrainHeightRange11', Types.F32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['regionInfo2', { quantity: 1, parameters: new Collection([['region', Types.UUID]]) }],
+    ['regionInfo2', { quantity: 1, parameters: new Collection<string, any>([['region', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['regionInfo3', { quantity: 1, parameters: new Collection([['cPUClass', Types.S32], ['cPURatio', Types.S32], ['coloName', Types.Variable1], ['productSKU', Types.Variable1], ['productName', Types.Variable1]]) }]
+    ['regionInfo3', { quantity: 1, parameters: new Collection<string, any>([['cPUClass', Types.S32], ['cPURatio', Types.S32], ['coloName', Types.Variable1], ['productSKU', Types.Variable1], ['productName', Types.Variable1]]) }]
   ])
 
   /**

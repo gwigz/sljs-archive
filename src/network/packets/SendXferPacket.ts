@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class SendXferPacket extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['xfer', { quantity: 1, parameters: new Collection([['id', Types.U64], ['packet', Types.U32]]) }],
+    ['xfer', { quantity: 1, parameters: new Collection<string, any>([['id', Types.U64], ['packet', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['dataPacket', { quantity: 1, parameters: new Collection([['data', Types.Variable2]]) }]
+    ['dataPacket', { quantity: 1, parameters: new Collection<string, any>([['data', Types.Variable2]]) }]
   ])
 
   /**

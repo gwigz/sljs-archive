@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ParcelMediaUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['dataBlock', { quantity: 1, parameters: new Collection([['mediaURL', Types.Variable1], ['media', Types.UUID], ['mediaAutoScale', Types.U8]]) }],
+    ['dataBlock', { quantity: 1, parameters: new Collection<string, any>([['mediaURL', Types.Variable1], ['media', Types.UUID], ['mediaAutoScale', Types.U8]]) }],
     // tslint:disable-next-line:max-line-length
-    ['dataBlockExtended', { quantity: 1, parameters: new Collection([['mediaType', Types.Variable1], ['mediaDesc', Types.Variable1], ['mediaWidth', Types.S32], ['mediaHeight', Types.S32], ['mediaLoop', Types.U8]]) }]
+    ['dataBlockExtended', { quantity: 1, parameters: new Collection<string, any>([['mediaType', Types.Variable1], ['mediaDesc', Types.Variable1], ['mediaWidth', Types.S32], ['mediaHeight', Types.S32], ['mediaLoop', Types.U8]]) }]
   ])
 
   /**

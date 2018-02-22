@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class MoneyBalanceReply extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['moneyData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['transaction', Types.UUID], ['transactionSuccess', Boolean], ['moneyBalance', Types.S32], ['squareMetersCredit', Types.S32], ['squareMetersCommitted', Types.S32], ['description', Types.Variable1]]) }],
+    ['moneyData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['transaction', Types.UUID], ['transactionSuccess', Types.Boolean], ['moneyBalance', Types.S32], ['squareMetersCredit', Types.S32], ['squareMetersCommitted', Types.S32], ['description', Types.Variable1]]) }],
     // tslint:disable-next-line:max-line-length
-    ['transactionInfo', { quantity: 1, parameters: new Collection([['transactionType', Types.S32], ['source', Types.UUID], ['isSourceGroup', Boolean], ['dest', Types.UUID], ['isDestGroup', Boolean], ['amount', Types.S32], ['itemDescription', Types.Variable1]]) }]
+    ['transactionInfo', { quantity: 1, parameters: new Collection<string, any>([['transactionType', Types.S32], ['source', Types.UUID], ['isSourceGroup', Types.Boolean], ['dest', Types.UUID], ['isDestGroup', Types.Boolean], ['amount', Types.S32], ['itemDescription', Types.Variable1]]) }]
   ])
 
   /**

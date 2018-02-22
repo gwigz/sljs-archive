@@ -1,18 +1,23 @@
-import Client from '..'
+import { Client } from '..'
 import { Collection } from '../utilities'
-import Entities from './Entities'
 
 import Agent from './Agent'
+import Entities from './Entities'
+import Parcel from './Parcel'
+
+interface IRegionOptions {
+  handle: number
+}
 
 class Region {
   public handle: number
   public agents: Collection<string, Agent>
   public objects: Entities
-  public parcels: Collection
+  public parcels: Collection<string, Parcel>
 
   public readonly client: Client
 
-  constructor (client: Client, data) {
+  constructor (client: Client, data: IRegionOptions) {
     /**
      * The Client that instantiated this Region.
      *

@@ -4,7 +4,13 @@ import * as Types from '../types'
  * @link http://wiki.secondlife.com/wiki/Packet_Layout
  */
 class PacketBuffer {
-  constructor (buffer, delegating) {
+  public readonly id: number
+  public readonly frequency: number
+
+  private buffer: Buffer
+  private position: number
+
+  constructor (buffer: Buffer, delegating: boolean = false) {
     this.buffer = buffer
 
     if (delegating) {
@@ -77,7 +83,7 @@ class PacketBuffer {
     return this.buffer.length
   }
 
-  get sequence (): buffer {
+  get sequence (): number {
     return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4]
   }
 
@@ -116,9 +122,6 @@ class PacketBuffer {
     const output = this.fetch(Type, ...args)
 
     switch (Type) {
-      case Boolean:
-        break
-
       case Types.Variable1:
         this.position += this.buffer.readUInt8(this.position) + 1
         break
@@ -165,16 +168,7 @@ class PacketBuffer {
   }
 
   public fetch (Type, ...args): any {
-    switch (Type) {
-      case Boolean:
-        return !!this.buffer.readUInt8(this.position++)
-
-      case Types.Quaternion:
-        return Type.fromBuffer(this.buffer, this.position, ...args)
-
-      default:
-        return Type.fromBuffer(this.buffer, this.position, ...args)
-    }
+    return Type.fromBuffer(this.buffer, this.position, ...args)
   }
 }
 

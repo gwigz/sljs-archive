@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ObjectAdd extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { quantity: 1, parameters: new Collection([['pCode', Types.U8], ['material', Types.U8], ['addFlags', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16], ['bypassRaycast', Types.U8], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['rayTarget', Types.UUID], ['rayEndIsIntersection', Types.U8], ['scale', Types.Vector3], ['rotation', Types.Quaternion], ['state', Types.U8]]) }]
+    ['objectData', { quantity: 1, parameters: new Collection<string, any>([['pCode', Types.U8], ['material', Types.U8], ['addFlags', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16], ['bypassRaycast', Types.U8], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['rayTarget', Types.UUID], ['rayEndIsIntersection', Types.U8], ['scale', Types.Vector3], ['rotation', Types.Quaternion], ['state', Types.U8]]) }]
   ])
 
   /**

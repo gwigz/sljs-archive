@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ObjectProperties extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['objectData', { parameters: new Collection([['object', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['creationDate', Types.U64], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['ownershipCost', Types.S32], ['saleType', Types.U8], ['salePrice', Types.S32], ['aggregatePerms', Types.U8], ['aggregatePermTextures', Types.U8], ['aggregatePermTexturesOwner', Types.U8], ['category', Types.U32], ['inventorySerial', Types.S16], ['item', Types.UUID], ['folder', Types.UUID], ['fromTask', Types.UUID], ['lastOwner', Types.UUID], ['name', Types.Variable1], ['description', Types.Variable1], ['touchName', Types.Variable1], ['sitName', Types.Variable1], ['texture', Types.Variable1]]) }]
+    ['objectData', { parameters: new Collection<string, any>([['object', Types.UUID], ['creator', Types.UUID], ['owner', Types.UUID], ['group', Types.UUID], ['creationDate', Types.U64], ['baseMask', Types.U32], ['ownerMask', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32], ['ownershipCost', Types.S32], ['saleType', Types.U8], ['salePrice', Types.S32], ['aggregatePerms', Types.U8], ['aggregatePermTextures', Types.U8], ['aggregatePermTexturesOwner', Types.U8], ['category', Types.U32], ['inventorySerial', Types.S16], ['item', Types.UUID], ['folder', Types.UUID], ['fromTask', Types.UUID], ['lastOwner', Types.UUID], ['name', Types.Variable1], ['description', Types.Variable1], ['touchName', Types.Variable1], ['sitName', Types.Variable1], ['texture', Types.Variable1]]) }]
   ])
 
   /**

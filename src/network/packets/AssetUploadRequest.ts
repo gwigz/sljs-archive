@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class AssetUploadRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['assetBlock', { quantity: 1, parameters: new Collection([['transaction', Types.UUID], ['type', Types.S8], ['tempfile', Boolean], ['storeLocal', Boolean], ['assetData', Types.Variable2]]) }]
+    ['assetBlock', { quantity: 1, parameters: new Collection<string, any>([['transaction', Types.UUID], ['type', Types.S8], ['tempfile', Types.Boolean], ['storeLocal', Types.Boolean], ['assetData', Types.Variable2]]) }]
   ])
 
   /**

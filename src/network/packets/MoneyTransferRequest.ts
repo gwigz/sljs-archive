@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class MoneyTransferRequest extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['moneyData', { quantity: 1, parameters: new Collection([['source', Types.UUID], ['dest', Types.UUID], ['flags', Types.U8], ['amount', Types.S32], ['aggregatePermNextOwner', Types.U8], ['aggregatePermInventory', Types.U8], ['transactionType', Types.S32], ['description', Types.Variable1]]) }]
+    ['moneyData', { quantity: 1, parameters: new Collection<string, any>([['source', Types.UUID], ['dest', Types.UUID], ['flags', Types.U8], ['amount', Types.S32], ['aggregatePermNextOwner', Types.U8], ['aggregatePermInventory', Types.U8], ['transactionType', Types.S32], ['description', Types.Variable1]]) }]
   ])
 
   /**

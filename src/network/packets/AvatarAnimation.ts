@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,15 +50,15 @@ class AvatarAnimation extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['sender', { quantity: 1, parameters: new Collection([['id', Types.UUID]]) }],
+    ['sender', { quantity: 1, parameters: new Collection<string, any>([['id', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['animationList', { parameters: new Collection([['anim', Types.UUID], ['animSequence', Types.S32]]) }],
+    ['animationList', { parameters: new Collection<string, any>([['anim', Types.UUID], ['animSequence', Types.S32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['animationSourceList', { parameters: new Collection([['object', Types.UUID]]) }],
+    ['animationSourceList', { parameters: new Collection<string, any>([['object', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['physicalAvatarEventList', { parameters: new Collection([['typeData', Types.Variable1]]) }]
+    ['physicalAvatarEventList', { parameters: new Collection<string, any>([['typeData', Types.Variable1]]) }]
   ])
 
   /**

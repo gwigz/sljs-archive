@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,15 +50,15 @@ class RezObjectFromNotecard extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['rezData', { quantity: 1, parameters: new Collection([['fromTask', Types.UUID], ['bypassRaycast', Types.U8], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['rayTarget', Types.UUID], ['rayEndIsIntersection', Boolean], ['rezSelected', Boolean], ['removeItem', Boolean], ['itemFlags', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32]]) }],
+    ['rezData', { quantity: 1, parameters: new Collection<string, any>([['fromTask', Types.UUID], ['bypassRaycast', Types.U8], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['rayTarget', Types.UUID], ['rayEndIsIntersection', Types.Boolean], ['rezSelected', Types.Boolean], ['removeItem', Types.Boolean], ['itemFlags', Types.U32], ['groupMask', Types.U32], ['everyoneMask', Types.U32], ['nextOwnerMask', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['notecardData', { quantity: 1, parameters: new Collection([['notecardItem', Types.UUID], ['object', Types.UUID]]) }],
+    ['notecardData', { quantity: 1, parameters: new Collection<string, any>([['notecardItem', Types.UUID], ['object', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['inventoryData', { parameters: new Collection([['item', Types.UUID]]) }]
+    ['inventoryData', { parameters: new Collection<string, any>([['item', Types.UUID]]) }]
   ])
 
   /**

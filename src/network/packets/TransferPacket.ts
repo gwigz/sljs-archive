@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class TransferPacket extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['transferData', { quantity: 1, parameters: new Collection([['transfer', Types.UUID], ['channelType', Types.S32], ['packet', Types.S32], ['status', Types.S32], ['data', Types.Variable2]]) }]
+    ['transferData', { quantity: 1, parameters: new Collection<string, any>([['transfer', Types.UUID], ['channelType', Types.S32], ['packet', Types.S32], ['status', Types.S32], ['data', Types.Variable2]]) }]
   ])
 
   /**

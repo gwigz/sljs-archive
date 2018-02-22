@@ -1,8 +1,8 @@
 import F32 from './F32'
 
 class Quaternion {
-  public readonly static size: number = 12
-  public readonly static zero: Array<number> = [0.0, 0.0, 0.0, 0.0]
+  public static readonly size: number = 12
+  public static readonly zero: Array<number> = [0.0, 0.0, 0.0, 0.0]
 
   /**
    * Converts array input into a buffer representing a quaternion.
@@ -37,12 +37,13 @@ class Quaternion {
    * @param {number} lower Lower limit for optional type convertion
    * @param {number} upper Upper limit for optional type convertion
    * @returns {number[]}
+   * @todo Handle these parameters better
    */
   public static fromBuffer (
     buffer: Buffer,
     position: number = 0,
     normalized: boolean = true,
-    type = F32,
+    type: any = F32,
     lower?: number,
     upper?: number
   ): Array<number> {

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,13 +50,13 @@ class ParcelBuy extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['group', Types.UUID], ['isGroupOwned', Boolean], ['removeContribution', Boolean], ['local', Types.S32], ['final', Boolean]]) }],
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['group', Types.UUID], ['isGroupOwned', Types.Boolean], ['removeContribution', Types.Boolean], ['local', Types.S32], ['final', Types.Boolean]]) }],
     // tslint:disable-next-line:max-line-length
-    ['parcelData', { quantity: 1, parameters: new Collection([['price', Types.S32], ['area', Types.S32]]) }]
+    ['parcelData', { quantity: 1, parameters: new Collection<string, any>([['price', Types.S32], ['area', Types.S32]]) }]
   ])
 
   /**

@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,15 +50,15 @@ class SimulatorPresentAtLocation extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['simulatorPublicHostBlock', { quantity: 1, parameters: new Collection([['port', Types.Port], ['simulatorIP', Types.IP], ['gridX', Types.U32], ['gridY', Types.U32]]) }],
+    ['simulatorPublicHostBlock', { quantity: 1, parameters: new Collection<string, any>([['port', Types.Port], ['simulatorIP', Types.IP], ['gridX', Types.U32], ['gridY', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['neighborBlock', { quantity: 4, parameters: new Collection([['ip', Types.IP], ['port', Types.Port]]) }],
+    ['neighborBlock', { quantity: 4, parameters: new Collection<string, any>([['ip', Types.IP], ['port', Types.Port]]) }],
     // tslint:disable-next-line:max-line-length
-    ['simulatorBlock', { quantity: 1, parameters: new Collection([['simName', Types.Variable1], ['simAccess', Types.U8], ['regionFlags', Types.U32], ['region', Types.UUID], ['estate', Types.U32], ['parentEstate', Types.U32]]) }],
+    ['simulatorBlock', { quantity: 1, parameters: new Collection<string, any>([['simName', Types.Variable1], ['simAccess', Types.U8], ['regionFlags', Types.U32], ['region', Types.UUID], ['estate', Types.U32], ['parentEstate', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['telehubBlock', { parameters: new Collection([['hasTelehub', Boolean], ['telehubPos', Types.Vector3]]) }]
+    ['telehubBlock', { parameters: new Collection<string, any>([['hasTelehub', Types.Boolean], ['telehubPos', Types.Vector3]]) }]
   ])
 
   /**

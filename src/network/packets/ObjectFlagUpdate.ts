@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class ObjectFlagUpdate extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['objectLocal', Types.U32], ['usePhysics', Boolean], ['isTemporary', Boolean], ['isPhantom', Boolean], ['castsShadows', Boolean]]) }]
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['objectLocal', Types.U32], ['usePhysics', Types.Boolean], ['isTemporary', Types.Boolean], ['isPhantom', Types.Boolean], ['castsShadows', Types.Boolean]]) }]
   ])
 
   /**

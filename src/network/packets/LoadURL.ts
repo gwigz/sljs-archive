@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class LoadURL extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['data', { quantity: 1, parameters: new Collection([['objectName', Types.Variable1], ['object', Types.UUID], ['owner', Types.UUID], ['ownerIsGroup', Boolean], ['message', Types.Variable1], ['url', Types.Variable1]]) }]
+    ['data', { quantity: 1, parameters: new Collection<string, any>([['objectName', Types.Variable1], ['object', Types.UUID], ['owner', Types.UUID], ['ownerIsGroup', Types.Boolean], ['message', Types.Variable1], ['url', Types.Variable1]]) }]
   ])
 
   /**

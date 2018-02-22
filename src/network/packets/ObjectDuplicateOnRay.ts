@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ObjectDuplicateOnRay extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['bypassRaycast', Boolean], ['rayEndIsIntersection', Boolean], ['copyCenters', Boolean], ['copyRotates', Boolean], ['rayTarget', Types.UUID], ['duplicateFlags', Types.U32]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID], ['group', Types.UUID], ['rayStart', Types.Vector3], ['rayEnd', Types.Vector3], ['bypassRaycast', Types.Boolean], ['rayEndIsIntersection', Types.Boolean], ['copyCenters', Types.Boolean], ['copyRotates', Types.Boolean], ['rayTarget', Types.UUID], ['duplicateFlags', Types.U32]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { parameters: new Collection([['objectLocal', Types.U32]]) }]
+    ['objectData', { parameters: new Collection<string, any>([['objectLocal', Types.U32]]) }]
   ])
 
   /**

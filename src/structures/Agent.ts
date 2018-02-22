@@ -1,5 +1,4 @@
-import Client from '..'
-
+import { Client } from '..'
 import { ImprovedInstantMessage } from '../network/packets'
 import { UUID, Vector3 } from '../network/types'
 
@@ -7,48 +6,44 @@ import Entity from './Entity'
 
 class Agent extends Entity {
   public self: boolean
-  public session: UUID
-  public firstname: ?string
-  public lastname: ?string
+  public session: number
+  public firstname: string|null
+  public lastname: string|null
+  public offset: Array<number> = Vector3.zero
+  public health: number = 100
 
   constructor (client: Client, data) {
     super(client, data)
 
-    /**
-     * True if agent is self, as in the Client connected Agent.
-     * @type {boolean}
-     */
     this.self = 'session' in data
 
     if (this.self) {
-      /**
-       * The Client connected Agent session ID, only exists for self.
-       * @type {?UUID}
-       */
       this.session = data.session
     }
 
-    /**
-     * Agents firstname value.
-     * @type {?string}
-     */
-    this.firstname = data.firstname || undefined
-
-    // Change buffer value to string.
-    if (this.firstname instanceof Buffer) {
-      this.firstname = this.firstname.toString('utf8')
+    if (typeof data.firstname === 'string') {
+      this.firstname = data.firstname
+    } else if (data.firstname instanceof Buffer) {
+      this.firstname = data.firstname.toString('utf8')
+    } else {
+      this.firstname = null
     }
 
-    /**
-     * Agents lastname value.
-     * @type {?string}
-     */
-    this.lastname = data.lastname || undefined
-
-    // Correct buffer value to string.
-    if (this.lastname instanceof Buffer) {
-      this.lastname = this.lastname.toString('utf8')
+    if (typeof data.lastname === 'string') {
+      this.lastname = data.lastname
+    } else if (data.lastname instanceof Buffer) {
+      this.lastname = data.lastname.toString('utf8')
+    } else {
+      this.lastname = null
     }
+  }
+
+  get name (): string {
+    return (this.firstname + ' ' + this.lastname).trim()
+  }
+
+  get distance (): number {
+    return 0.0
   }
 
   public message (message: string): void {

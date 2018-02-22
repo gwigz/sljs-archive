@@ -1,5 +1,5 @@
 class Vector4 {
-  public readonly static size: number = 16
+  public static readonly size: number = 16
 
   /**
    * Converts array input into a buffer representing a 4 point vector.

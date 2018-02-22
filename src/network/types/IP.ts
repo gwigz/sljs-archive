@@ -1,5 +1,5 @@
 class IP {
-  public readonly static size: number = 1
+  public static readonly size: number = 1
 
   /**
    * Converts an IP address (string) input into a buffer, one place per byte, 4
@@ -8,14 +8,14 @@ class IP {
    * @param {string} string IP address string to convert
    * @returns {Buffer}
    */
-  public static toBuffer (string: string): boolean {
+  public static toBuffer (string: string): Buffer {
     const ip = string.split('.')
     const buffer = Buffer.allocUnsafe(this.size)
 
-    buffer.writeUInt8(ip[0], 0)
-    buffer.writeUInt8(ip[1], 1)
-    buffer.writeUInt8(ip[2], 2)
-    buffer.writeUInt8(ip[3], 3)
+    buffer.writeUInt8(parseInt(ip[0], 10), 0)
+    buffer.writeUInt8(parseInt(ip[1], 10), 1)
+    buffer.writeUInt8(parseInt(ip[2], 10), 2)
+    buffer.writeUInt8(parseInt(ip[3], 10), 3)
 
     return buffer
   }

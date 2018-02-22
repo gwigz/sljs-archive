@@ -6,12 +6,12 @@ import * as Types from '../types'
 import { Constants } from '../../utilities'
 
 class ImprovedTerseObjectUpdate extends Delegate {
-  public async handle (packet): void {
+  public handle (packet): void {
     const handle = packet.data.regionData[0].regionHandle
     const region = this.region(handle)
 
     if (!region) {
-      throw Error(Constants.UNEXPECTED_OBJECT_UPDATE)
+      throw Error(Constants.Errors.UNEXPECTED_OBJECT_UPDATE)
     }
 
     for (const { data } of packet.data.objectData) {
@@ -25,7 +25,7 @@ class ImprovedTerseObjectUpdate extends Delegate {
       const entity = region.objects.get(id)
 
       if (!entity) {
-        // TODO: We would want to log this, as a warning.
+        // TODO: We would want to log this, as a info/warning.
         continue
       }
 
@@ -36,8 +36,7 @@ class ImprovedTerseObjectUpdate extends Delegate {
         // This contains a normal and Z position for the avatars foot shadow,
         // we don't use these at the moment for anything, so don't include them
         // for now.
-        // entity.agent.something(...buffer.read(Types.Vector4))
-        buffer.position += Types.Vector4.size
+        buffer.read(Types.Vector4)
       }
 
       entity.position = buffer.read(Types.Vector3)

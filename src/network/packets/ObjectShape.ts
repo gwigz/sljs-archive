@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class ObjectShape extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['objectData', { parameters: new Collection([['objectLocal', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16]]) }]
+    ['objectData', { parameters: new Collection<string, any>([['objectLocal', Types.U32], ['pathCurve', Types.U8], ['profileCurve', Types.U8], ['pathBegin', Types.U16], ['pathEnd', Types.U16], ['pathScaleX', Types.U8], ['pathScaleY', Types.U8], ['pathShearX', Types.U8], ['pathShearY', Types.U8], ['pathTwist', Types.S8], ['pathTwistBegin', Types.S8], ['pathRadiusOffset', Types.S8], ['pathTaperX', Types.S8], ['pathTaperY', Types.S8], ['pathRevolutions', Types.U8], ['pathSkew', Types.S8], ['profileBegin', Types.U16], ['profileEnd', Types.U16], ['profileHollow', Types.U16]]) }]
   ])
 
   /**

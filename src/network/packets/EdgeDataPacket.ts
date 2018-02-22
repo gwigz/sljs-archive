@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class EdgeDataPacket extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['edgeData', { quantity: 1, parameters: new Collection([['layerType', Types.U8], ['direction', Types.U8], ['layerData', Types.Variable2]]) }]
+    ['edgeData', { quantity: 1, parameters: new Collection<string, any>([['layerType', Types.U8], ['direction', Types.U8], ['layerData', Types.Variable2]]) }]
   ])
 
   /**

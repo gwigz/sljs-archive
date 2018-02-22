@@ -1,6 +1,6 @@
 class UUID {
-  public readonly static size: number = 16
-  public readonly static zero: string = '00000000-0000-0000-0000-000000000000'
+  public static readonly size: number = 16
+  public static readonly zero: string = '00000000-0000-0000-0000-000000000000'
 
   /**
    * Converts string input into a buffer representing a UUID.

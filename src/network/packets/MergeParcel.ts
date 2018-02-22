@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class MergeParcel extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['masterParcelData', { quantity: 1, parameters: new Collection([['master', Types.UUID]]) }],
+    ['masterParcelData', { quantity: 1, parameters: new Collection<string, any>([['master', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['slaveParcelData', { parameters: new Collection([['slave', Types.UUID]]) }]
+    ['slaveParcelData', { parameters: new Collection<string, any>([['slave', Types.UUID]]) }]
   ])
 
   /**

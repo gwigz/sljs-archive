@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,9 +50,9 @@ class FeatureDisabled extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['failureInfo', { quantity: 1, parameters: new Collection([['errorMessage', Types.Variable1], ['agent', Types.UUID], ['transaction', Types.UUID]]) }]
+    ['failureInfo', { quantity: 1, parameters: new Collection<string, any>([['errorMessage', Types.Variable1], ['agent', Types.UUID], ['transaction', Types.UUID]]) }]
   ])
 
   /**

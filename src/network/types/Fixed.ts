@@ -1,11 +1,13 @@
-class Fixed {
+abstract class Fixed {
+  public static size: number
+
   /**
    * Pads buffer bytes of fixed length if nessecery.
    *
-   * @param {Buffer} buffer This will truncate or pad if nessecery
+   * @param {Buffer} buffer This will truncate or padded if nessecery
    * @returns {Buffer}
    */
-  public static toBuffer (buffer): Buffer {
+  public static toBuffer (buffer: Buffer): Buffer {
     if (buffer.length === this.size) {
       return buffer
     }
@@ -14,7 +16,13 @@ class Fixed {
       return buffer.slice(0, this.size)
     }
 
-    return Buffer.alloc(this.size).copy(buffer)
+    const output = Buffer.alloc(this.size)
+
+    // Insert into new buffer, limited by correct size, this way it will be
+    // padded with zeros.
+    output.copy(buffer, 0, this.size)
+
+    return output
   }
 
   /**

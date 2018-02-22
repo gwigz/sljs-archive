@@ -1,4 +1,4 @@
-import Collection from '../../utilities/Collection'
+import { Collection } from '../../utilities'
 import Packet from './Packet'
 
 import * as Types from '../types'
@@ -50,11 +50,11 @@ class FetchInventoryDescendents extends Packet {
    * @see {@link http://wiki.secondlife.com/wiki/Message_Layout}
    * @type {Collection}
    */
-  public static format: Collection = new Collection([
+  public static format: Collection<string, any> = new Collection([
     // tslint:disable-next-line:max-line-length
-    ['agentData', { quantity: 1, parameters: new Collection([['agent', Types.UUID], ['session', Types.UUID]]) }],
+    ['agentData', { quantity: 1, parameters: new Collection<string, any>([['agent', Types.UUID], ['session', Types.UUID]]) }],
     // tslint:disable-next-line:max-line-length
-    ['inventoryData', { quantity: 1, parameters: new Collection([['folder', Types.UUID], ['owner', Types.UUID], ['sortOrder', Types.S32], ['fetchFolders', Boolean], ['fetchItems', Boolean]]) }]
+    ['inventoryData', { quantity: 1, parameters: new Collection<string, any>([['folder', Types.UUID], ['owner', Types.UUID], ['sortOrder', Types.S32], ['fetchFolders', Types.Boolean], ['fetchItems', Types.Boolean]]) }]
   ])
 
   /**
