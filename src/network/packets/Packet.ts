@@ -1,6 +1,6 @@
 import { Collection } from '../../utilities'
 
-class Packet {
+abstract class Packet {
   public static id: number
   public static frequency: number
   public static trusted: boolean

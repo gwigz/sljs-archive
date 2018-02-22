@@ -21,7 +21,7 @@ const Flags = {
   MEDIA_URL: 0x200
 }
 
-const CompressedObjectProperties = [
+const CompressedObjectProperties: Array<Array<any>> = [
   ['type', Types.U8],
   ['state', Types.U8],
   ['crc', Types.U32],
@@ -114,24 +114,24 @@ class ObjectUpdateCompressed extends Delegate {
           break
 
         case 'text.value':
-          if (!entity.text) {
+          if (entity.text) {
+            entity.text.value = value
+          } else {
             entity.text = {
               value: value,
               color: Types.Vector4.zero
             }
-          } else {
-            entity.text.value = value
           }
           break
 
         case 'text.color':
-          if (!entity.text) {
+          if (entity.text) {
+            entity.text.color = value
+          } else {
             entity.text = {
               value: '',
               color: value
             }
-          } else {
-            entity.text.color = value
           }
           break
 
