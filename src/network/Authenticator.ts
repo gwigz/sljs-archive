@@ -58,7 +58,7 @@ class Authenticator {
     const client = XMLRPC.createSecureClient({
       url: Constants.Endpoints.LOGIN_URL,
       headers: { 'User-Agent': this.agent },
-      // rejectUnauthorized: false
+      rejectUnauthorized: false
     })
 
     return new Promise((resolve) => {

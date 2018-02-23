@@ -1,7 +1,7 @@
 import { Client } from '..'
 
 import { Agent, Entities, Region } from '../structures'
-import { Collection, Constants, EventEmitter } from '../utilities'
+import { Collection, Constants } from '../utilities'
 import { LogoutRequest } from './packets'
 
 import Circuit from './Circuit'
@@ -11,7 +11,7 @@ import Socket from './Socket'
  * The core handles connecting to a Simulator, processing and sending
  * messages. It's basically handles 100% of the the communication.
  */
-class Core extends EventEmitter {
+class Core {
   public socket: Socket
   public circuits: Collection<string, Circuit>
   public circuit: Circuit
@@ -23,8 +23,6 @@ class Core extends EventEmitter {
    * @param {Client} client For emiting processed messages back to
    */
   constructor (client) {
-    super()
-
     /**
      * Client instance that instantiated this Core.
      *
@@ -92,13 +90,13 @@ class Core extends EventEmitter {
     const circuit = new Circuit(this, ...args)
 
     this.status = Constants.Status.CONNECTING
-    this.client.emit(Constants.Events.DEBUG, 'Handshake recieved, creating circuit...')
+    this.circuits.set(`${circuit.address}:${circuit.port}`, circuit)
 
     if (this.circuit === null) {
       this.circuit = circuit
     }
 
-    this.circuits.set(`${circuit.address}:${circuit.port}`, circuit)
+    this.client.emit(Constants.Events.DEBUG, 'Handshake recieved, creating circuit...')
 
     return circuit.handshake()
   }

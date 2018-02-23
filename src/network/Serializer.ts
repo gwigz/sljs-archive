@@ -146,11 +146,7 @@ class Serializer {
         throw new Error(Constants.Errors.MISSING_PARAMETER)
       }
 
-      if (Type === Boolean) {
-        array.push(Buffer.from([data[name] === true]))
-      } else {
-        array.push(Type.toBuffer(data[name]))
-      }
+      array.push(Type.toBuffer(data[name]))
     }
 
     return Buffer.concat(array)

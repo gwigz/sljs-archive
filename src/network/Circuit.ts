@@ -68,8 +68,8 @@ class Circuit {
 
     for (const packet of [...args]) {
       try {
-        // this.core.emit('sending', packet.constructor.name)
         this.core.send(this, this.serializer.convert(packet))
+        this.core.client.emit('sending', packet.constructor.name)
       } catch (error) {
         this.core.client.emit(Constants.Events.ERROR, error)
       }
@@ -91,14 +91,15 @@ class Circuit {
       return
     }
 
-    // this.core.emit('received', Packet.constructor.name)
+    this.core.client.emit('received', Packet.name)
 
-    if (Packet.constructor.name in this.delegates
-      && this.delegates[Packet.constructor.name].waiting
+    if (Packet.name in this.delegates
+      && this.delegates[Packet.name].waiting
     ) {
-      this.delegates[Packet.constructor.name]
+      // TODO: Make this async?
+      this.delegates[Packet.name]
         .handle(this.deserializer.convert(Packet, buffer))
-        .catch(console.error)
+        // .catch(console.error)
     }
   }
 

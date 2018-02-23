@@ -1,9 +1,9 @@
-import PacketBuffer from '../helpers/PacketBuffer'
-import Delegate from './Delegate'
+import { Constants } from '../../utilities'
+import { PacketBuffer } from '../helpers'
 
 import * as Types from '../types'
 
-import { Constants } from '../../utilities'
+import Delegate from './Delegate'
 
 class ImprovedTerseObjectUpdate extends Delegate {
   public handle (packet): void {
@@ -32,7 +32,7 @@ class ImprovedTerseObjectUpdate extends Delegate {
       entity.state = buffer.read(Types.U8)
 
       // Next byte defines if this update is for an avatar or not.
-      if (buffer.read(Boolean)) {
+      if (buffer.read(Types.Boolean)) {
         // This contains a normal and Z position for the avatars foot shadow,
         // we don't use these at the moment for anything, so don't include them
         // for now.

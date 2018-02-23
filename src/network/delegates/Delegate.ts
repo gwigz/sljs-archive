@@ -12,13 +12,17 @@ interface IDelegeateOptions {
 
 abstract class Delegate {
   public readonly circuit: Circuit
-  public readonly client: Client
-  public readonly core: Core
 
   constructor (circuit: IDelegeateOptions) {
     Object.defineProperty(this, 'circuit', { value: circuit })
-    Object.defineProperty(this, 'client', { value: this.core.client })
-    Object.defineProperty(this, 'core', { value: this.circuit.core })
+  }
+
+  get core (): Core {
+    return this.circuit.core
+  }
+
+  get client (): Client {
+    return this.circuit.core.client
   }
 
   /**
