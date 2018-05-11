@@ -77,7 +77,7 @@ class Core {
    * @returns {Promise}
    */
   public send (circuit, ...packets): Promise<void[]> {
-    let promises: Promise<void>[] = []
+    let promises: Array<Promise<void>> = []
 
     for (const packet of packets) {
       promises.push(this.socket.send(circuit, packet))
