@@ -122,9 +122,12 @@ class Circuit {
 
   public register (delegates: any): void {
     for (const Delegate of Object.values(delegates) as Array<typeof Delegates.Delegate>) {
-      this.delegates[Delegate.name] = new Delegate(this)
+      if (Delegate !== Delegates.Delegate) {
+        this.delegates[Delegate.name] = new Delegate(this)
+      }
     }
   }
 }
 
 export default Circuit
+export { ICircuitOptions }

@@ -4,16 +4,10 @@ import { Circuit, Core, Packets } from '..'
 import { Client } from '../..'
 import { Region } from '../../structures'
 
-interface IDelegeateOptions {
-  circuit: Circuit,
-  client: Client,
-  core: Core
-}
-
-abstract class Delegate {
+class Delegate {
   public readonly circuit: Circuit
 
-  constructor (circuit: IDelegeateOptions) {
+  constructor (circuit: Circuit) {
     Object.defineProperty(this, 'circuit', { value: circuit })
   }
 
@@ -41,7 +35,9 @@ abstract class Delegate {
    *
    * @param {Packet} packet Parsed packet object
    */
-  public abstract handle (packet: Packets.Packet): void
+  public handle (packet: Packets.Packet): void {
+    // ...
+  }
 
   /**
    * Attempts to fetch region by region handle.

@@ -63,16 +63,16 @@ class Agent extends Entity {
     }))
   }
 
-  public whisper (...args): void {
-    this.client.nearby.whisper(...args)
+  public whisper (message: string, channel = 0): void {
+    this.client.nearby.whisper(message, channel)
   }
 
-  public say (...args): void {
-    this.client.nearby.say(...args)
+  public say (message: string, channel = 0): void {
+    this.client.nearby.say(message, channel)
   }
 
-  public shout (...args): void {
-    this.client.nearby.shout(...args)
+  public shout (message: string, channel = 0): void {
+    this.client.nearby.shout(message, channel)
   }
 }
 

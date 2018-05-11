@@ -4,7 +4,7 @@ import { Agent, Entities, Region } from '../structures'
 import { Collection, Constants } from '../utilities'
 import { LogoutRequest } from './packets'
 
-import Circuit from './Circuit'
+import Circuit, { ICircuitOptions } from './Circuit'
 import Socket from './Socket'
 
 /**
@@ -76,8 +76,14 @@ class Core {
    * @param {...Packet} packets Packet to send
    * @returns {Promise}
    */
-  public send (circuit, ...packets): Promise<void> {
-    return this.socket.send(circuit, ...packets)
+  public send (circuit, ...packets): Promise<void[]> {
+    let promises: Promise<void>[] = []
+
+    for (const packet of packets) {
+      promises.push(this.socket.send(circuit, packet))
+    }
+
+    return Promise.all(promises)
   }
 
   /**
@@ -86,8 +92,8 @@ class Core {
    * @param {string} session Session ID
    * @returns {Promise}
    */
-  public handshake (session, ...args): void {
-    const circuit = new Circuit(this, ...args)
+  public handshake (session, data: ICircuitOptions): void {
+    const circuit = new Circuit(this, data)
 
     this.status = Constants.Status.CONNECTING
     this.circuits.set(`${circuit.address}:${circuit.port}`, circuit)

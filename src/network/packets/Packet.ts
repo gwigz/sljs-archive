@@ -1,6 +1,6 @@
 import { Collection } from '../../utilities'
 
-abstract class Packet {
+class Packet {
   public static id: number
   public static frequency: number
   public static trusted: boolean
@@ -18,7 +18,7 @@ abstract class Packet {
    */
   constructor (data = {}) {
     if (this.constructor === Packet) {
-      throw new Error('Do not instantiate from the abstract packet class!')
+      throw new Error('Do not instantiate from the packet class, use extended classes!')
     }
 
     this.data = data

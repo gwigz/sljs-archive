@@ -13,7 +13,7 @@ class Collection<K, V> extends Map<K, V> {
    * @returns {Array} forEach result
    */
   public forEach (...args): Array<any> {
-    return this.toArray().forEach(...args)
+    return this.toArray().forEach.apply(this, args)
   }
 
   /**
@@ -22,7 +22,7 @@ class Collection<K, V> extends Map<K, V> {
    * @returns {Array} Array of filtered values
    */
   public filter (...args): Array<any> {
-    return this.toArray().filter(...args)
+    return this.toArray().filter.apply(this, args)
   }
 
   /**
@@ -31,7 +31,7 @@ class Collection<K, V> extends Map<K, V> {
    * @returns {*} Value that was found
    */
   public find (...args): any {
-    return this.toArray().find(...args)
+    return this.toArray().find.apply(this, args)
   }
 
   /**
@@ -40,7 +40,7 @@ class Collection<K, V> extends Map<K, V> {
    * @returns {Array} Array of mapped values
    */
   public map (...args): Array<any> {
-    return this.toArray().map(...args)
+    return this.toArray().map.apply(this, args)
   }
 
   /**
@@ -49,7 +49,7 @@ class Collection<K, V> extends Map<K, V> {
    * @returns {Array} Array of reduced values
    */
   public reduce (...args): Array<any> {
-    return this.toArray().reduce(...args)
+    return this.toArray().reduce.apply(this, args)
   }
 
   /**
