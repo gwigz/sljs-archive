@@ -1,6 +1,6 @@
 {
   "name": "sljs",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A framework for connecting to Linden Lab's virtual world \"Second Life\"",
   "main": "./dist/index.js",
   "files": [
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/gwigz/sljs#readme",
   "engines": {
-    "node": ">=9.5.0"
+    "node": ">=10.0.8"
   },
   "dependencies": {
     "eventemitter3": "^3.0.1",
@@ -47,8 +47,8 @@
     "xmlrpc": "^1.3.2"
   },
   "devDependencies": {
-    "@types/long": "^3.0.32",
-    "@types/node": "^9.4.6",
+    "@types/long": "^4.0.0",
+    "@types/node": "^10.0.8",
     "@types/xmlrpc": "^1.3.5",
     "tslint": "^5.9.1",
     "tslint-eslint-rules": "^5.0.0",
