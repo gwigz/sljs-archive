@@ -5,8 +5,6 @@
   <br>
   <a href="https://david-dm.org" title="Dependency Monitor"><img src="https://david-dm.org/gwigz/sljs.svg" alt="Dependency Monitor"></a>
   <a href="https://travis-ci.org/gwigz/sljs" title="Travis CI Build Status"><img src="https://api.travis-ci.org/gwigz/sljs.svg?branch=master" alt="Travis CI Build Status"></a>
-  <a href="https://www.codacy.com/app/gwigz/sljs" title="Codecy Project Certification"><img src="https://api.codacy.com/project/badge/Grade/ea826f0f261e4e8db5a495f3b0b43133" alt="Codecy Project Certification"></a>
-  <a href="https://github.com/ruddfawcett/reposs" alt="Repository Size"><img src="https://reposs.herokuapp.com/?path=gwigz/sljs" alt="Repository Size"></a>
 </div>
 <h1>
   <!-- sljs -->
