@@ -1,4 +1,4 @@
-import * as Long from 'long'
+import Long from 'long'
 
 class U64 {
   public static readonly size: number = 8

@@ -1,4 +1,4 @@
-import * as xmlrpc from 'xmlrpc'
+import xmlrpc from 'xmlrpc'
 
 declare module 'xmlrpc' {
   // tslint:disable-next-line:interface-name

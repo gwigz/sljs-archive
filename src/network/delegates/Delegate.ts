@@ -1,4 +1,4 @@
-import * as Long from 'long'
+import Long from 'long'
 
 import { Circuit, Core, Packets } from '..'
 import { Client } from '../..'

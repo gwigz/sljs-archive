@@ -1,6 +1,6 @@
-import * as Crypto from 'crypto'
-import * as OS from 'os'
-import * as XMLRPC from 'xmlrpc'
+import Crypto from 'crypto'
+import OS from 'os'
+import XMLRPC from 'xmlrpc'
 
 import { Constants } from '../utilities'
 

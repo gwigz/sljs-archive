@@ -1,4 +1,4 @@
-import * as EM3 from 'eventemitter3'
+import EM3 from 'eventemitter3'
 
 class EventEmitter extends EM3.EventEmitter {
   public one(event: string|symbol, fn: (...args: Array<any>) => void, context?: any): this {
