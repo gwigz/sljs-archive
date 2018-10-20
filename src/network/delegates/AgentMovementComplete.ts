@@ -45,7 +45,7 @@ class AgentMovementComplete extends Delegate {
     const texture = throttle * 0.31
     const asset = throttle * 0.14
 
-    const throttles = new Buffer(7 * 4)
+    const throttles = Buffer.allocUnsafe(7 * 4)
 
     // May decide to just pass an array of values, keep buffer stuff out of
     // these sorts of classes. Depends on how Variable1 and Variable2 types

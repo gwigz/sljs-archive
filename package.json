@@ -1,6 +1,6 @@
 {
   "name": "sljs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A framework for connecting to Linden Lab's virtual world \"Second Life\"",
   "main": "./dist/index.js",
   "files": [

@@ -1,4 +1,4 @@
-import * as dgram from 'dgram'
+import dgram from 'dgram'
 
 import { Constants } from '../utilities'
 

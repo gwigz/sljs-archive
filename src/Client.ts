@@ -46,7 +46,7 @@ class Client extends EventEmitter {
      *
      * @type {Collection}
      */
-    this.regions = new Collection
+    this.regions = new Collection()
 
     /**
      * The nearby helper, becomes fully functional after ready event is emitted.
@@ -91,7 +91,17 @@ class Client extends EventEmitter {
     return null // this.agent.parcel
   }
 
-  public async connect(username: string, password: string): Promise<void> {
+  /**
+   * @param {string} username
+   * @param {string} password
+   * @param {string} start Alternatively use "uri:Region Name&x&y&z"
+   * @returns {?Promise} Complete upon handshake sent, use ready event instead
+   */
+  public async connect(
+    username: string,
+    password: string,
+    start: 'first' | 'last' | string = 'last'
+  ): Promise<void> {
     if (this.status < Constants.Status.IDLE) {
       throw new Error(Constants.Errors.ALREADY_CONNECTED)
     }
@@ -104,29 +114,31 @@ class Client extends EventEmitter {
       throw new Error(Constants.Errors.INVALID_LOGIN)
     }
 
-    this.emit(Constants.Events.DEBUG, `Attempting login using username "${username}"...`)
+    this.emit(
+      Constants.Events.DEBUG,
+      `Attempting login using username "${username}"...`
+    )
 
-    const response = await this.authenticator.login(username, password)
+    const response = await this.authenticator.login(username, password, start)
 
-    if (typeof response === 'object'
-      && 'circuit_code' in response
-      && 'agent_id' in response
-      && 'session_id' in response
-      && 'sim_ip' in response
-      && 'sim_port' in response
+    if (
+      typeof response === 'object' &&
+      'circuit_code' in response &&
+      'agent_id' in response &&
+      'session_id' in response &&
+      'sim_ip' in response &&
+      'sim_port' in response
     ) {
       this.agent = new Agent(this, {
         id: response.agent_id,
         session: response.session_id
       })
 
-      await this.core.handshake({
+      return this.core.handshake({
         id: response.circuit_code,
         address: response.sim_ip,
         port: response.sim_port
       })
-
-      return
     }
 
     throw new Error(response.message || Constants.Errors.LOGIN_FAILED)
