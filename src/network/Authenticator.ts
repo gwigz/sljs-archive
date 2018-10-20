@@ -17,7 +17,9 @@ class Authenticator {
     this.agent = `${channel} ${version}`
 
     // TODO: Figure out better method of doing this, for callers file?
-    this.digest = Crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
+    this.digest = Crypto.createHash('md5')
+      .update(JSON.stringify(require('../../package.json')))
+      .digest('hex')
   }
 
   public login(
