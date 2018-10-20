@@ -7,6 +7,7 @@ docs
 # Unfinished tests
 tests
 bin
+bot.ts
 
 # Logs
 logs
@@ -21,8 +22,12 @@ pids
 # Dependency directories
 node_modules
 
-# NPM cache directory
+# NPM stuff
 .npm
+package-lock.json
 
 # REPL history
 .node_repl_history
+
+# macOS related
+.DS_Store
