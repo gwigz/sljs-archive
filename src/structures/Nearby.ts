@@ -24,15 +24,15 @@ class Nearby extends EventEmitter {
     return this.client.region.agents
   }
 
-  public whisper(message: string, channel = 0): void {
+  public whisper(message: string, channel = 0): Promise<Array<void>> {
     return this.message(message, channel, Constants.ChatTypes.WHISPER)
   }
 
-  public say(message: string, channel = 0): void {
+  public say(message: string, channel = 0): Promise<Array<void>> {
     return this.message(message, channel, Constants.ChatTypes.NORMAL)
   }
 
-  public shout(message: string, channel = 0): void {
+  public shout(message: string, channel = 0): Promise<Array<void>> {
     return this.message(message, channel, Constants.ChatTypes.SHOUT)
   }
 
@@ -40,7 +40,7 @@ class Nearby extends EventEmitter {
     message: string,
     channel = 0,
     type = Constants.ChatTypes.NORMAL
-  ): void {
+  ): Promise<Array<void>> {
     return this.client.send(
       new ChatFromViewer({
         chatData: {
@@ -52,12 +52,12 @@ class Nearby extends EventEmitter {
     )
   }
 
-  // TODO: Create message structure class instead.
+  // TODO: create message interface/class instead of "any" here
   public listen(callable: (chatter: any, message: string) => void): void {
     this.on('message', callable)
   }
 
-  // TODO: Ceate message structure class instead.
+  // TODO: ceate message interface/class instead of "any" here
   public watch(callable: (chatter: any, message: string) => void): void {
     this.on('agent', callable)
   }

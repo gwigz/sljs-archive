@@ -31,9 +31,9 @@ class Entity {
   public rotation: Array<number>
   public scale: Array<number>
   public text?: { value: string; color: Array<number> }
-  public material: number // Constants.ObjectMaterials
-  public tree?: number // Constants.ObjectTrees
-  public action: number // Constants.ObjectActions
+  public material: number // TODO: enums based on Constants.ObjectMaterials
+  public tree?: number // TODO: enums based on Constants.ObjectTrees
+  public action: number // TODO: enums based on Constants.ObjectActions
   public children: Array<number>
 
   public readonly client: Client

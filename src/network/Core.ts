@@ -22,7 +22,7 @@ class Core {
   /**
    * @param {Client} client For emiting processed messages back to
    */
-  constructor(client) {
+  constructor(client: Client) {
     /**
      * Client instance that instantiated this Core.
      *
@@ -73,17 +73,13 @@ class Core {
    * Sends message to Circuit over UDP socket.
    *
    * @param {Circuit} circuit Circuit to send packets too
-   * @param {...Packet} packets Packet to send
+   * @param {...Buffer} packets Packet to send
    * @returns {Promise}
    */
-  public send(circuit, ...packets): Promise<Array<void>> {
-    const promises: Array<Promise<void>> = []
-
-    for (const packet of packets) {
-      promises.push(this.socket.send(circuit, packet))
-    }
-
-    return Promise.all(promises)
+  public send(circuit: Circuit, ...packets: Array<Buffer>): Promise<Array<void>> {
+    return Promise.all(packets.map((packet) =>
+      this.socket.send(circuit, packet)
+    ))
   }
 
   /**
@@ -91,7 +87,7 @@ class Core {
    *
    * @param {data} ICircuitOptions
    */
-  public handshake(data: ICircuitOptions): void {
+  public handshake(data: ICircuitOptions): Promise<Array<void>> {
     const circuit = new Circuit(this, data)
 
     this.status = Constants.Status.CONNECTING

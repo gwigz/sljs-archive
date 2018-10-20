@@ -101,7 +101,7 @@ class Client extends EventEmitter {
     username: string,
     password: string,
     start: 'first' | 'last' | string = 'last'
-  ): Promise<void> {
+  ): Promise<Array<void>> {
     if (this.status < Constants.Status.IDLE) {
       throw new Error(Constants.Errors.ALREADY_CONNECTED)
     }
@@ -148,9 +148,9 @@ class Client extends EventEmitter {
    * Sends Packet (or multiple) to currently active Circuit.
    *
    * @param {..Packet} packets Packets to send
-   * @returns {?Promise}
+   * @returns {Promise}
    */
-  public send(...packets: Array<Packet>): void {
+  public send(...packets: Array<Packet>): Promise<Array<void>> {
     if (this.core.circuit === undefined) {
       throw new Error(Constants.Errors.NOT_CONNECTED)
     }

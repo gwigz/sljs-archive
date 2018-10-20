@@ -20,7 +20,7 @@ class RegionHandshake extends Delegate {
     // { ProductSKU Variable1 } // string
     // { ProductName Variable1 } // string
 
-    // TODO: Add toggle for this, if we don't want objects dont send this.
+    // TODO: add toggle for this, if we don't want objects dont send this
     this.circuit.send(
       new RegionHandshakeReply({
         regionInfo: {

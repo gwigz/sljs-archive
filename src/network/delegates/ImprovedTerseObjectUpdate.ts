@@ -25,7 +25,7 @@ class ImprovedTerseObjectUpdate extends Delegate {
       const entity = region.objects.get(id)
 
       if (!entity) {
-        // TODO: We would want to log this, as a info/warning.
+        // TODO: we would want to log this, as a info/warning.
         continue
       }
 

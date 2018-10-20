@@ -107,7 +107,7 @@ class ObjectUpdateCompressed extends Delegate {
         continue
       }
 
-      // TODO: This is shit, and unfinished.
+      // TODO: this is shit, and unfinished
       switch (key) {
         case 'velocity.angular':
         case 'data':

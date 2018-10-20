@@ -8,7 +8,7 @@ import * as Delegates from './delegates'
 import { Agent } from '../structures'
 import { Constants } from '../utilities'
 
-import { CompleteAgentMovement, UseCircuitCode } from './packets'
+import { CompleteAgentMovement, Packet, UseCircuitCode } from './packets'
 
 interface ICircuitOptions {
   id: number,
@@ -61,19 +61,14 @@ class Circuit {
     return this.core.agent.session
   }
 
-  public send(...args): void {
+  public send(...packets: Array<Packet>): Promise<Array<void>> {
     if (this.dead) {
       throw new Error(Constants.Errors.INACTIVE_CIRCUIT)
     }
 
-    for (const packet of [...args]) {
-      try {
-        this.core.send(this, this.serializer.convert(packet))
-        this.core.client.emit('sending', packet.constructor.name)
-      } catch (error) {
-        this.core.client.emit(Constants.Events.ERROR, error)
-      }
-    }
+    return this.core.send(this, ...packets.map((packet) =>
+      this.serializer.convert(packet)
+    ))
   }
 
   public receive(buffer): void {
@@ -85,25 +80,21 @@ class Circuit {
       this.acknowledger.queue(buffer.sequence)
     }
 
-    const Packet = this.deserializer.lookup(buffer)
+    const packet = this.deserializer.lookup(buffer)
 
-    if (!Packet) {
+    if (!packet) {
       return
     }
 
-    this.core.client.emit('received', Packet.name)
-
-    if (Packet.name in this.delegates
-      && this.delegates[Packet.name].waiting
+    if (packet.name in this.delegates
+      && this.delegates[packet.name].waiting
     ) {
-      // TODO: Make this async?
-      this.delegates[Packet.name]
-        .handle(this.deserializer.convert(Packet, buffer))
-        // .catch(console.error)
+      // TODO: check async
+      this.delegates[packet.name].handle(this.deserializer.convert(packet, buffer))
     }
   }
 
-  public handshake(): void {
+  public handshake(): Promise<Array<void>> {
     if (!this.dead) {
       throw new Error(Constants.Errors.HANDSHAKE_ACTIVE_CIRCUIT)
     }

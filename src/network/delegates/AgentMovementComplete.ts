@@ -18,7 +18,7 @@ class AgentMovementComplete extends Delegate {
     agent.position = data.position
     agent.rotation = data.lookAt
 
-    // TODO: Setup an actual objects for region handle (so we can have sugar for
+    // TODO: setup an actual objects for region handle (so we can have sugar for
     // global to local transformations).
     agent.offset = [
       data.regionHandle.shiftRight(32).toNumber(),
@@ -104,7 +104,7 @@ class AgentMovementComplete extends Delegate {
       })
     )
 
-    // TODO: Add toggle to enable/disable these packets, as they allow object
+    // TODO: add toggle to enable/disable these packets, as they allow object
     // data to start being recieved, which we may or may not want.
     this.circuit.send(
       new Packets.AgentUpdate({
