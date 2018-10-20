@@ -98,7 +98,7 @@ class ObjectAdd extends Packet {
    * @param {Quaternion} [data.objectData.rotation] Rotation
    * @param {U8} [data.objectData.state] State
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

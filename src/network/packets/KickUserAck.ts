@@ -66,7 +66,7 @@ class KickUserAck extends Packet {
    * @param {string} [data.userInfo.session] SessionID
    * @param {U32} [data.userInfo.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

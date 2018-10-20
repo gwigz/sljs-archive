@@ -72,7 +72,7 @@ class GroupAccountTransactionsRequest extends Packet {
    * @param {S32} [data.moneyData.intervalDays] IntervalDays
    * @param {S32} [data.moneyData.currentInterval] CurrentInterval
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

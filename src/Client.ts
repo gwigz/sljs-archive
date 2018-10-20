@@ -16,7 +16,7 @@ class Client extends EventEmitter {
   private core: Core
   private authenticator: Authenticator
 
-  constructor () {
+  constructor() {
     super()
 
     /**
@@ -65,7 +65,7 @@ class Client extends EventEmitter {
     // https://gist.github.com/gwigz/0c13179591a3d005eb4765a3bfe9fc3d
   }
 
-  get status (): number {
+  get status(): number {
     return this.core.status
   }
 
@@ -77,7 +77,7 @@ class Client extends EventEmitter {
    *
    * @returns {Region|null}
    */
-  get region (): Region {
+  get region(): Region {
     return null // this.agent.region
   }
 
@@ -87,11 +87,11 @@ class Client extends EventEmitter {
    *
    * @returns {?Parcel}
    */
-  get parcel (): Parcel {
+  get parcel(): Parcel {
     return null // this.agent.parcel
   }
 
-  public async connect (username: string, password: string): Promise<void> {
+  public async connect(username: string, password: string): Promise<void> {
     if (this.status < Constants.Status.IDLE) {
       throw new Error(Constants.Errors.ALREADY_CONNECTED)
     }
@@ -138,7 +138,7 @@ class Client extends EventEmitter {
    * @param {..Packet} packets Packets to send
    * @returns {?Promise}
    */
-  public send (...packets: Array<Packet>): void {
+  public send(...packets: Array<Packet>): void {
     if (this.core.circuit === undefined) {
       throw new Error(Constants.Errors.NOT_CONNECTED)
     }
@@ -153,7 +153,7 @@ class Client extends EventEmitter {
    * @param {string} message Message to send to agent
    * @returns {?Promise}
    */
-  public message (agent: Agent, message: string): void {
+  public message(agent: Agent, message: string): void {
     if (!(agent instanceof Agent)) {
       throw new Error(Constants.Errors.INVALID_PARAMETER_TYPE)
     }
@@ -161,7 +161,7 @@ class Client extends EventEmitter {
     return agent.message(message)
   }
 
-  public async disconnect (): Promise<void> {
+  public async disconnect(): Promise<void> {
     await this.core.disconnect()
 
     // May want to emit some statistics here, later.

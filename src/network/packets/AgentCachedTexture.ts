@@ -71,7 +71,7 @@ class AgentCachedTexture extends Packet {
    * @param {string} [data.wearableData.id] ID
    * @param {U8} [data.wearableData.textureIndex] TextureIndex
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

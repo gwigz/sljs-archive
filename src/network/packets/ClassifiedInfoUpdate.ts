@@ -78,7 +78,7 @@ class ClassifiedInfoUpdate extends Packet {
    * @param {U8} [data.data.classifiedFlags] ClassifiedFlags
    * @param {S32} [data.data.priceForListing] PriceForListing
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

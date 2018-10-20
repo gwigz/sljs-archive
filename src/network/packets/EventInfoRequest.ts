@@ -69,7 +69,7 @@ class EventInfoRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.eventData.event] EventID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

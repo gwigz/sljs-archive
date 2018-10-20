@@ -71,7 +71,7 @@ class ScriptAnswerYes extends Packet {
    * @param {string} [data.data.item] ItemID
    * @param {S32} [data.data.questions] Questions
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

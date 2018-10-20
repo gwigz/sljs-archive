@@ -76,7 +76,7 @@ class GroupAccountDetailsReply extends Packet {
    * @param {Variable1} [data.historyData.description] Description
    * @param {S32} [data.historyData.amount] Amount
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

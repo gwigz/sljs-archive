@@ -69,7 +69,7 @@ class ParcelInfoRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.data.parcel] ParcelID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

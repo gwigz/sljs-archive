@@ -74,7 +74,7 @@ class ChatPass extends Packet {
    * @param {U8} [data.chatData.simAccess] SimAccess
    * @param {Variable2} [data.chatData.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

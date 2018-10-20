@@ -78,7 +78,7 @@ class ObjectDuplicateOnRay extends Packet {
    * @param {U32} [data.agentData.duplicateFlags] DuplicateFlags
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

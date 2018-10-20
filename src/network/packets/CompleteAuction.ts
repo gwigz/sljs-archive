@@ -65,7 +65,7 @@ class CompleteAuction extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {string} [data.parcelData.parcel] ParcelID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

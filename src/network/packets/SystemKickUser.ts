@@ -65,7 +65,7 @@ class SystemKickUser extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {string} [data.agentInfo.agent] AgentID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

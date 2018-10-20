@@ -69,7 +69,7 @@ class GroupNoticesListRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.data.group] GroupID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

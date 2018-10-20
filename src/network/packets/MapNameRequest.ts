@@ -72,7 +72,7 @@ class MapNameRequest extends Packet {
    * @param {boolean} [data.agentData.godlike] Godlike
    * @param {Variable1} [data.nameData.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

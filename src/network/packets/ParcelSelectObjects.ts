@@ -73,7 +73,7 @@ class ParcelSelectObjects extends Packet {
    * @param {U32} [data.parcelData.returnType] ReturnType
    * @param {string} [data.returnIDs.return] ReturnID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

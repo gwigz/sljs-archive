@@ -49,7 +49,7 @@ class EconomyDataRequest extends Packet {
    *
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -67,7 +67,7 @@ class UUIDNameReply extends Packet {
    * @param {Variable1} [data.uUIDNameBlock.firstName] FirstName
    * @param {Variable1} [data.uUIDNameBlock.lastName] LastName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

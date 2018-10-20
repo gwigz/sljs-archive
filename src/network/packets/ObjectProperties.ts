@@ -91,7 +91,7 @@ class ObjectProperties extends Packet {
    * @param {Variable1} [data.objectData.sitName] SitName
    * @param {Variable1} [data.objectData.texture] TextureID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

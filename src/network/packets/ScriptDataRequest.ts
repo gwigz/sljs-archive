@@ -67,7 +67,7 @@ class ScriptDataRequest extends Packet {
    * @param {S8} [data.dataBlock.requestType] RequestType
    * @param {Variable2} [data.dataBlock.request] Request
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -13,15 +13,15 @@ import * as Types from './types'
  * @link http://wiki.secondlife.com/wiki/Pyogp/Client_Lib/Packet
  */
 class Deserializer {
-  public read (buffer): PacketBuffer {
+  public read(buffer): PacketBuffer {
     return new PacketBuffer(buffer)
   }
 
-  public lookup (buffer: PacketBuffer): typeof Packet|null {
+  public lookup(buffer: PacketBuffer): typeof Packet | null {
     return PacketLookup.find(buffer.id)
   }
 
-  public convert (PacketConstructor: typeof Packet, buffer: PacketBuffer): Packet {
+  public convert(PacketConstructor: typeof Packet, buffer: PacketBuffer): Packet {
     const packet: Packet = new PacketConstructor
 
     packet.index = buffer.sequence

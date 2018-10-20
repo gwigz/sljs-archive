@@ -70,7 +70,7 @@ class UpdateUserInfo extends Packet {
    * @param {boolean} [data.userData.imViaEMail] IMViaEMail
    * @param {Variable1} [data.userData.directoryVisibility] DirectoryVisibility
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

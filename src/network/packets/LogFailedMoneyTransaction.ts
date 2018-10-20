@@ -75,7 +75,7 @@ class LogFailedMoneyTransaction extends Packet {
    * @param {U32} [data.transactionData.gridY] GridY
    * @param {U8} [data.transactionData.failureType] FailureType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

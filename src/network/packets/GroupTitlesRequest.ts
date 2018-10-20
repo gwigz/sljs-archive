@@ -68,7 +68,7 @@ class GroupTitlesRequest extends Packet {
    * @param {string} [data.agentData.group] GroupID
    * @param {string} [data.agentData.request] RequestID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

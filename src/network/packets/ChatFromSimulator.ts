@@ -72,7 +72,7 @@ class ChatFromSimulator extends Packet {
    * @param {Vector3} [data.chatData.position] Position
    * @param {Variable2} [data.chatData.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

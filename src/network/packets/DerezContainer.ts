@@ -66,7 +66,7 @@ class DerezContainer extends Packet {
    * @param {string} [data.data.object] ObjectID
    * @param {boolean} [data.data.delete] Delete
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

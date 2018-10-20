@@ -72,7 +72,7 @@ class GroupActiveProposalsRequest extends Packet {
    * @param {string} [data.groupData.group] GroupID
    * @param {string} [data.transactionData.transaction] TransactionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

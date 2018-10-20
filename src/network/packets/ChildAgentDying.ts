@@ -66,7 +66,7 @@ class ChildAgentDying extends Packet {
    * @param {string} [data.agentData.agent] AgentID
    * @param {string} [data.agentData.session] SessionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

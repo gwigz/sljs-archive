@@ -73,7 +73,7 @@ class ObjectBuy extends Packet {
    * @param {U8} [data.objectData.saleType] SaleType
    * @param {S32} [data.objectData.salePrice] SalePrice
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

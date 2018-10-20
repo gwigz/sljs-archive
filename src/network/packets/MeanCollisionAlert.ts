@@ -69,7 +69,7 @@ class MeanCollisionAlert extends Packet {
    * @param {F32} [data.meanCollision.mag] Mag
    * @param {U8} [data.meanCollision.type] Type
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

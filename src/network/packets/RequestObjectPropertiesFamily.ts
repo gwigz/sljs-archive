@@ -70,7 +70,7 @@ class RequestObjectPropertiesFamily extends Packet {
    * @param {U32} [data.objectData.requestFlags] RequestFlags
    * @param {string} [data.objectData.object] ObjectID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

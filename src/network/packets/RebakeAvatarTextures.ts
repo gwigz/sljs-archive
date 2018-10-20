@@ -65,7 +65,7 @@ class RebakeAvatarTextures extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {string} [data.textureData.texture] TextureID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

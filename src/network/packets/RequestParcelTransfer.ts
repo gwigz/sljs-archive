@@ -80,7 +80,7 @@ class RequestParcelTransfer extends Packet {
    * @param {U32} [data.regionData.gridX] GridX
    * @param {U32} [data.regionData.gridY] GridY
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

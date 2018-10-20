@@ -68,7 +68,7 @@ class EventLocationRequest extends Packet {
    * @param {string} [data.queryData.query] QueryID
    * @param {U32} [data.eventData.event] EventID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

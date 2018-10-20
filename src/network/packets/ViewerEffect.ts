@@ -74,7 +74,7 @@ class ViewerEffect extends Packet {
    * @param {Fixed4} [data.effect.color] Color
    * @param {Variable1} [data.effect.typeData] TypeData
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -65,7 +65,7 @@ class PacketAck extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U32} [data.packets.id] ID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

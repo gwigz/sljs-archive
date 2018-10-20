@@ -6,7 +6,7 @@ import * as Types from '../types'
 import Delegate from './Delegate'
 
 class ImprovedTerseObjectUpdate extends Delegate {
-  public handle (packet): void {
+  public handle(packet): void {
     const handle = packet.data.regionData[0].regionHandle
     const region = this.region(handle)
 

@@ -72,7 +72,7 @@ class LandStatRequest extends Packet {
    * @param {Variable1} [data.requestData.filter] Filter
    * @param {S32} [data.requestData.parcelLocal] ParcelLocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

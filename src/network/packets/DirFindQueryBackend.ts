@@ -73,7 +73,7 @@ class DirFindQueryBackend extends Packet {
    * @param {U32} [data.queryData.estate] EstateID
    * @param {boolean} [data.queryData.godlike] Godlike
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

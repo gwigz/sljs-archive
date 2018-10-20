@@ -67,7 +67,7 @@ class AddCircuitCode extends Packet {
    * @param {string} [data.circuitCode.session] SessionID
    * @param {string} [data.circuitCode.agent] AgentID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

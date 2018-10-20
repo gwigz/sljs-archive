@@ -66,7 +66,7 @@ class ScriptDataReply extends Packet {
    * @param {U64} [data.dataBlock.hash] Hash
    * @param {Variable2} [data.dataBlock.reply] Reply
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -67,7 +67,7 @@ class FeatureDisabled extends Packet {
    * @param {string} [data.failureInfo.agent] AgentID
    * @param {string} [data.failureInfo.transaction] TransactionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -67,7 +67,7 @@ class AvatarPropertiesRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.agentData.avatar] AvatarID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

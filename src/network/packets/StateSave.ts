@@ -69,7 +69,7 @@ class StateSave extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {Variable1} [data.dataBlock.filename] Filename
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

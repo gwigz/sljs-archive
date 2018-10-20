@@ -69,7 +69,7 @@ class ScriptQuestion extends Packet {
    * @param {Variable1} [data.data.objectOwner] ObjectOwner
    * @param {S32} [data.data.questions] Questions
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

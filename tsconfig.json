@@ -1,16 +1,16 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2017",
-		"outDir": "dist",
-		"rootDir": "src",
-		"declaration": false,
-		"noImplicitAny": false,
-		"sourceMap": true,
-		"allowJs": true
-	},
-	"exclude": [
-		"node_modules",
-		"dist"
-	]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "outDir": "dist",
+    "rootDir": "src",
+    "declaration": false,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

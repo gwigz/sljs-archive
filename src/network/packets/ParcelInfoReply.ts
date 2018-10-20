@@ -82,7 +82,7 @@ class ParcelInfoReply extends Packet {
    * @param {S32} [data.data.salePrice] SalePrice
    * @param {S32} [data.data.auction] AuctionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

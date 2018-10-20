@@ -88,7 +88,7 @@ class GroupAccountSummaryReply extends Packet {
    * @param {Variable1} [data.moneyData.lastTaxDate] LastTaxDate
    * @param {Variable1} [data.moneyData.taxDate] TaxDate
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

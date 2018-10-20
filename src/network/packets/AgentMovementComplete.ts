@@ -75,7 +75,7 @@ class AgentMovementComplete extends Packet {
    * @param {U32} [data.data.timestamp] Timestamp
    * @param {Variable2} [data.simData.channelVersion] ChannelVersion
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

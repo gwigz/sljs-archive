@@ -83,7 +83,7 @@ class GroupProfileReply extends Packet {
    * @param {boolean} [data.groupData.maturePublish] MaturePublish
    * @param {string} [data.groupData.ownerRole] OwnerRole
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

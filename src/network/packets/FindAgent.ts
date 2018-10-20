@@ -71,7 +71,7 @@ class FindAgent extends Packet {
    * @param {F64} [data.locationBlock.globalX] GlobalX
    * @param {F64} [data.locationBlock.globalY] GlobalY
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

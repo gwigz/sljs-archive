@@ -71,7 +71,7 @@ class NeighborList extends Packet {
    * @param {Variable1} [data.neighborBlock.name] Name
    * @param {U8} [data.neighborBlock.simAccess] SimAccess
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

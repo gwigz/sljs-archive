@@ -72,7 +72,7 @@ class AgentWearablesUpdate extends Packet {
    * @param {string} [data.wearableData.asset] AssetID
    * @param {U8} [data.wearableData.wearableType] WearableType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

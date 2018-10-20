@@ -76,7 +76,7 @@ class ScriptSensorReply extends Packet {
    * @param {S32} [data.sensedData.type] Type
    * @param {F32} [data.sensedData.range] Range
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

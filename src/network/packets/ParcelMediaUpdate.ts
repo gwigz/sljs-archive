@@ -74,7 +74,7 @@ class ParcelMediaUpdate extends Packet {
    * @param {S32} [data.dataBlockExtended.mediaHeight] MediaHeight
    * @param {U8} [data.dataBlockExtended.mediaLoop] MediaLoop
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

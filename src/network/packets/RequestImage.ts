@@ -73,7 +73,7 @@ class RequestImage extends Packet {
    * @param {U32} [data.requestImage.packet] Packet
    * @param {U8} [data.requestImage.type] Type
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -10,7 +10,7 @@ class Variable1 extends Variable {
    * @param {string|Buffer} Maximum length of 255 bytes, may truncate
    * @returns {Buffer}
    */
-  public static toBuffer (string: string): Buffer {
+  public static toBuffer(string: string): Buffer {
     return this.toPrefixedBuffer(this.prefix, string)
   }
 
@@ -21,7 +21,7 @@ class Variable1 extends Variable {
    * @param {number} start Position to read from
    * @returns {Buffer}
    */
-  public static fromBuffer (buffer: Buffer, start?: number): Buffer {
+  public static fromBuffer(buffer: Buffer, start?: number): Buffer {
     return super.fromPrefixedBuffer(this.prefix, buffer, start)
   }
 }

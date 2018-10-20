@@ -69,7 +69,7 @@ class AlertMessage extends Packet {
    * @param {Variable1} [data.alertInfo.message] Message
    * @param {Variable1} [data.alertInfo.extraParams] ExtraParams
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

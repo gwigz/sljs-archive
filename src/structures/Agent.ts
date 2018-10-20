@@ -7,12 +7,12 @@ import Entity from './Entity'
 class Agent extends Entity {
   public self: boolean
   public session: number
-  public firstname: string|null
-  public lastname: string|null
+  public firstname: string | null
+  public lastname: string | null
   public offset: Array<number> = Vector3.zero
   public health: number = 100
 
-  constructor (client: Client, data) {
+  constructor(client: Client, data) {
     super(client, data)
 
     this.self = 'session' in data
@@ -38,15 +38,15 @@ class Agent extends Entity {
     }
   }
 
-  get name (): string {
+  get name(): string {
     return (this.firstname + ' ' + this.lastname).trim()
   }
 
-  get distance (): number {
+  get distance(): number {
     return 0.0
   }
 
-  public message (message: string): void {
+  public message(message: string): void {
     this.client.send(new ImprovedInstantMessage({
       id: this.client.agent.session,
       dialog: 0,
@@ -63,15 +63,15 @@ class Agent extends Entity {
     }))
   }
 
-  public whisper (message: string, channel = 0): void {
+  public whisper(message: string, channel = 0): void {
     this.client.nearby.whisper(message, channel)
   }
 
-  public say (message: string, channel = 0): void {
+  public say(message: string, channel = 0): void {
     this.client.nearby.say(message, channel)
   }
 
-  public shout (message: string, channel = 0): void {
+  public shout(message: string, channel = 0): void {
     this.client.nearby.shout(message, channel)
   }
 }

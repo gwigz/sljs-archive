@@ -70,7 +70,7 @@ class RequestGodlikePowers extends Packet {
    * @param {boolean} [data.requestBlock.godlike] Godlike
    * @param {string} [data.requestBlock.token] Token
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -75,7 +75,7 @@ class AvatarAnimation extends Packet {
    * @param {string} [data.animationSourceList.object] ObjectID
    * @param {Variable1} [data.physicalAvatarEventList.typeData] TypeData
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

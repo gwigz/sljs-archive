@@ -66,7 +66,7 @@ class LiveHelpGroupRequest extends Packet {
    * @param {string} [data.requestData.request] RequestID
    * @param {string} [data.requestData.agent] AgentID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

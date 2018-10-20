@@ -67,7 +67,7 @@ class EdgeDataPacket extends Packet {
    * @param {U8} [data.edgeData.direction] Direction
    * @param {Variable2} [data.edgeData.layerData] LayerData
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -8,7 +8,7 @@ class Boolean {
    * @param {boolean|number} boolean Boolean to convert
    * @returns {Buffer}
    */
-  public static toBuffer (boolean: boolean|number): Buffer {
+  public static toBuffer(boolean: boolean|number): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeUInt8(Number(boolean), 0)
@@ -24,7 +24,7 @@ class Boolean {
    * @param {number} position Position to read from
    * @returns {boolean}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): boolean {
+  public static fromBuffer(buffer: Buffer, position: number = 0): boolean {
     return !!buffer.readUInt8(position)
   }
 }

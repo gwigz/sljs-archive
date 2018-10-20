@@ -82,7 +82,7 @@ class GroupActiveProposalItemReply extends Packet {
    * @param {S32} [data.proposalData.quorum] Quorum
    * @param {Variable1} [data.proposalData.proposalText] ProposalText
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

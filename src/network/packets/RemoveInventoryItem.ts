@@ -69,7 +69,7 @@ class RemoveInventoryItem extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.inventoryData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

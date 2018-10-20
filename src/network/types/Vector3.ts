@@ -10,7 +10,7 @@ class Vector3 {
    * @param {number[]} vector Should contain 3 values
    * @returns {Buffer}
    */
-  public static toBuffer (vector: Array<number>): Buffer {
+  public static toBuffer(vector: Array<number>): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeFloatLE(vector[0], 0)
@@ -32,7 +32,7 @@ class Vector3 {
    * @returns {number[]}
    * @todo Handle these parameters better
    */
-  public static fromBuffer (
+  public static fromBuffer(
     buffer: Buffer,
     position = 0,
     type: any = F32,
@@ -61,7 +61,7 @@ class Vector3 {
    * @param {number[]} to Position to calculate distance to
    * @returns {number}
    */
-  public static distance (from: Array<number>, to: Array<number>): number {
+  public static distance(from: Array<number>, to: Array<number>): number {
     const dx = from[0] - to[0]
     const dy = from[1] - to[1]
     const dz = from[2] - to[2]

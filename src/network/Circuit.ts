@@ -30,7 +30,7 @@ class Circuit {
   protected delegates: any
   protected dead: boolean
 
-  constructor (core: Core, data: ICircuitOptions) {
+  constructor(core: Core, data: ICircuitOptions) {
     /**
      * Core instance that instantiated this Circuit.
      *
@@ -53,15 +53,15 @@ class Circuit {
     this.register(Delegates)
   }
 
-  get agent (): Agent {
+  get agent(): Agent {
     return this.core.agent
   }
 
-  get session (): number {
+  get session(): number {
     return this.core.agent.session
   }
 
-  public send (...args): void {
+  public send(...args): void {
     if (this.dead) {
       throw new Error(Constants.Errors.INACTIVE_CIRCUIT)
     }
@@ -76,7 +76,7 @@ class Circuit {
     }
   }
 
-  public receive (buffer): void {
+  public receive(buffer): void {
     if (buffer.reliable) {
       if (this.acknowledger.seen(buffer.sequence)) {
         return
@@ -103,7 +103,7 @@ class Circuit {
     }
   }
 
-  public handshake (): void {
+  public handshake(): void {
     if (!this.dead) {
       throw new Error(Constants.Errors.HANDSHAKE_ACTIVE_CIRCUIT)
     }
@@ -120,7 +120,7 @@ class Circuit {
     )
   }
 
-  public register (delegates: any): void {
+  public register(delegates: any): void {
     for (const Delegate of Object.values(delegates) as Array<typeof Delegates.Delegate>) {
       if (Delegate !== Delegates.Delegate) {
         this.delegates[Delegate.name] = new Delegate(this)

@@ -69,7 +69,7 @@ class PickDelete extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.data.pick] PickID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

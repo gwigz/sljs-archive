@@ -66,7 +66,7 @@ class StartPingCheck extends Packet {
    * @param {U8} [data.ping.ping] PingID
    * @param {U32} [data.ping.oldestUnacked] OldestUnacked
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -69,7 +69,7 @@ class TeleportLocal extends Packet {
    * @param {Vector3} [data.info.lookAt] LookAt
    * @param {U32} [data.info.teleportFlags] TeleportFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

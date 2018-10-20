@@ -74,7 +74,7 @@ class DirClassifiedQueryBackend extends Packet {
    * @param {boolean} [data.queryData.godlike] Godlike
    * @param {S32} [data.queryData.queryStart] QueryStart
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

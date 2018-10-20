@@ -79,7 +79,7 @@ class DirClassifiedReply extends Packet {
    * @param {S32} [data.queryReplies.priceForListing] PriceForListing
    * @param {U32} [data.statusData.status] Status
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

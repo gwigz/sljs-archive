@@ -69,7 +69,7 @@ class PayPriceReply extends Packet {
    * @param {S32} [data.objectData.defaultPayPrice] DefaultPayPrice
    * @param {S32} [data.buttonData.payButton] PayButton
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

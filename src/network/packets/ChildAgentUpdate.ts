@@ -115,7 +115,7 @@ class ChildAgentUpdate extends Packet {
    * @param {U8} [data.agentAccess.agentMaxAccess] AgentMaxAccess
    * @param {U32} [data.agentInfo.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

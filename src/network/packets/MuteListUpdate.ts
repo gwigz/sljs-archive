@@ -66,7 +66,7 @@ class MuteListUpdate extends Packet {
    * @param {string} [data.muteData.agent] AgentID
    * @param {Variable1} [data.muteData.filename] Filename
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

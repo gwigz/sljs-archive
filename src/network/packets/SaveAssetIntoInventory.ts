@@ -69,7 +69,7 @@ class SaveAssetIntoInventory extends Packet {
    * @param {string} [data.inventoryData.item] ItemID
    * @param {string} [data.inventoryData.newAsset] NewAssetID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

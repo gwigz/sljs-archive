@@ -68,7 +68,7 @@ class InternalScriptMail extends Packet {
    * @param {Variable1} [data.dataBlock.subject] Subject
    * @param {Variable2} [data.dataBlock.body] Body
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

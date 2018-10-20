@@ -68,7 +68,7 @@ class DataServerLogout extends Packet {
    * @param {boolean} [data.userData.disconnect] Disconnect
    * @param {string} [data.userData.session] SessionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

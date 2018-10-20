@@ -69,7 +69,7 @@ class TrackAgent extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.targetData.prey] PreyID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

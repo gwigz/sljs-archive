@@ -77,7 +77,7 @@ class ParcelClaim extends Packet {
    * @param {F32} [data.parcelData.east] East
    * @param {F32} [data.parcelData.north] North
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

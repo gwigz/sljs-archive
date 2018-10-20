@@ -71,7 +71,7 @@ class EjectGroupMemberReply extends Packet {
    * @param {string} [data.groupData.group] GroupID
    * @param {boolean} [data.ejectData.success] Success
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

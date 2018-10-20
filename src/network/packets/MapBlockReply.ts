@@ -76,7 +76,7 @@ class MapBlockReply extends Packet {
    * @param {U8} [data.data.agents] Agents
    * @param {string} [data.data.mapImage] MapImageID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

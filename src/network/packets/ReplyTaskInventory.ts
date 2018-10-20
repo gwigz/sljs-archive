@@ -67,7 +67,7 @@ class ReplyTaskInventory extends Packet {
    * @param {S16} [data.inventoryData.serial] Serial
    * @param {Variable1} [data.inventoryData.filename] Filename
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

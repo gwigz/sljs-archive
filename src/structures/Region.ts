@@ -17,7 +17,7 @@ class Region {
 
   public readonly client: Client
 
-  constructor (client: Client, data: IRegionOptions) {
+  constructor(client: Client, data: IRegionOptions) {
     /**
      * The Client that instantiated this Region.
      *

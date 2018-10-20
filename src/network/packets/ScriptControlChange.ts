@@ -67,7 +67,7 @@ class ScriptControlChange extends Packet {
    * @param {U32} [data.data.controls] Controls
    * @param {boolean} [data.data.passToAgent] PassToAgent
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

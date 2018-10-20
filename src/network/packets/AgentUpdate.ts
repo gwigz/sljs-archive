@@ -76,7 +76,7 @@ class AgentUpdate extends Packet {
    * @param {U32} [data.agentData.controlFlags] ControlFlags
    * @param {U8} [data.agentData.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

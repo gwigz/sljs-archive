@@ -66,7 +66,7 @@ class TransferInventoryAck extends Packet {
    * @param {string} [data.infoBlock.transaction] TransactionID
    * @param {string} [data.infoBlock.inventory] InventoryID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

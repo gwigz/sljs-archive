@@ -77,7 +77,7 @@ class CreateInventoryItem extends Packet {
    * @param {Variable1} [data.inventoryBlock.name] Name
    * @param {Variable1} [data.inventoryBlock.description] Description
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

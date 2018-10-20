@@ -70,7 +70,7 @@ class ObjectExportSelected extends Packet {
    * @param {S16} [data.agentData.volumeDetail] VolumeDetail
    * @param {string} [data.objectData.object] ObjectID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

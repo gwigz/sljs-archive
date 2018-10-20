@@ -72,7 +72,7 @@ class EjectGroupMemberRequest extends Packet {
    * @param {string} [data.groupData.group] GroupID
    * @param {string} [data.ejectData.ejectee] EjecteeID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

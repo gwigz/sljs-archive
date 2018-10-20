@@ -70,7 +70,7 @@ class ScriptReset extends Packet {
    * @param {string} [data.script.object] ObjectID
    * @param {string} [data.script.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

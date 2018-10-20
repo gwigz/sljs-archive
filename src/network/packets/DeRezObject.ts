@@ -77,7 +77,7 @@ class DeRezObject extends Packet {
    * @param {U8} [data.agentBlock.packetNumber] PacketNumber
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

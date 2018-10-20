@@ -72,7 +72,7 @@ class ActivateGestures extends Packet {
    * @param {string} [data.data.asset] AssetID
    * @param {U32} [data.data.gestureFlags] GestureFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

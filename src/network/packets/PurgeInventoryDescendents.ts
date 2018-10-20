@@ -69,7 +69,7 @@ class PurgeInventoryDescendents extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.inventoryData.folder] FolderID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

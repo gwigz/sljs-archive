@@ -76,7 +76,7 @@ class GodUpdateRegionInfo extends Packet {
    * @param {S32} [data.regionInfo.redirectGridX] RedirectGridX
    * @param {S32} [data.regionInfo.redirectGridY] RedirectGridY
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

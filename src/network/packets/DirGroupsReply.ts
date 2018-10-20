@@ -74,7 +74,7 @@ class DirGroupsReply extends Packet {
    * @param {S32} [data.queryReplies.members] Members
    * @param {F32} [data.queryReplies.searchOrder] SearchOrder
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

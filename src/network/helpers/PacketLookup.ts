@@ -462,7 +462,7 @@ class PacketLookup {
     42949672933: Packets.CloseCircuit
   }
 
-  public static find (id: number): typeof Packets.Packet|null {
+  public static find(id: number): typeof Packets.Packet | null {
     return id in this.list ? this.list[id] : null
   }
 }

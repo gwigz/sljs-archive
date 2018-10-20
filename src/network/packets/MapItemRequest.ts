@@ -73,7 +73,7 @@ class MapItemRequest extends Packet {
    * @param {U32} [data.requestData.itemType] ItemType
    * @param {U64} [data.requestData.regionHandle] RegionHandle
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

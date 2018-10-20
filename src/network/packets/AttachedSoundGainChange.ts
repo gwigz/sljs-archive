@@ -66,7 +66,7 @@ class AttachedSoundGainChange extends Packet {
    * @param {string} [data.dataBlock.object] ObjectID
    * @param {F32} [data.dataBlock.gain] Gain
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

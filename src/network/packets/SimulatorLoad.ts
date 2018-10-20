@@ -72,7 +72,7 @@ class SimulatorLoad extends Packet {
    * @param {U8} [data.agentList.x] X
    * @param {U8} [data.agentList.y] Y
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

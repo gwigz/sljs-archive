@@ -67,7 +67,7 @@ class AssetUploadComplete extends Packet {
    * @param {S8} [data.assetBlock.type] Type
    * @param {boolean} [data.assetBlock.success] Success
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

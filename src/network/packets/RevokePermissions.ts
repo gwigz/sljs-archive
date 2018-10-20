@@ -70,7 +70,7 @@ class RevokePermissions extends Packet {
    * @param {string} [data.data.object] ObjectID
    * @param {U32} [data.data.objectPermissions] ObjectPermissions
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

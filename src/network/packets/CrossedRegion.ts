@@ -76,7 +76,7 @@ class CrossedRegion extends Packet {
    * @param {Vector3} [data.info.position] Position
    * @param {Vector3} [data.info.lookAt] LookAt
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -68,7 +68,7 @@ class ScriptTeleportRequest extends Packet {
    * @param {Vector3} [data.data.simPosition] SimPosition
    * @param {Vector3} [data.data.lookAt] LookAt
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

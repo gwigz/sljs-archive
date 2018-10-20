@@ -67,7 +67,7 @@ class ActivateGroup extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.agentData.group] GroupID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

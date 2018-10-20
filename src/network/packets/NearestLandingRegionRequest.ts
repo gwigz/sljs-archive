@@ -65,7 +65,7 @@ class NearestLandingRegionRequest extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U64} [data.requestingRegionData.regionHandle] RegionHandle
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -4,7 +4,9 @@ import Delegate from './Delegate'
 import * as Packets from '../packets'
 
 class AgentMovementComplete extends Delegate {
-  public handle (packet: Packets.AgentMovementComplete): void {
+  private counter: number = 0
+
+  public handle(packet: Packets.AgentMovementComplete): void {
     const data = packet.data.data[0]
     const client = this.client
     const agent = this.client.agent
@@ -27,7 +29,9 @@ class AgentMovementComplete extends Delegate {
     // This is kinda ugly, I know.
     client.regions.set(
       `${data.regionHandle.getHighBits()}${data.regionHandle.getLowBits()}`,
-      new Region(client, { handle: data.regionHandle })
+      new Region(client, {
+        handle: data.regionHandle
+      })
     )
 
     // client.throttle/bandwidth?
@@ -59,7 +63,7 @@ class AgentMovementComplete extends Delegate {
     // specified bandwidth limit.
     this.circuit.send(new Packets.AgentThrottle({
       throttle: {
-        genCounter: 0,
+        genCounter: this.counter++,
         throttles
       }
     }))
@@ -68,7 +72,7 @@ class AgentMovementComplete extends Delegate {
     // just saying "hey, give me everything, even stuff behind me".
     this.circuit.send(new Packets.AgentFOV({
       fovBlock: {
-        genCounter: 0,
+        genCounter: this.counter++,
         // client.fov or camera.fov?
         verticalAngle: (Math.PI * 2) - 0.05
       }
@@ -78,7 +82,7 @@ class AgentMovementComplete extends Delegate {
     // display/window size.
     this.circuit.send(new Packets.AgentHeightWidth({
       heightWidthBlock: {
-        genCounter: 0,
+        genCounter: this.counter++,
         height: 360,
         width: 640
       }

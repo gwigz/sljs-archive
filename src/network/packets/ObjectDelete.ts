@@ -70,7 +70,7 @@ class ObjectDelete extends Packet {
    * @param {boolean} [data.agentData.force] Force
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

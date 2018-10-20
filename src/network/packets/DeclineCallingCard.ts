@@ -69,7 +69,7 @@ class DeclineCallingCard extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.transactionBlock.transaction] TransactionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

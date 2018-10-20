@@ -68,7 +68,7 @@ class GroupTitleUpdate extends Packet {
    * @param {string} [data.agentData.group] GroupID
    * @param {string} [data.agentData.titleRole] TitleRoleID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

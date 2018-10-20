@@ -69,7 +69,7 @@ class TransferRequest extends Packet {
    * @param {F32} [data.transferInfo.priority] Priority
    * @param {Variable2} [data.transferInfo.params] Params
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -88,7 +88,7 @@ class RezObjectFromNotecard extends Packet {
    * @param {string} [data.notecardData.object] ObjectID
    * @param {string} [data.inventoryData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -116,7 +116,7 @@ class ParcelProperties extends Packet {
    * @param {boolean} [data.parcelData.regionDenyTransacted] RegionDenyTransacted
    * @param {boolean} [data.ageVerificationBlock.regionDenyAgeUnverified] RegionDenyAgeUnverified
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

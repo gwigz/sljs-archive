@@ -69,7 +69,7 @@ class ParcelRelease extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {S32} [data.data.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

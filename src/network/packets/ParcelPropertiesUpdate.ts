@@ -87,7 +87,7 @@ class ParcelPropertiesUpdate extends Packet {
    * @param {Vector3} [data.parcelData.userLookAt] UserLookAt
    * @param {U8} [data.parcelData.landingType] LandingType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

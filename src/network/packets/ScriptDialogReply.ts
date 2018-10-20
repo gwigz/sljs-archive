@@ -72,7 +72,7 @@ class ScriptDialogReply extends Packet {
    * @param {S32} [data.data.buttonIndex] ButtonIndex
    * @param {Variable1} [data.data.buttonLabel] ButtonLabel
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

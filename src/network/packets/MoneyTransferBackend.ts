@@ -77,7 +77,7 @@ class MoneyTransferBackend extends Packet {
    * @param {U32} [data.moneyData.gridY] GridY
    * @param {Variable1} [data.moneyData.description] Description
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

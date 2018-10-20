@@ -66,7 +66,7 @@ class AtomicPassObject extends Packet {
    * @param {string} [data.taskData.task] TaskID
    * @param {boolean} [data.taskData.attachmentNeedsSave] AttachmentNeedsSave
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

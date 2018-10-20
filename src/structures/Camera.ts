@@ -7,7 +7,7 @@ import { Client } from '..'
 class Camera {
   public readonly client: Client
 
-  constructor (client: Client) {
+  constructor(client: Client) {
     /**
      * The Client that instantiated this Camera object.
      * @name Camera#client

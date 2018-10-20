@@ -66,7 +66,7 @@ class ParcelRename extends Packet {
    * @param {string} [data.parcelData.parcel] ParcelID
    * @param {Variable1} [data.parcelData.newName] NewName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

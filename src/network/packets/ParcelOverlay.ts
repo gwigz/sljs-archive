@@ -66,7 +66,7 @@ class ParcelOverlay extends Packet {
    * @param {S32} [data.parcelData.sequence] SequenceID
    * @param {Variable2} [data.parcelData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

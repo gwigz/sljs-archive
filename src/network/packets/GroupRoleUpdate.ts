@@ -75,7 +75,7 @@ class GroupRoleUpdate extends Packet {
    * @param {U64} [data.roleData.powers] Powers
    * @param {U8} [data.roleData.updateType] UpdateType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

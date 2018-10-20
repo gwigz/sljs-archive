@@ -71,7 +71,7 @@ class KickUser extends Packet {
    * @param {string} [data.userInfo.session] SessionID
    * @param {Variable2} [data.userInfo.reason] Reason
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

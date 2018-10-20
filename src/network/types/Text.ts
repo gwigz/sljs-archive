@@ -7,7 +7,7 @@ class Text {
    * @param {number} position Position to read from
    * @returns {Buffer}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): Buffer {
+  public static fromBuffer(buffer: Buffer, position: number = 0): Buffer {
     const bytes = []
 
     for (const byte of buffer.slice(position)) {

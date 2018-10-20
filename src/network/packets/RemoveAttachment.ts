@@ -70,7 +70,7 @@ class RemoveAttachment extends Packet {
    * @param {U8} [data.attachmentBlock.attachmentPoint] AttachmentPoint
    * @param {string} [data.attachmentBlock.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

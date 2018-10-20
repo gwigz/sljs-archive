@@ -80,7 +80,7 @@ class EventInfoReply extends Packet {
    * @param {Vector3D} [data.eventData.globalPos] GlobalPos
    * @param {U32} [data.eventData.eventFlags] EventFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

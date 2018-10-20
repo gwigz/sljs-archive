@@ -67,7 +67,7 @@ class TeleportLandmarkRequest extends Packet {
    * @param {string} [data.info.session] SessionID
    * @param {string} [data.info.landmark] LandmarkID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

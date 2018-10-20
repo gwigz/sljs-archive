@@ -73,7 +73,7 @@ class AvatarInterestsReply extends Packet {
    * @param {Variable1} [data.propertiesData.skillsText] SkillsText
    * @param {Variable1} [data.propertiesData.languagesText] LanguagesText
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

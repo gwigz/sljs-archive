@@ -72,7 +72,7 @@ class AcceptCallingCard extends Packet {
    * @param {string} [data.transactionBlock.transaction] TransactionID
    * @param {string} [data.folderData.folder] FolderID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

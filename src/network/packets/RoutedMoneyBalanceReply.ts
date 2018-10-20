@@ -84,7 +84,7 @@ class RoutedMoneyBalanceReply extends Packet {
    * @param {S32} [data.transactionInfo.amount] Amount
    * @param {Variable1} [data.transactionInfo.itemDescription] ItemDescription
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

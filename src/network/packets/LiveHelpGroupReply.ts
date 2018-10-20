@@ -67,7 +67,7 @@ class LiveHelpGroupReply extends Packet {
    * @param {string} [data.replyData.group] GroupID
    * @param {Variable1} [data.replyData.selection] Selection
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

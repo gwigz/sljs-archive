@@ -69,7 +69,7 @@ class ParcelBuyPass extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {S32} [data.parcelData.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

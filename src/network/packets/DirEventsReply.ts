@@ -79,7 +79,7 @@ class DirEventsReply extends Packet {
    * @param {U32} [data.queryReplies.eventFlags] EventFlags
    * @param {U32} [data.statusData.status] Status
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

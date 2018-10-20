@@ -72,7 +72,7 @@ class LogDwellTime extends Packet {
    * @param {U8} [data.dwellInfo.avgAgentsInView] AvgAgentsInView
    * @param {U8} [data.dwellInfo.avgViewerFPS] AvgViewerFPS
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

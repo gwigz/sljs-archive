@@ -75,7 +75,7 @@ class AvatarPropertiesUpdate extends Packet {
    * @param {boolean} [data.propertiesData.maturePublish] MaturePublish
    * @param {Variable1} [data.propertiesData.profileURL] ProfileURL
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

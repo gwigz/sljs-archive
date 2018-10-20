@@ -70,7 +70,7 @@ class ObjectDescription extends Packet {
    * @param {U32} [data.objectData.local] LocalID
    * @param {Variable1} [data.objectData.description] Description
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

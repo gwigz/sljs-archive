@@ -70,7 +70,7 @@ class ObjectGroup extends Packet {
    * @param {string} [data.agentData.group] GroupID
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

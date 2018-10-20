@@ -70,7 +70,7 @@ class UserInfoReply extends Packet {
    * @param {Variable1} [data.userData.directoryVisibility] DirectoryVisibility
    * @param {Variable2} [data.userData.eMail] EMail
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

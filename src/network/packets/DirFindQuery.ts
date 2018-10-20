@@ -72,7 +72,7 @@ class DirFindQuery extends Packet {
    * @param {U32} [data.queryData.queryFlags] QueryFlags
    * @param {S32} [data.queryData.queryStart] QueryStart
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

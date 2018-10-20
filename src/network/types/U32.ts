@@ -8,7 +8,7 @@ class U32 {
    * @param {number} integer Integer to convert
    * @returns {Buffer}
    */
-  public static toBuffer (integer: number): Buffer {
+  public static toBuffer(integer: number): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeUInt32LE(integer, 0)
@@ -24,7 +24,7 @@ class U32 {
    * @param {number} position Position to read from
    * @returns {number}
    */
-  public static fromBuffer (buffer: Buffer, position = 0): number {
+  public static fromBuffer(buffer: Buffer, position = 0): number {
     return buffer.readUInt32LE(position)
   }
 }

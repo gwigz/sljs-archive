@@ -72,7 +72,7 @@ class UpdateInventoryFolder extends Packet {
    * @param {S8} [data.folderData.type] Type
    * @param {Variable1} [data.folderData.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

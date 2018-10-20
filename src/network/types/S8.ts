@@ -7,7 +7,7 @@ class S8 {
    * @param {number} integer Integer to convert
    * @returns {Buffer}
    */
-  public static toBuffer (integer: number): Buffer {
+  public static toBuffer(integer: number): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeInt8(integer, 0)
@@ -23,7 +23,7 @@ class S8 {
    * @param {number} position Position to read from
    * @returns {number}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): number {
+  public static fromBuffer(buffer: Buffer, position: number = 0): number {
     return buffer.readInt8(position)
   }
 }

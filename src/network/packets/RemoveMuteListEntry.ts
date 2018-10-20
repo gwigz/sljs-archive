@@ -70,7 +70,7 @@ class RemoveMuteListEntry extends Packet {
    * @param {string} [data.muteData.mute] MuteID
    * @param {Variable1} [data.muteData.muteName] MuteName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

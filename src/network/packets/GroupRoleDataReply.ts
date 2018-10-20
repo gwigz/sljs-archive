@@ -78,7 +78,7 @@ class GroupRoleDataReply extends Packet {
    * @param {U64} [data.roleData.powers] Powers
    * @param {U32} [data.roleData.members] Members
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

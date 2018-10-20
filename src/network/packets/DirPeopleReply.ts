@@ -76,7 +76,7 @@ class DirPeopleReply extends Packet {
    * @param {boolean} [data.queryReplies.online] Online
    * @param {S32} [data.queryReplies.reputation] Reputation
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

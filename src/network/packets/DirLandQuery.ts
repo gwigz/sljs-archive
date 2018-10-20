@@ -74,7 +74,7 @@ class DirLandQuery extends Packet {
    * @param {S32} [data.queryData.area] Area
    * @param {S32} [data.queryData.queryStart] QueryStart
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

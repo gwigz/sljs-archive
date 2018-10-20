@@ -71,7 +71,7 @@ class SoundTrigger extends Packet {
    * @param {Vector3} [data.soundData.position] Position
    * @param {F32} [data.soundData.gain] Gain
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

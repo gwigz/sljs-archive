@@ -10,7 +10,7 @@ class Quaternion {
    * @param {number[]} quaternion Should contain 4 values
    * @returns {Buffer}
    */
-  public static toBuffer (quaternion: Array<number>): Buffer {
+  public static toBuffer(quaternion: Array<number>): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     if (quaternion[3] >= 0.0) {
@@ -39,7 +39,7 @@ class Quaternion {
    * @returns {number[]}
    * @todo Handle these parameters better
    */
-  public static fromBuffer (
+  public static fromBuffer(
     buffer: Buffer,
     position: number = 0,
     normalized: boolean = true,

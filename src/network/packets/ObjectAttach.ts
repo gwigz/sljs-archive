@@ -71,7 +71,7 @@ class ObjectAttach extends Packet {
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    * @param {Quaternion} [data.objectData.rotation] Rotation
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

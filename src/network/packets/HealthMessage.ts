@@ -65,7 +65,7 @@ class HealthMessage extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {F32} [data.healthData.health] Health
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

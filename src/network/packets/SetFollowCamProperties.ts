@@ -69,7 +69,7 @@ class SetFollowCamProperties extends Packet {
    * @param {S32} [data.cameraProperty.type] Type
    * @param {F32} [data.cameraProperty.value] Value
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -69,7 +69,7 @@ class TransferPacket extends Packet {
    * @param {S32} [data.transferData.status] Status
    * @param {Variable2} [data.transferData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

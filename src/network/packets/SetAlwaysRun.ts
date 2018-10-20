@@ -67,7 +67,7 @@ class SetAlwaysRun extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {boolean} [data.agentData.alwaysRun] AlwaysRun
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

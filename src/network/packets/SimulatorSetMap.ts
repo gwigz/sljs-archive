@@ -67,7 +67,7 @@ class SimulatorSetMap extends Packet {
    * @param {S32} [data.mapData.type] Type
    * @param {string} [data.mapData.mapImage] MapImage
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

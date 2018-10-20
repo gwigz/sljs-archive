@@ -4,7 +4,7 @@ import { Constants } from '../../utilities'
 import Delegate from './Delegate'
 
 class ObjectUpdate extends Delegate {
-  public handle (packet): void {
+  public handle(packet): void {
     const handle = packet.data.regionData[0].regionHandle
     const region = this.region(handle)
 
@@ -23,7 +23,7 @@ class ObjectUpdate extends Delegate {
     }
   }
 
-  public update (entity, data): Entity {
+  public update(entity, data): Entity {
     // data.data
     // data.objectData
     // data.extraParams
@@ -39,7 +39,7 @@ class ObjectUpdate extends Delegate {
     return entity
   }
 
-  public insert (data, region): Entity {
+  public insert(data, region): Entity {
     const entity = new Entity(this.client, this.update({}, data))
 
     // Pass to regions entity collection.

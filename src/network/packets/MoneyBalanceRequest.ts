@@ -69,7 +69,7 @@ class MoneyBalanceRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.moneyData.transaction] TransactionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

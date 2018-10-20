@@ -68,7 +68,7 @@ class AvatarPropertiesRequestBackend extends Packet {
    * @param {U8} [data.agentData.godLevel] GodLevel
    * @param {boolean} [data.agentData.webProfilesDisabled] WebProfilesDisabled
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

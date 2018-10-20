@@ -74,7 +74,7 @@ class ParcelPropertiesRequest extends Packet {
    * @param {F32} [data.parcelData.north] North
    * @param {boolean} [data.parcelData.snapSelection] SnapSelection
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

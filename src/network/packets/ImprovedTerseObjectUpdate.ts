@@ -70,7 +70,7 @@ class ImprovedTerseObjectUpdate extends Packet {
    * @param {Variable1} [data.objectData.data] Data
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

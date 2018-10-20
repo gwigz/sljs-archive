@@ -7,15 +7,15 @@ import { Region } from '../../structures'
 class Delegate {
   public readonly circuit: Circuit
 
-  constructor (circuit: Circuit) {
+  constructor(circuit: Circuit) {
     Object.defineProperty(this, 'circuit', { value: circuit })
   }
 
-  get core (): Core {
+  get core(): Core {
     return this.circuit.core
   }
 
-  get client (): Client {
+  get client(): Client {
     return this.circuit.core.client
   }
 
@@ -26,7 +26,7 @@ class Delegate {
    *
    * @returns {boolean} True if we want to recieve packets, defaulted to true
    */
-  get waiting (): boolean {
+  get waiting(): boolean {
     return true
   }
 
@@ -35,7 +35,7 @@ class Delegate {
    *
    * @param {Packet} packet Parsed packet object
    */
-  public handle (packet: Packets.Packet): void {
+  public handle(packet: Packets.Packet): void {
     // ...
   }
 
@@ -45,7 +45,7 @@ class Delegate {
    * @param {Long} handle Region handle
    * @returns {?Region}
    */
-  protected region (handle: Long): Region|null {
+  protected region(handle: Long): Region|null {
     // This is kinda ugly, I know.
     return this.client.regions.get(`${handle.getHighBits()}${handle.getLowBits()}`)
   }

@@ -70,7 +70,7 @@ class TransferInfo extends Packet {
    * @param {S32} [data.transferInfo.size] Size
    * @param {Variable2} [data.transferInfo.params] Params
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

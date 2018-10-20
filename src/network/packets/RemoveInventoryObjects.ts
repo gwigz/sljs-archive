@@ -72,7 +72,7 @@ class RemoveInventoryObjects extends Packet {
    * @param {string} [data.folderData.folder] FolderID
    * @param {string} [data.itemData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

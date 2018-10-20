@@ -67,7 +67,7 @@ class UseCircuitCode extends Packet {
    * @param {string} [data.circuitCode.session] SessionID
    * @param {string} [data.circuitCode.id] ID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -68,7 +68,7 @@ class RpcChannelRequest extends Packet {
    * @param {string} [data.dataBlock.task] TaskID
    * @param {string} [data.dataBlock.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

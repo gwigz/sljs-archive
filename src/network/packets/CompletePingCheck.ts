@@ -65,7 +65,7 @@ class CompletePingCheck extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U8} [data.ping.ping] PingID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

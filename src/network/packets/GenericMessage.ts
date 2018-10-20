@@ -74,7 +74,7 @@ class GenericMessage extends Packet {
    * @param {string} [data.methodData.invoice] Invoice
    * @param {Variable1} [data.paramList.parameter] Parameter
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

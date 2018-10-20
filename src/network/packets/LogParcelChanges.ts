@@ -76,7 +76,7 @@ class LogParcelChanges extends Packet {
    * @param {S8} [data.parcelData.action] Action
    * @param {string} [data.parcelData.transaction] TransactionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

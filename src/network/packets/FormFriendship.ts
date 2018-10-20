@@ -66,7 +66,7 @@ class FormFriendship extends Packet {
    * @param {string} [data.agentBlock.source] SourceID
    * @param {string} [data.agentBlock.dest] DestID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class Undo extends Packet {
    * @param {string} [data.agentData.group] GroupID
    * @param {string} [data.objectData.object] ObjectID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

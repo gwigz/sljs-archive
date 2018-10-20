@@ -70,7 +70,7 @@ class ViewerStartAuction extends Packet {
    * @param {S32} [data.parcelData.local] LocalID
    * @param {string} [data.parcelData.snapshot] SnapshotID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

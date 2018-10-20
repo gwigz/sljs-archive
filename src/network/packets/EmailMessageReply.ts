@@ -71,7 +71,7 @@ class EmailMessageReply extends Packet {
    * @param {Variable2} [data.dataBlock.data] Data
    * @param {Variable1} [data.dataBlock.mailFilter] MailFilter
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -69,7 +69,7 @@ class InviteGroupResponse extends Packet {
    * @param {string} [data.inviteData.role] RoleID
    * @param {S32} [data.inviteData.membershipFee] MembershipFee
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

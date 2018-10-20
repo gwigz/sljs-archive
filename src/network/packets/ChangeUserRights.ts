@@ -69,7 +69,7 @@ class ChangeUserRights extends Packet {
    * @param {string} [data.rights.agentRelated] AgentRelated
    * @param {S32} [data.rights.relatedRights] RelatedRights
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

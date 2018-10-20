@@ -69,7 +69,7 @@ class InitiateDownload extends Packet {
    * @param {Variable1} [data.fileData.simFilename] SimFilename
    * @param {Variable1} [data.fileData.viewerFilename] ViewerFilename
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

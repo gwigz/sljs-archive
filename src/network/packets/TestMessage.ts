@@ -70,7 +70,7 @@ class TestMessage extends Packet {
    * @param {U32} [data.neighborBlock.test1] Test1
    * @param {U32} [data.neighborBlock.test2] Test2
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

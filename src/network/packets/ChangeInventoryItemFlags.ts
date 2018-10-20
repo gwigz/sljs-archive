@@ -70,7 +70,7 @@ class ChangeInventoryItemFlags extends Packet {
    * @param {string} [data.inventoryData.item] ItemID
    * @param {U32} [data.inventoryData.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

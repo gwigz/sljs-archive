@@ -71,7 +71,7 @@ class MultipleObjectUpdate extends Packet {
    * @param {U8} [data.objectData.type] Type
    * @param {Variable1} [data.objectData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class ParcelPropertiesRequestByID extends Packet {
    * @param {S32} [data.parcelData.sequence] SequenceID
    * @param {S32} [data.parcelData.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

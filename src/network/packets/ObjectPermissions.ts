@@ -75,7 +75,7 @@ class ObjectPermissions extends Packet {
    * @param {U8} [data.objectData.set] Set
    * @param {U32} [data.objectData.mask] Mask
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

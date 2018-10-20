@@ -75,7 +75,7 @@ class SimStats extends Packet {
    * @param {F32} [data.stat.statValue] StatValue
    * @param {S32} [data.pidStat.pID] PID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

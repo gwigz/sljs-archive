@@ -69,7 +69,7 @@ class SimCrashed extends Packet {
    * @param {U32} [data.data.regionY] RegionY
    * @param {string} [data.users.agent] AgentID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

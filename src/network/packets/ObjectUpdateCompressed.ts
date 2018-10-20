@@ -70,7 +70,7 @@ class ObjectUpdateCompressed extends Packet {
    * @param {U32} [data.objectData.updateFlags] UpdateFlags
    * @param {Variable2} [data.objectData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

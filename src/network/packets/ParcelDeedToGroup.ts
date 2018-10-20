@@ -70,7 +70,7 @@ class ParcelDeedToGroup extends Packet {
    * @param {string} [data.data.group] GroupID
    * @param {S32} [data.data.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

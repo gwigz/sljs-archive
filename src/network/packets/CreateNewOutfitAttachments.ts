@@ -73,7 +73,7 @@ class CreateNewOutfitAttachments extends Packet {
    * @param {string} [data.objectData.oldItem] OldItemID
    * @param {string} [data.objectData.oldFolder] OldFolderID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

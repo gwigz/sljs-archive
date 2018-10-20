@@ -71,7 +71,7 @@ class ChatFromViewer extends Packet {
    * @param {U8} [data.chatData.type] Type
    * @param {S32} [data.chatData.channel] Channel
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

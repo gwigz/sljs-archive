@@ -69,7 +69,7 @@ class GodKickUser extends Packet {
    * @param {U32} [data.userInfo.kickFlags] KickFlags
    * @param {Variable2} [data.userInfo.reason] Reason
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class ObjectIncludeInSearch extends Packet {
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    * @param {boolean} [data.objectData.includeInSearch] IncludeInSearch
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

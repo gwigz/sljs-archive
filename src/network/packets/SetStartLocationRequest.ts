@@ -72,7 +72,7 @@ class SetStartLocationRequest extends Packet {
    * @param {Vector3} [data.startLocationData.locationPos] LocationPos
    * @param {Vector3} [data.startLocationData.locationLookAt] LocationLookAt
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

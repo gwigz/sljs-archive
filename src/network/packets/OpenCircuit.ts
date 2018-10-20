@@ -66,7 +66,7 @@ class OpenCircuit extends Packet {
    * @param {IP} [data.circuitInfo.ip] IP
    * @param {Port} [data.circuitInfo.port] Port
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

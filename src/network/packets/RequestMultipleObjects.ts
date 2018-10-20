@@ -70,7 +70,7 @@ class RequestMultipleObjects extends Packet {
    * @param {U8} [data.objectData.cacheMissType] CacheMissType
    * @param {U32} [data.objectData.id] ID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

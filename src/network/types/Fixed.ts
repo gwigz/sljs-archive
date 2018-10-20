@@ -7,7 +7,7 @@ abstract class Fixed {
    * @param {Buffer} buffer This will truncate or padded if nessecery
    * @returns {Buffer}
    */
-  public static toBuffer (buffer: Buffer): Buffer {
+  public static toBuffer(buffer: Buffer): Buffer {
     if (buffer.length === this.size) {
       return buffer
     }
@@ -32,7 +32,7 @@ abstract class Fixed {
    * @param {number} start Position to read from
    * @returns {Buffer}
    */
-  public static fromBuffer (buffer: Buffer, start: number): Buffer {
+  public static fromBuffer(buffer: Buffer, start: number): Buffer {
     return buffer.slice(start, start + this.size)
   }
 }

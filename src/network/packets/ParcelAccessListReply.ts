@@ -73,7 +73,7 @@ class ParcelAccessListReply extends Packet {
    * @param {S32} [data.list.time] Time
    * @param {U32} [data.list.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

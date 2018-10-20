@@ -8,7 +8,7 @@ class Vector4 {
    * @param {number[]} vector Should contain 4 values
    * @returns {Buffer}
    */
-  public static toBuffer (vector: Array<number>): Buffer {
+  public static toBuffer(vector: Array<number>): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeFloatLE(vector[0], 0)
@@ -27,7 +27,7 @@ class Vector4 {
    * @param {number} position Position to read from
    * @returns {number[]}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): Array<number> {
+  public static fromBuffer(buffer: Buffer, position: number = 0): Array<number> {
     return [
       buffer.readFloatLE(position),
       buffer.readFloatLE(position + 4),

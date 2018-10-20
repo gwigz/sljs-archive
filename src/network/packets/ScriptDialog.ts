@@ -77,7 +77,7 @@ class ScriptDialog extends Packet {
    * @param {Variable1} [data.buttons.buttonLabel] ButtonLabel
    * @param {string} [data.ownerData.owner] OwnerID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

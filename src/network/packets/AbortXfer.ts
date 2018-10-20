@@ -66,7 +66,7 @@ class AbortXfer extends Packet {
    * @param {U64} [data.xfer.id] ID
    * @param {S32} [data.xfer.result] Result
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -75,7 +75,7 @@ class MapBlockRequest extends Packet {
    * @param {U16} [data.positionData.minY] MinY
    * @param {U16} [data.positionData.maxY] MaxY
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

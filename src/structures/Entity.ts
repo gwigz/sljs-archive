@@ -38,7 +38,7 @@ class Entity {
 
   public readonly client: Client
 
-  constructor (client: Client, data: IEntityOptions) {
+  constructor(client: Client, data: IEntityOptions) {
     /**
      * The Client that instantiated this Entity.
      *
@@ -51,7 +51,7 @@ class Entity {
     this.setup(data)
   }
 
-  public setup (data: IEntityOptions): void {
+  public setup(data: IEntityOptions): void {
     /**
      * Local ID for this Entity.
      * @type {number}
@@ -160,7 +160,7 @@ class Entity {
     this.children = []
   }
 
-  get distance (): number {
+  get distance(): number {
     return Vector3.distance(this.client.agent.position, this.position)
   }
 }

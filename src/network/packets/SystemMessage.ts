@@ -70,7 +70,7 @@ class SystemMessage extends Packet {
    * @param {Fixed32} [data.methodData.digest] Digest
    * @param {Variable1} [data.paramList.parameter] Parameter
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

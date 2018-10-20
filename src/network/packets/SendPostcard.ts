@@ -75,7 +75,7 @@ class SendPostcard extends Packet {
    * @param {boolean} [data.agentData.allowPublish] AllowPublish
    * @param {boolean} [data.agentData.maturePublish] MaturePublish
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

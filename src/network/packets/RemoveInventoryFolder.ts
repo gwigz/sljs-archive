@@ -69,7 +69,7 @@ class RemoveInventoryFolder extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.folderData.folder] FolderID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

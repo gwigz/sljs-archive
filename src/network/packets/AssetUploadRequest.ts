@@ -69,7 +69,7 @@ class AssetUploadRequest extends Packet {
    * @param {boolean} [data.assetBlock.storeLocal] StoreLocal
    * @param {Variable2} [data.assetBlock.assetData] AssetData
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

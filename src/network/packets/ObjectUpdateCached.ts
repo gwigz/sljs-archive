@@ -71,7 +71,7 @@ class ObjectUpdateCached extends Packet {
    * @param {U32} [data.objectData.crc] CRC
    * @param {U32} [data.objectData.updateFlags] UpdateFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

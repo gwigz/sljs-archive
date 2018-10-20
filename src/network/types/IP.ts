@@ -8,7 +8,7 @@ class IP {
    * @param {string} string IP address string to convert
    * @returns {Buffer}
    */
-  public static toBuffer (string: string): Buffer {
+  public static toBuffer(string: string): Buffer {
     const ip = string.split('.')
     const buffer = Buffer.allocUnsafe(this.size)
 
@@ -27,7 +27,7 @@ class IP {
    * @param {number} position Position to read from
    * @returns {string}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): string {
+  public static fromBuffer(buffer: Buffer, position: number = 0): string {
     return [
       buffer.readUInt8(position),
       buffer.readUInt8(position + 1),

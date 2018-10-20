@@ -73,7 +73,7 @@ class AvatarSitResponse extends Packet {
    * @param {Vector3} [data.sitTransform.cameraAtOffset] CameraAtOffset
    * @param {boolean} [data.sitTransform.forceMouselook] ForceMouselook
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

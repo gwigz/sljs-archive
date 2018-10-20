@@ -71,7 +71,7 @@ class AvatarPickerRequestBackend extends Packet {
    * @param {U8} [data.agentData.godLevel] GodLevel
    * @param {Variable1} [data.data.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

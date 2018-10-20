@@ -69,7 +69,7 @@ class ObjectSpinStart extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.objectData.object] ObjectID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class ParcelGodForceOwner extends Packet {
    * @param {string} [data.data.owner] OwnerID
    * @param {S32} [data.data.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

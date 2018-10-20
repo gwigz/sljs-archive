@@ -68,7 +68,7 @@ class LayerData extends Packet {
    * @param {U8} [data.layer.type] Type
    * @param {Variable2} [data.layerData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

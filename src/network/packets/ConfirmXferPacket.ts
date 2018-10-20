@@ -66,7 +66,7 @@ class ConfirmXferPacket extends Packet {
    * @param {U64} [data.xfer.id] ID
    * @param {U32} [data.xfer.packet] Packet
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

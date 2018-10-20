@@ -68,7 +68,7 @@ class EstateCovenantReply extends Packet {
    * @param {Variable1} [data.data.estateName] EstateName
    * @param {string} [data.data.estateOwner] EstateOwnerID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

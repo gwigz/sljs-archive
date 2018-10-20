@@ -74,7 +74,7 @@ class CoarseLocationUpdate extends Packet {
    * @param {S16} [data.index.prey] Prey
    * @param {string} [data.agentData.agent] AgentID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

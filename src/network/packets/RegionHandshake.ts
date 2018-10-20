@@ -98,7 +98,7 @@ class RegionHandshake extends Packet {
    * @param {Variable1} [data.regionInfo3.productSKU] ProductSKU
    * @param {Variable1} [data.regionInfo3.productName] ProductName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -96,7 +96,7 @@ class BulkUpdateInventory extends Packet {
    * @param {S32} [data.itemData.creationDate] CreationDate
    * @param {U32} [data.itemData.crc] CRC
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -73,7 +73,7 @@ class MapLayerReply extends Packet {
    * @param {U32} [data.layerData.bottom] Bottom
    * @param {string} [data.layerData.image] ImageID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

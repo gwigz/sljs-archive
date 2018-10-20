@@ -70,7 +70,7 @@ class AvatarClassifiedReply extends Packet {
    * @param {string} [data.data.classified] ClassifiedID
    * @param {Variable1} [data.data.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

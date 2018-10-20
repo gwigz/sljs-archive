@@ -73,7 +73,7 @@ class InviteGroupRequest extends Packet {
    * @param {string} [data.inviteData.invitee] InviteeID
    * @param {string} [data.inviteData.role] RoleID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

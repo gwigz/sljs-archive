@@ -76,7 +76,7 @@ class ChildAgentPositionUpdate extends Packet {
    * @param {Vector3} [data.agentData.upAxis] UpAxis
    * @param {boolean} [data.agentData.changedGrid] ChangedGrid
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

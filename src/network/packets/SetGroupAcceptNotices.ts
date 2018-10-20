@@ -73,7 +73,7 @@ class SetGroupAcceptNotices extends Packet {
    * @param {boolean} [data.data.acceptNotices] AcceptNotices
    * @param {boolean} [data.newData.listInProfile] ListInProfile
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -69,7 +69,7 @@ class JoinGroupReply extends Packet {
    * @param {string} [data.groupData.group] GroupID
    * @param {boolean} [data.groupData.success] Success
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

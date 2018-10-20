@@ -10,7 +10,7 @@ class PacketBuffer {
   private buffer: Buffer
   private position: number
 
-  constructor (buffer: Buffer, delegating: boolean = false) {
+  constructor(buffer: Buffer, delegating: boolean = false) {
     this.buffer = buffer
 
     if (delegating) {
@@ -56,7 +56,7 @@ class PacketBuffer {
     }
   }
 
-  public prepare (): this {
+  public prepare(): this {
     if (this.zerocoded) {
       this.dezerocode()
     }
@@ -79,31 +79,31 @@ class PacketBuffer {
     return this
   }
 
-  get length (): number {
+  get length(): number {
     return this.buffer.length
   }
 
-  get sequence (): number {
+  get sequence(): number {
     return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4]
   }
 
-  get acks (): boolean {
+  get acks(): boolean {
     return !!(this.buffer[0] & 0x10)
   }
 
-  get resent (): boolean {
+  get resent(): boolean {
     return !!(this.buffer[0] & 0x20)
   }
 
-  get reliable (): boolean {
+  get reliable(): boolean {
     return !!(this.buffer[0] & 0x40)
   }
 
-  get zerocoded (): boolean {
+  get zerocoded(): boolean {
     return !!(this.buffer[0] & 0x80)
   }
 
-  public dezerocode (): void {
+  public dezerocode(): void {
     const output = [...this.buffer.slice(0, 6)]
     const length = this.length
 
@@ -118,7 +118,7 @@ class PacketBuffer {
     this.buffer = Buffer.from(output)
   }
 
-  public read (Type, ...args): any {
+  public read(Type, ...args): any {
     const output = this.fetch(Type, ...args)
 
     switch (Type) {
@@ -167,7 +167,7 @@ class PacketBuffer {
     return output
   }
 
-  public fetch (Type, ...args): any {
+  public fetch(Type, ...args): any {
     return Type.fromBuffer(this.buffer, this.position, ...args)
   }
 }

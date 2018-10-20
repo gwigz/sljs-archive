@@ -69,7 +69,7 @@ class TeleportProgress extends Packet {
    * @param {U32} [data.info.teleportFlags] TeleportFlags
    * @param {Variable1} [data.info.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class GroupMembersRequest extends Packet {
    * @param {string} [data.groupData.group] GroupID
    * @param {string} [data.groupData.request] RequestID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

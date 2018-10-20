@@ -69,7 +69,7 @@ class AgentAlertMessage extends Packet {
    * @param {boolean} [data.alertData.modal] Modal
    * @param {Variable1} [data.alertData.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

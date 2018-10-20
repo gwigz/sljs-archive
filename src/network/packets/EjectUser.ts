@@ -70,7 +70,7 @@ class EjectUser extends Packet {
    * @param {string} [data.data.target] TargetID
    * @param {U32} [data.data.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

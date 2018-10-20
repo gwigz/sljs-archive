@@ -66,7 +66,7 @@ class UUIDGroupNameReply extends Packet {
    * @param {string} [data.uUIDNameBlock.id] ID
    * @param {Variable1} [data.uUIDNameBlock.groupName] GroupName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

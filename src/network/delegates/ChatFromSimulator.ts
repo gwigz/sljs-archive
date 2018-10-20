@@ -4,7 +4,7 @@ import { UUID } from '../types'
 import Delegate from './Delegate'
 
 class ChatFromSimulator extends Delegate {
-  public handle (packet): void {
+  public handle(packet): void {
     for (const data of packet.data.chatData) {
       const chatter = {
         key: data.source,
@@ -22,7 +22,7 @@ class ChatFromSimulator extends Delegate {
     }
   }
 
-  get waiting (): boolean {
+  get waiting(): boolean {
     return !!this.client.nearby.listenerCount('message')
   }
 }

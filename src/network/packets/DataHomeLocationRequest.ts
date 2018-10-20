@@ -69,7 +69,7 @@ class DataHomeLocationRequest extends Packet {
    * @param {U32} [data.info.kickedFromEstate] KickedFromEstateID
    * @param {U32} [data.agentInfo.agentEffectiveMaturity] AgentEffectiveMaturity
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

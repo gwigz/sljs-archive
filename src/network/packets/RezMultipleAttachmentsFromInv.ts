@@ -82,7 +82,7 @@ class RezMultipleAttachmentsFromInv extends Packet {
    * @param {Variable1} [data.objectData.name] Name
    * @param {Variable1} [data.objectData.description] Description
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

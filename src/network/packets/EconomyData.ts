@@ -81,7 +81,7 @@ class EconomyData extends Packet {
    * @param {S32} [data.info.priceParcelRent] PriceParcelRent
    * @param {S32} [data.info.priceGroupCreate] PriceGroupCreate
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

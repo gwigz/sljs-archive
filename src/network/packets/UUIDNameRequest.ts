@@ -65,7 +65,7 @@ class UUIDNameRequest extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {string} [data.uUIDNameBlock.id] ID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

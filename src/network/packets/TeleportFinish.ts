@@ -72,7 +72,7 @@ class TeleportFinish extends Packet {
    * @param {U8} [data.info.simAccess] SimAccess
    * @param {U32} [data.info.teleportFlags] TeleportFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

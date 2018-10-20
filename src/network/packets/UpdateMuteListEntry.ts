@@ -72,7 +72,7 @@ class UpdateMuteListEntry extends Packet {
    * @param {S32} [data.muteData.muteType] MuteType
    * @param {U32} [data.muteData.muteFlags] MuteFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

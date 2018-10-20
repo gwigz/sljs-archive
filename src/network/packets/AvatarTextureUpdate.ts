@@ -74,7 +74,7 @@ class AvatarTextureUpdate extends Packet {
    * @param {Variable1} [data.wearableData.hostName] HostName
    * @param {string} [data.textureData.texture] TextureID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

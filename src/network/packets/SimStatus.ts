@@ -66,7 +66,7 @@ class SimStatus extends Packet {
    * @param {boolean} [data.simStatus.canAcceptAgents] CanAcceptAgents
    * @param {boolean} [data.simStatus.canAcceptTasks] CanAcceptTasks
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

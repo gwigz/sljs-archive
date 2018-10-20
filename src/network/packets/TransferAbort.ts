@@ -66,7 +66,7 @@ class TransferAbort extends Packet {
    * @param {string} [data.transferInfo.transfer] TransferID
    * @param {S32} [data.transferInfo.channelType] ChannelType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

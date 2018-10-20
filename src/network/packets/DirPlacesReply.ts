@@ -78,7 +78,7 @@ class DirPlacesReply extends Packet {
    * @param {F32} [data.queryReplies.dwell] Dwell
    * @param {U32} [data.statusData.status] Status
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

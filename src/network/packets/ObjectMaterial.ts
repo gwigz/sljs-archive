@@ -70,7 +70,7 @@ class ObjectMaterial extends Packet {
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    * @param {U8} [data.objectData.material] Material
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -71,7 +71,7 @@ class ParcelAccessListRequest extends Packet {
    * @param {U32} [data.data.flags] Flags
    * @param {S32} [data.data.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

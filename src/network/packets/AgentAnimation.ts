@@ -73,7 +73,7 @@ class AgentAnimation extends Packet {
    * @param {boolean} [data.animationList.startAnim] StartAnim
    * @param {Variable1} [data.physicalAvatarEventList.typeData] TypeData
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

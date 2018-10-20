@@ -70,7 +70,7 @@ class SetGroupContribution extends Packet {
    * @param {string} [data.data.group] GroupID
    * @param {S32} [data.data.contribution] Contribution
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

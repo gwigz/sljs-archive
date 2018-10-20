@@ -70,7 +70,7 @@ class AvatarPicksReply extends Packet {
    * @param {string} [data.data.pick] PickID
    * @param {Variable1} [data.data.pickName] PickName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

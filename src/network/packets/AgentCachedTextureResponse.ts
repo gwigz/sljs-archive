@@ -72,7 +72,7 @@ class AgentCachedTextureResponse extends Packet {
    * @param {U8} [data.wearableData.textureIndex] TextureIndex
    * @param {Variable1} [data.wearableData.hostName] HostName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

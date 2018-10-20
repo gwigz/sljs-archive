@@ -66,7 +66,7 @@ class ParcelSales extends Packet {
    * @param {string} [data.parcelData.parcel] ParcelID
    * @param {string} [data.parcelData.buyer] BuyerID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

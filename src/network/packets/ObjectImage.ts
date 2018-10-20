@@ -71,7 +71,7 @@ class ObjectImage extends Packet {
    * @param {Variable1} [data.objectData.mediaURL] MediaURL
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

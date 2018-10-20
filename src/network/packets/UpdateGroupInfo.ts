@@ -76,7 +76,7 @@ class UpdateGroupInfo extends Packet {
    * @param {boolean} [data.groupData.allowPublish] AllowPublish
    * @param {boolean} [data.groupData.maturePublish] MaturePublish
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

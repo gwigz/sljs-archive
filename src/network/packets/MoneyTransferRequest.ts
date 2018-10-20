@@ -76,7 +76,7 @@ class MoneyTransferRequest extends Packet {
    * @param {S32} [data.moneyData.transactionType] TransactionType
    * @param {Variable1} [data.moneyData.description] Description
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

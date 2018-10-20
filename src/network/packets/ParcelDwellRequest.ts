@@ -70,7 +70,7 @@ class ParcelDwellRequest extends Packet {
    * @param {S32} [data.data.local] LocalID
    * @param {string} [data.data.parcel] ParcelID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

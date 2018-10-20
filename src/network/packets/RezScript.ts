@@ -94,7 +94,7 @@ class RezScript extends Packet {
    * @param {S32} [data.inventoryBlock.creationDate] CreationDate
    * @param {U32} [data.inventoryBlock.crc] CRC
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

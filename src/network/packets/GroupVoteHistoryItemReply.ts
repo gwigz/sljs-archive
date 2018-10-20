@@ -87,7 +87,7 @@ class GroupVoteHistoryItemReply extends Packet {
    * @param {Variable1} [data.voteItem.voteCast] VoteCast
    * @param {S32} [data.voteItem.numVotes] NumVotes
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

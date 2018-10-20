@@ -10,7 +10,7 @@ class Authenticator {
   private readonly agent: string
   private readonly digest: string
 
-  constructor (channel: string, version: string) {
+  constructor(channel: string, version: string) {
     this.channel = channel
     this.version = version
     this.agent = `${channel} ${version}`
@@ -19,7 +19,7 @@ class Authenticator {
     this.digest = Crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
   }
 
-  public login (username: string, password: string, start: string = 'last'): Promise<any> {
+  public login(username: string, password: string, start: string = 'last'): Promise<any> {
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',

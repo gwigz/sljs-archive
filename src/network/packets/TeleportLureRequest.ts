@@ -68,7 +68,7 @@ class TeleportLureRequest extends Packet {
    * @param {string} [data.info.lure] LureID
    * @param {U32} [data.info.teleportFlags] TeleportFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

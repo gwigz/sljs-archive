@@ -69,7 +69,7 @@ class SendXferPacket extends Packet {
    * @param {U32} [data.xfer.packet] Packet
    * @param {Variable2} [data.dataPacket.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

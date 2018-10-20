@@ -70,7 +70,7 @@ class LoadURL extends Packet {
    * @param {Variable1} [data.data.message] Message
    * @param {Variable1} [data.data.url] URL
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

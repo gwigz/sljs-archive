@@ -16,7 +16,7 @@ class Packet {
    * @param {string} [data.agentData.agent] AgentID
    * @param {string} [data.agentData.session] SessionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     if (this.constructor === Packet) {
       throw new Error('Do not instantiate from the packet class, use extended classes!')
     }

@@ -77,7 +77,7 @@ class ObjectDeGrab extends Packet {
    * @param {Vector3} [data.surfaceInfo.normal] Normal
    * @param {Vector3} [data.surfaceInfo.binormal] Binormal
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -66,7 +66,7 @@ class RegionIDAndHandleReply extends Packet {
    * @param {string} [data.replyBlock.region] RegionID
    * @param {U64} [data.replyBlock.regionHandle] RegionHandle
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

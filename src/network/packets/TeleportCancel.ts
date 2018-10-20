@@ -66,7 +66,7 @@ class TeleportCancel extends Packet {
    * @param {string} [data.info.agent] AgentID
    * @param {string} [data.info.session] SessionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -66,7 +66,7 @@ class DetachAttachmentIntoInv extends Packet {
    * @param {string} [data.objectData.agent] AgentID
    * @param {string} [data.objectData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

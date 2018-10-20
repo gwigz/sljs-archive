@@ -78,7 +78,7 @@ class PickInfoUpdate extends Packet {
    * @param {S32} [data.data.sortOrder] SortOrder
    * @param {boolean} [data.data.enabled] Enabled
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -69,7 +69,7 @@ class RequestTaskInventory extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.inventoryData.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

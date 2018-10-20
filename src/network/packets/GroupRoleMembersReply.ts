@@ -72,7 +72,7 @@ class GroupRoleMembersReply extends Packet {
    * @param {string} [data.memberData.role] RoleID
    * @param {string} [data.memberData.member] MemberID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

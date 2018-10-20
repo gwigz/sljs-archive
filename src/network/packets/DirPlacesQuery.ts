@@ -74,7 +74,7 @@ class DirPlacesQuery extends Packet {
    * @param {Variable1} [data.queryData.simName] SimName
    * @param {S32} [data.queryData.queryStart] QueryStart
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

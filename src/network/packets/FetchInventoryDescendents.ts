@@ -73,7 +73,7 @@ class FetchInventoryDescendents extends Packet {
    * @param {boolean} [data.inventoryData.fetchFolders] FetchFolders
    * @param {boolean} [data.inventoryData.fetchItems] FetchItems
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

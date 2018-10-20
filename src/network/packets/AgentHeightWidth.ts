@@ -72,7 +72,7 @@ class AgentHeightWidth extends Packet {
    * @param {U16} [data.heightWidthBlock.height] Height
    * @param {U16} [data.heightWidthBlock.width] Width
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

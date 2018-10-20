@@ -73,7 +73,7 @@ class DirClassifiedQuery extends Packet {
    * @param {U32} [data.queryData.category] Category
    * @param {S32} [data.queryData.queryStart] QueryStart
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

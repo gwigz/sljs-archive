@@ -68,7 +68,7 @@ class UpdateSimulator extends Packet {
    * @param {U32} [data.simulatorInfo.estate] EstateID
    * @param {U8} [data.simulatorInfo.simAccess] SimAccess
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

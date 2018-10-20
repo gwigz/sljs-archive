@@ -114,7 +114,7 @@ class ObjectUpdate extends Packet {
    * @param {Vector3} [data.objectData.jointPivot] JointPivot
    * @param {Vector3} [data.objectData.jointAxisOrAnchor] JointAxisOrAnchor
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

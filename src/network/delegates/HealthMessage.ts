@@ -1,7 +1,7 @@
 import Delegate from './Delegate'
 
 class HealthMessage extends Delegate {
-  public handle (packet): void {
+  public handle(packet): void {
     const data = packet.data.healthData[0]
     const agent = this.client.agent
 

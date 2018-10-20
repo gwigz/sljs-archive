@@ -71,7 +71,7 @@ class ImageData extends Packet {
    * @param {U16} [data.image.packets] Packets
    * @param {Variable2} [data.imageData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

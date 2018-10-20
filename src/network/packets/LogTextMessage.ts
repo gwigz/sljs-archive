@@ -70,7 +70,7 @@ class LogTextMessage extends Packet {
    * @param {U32} [data.dataBlock.time] Time
    * @param {Variable2} [data.dataBlock.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

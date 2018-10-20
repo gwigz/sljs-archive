@@ -65,7 +65,7 @@ class CheckParcelSales extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U64} [data.regionData.regionHandle] RegionHandle
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

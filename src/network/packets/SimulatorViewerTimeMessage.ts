@@ -70,7 +70,7 @@ class SimulatorViewerTimeMessage extends Packet {
    * @param {F32} [data.timeInfo.sunPhase] SunPhase
    * @param {Vector3} [data.timeInfo.sunAngVelocity] SunAngVelocity
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

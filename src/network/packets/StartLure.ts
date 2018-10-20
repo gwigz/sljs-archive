@@ -73,7 +73,7 @@ class StartLure extends Packet {
    * @param {Variable1} [data.info.message] Message
    * @param {string} [data.targetData.target] TargetID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

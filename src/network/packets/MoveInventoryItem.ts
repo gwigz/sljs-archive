@@ -72,7 +72,7 @@ class MoveInventoryItem extends Packet {
    * @param {string} [data.inventoryData.folder] FolderID
    * @param {Variable1} [data.inventoryData.newName] NewName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

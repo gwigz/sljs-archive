@@ -67,7 +67,7 @@ class CompleteAgentMovement extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.circuitCode] CircuitCode
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

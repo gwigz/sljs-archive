@@ -70,7 +70,7 @@ class ParcelSetOtherCleanTime extends Packet {
    * @param {S32} [data.parcelData.local] LocalID
    * @param {S32} [data.parcelData.otherCleanTime] OtherCleanTime
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

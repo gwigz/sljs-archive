@@ -70,7 +70,7 @@ class OfferCallingCard extends Packet {
    * @param {string} [data.agentBlock.dest] DestID
    * @param {string} [data.agentBlock.transaction] TransactionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

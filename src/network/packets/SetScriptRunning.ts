@@ -71,7 +71,7 @@ class SetScriptRunning extends Packet {
    * @param {string} [data.script.item] ItemID
    * @param {boolean} [data.script.running] Running
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

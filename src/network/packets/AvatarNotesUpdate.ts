@@ -70,7 +70,7 @@ class AvatarNotesUpdate extends Packet {
    * @param {string} [data.data.target] TargetID
    * @param {Variable2} [data.data.notes] Notes
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

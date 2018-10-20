@@ -70,7 +70,7 @@ class PickGodDelete extends Packet {
    * @param {string} [data.data.pick] PickID
    * @param {string} [data.data.query] QueryID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

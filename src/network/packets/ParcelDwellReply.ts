@@ -70,7 +70,7 @@ class ParcelDwellReply extends Packet {
    * @param {string} [data.data.parcel] ParcelID
    * @param {F32} [data.data.dwell] Dwell
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -72,7 +72,7 @@ class GroupTitlesReply extends Packet {
    * @param {string} [data.groupData.role] RoleID
    * @param {boolean} [data.groupData.selected] Selected
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

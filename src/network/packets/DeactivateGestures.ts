@@ -71,7 +71,7 @@ class DeactivateGestures extends Packet {
    * @param {string} [data.data.item] ItemID
    * @param {U32} [data.data.gestureFlags] GestureFlags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

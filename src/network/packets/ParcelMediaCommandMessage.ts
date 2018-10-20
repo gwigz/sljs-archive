@@ -67,7 +67,7 @@ class ParcelMediaCommandMessage extends Packet {
    * @param {U32} [data.commandBlock.command] Command
    * @param {F32} [data.commandBlock.time] Time
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

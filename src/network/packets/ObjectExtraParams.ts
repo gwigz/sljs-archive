@@ -73,7 +73,7 @@ class ObjectExtraParams extends Packet {
    * @param {U32} [data.objectData.paramSize] ParamSize
    * @param {Variable1} [data.objectData.paramData] ParamData
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

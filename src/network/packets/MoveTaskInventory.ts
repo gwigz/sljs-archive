@@ -71,7 +71,7 @@ class MoveTaskInventory extends Packet {
    * @param {U32} [data.inventoryData.local] LocalID
    * @param {string} [data.inventoryData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

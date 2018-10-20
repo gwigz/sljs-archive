@@ -69,7 +69,7 @@ class RegionHandshakeReply extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.regionInfo.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

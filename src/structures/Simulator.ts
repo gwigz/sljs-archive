@@ -18,7 +18,7 @@ class Simulator {
 
   public readonly client: Client
 
-  constructor (client: Client, data: ISimulatorOptions) {
+  constructor(client: Client, data: ISimulatorOptions) {
     /**
      * The Client that instantiated this Simulator object.
      * @name Simulator#client
@@ -30,7 +30,7 @@ class Simulator {
     this.setup(data)
   }
 
-  public setup (data: ISimulatorOptions): void {
+  public setup(data: ISimulatorOptions): void {
     /**
      * IP address of this Simulator.
      * @type {string}

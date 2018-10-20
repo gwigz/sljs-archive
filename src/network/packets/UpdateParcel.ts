@@ -85,7 +85,7 @@ class UpdateParcel extends Packet {
    * @param {boolean} [data.parcelData.allowPublish] AllowPublish
    * @param {boolean} [data.parcelData.maturePublish] MaturePublish
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -22,7 +22,7 @@ class Core {
   /**
    * @param {Client} client For emiting processed messages back to
    */
-  constructor (client) {
+  constructor(client) {
     /**
      * Client instance that instantiated this Core.
      *
@@ -57,15 +57,15 @@ class Core {
     this.status = Constants.Status.IDLE
   }
 
-  get agent (): Agent {
+  get agent(): Agent {
     return this.client.agent
   }
 
-  get region (): Region {
+  get region(): Region {
     return this.client.region
   }
 
-  get objects (): Entities {
+  get objects(): Entities {
     return this.client.region.objects
   }
 
@@ -76,8 +76,8 @@ class Core {
    * @param {...Packet} packets Packet to send
    * @returns {Promise}
    */
-  public send (circuit, ...packets): Promise<void[]> {
-    let promises: Array<Promise<void>> = []
+  public send(circuit, ...packets): Promise<Array<void>> {
+    const promises: Array<Promise<void>> = []
 
     for (const packet of packets) {
       promises.push(this.socket.send(circuit, packet))
@@ -92,7 +92,7 @@ class Core {
    * @param {string} session Session ID
    * @returns {Promise}
    */
-  public handshake (session, data: ICircuitOptions): void {
+  public handshake(session, data: ICircuitOptions): void {
     const circuit = new Circuit(this, data)
 
     this.status = Constants.Status.CONNECTING
@@ -107,7 +107,7 @@ class Core {
     return circuit.handshake()
   }
 
-  public ready (): void {
+  public ready(): void {
     if (this.status < Constants.Status.CONNECTING) {
       return
     }
@@ -121,7 +121,7 @@ class Core {
   /**
    * Disconnects the client from the current circuit.
    */
-  public disconnect (): void {
+  public disconnect(): void {
     this.circuit.send(new LogoutRequest)
   }
 }

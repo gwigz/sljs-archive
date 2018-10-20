@@ -65,7 +65,7 @@ class SetCPURatio extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {U8} [data.data.ratio] Ratio
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

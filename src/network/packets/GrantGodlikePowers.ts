@@ -70,7 +70,7 @@ class GrantGodlikePowers extends Packet {
    * @param {U8} [data.grantData.godLevel] GodLevel
    * @param {string} [data.grantData.token] Token
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

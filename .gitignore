@@ -22,8 +22,9 @@ pids
 # Dependency directories
 node_modules
 
-# NPM cache directory
+# NPM stuff
 .npm
+package-lock.json
 
 # REPL history
 .node_repl_history

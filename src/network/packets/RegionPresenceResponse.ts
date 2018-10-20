@@ -71,7 +71,7 @@ class RegionPresenceResponse extends Packet {
    * @param {F64} [data.regionData.validUntil] ValidUntil
    * @param {Variable1} [data.regionData.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -69,7 +69,7 @@ class MuteListRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.muteData.muteCRC] MuteCRC
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

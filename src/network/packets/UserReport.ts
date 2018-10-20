@@ -80,7 +80,7 @@ class UserReport extends Packet {
    * @param {Variable2} [data.reportData.details] Details
    * @param {Variable1} [data.reportData.versionString] VersionString
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

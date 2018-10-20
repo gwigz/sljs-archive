@@ -72,7 +72,7 @@ class SetSimStatusInDatabase extends Packet {
    * @param {S32} [data.data.timeToLive] TimeToLive
    * @param {Variable1} [data.data.status] Status
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

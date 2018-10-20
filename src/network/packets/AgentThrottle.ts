@@ -71,7 +71,7 @@ class AgentThrottle extends Packet {
    * @param {U32} [data.throttle.genCounter] GenCounter
    * @param {Variable1} [data.throttle.throttles] Throttles
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

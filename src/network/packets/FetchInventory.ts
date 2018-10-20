@@ -70,7 +70,7 @@ class FetchInventory extends Packet {
    * @param {string} [data.inventoryData.owner] OwnerID
    * @param {string} [data.inventoryData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

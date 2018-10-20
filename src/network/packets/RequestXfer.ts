@@ -71,7 +71,7 @@ class RequestXfer extends Packet {
    * @param {string} [data.xfer.vFile] VFileID
    * @param {S16} [data.xfer.vFileType] VFileType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

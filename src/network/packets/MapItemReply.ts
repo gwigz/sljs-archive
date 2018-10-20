@@ -77,7 +77,7 @@ class MapItemReply extends Packet {
    * @param {S32} [data.data.extra2] Extra2
    * @param {Variable1} [data.data.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -73,7 +73,7 @@ class RpcScriptRequestInbound extends Packet {
    * @param {U32} [data.dataBlock.intValue] IntValue
    * @param {Variable2} [data.dataBlock.stringValue] StringValue
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

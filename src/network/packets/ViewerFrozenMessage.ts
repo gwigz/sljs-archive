@@ -65,7 +65,7 @@ class ViewerFrozenMessage extends Packet {
    * @param {object|Buffer} [data] Packet block data to be seralized, may be optional
    * @param {boolean} [data.frozenData.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

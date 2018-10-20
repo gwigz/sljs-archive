@@ -77,7 +77,7 @@ class AvatarGroupsReply extends Packet {
    * @param {string} [data.groupData.groupInsignia] GroupInsigniaID
    * @param {boolean} [data.newGroupData.listInProfile] ListInProfile
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

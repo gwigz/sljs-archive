@@ -66,7 +66,7 @@ class ReportAutosaveCrash extends Packet {
    * @param {S32} [data.autosaveData.pID] PID
    * @param {S32} [data.autosaveData.status] Status
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

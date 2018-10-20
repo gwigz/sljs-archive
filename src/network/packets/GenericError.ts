@@ -73,7 +73,7 @@ class GenericError extends Packet {
    * @param {Variable2} [data.data.message] Message
    * @param {Variable2} [data.data.data] Data
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

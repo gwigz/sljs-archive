@@ -66,7 +66,7 @@ class DeRezAck extends Packet {
    * @param {string} [data.transactionData.transaction] TransactionID
    * @param {boolean} [data.transactionData.success] Success
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

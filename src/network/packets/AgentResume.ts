@@ -67,7 +67,7 @@ class AgentResume extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.agentData.serialNum] SerialNum
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

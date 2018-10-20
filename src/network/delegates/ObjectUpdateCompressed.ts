@@ -70,7 +70,7 @@ const CompressedObjectProperties: Array<Array<any>> = [
 // ['animation', new CompressedObjectValue(Types.U32, Flags.TEXTURE_ANIMATION)]
 
 class ObjectUpdateCompressed extends Delegate {
-  public handle (packet): void {
+  public handle(packet): void {
     const handle = packet.data.regionData[0].regionHandle
     const region = this.region(handle)
 
@@ -94,7 +94,7 @@ class ObjectUpdateCompressed extends Delegate {
     }
   }
 
-  public update (entity: Entity, buffer: PacketBuffer): Entity {
+  public update(entity: Entity, buffer: PacketBuffer): Entity {
     const flags = Flags.NONE
 
     for (const [key, type] of CompressedObjectProperties) {
@@ -144,7 +144,7 @@ class ObjectUpdateCompressed extends Delegate {
     return entity
   }
 
-  public insert (id: number, key: string, buffer: PacketBuffer, flags: number, region: Region): Entity {
+  public insert(id: number, key: string, buffer: PacketBuffer, flags: number, region: Region): Entity {
     const entity = this.update(
       new Entity(this.client, { id, key, flags }),
       buffer

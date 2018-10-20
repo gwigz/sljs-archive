@@ -70,7 +70,7 @@ class CreateGroupReply extends Packet {
    * @param {boolean} [data.replyData.success] Success
    * @param {Variable1} [data.replyData.message] Message
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

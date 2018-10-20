@@ -87,7 +87,7 @@ class ObjectShape extends Packet {
    * @param {U16} [data.objectData.profileEnd] ProfileEnd
    * @param {U16} [data.objectData.profileHollow] ProfileHollow
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

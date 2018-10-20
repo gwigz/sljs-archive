@@ -69,7 +69,7 @@ class MapLayerRequest extends Packet {
    * @param {U32} [data.agentData.estate] EstateID
    * @param {boolean} [data.agentData.godlike] Godlike
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -7,7 +7,7 @@ class F64 {
    * @param {number} float Number/float to convert
    * @returns {Buffer}
    */
-  public static toBuffer (float: number): Buffer {
+  public static toBuffer(float: number): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeDoubleLE(float, 0)
@@ -23,7 +23,7 @@ class F64 {
    * @param {number} position Position to read from
    * @returns {number}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): number {
+  public static fromBuffer(buffer: Buffer, position: number = 0): number {
     return buffer.readDoubleLE(position)
   }
 }

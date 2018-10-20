@@ -4,14 +4,14 @@ import Entity from './Entity'
 class Entities extends Collection<number, Entity> {
   private register: Collection<string, number>
 
-  constructor () {
+  constructor() {
     super()
 
     // For ObjectID to UUID translation.
     this.register = new Collection
   }
 
-  public lookup (key: string): Entity|null {
+  public lookup(key: string): Entity | null {
     if (this.register.has(key)) {
       return this.get(this.register.get(key))
     }
@@ -19,7 +19,7 @@ class Entities extends Collection<number, Entity> {
     return null
   }
 
-  public set (id: number, entity: Entity): this {
+  public set(id: number, entity: Entity): this {
     super.set(id, entity)
 
     // Add object UUID to our lookup object.
@@ -28,7 +28,7 @@ class Entities extends Collection<number, Entity> {
     return this
   }
 
-  public delete (id: number): boolean {
+  public delete(id: number): boolean {
     const entity = this.get(id)
 
     if (entity) {

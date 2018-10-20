@@ -96,7 +96,7 @@ class UpdateAttachment extends Packet {
    * @param {S32} [data.inventoryData.creationDate] CreationDate
    * @param {U32} [data.inventoryData.crc] CRC
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -77,7 +77,7 @@ class AvatarPropertiesReply extends Packet {
    * @param {Variable1} [data.propertiesData.charterMember] CharterMember
    * @param {U32} [data.propertiesData.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class SimWideDeletes extends Packet {
    * @param {string} [data.dataBlock.target] TargetID
    * @param {U32} [data.dataBlock.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

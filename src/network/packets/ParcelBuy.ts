@@ -77,7 +77,7 @@ class ParcelBuy extends Packet {
    * @param {S32} [data.parcelData.price] Price
    * @param {S32} [data.parcelData.area] Area
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

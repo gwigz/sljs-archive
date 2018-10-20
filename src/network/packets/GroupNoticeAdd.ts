@@ -73,7 +73,7 @@ class GroupNoticeAdd extends Packet {
    * @param {Variable2} [data.messageBlock.message] Message
    * @param {Variable2} [data.messageBlock.binaryBucket] BinaryBucket
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

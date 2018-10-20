@@ -67,7 +67,7 @@ class EmailMessageRequest extends Packet {
    * @param {Variable1} [data.dataBlock.fromAddress] FromAddress
    * @param {Variable1} [data.dataBlock.subject] Subject
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

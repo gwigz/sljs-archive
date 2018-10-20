@@ -69,7 +69,7 @@ class AttachedSound extends Packet {
    * @param {F32} [data.dataBlock.gain] Gain
    * @param {U8} [data.dataBlock.flags] Flags
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

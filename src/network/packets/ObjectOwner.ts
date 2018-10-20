@@ -74,7 +74,7 @@ class ObjectOwner extends Packet {
    * @param {string} [data.headerData.group] GroupID
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

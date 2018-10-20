@@ -70,7 +70,7 @@ class EventLocationReply extends Packet {
    * @param {string} [data.eventData.region] RegionID
    * @param {Vector3} [data.eventData.regionPos] RegionPos
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -76,7 +76,7 @@ class ParcelReturnObjects extends Packet {
    * @param {string} [data.taskIDs.task] TaskID
    * @param {string} [data.ownerIDs.owner] OwnerID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

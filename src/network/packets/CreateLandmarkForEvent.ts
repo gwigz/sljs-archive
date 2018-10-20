@@ -73,7 +73,7 @@ class CreateLandmarkForEvent extends Packet {
    * @param {string} [data.inventoryBlock.folder] FolderID
    * @param {Variable1} [data.inventoryBlock.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

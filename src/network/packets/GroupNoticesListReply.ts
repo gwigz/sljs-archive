@@ -74,7 +74,7 @@ class GroupNoticesListReply extends Packet {
    * @param {boolean} [data.data.hasAttachment] HasAttachment
    * @param {U8} [data.data.assetType] AssetType
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

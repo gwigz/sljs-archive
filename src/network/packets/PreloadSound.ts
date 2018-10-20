@@ -67,7 +67,7 @@ class PreloadSound extends Packet {
    * @param {string} [data.dataBlock.owner] OwnerID
    * @param {string} [data.dataBlock.sound] SoundID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

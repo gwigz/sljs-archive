@@ -70,7 +70,7 @@ class ClassifiedGodDelete extends Packet {
    * @param {string} [data.data.classified] ClassifiedID
    * @param {string} [data.data.query] QueryID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

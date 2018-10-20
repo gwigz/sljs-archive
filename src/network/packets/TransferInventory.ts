@@ -70,7 +70,7 @@ class TransferInventory extends Packet {
    * @param {string} [data.inventoryBlock.inventory] InventoryID
    * @param {S8} [data.inventoryBlock.type] Type
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

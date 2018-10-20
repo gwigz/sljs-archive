@@ -75,7 +75,7 @@ class ScriptSensorRequest extends Packet {
    * @param {U64} [data.requester.regionHandle] RegionHandle
    * @param {U8} [data.requester.searchRegions] SearchRegions
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -71,7 +71,7 @@ class AvatarPickerReply extends Packet {
    * @param {Variable1} [data.data.firstName] FirstName
    * @param {Variable1} [data.data.lastName] LastName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

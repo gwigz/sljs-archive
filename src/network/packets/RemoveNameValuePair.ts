@@ -68,7 +68,7 @@ class RemoveNameValuePair extends Packet {
    * @param {string} [data.taskData.id] ID
    * @param {Variable2} [data.nameValueData.nVPair] NVPair
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

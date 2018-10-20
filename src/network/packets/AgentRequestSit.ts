@@ -70,7 +70,7 @@ class AgentRequestSit extends Packet {
    * @param {string} [data.targetObject.target] TargetID
    * @param {Vector3} [data.targetObject.offset] Offset
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

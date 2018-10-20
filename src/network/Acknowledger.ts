@@ -14,7 +14,7 @@ class Acknowledger {
   private acknowledge: PacketAck
   private packets: IAcknowledgerPackets
 
-  constructor (circuit: Circuit) {
+  constructor(circuit: Circuit) {
     /**
      * Circuit instance that instantiated this Acknowledger.
      *
@@ -35,15 +35,15 @@ class Acknowledger {
     setInterval(this.prune.bind(this), 1000)
   }
 
-  public seen (number): boolean {
+  public seen(number): boolean {
     return this.packets.seen.has(number) || this.packets.queued.has(number)
   }
 
-  public queue (number): void {
+  public queue(number): void {
     this.packets.queued.add(number)
   }
 
-  public tick (): void {
+  public tick(): void {
     if (this.packets.queued.size) {
       const uptime = process.uptime()
 
@@ -62,7 +62,7 @@ class Acknowledger {
     }
   }
 
-  public prune (): void {
+  public prune(): void {
     if (!this.packets.seen.size) {
       return
     }

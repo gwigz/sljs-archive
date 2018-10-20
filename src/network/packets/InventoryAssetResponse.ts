@@ -67,7 +67,7 @@ class InventoryAssetResponse extends Packet {
    * @param {string} [data.queryData.asset] AssetID
    * @param {boolean} [data.queryData.isReadable] IsReadable
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

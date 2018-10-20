@@ -8,7 +8,7 @@ class Serializer {
   public index: number
   public readonly circuit: Circuit
 
-  constructor (circuit) {
+  constructor(circuit) {
     this.index = 1
 
     /**
@@ -21,7 +21,7 @@ class Serializer {
     Object.defineProperty(this, 'circuit', { value: circuit })
   }
 
-  public convert (packet: Packet): Buffer {
+  public convert(packet: Packet): Buffer {
     if (!(packet instanceof Packet)) {
       throw new Error('Serializer is only able to convert instances of Packet.')
     }
@@ -76,7 +76,7 @@ class Serializer {
     return Buffer.concat(array)
   }
 
-  public header (PacketConstructor: typeof Packet): Buffer {
+  public header(PacketConstructor: typeof Packet): Buffer {
     const index = this.index++
 
     // First, append flags and packet sequence number/index.
@@ -112,7 +112,7 @@ class Serializer {
     return Buffer.from(array)
   }
 
-  public parse (block: string, format: any, data: any = {}): Buffer {
+  public parse(block: string, format: any, data: any = {}): Buffer {
     const array = []
 
     // Attempt to fill optional parts of agent data blocks.

@@ -66,7 +66,7 @@ class CreateTrustedCircuit extends Packet {
    * @param {string} [data.dataBlock.endPoint] EndPointID
    * @param {Fixed32} [data.dataBlock.digest] Digest
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -84,7 +84,7 @@ class SimulatorPresentAtLocation extends Packet {
    * @param {boolean} [data.telehubBlock.hasTelehub] HasTelehub
    * @param {Vector3} [data.telehubBlock.telehubPos] TelehubPos
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

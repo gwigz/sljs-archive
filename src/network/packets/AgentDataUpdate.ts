@@ -71,7 +71,7 @@ class AgentDataUpdate extends Packet {
    * @param {U64} [data.agentData.groupPowers] GroupPowers
    * @param {Variable1} [data.agentData.groupName] GroupName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

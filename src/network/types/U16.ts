@@ -10,7 +10,7 @@ class U16 {
    * @param {number} integer Integer to convert
    * @returns {Buffer}
    */
-  public static toBuffer (integer: number): Buffer {
+  public static toBuffer(integer: number): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     buffer.writeUInt16LE(integer, 0)
@@ -26,7 +26,7 @@ class U16 {
    * @param {number} position Position to read from
    * @returns {number}
    */
-  public static fromBuffer (buffer: Buffer, position: number = 0): number {
+  public static fromBuffer(buffer: Buffer, position: number = 0): number {
     return buffer.readUInt16LE(position)
   }
 
@@ -39,7 +39,7 @@ class U16 {
    * @param {number} upper Upper limit for convertion
    * @returns {number} Float value, will return 0.0 if delta is reached
    */
-  public static toFloat (value: number, lower: number, upper: number): number {
+  public static toFloat(value: number, lower: number, upper: number): number {
     const float = value * ONE_OVER_U16_MAX
 
     if (Math.abs(float) < ((upper - lower) * ONE_OVER_U16_MAX)) {

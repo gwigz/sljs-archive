@@ -71,7 +71,7 @@ class AgentFOV extends Packet {
    * @param {U32} [data.fovBlock.genCounter] GenCounter
    * @param {F32} [data.fovBlock.verticalAngle] VerticalAngle
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

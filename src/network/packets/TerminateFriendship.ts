@@ -69,7 +69,7 @@ class TerminateFriendship extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.exBlock.other] OtherID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

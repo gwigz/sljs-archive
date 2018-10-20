@@ -68,7 +68,7 @@ class ForceObjectSelect extends Packet {
    * @param {boolean} [data.header.resetList] ResetList
    * @param {U32} [data.data.local] LocalID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

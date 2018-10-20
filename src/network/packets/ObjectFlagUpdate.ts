@@ -71,7 +71,7 @@ class ObjectFlagUpdate extends Packet {
    * @param {boolean} [data.agentData.isPhantom] IsPhantom
    * @param {boolean} [data.agentData.castsShadows] CastsShadows
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

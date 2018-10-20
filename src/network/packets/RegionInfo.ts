@@ -91,7 +91,7 @@ class RegionInfo extends Packet {
    * @param {U32} [data.regionInfo2.hardMaxAgents] HardMaxAgents
    * @param {U32} [data.regionInfo2.hardMaxObjects] HardMaxObjects
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

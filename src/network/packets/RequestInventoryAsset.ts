@@ -68,7 +68,7 @@ class RequestInventoryAsset extends Packet {
    * @param {string} [data.queryData.owner] OwnerID
    * @param {string} [data.queryData.item] ItemID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

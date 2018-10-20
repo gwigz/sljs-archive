@@ -72,7 +72,7 @@ class AvatarAppearance extends Packet {
    * @param {Variable2} [data.objectData.textureEntry] TextureEntry
    * @param {U8} [data.visualParam.paramValue] ParamValue
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

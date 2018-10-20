@@ -6,12 +6,4 @@ import Nearby from './Nearby'
 import Parcel from './Parcel'
 import Region from './Region'
 
-export {
-  Agent,
-  Camera,
-  Entities,
-  Entity,
-  Nearby,
-  Parcel,
-  Region
-}
+export { Agent, Camera, Entities, Entity, Nearby, Parcel, Region }

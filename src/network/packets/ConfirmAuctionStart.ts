@@ -66,7 +66,7 @@ class ConfirmAuctionStart extends Packet {
    * @param {string} [data.auctionData.parcel] ParcelID
    * @param {U32} [data.auctionData.auction] AuctionID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

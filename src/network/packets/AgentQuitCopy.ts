@@ -69,7 +69,7 @@ class AgentQuitCopy extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {U32} [data.fuseBlock.viewerCircuitCode] ViewerCircuitCode
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

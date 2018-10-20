@@ -70,7 +70,7 @@ class AvatarPickerRequest extends Packet {
    * @param {string} [data.agentData.query] QueryID
    * @param {Variable1} [data.data.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

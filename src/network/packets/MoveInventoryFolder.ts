@@ -71,7 +71,7 @@ class MoveInventoryFolder extends Packet {
    * @param {string} [data.inventoryData.folder] FolderID
    * @param {string} [data.inventoryData.parent] ParentID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class ObjectClickAction extends Packet {
    * @param {U32} [data.objectData.objectLocal] ObjectLocalID
    * @param {U8} [data.objectData.clickAction] ClickAction
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

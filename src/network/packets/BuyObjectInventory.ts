@@ -71,7 +71,7 @@ class BuyObjectInventory extends Packet {
    * @param {string} [data.data.item] ItemID
    * @param {string} [data.data.folder] FolderID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

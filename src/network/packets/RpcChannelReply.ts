@@ -67,7 +67,7 @@ class RpcChannelReply extends Packet {
    * @param {string} [data.dataBlock.item] ItemID
    * @param {string} [data.dataBlock.channel] ChannelID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

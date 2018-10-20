@@ -82,7 +82,7 @@ class ModifyLand extends Packet {
    * @param {F32} [data.parcelData.north] North
    * @param {F32} [data.modifyBlockExtended.brushSize] BrushSize
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

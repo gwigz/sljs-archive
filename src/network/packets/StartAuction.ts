@@ -70,7 +70,7 @@ class StartAuction extends Packet {
    * @param {string} [data.parcelData.snapshot] SnapshotID
    * @param {Variable1} [data.parcelData.name] Name
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

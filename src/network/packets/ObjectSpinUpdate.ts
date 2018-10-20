@@ -70,7 +70,7 @@ class ObjectSpinUpdate extends Packet {
    * @param {string} [data.objectData.object] ObjectID
    * @param {Quaternion} [data.objectData.rotation] Rotation
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

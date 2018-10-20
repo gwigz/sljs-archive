@@ -71,7 +71,7 @@ class TelehubInfo extends Packet {
    * @param {Quaternion} [data.telehubBlock.telehubRot] TelehubRot
    * @param {Vector3} [data.spawnPointBlock.spawnPointPos] SpawnPointPos
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

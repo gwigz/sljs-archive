@@ -72,7 +72,7 @@ class GroupRoleChanges extends Packet {
    * @param {string} [data.roleChange.member] MemberID
    * @param {U32} [data.roleChange.change] Change
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

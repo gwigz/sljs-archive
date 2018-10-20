@@ -69,7 +69,7 @@ class ClassifiedInfoRequest extends Packet {
    * @param {string} [data.agentData.session] SessionID
    * @param {string} [data.data.classified] ClassifiedID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

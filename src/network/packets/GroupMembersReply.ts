@@ -78,7 +78,7 @@ class GroupMembersReply extends Packet {
    * @param {Variable1} [data.memberData.title] Title
    * @param {boolean} [data.memberData.isOwner] IsOwner
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

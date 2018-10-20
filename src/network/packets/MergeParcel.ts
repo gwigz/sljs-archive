@@ -68,7 +68,7 @@ class MergeParcel extends Packet {
    * @param {string} [data.masterParcelData.master] MasterID
    * @param {string} [data.slaveParcelData.slave] SlaveID
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -70,7 +70,7 @@ class ObjectCategory extends Packet {
    * @param {U32} [data.objectData.local] LocalID
    * @param {U32} [data.objectData.category] Category
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

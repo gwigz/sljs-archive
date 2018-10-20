@@ -72,7 +72,7 @@ class SetSimPresenceInDatabase extends Packet {
    * @param {S32} [data.simData.timeToLive] TimeToLive
    * @param {Variable1} [data.simData.status] Status
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

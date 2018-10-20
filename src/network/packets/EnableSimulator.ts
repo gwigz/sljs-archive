@@ -67,7 +67,7 @@ class EnableSimulator extends Packet {
    * @param {IP} [data.simulatorInfo.ip] IP
    * @param {Port} [data.simulatorInfo.port] Port
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }

@@ -76,7 +76,7 @@ class PlacesQuery extends Packet {
    * @param {S8} [data.queryData.category] Category
    * @param {Variable1} [data.queryData.simName] SimName
    */
-  constructor (data = {}) {
+  constructor(data = {}) {
     super(data)
   }
 }
