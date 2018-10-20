@@ -2,20 +2,20 @@ import { Client } from '..'
 import { Quaternion, U8, UUID, Vector3 } from '../network/types'
 
 interface IEntityOptions {
-  id: number,
-  key: string,
-  parent?: number,
-  state?: number,
-  owner?: string,
-  flags?: number,
-  position?: Array<number>,
-  velocity?: Array<number>,
-  rotation?: Array<number>,
-  scale?: Array<number>,
-  text?: any,
-  material?: number, // Constants.ObjectMaterials
-  tree?: number, // Constants.ObjectTrees
-  action?: number, // Constants.ObjectActions
+  id: number
+  key: string
+  parent?: number
+  state?: number
+  owner?: string
+  flags?: number
+  position?: Array<number>
+  velocity?: Array<number>
+  rotation?: Array<number>
+  scale?: Array<number>
+  text?: any
+  material?: number // Constants.ObjectMaterials
+  tree?: number // Constants.ObjectTrees
+  action?: number // Constants.ObjectActions
   children?: Array<number>
 }
 
@@ -30,7 +30,7 @@ class Entity {
   public velocity: Array<number>
   public rotation: Array<number>
   public scale: Array<number>
-  public text?: { value: string, color: Array<number> }
+  public text?: { value: string; color: Array<number> }
   public material: number // Constants.ObjectMaterials
   public tree?: number // Constants.ObjectTrees
   public action: number // Constants.ObjectActions

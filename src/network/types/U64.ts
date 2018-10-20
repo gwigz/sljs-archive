@@ -9,7 +9,7 @@ class U64 {
    * @param {number|Long} integer Integer to convert
    * @returns {Buffer}
    */
-  public static toBuffer(integer: number|Long): Buffer {
+  public static toBuffer(integer: number | Long): Buffer {
     const buffer = Buffer.allocUnsafe(this.size)
 
     if (!(integer instanceof Long)) {

@@ -47,20 +47,22 @@ class Agent extends Entity {
   }
 
   public message(message: string): void {
-    this.client.send(new ImprovedInstantMessage({
-      id: this.client.agent.session,
-      dialog: 0,
-      timestamp: 0,
-      fromGroup: false,
-      fromAgentName: this.client.agent.name,
-      message: `${message}\x00`,
-      toAgent: this.id,
-      offline: 0,
-      parentEstate: 0,
-      region: UUID.zero,
-      position: Vector3.zero,
-      binaryBucket: null
-    }))
+    this.client.send(
+      new ImprovedInstantMessage({
+        id: this.client.agent.session,
+        dialog: 0,
+        timestamp: 0,
+        fromGroup: false,
+        fromAgentName: this.client.agent.name,
+        message: `${message}\x00`,
+        toAgent: this.id,
+        offline: 0,
+        parentEstate: 0,
+        region: UUID.zero,
+        position: Vector3.zero,
+        binaryBucket: null
+      })
+    )
   }
 
   public whisper(message: string, channel = 0): void {

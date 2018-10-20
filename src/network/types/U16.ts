@@ -42,7 +42,7 @@ class U16 {
   public static toFloat(value: number, lower: number, upper: number): number {
     const float = value * ONE_OVER_U16_MAX
 
-    if (Math.abs(float) < ((upper - lower) * ONE_OVER_U16_MAX)) {
+    if (Math.abs(float) < (upper - lower) * ONE_OVER_U16_MAX) {
       return 0.0
     }
 

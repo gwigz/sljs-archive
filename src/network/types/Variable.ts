@@ -6,7 +6,7 @@ class Variable {
    * @param {string|Buffer} value Input value
    * @returns {buffer}
    */
-  public static toPrefixedBuffer(size: number, value: string|Buffer): Buffer {
+  public static toPrefixedBuffer(size: number, value: string | Buffer): Buffer {
     const max = 256 * (size * 8)
     const buffer = value instanceof Buffer ? value : Buffer.from(value, 'utf-8')
     const length = Math.min(max, buffer.length)
@@ -33,10 +33,13 @@ class Variable {
    * @param {number} start Position to read from
    * @returns {Buffer}
    */
-  public static fromPrefixedBuffer(size: number, buffer: Buffer, start: number): Buffer {
-    const length = size === 1
-      ? buffer.readUInt8(start)
-      : buffer.readUInt16LE(start)
+  public static fromPrefixedBuffer(
+    size: number,
+    buffer: Buffer,
+    start: number
+  ): Buffer {
+    const length =
+      size === 1 ? buffer.readUInt8(start) : buffer.readUInt16LE(start)
 
     // May want to use slice instead here, so the delegates can handle whatever
     // this value contains.

@@ -59,8 +59,12 @@ class Collection<K, V> extends Map<K, V> {
    */
   public pluck(key: string): Array<any> {
     return this.toArray().reduce((index, object) => {
-      if (!object[key]) { return index }
+      if (!object[key]) {
+        return index
+      }
+
       index.push(object[key])
+
       return index
     }, [])
   }
@@ -73,8 +77,10 @@ class Collection<K, V> extends Map<K, V> {
   public groupBy(key: string): any {
     return this.toArray().reduce((index, object) => {
       const value = object[key]
+
       index[value] = index[value] || []
       index[value].push(object)
+
       return index
     }, {})
   }

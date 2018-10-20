@@ -42,13 +42,11 @@ class Vector3 {
     const output = [
       type.fromBuffer(buffer, position),
       type.fromBuffer(buffer, position + type.size),
-      type.fromBuffer(buffer, position + (type.size * 2))
+      type.fromBuffer(buffer, position + type.size * 2)
     ]
 
-    if (type.toFloat
-      && type.toFloat instanceof Function
-    ) {
-      return output.map((value) => type.toFloat(value, lower, upper))
+    if (type.toFloat && type.toFloat instanceof Function) {
+      return output.map(value => type.toFloat(value, lower, upper))
     }
 
     return output
@@ -66,7 +64,7 @@ class Vector3 {
     const dy = from[1] - to[1]
     const dz = from[2] - to[2]
 
-    return Math.sqrt((dx * dx) + (dy * dy) + (dz * dz))
+    return Math.sqrt(dx * dx + dy * dy + dz * dz)
   }
 }
 

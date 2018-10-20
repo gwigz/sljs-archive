@@ -1,4 +1,3 @@
-import { Collection } from '../../utilities'
 import * as Packets from '../packets'
 
 class PacketLookup {

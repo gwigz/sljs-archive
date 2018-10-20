@@ -98,9 +98,10 @@ class ObjectUpdateCompressed extends Delegate {
     const flags = Flags.NONE
 
     for (const [key, type] of CompressedObjectProperties) {
-      const value = type instanceof CompressedObjectValue
-        ? type.read(buffer, flags)
-        : buffer.read(type)
+      const value =
+        type instanceof CompressedObjectValue
+          ? type.read(buffer, flags)
+          : buffer.read(type)
 
       if (value === undefined) {
         continue
@@ -144,7 +145,13 @@ class ObjectUpdateCompressed extends Delegate {
     return entity
   }
 
-  public insert(id: number, key: string, buffer: PacketBuffer, flags: number, region: Region): Entity {
+  public insert(
+    id: number,
+    key: string,
+    buffer: PacketBuffer,
+    flags: number,
+    region: Region
+  ): Entity {
     const entity = this.update(
       new Entity(this.client, { id, key, flags }),
       buffer

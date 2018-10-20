@@ -25,7 +25,10 @@ class Vector3D {
    * @param {number} position Position to read from
    * @returns {number[]}
    */
-  public static fromBuffer(buffer: Buffer, position: number = 0): Array<number> {
+  public static fromBuffer(
+    buffer: Buffer,
+    position: number = 0
+  ): Array<number> {
     return [
       buffer.readDoubleLE(position),
       buffer.readDoubleLE(position + 8),

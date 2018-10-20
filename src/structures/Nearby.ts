@@ -36,14 +36,20 @@ class Nearby extends EventEmitter {
     return this.message(message, channel, Constants.ChatTypes.SHOUT)
   }
 
-  public message(message: string, channel = 0, type = Constants.ChatTypes.NORMAL): void {
-    return this.client.send(new ChatFromViewer({
-      chatData: {
-        channel,
-        type,
-        message: `${message}\x00`
-      }
-    }))
+  public message(
+    message: string,
+    channel = 0,
+    type = Constants.ChatTypes.NORMAL
+  ): void {
+    return this.client.send(
+      new ChatFromViewer({
+        chatData: {
+          channel,
+          type,
+          message: `${message}\x00`
+        }
+      })
+    )
   }
 
   // TODO: Create message structure class instead.

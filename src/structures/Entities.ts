@@ -8,7 +8,7 @@ class Entities extends Collection<number, Entity> {
     super()
 
     // For ObjectID to UUID translation.
-    this.register = new Collection
+    this.register = new Collection()
   }
 
   public lookup(key: string): Entity | null {

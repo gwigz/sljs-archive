@@ -3,14 +3,16 @@ import Delegate from './Delegate'
 
 class ObjectUpdateCached extends Delegate {
   public handle(packet): void {
-    const uncached = packet.data.objectData.map((data) => ({
+    const uncached = packet.data.objectData.map(data => ({
       id: data.id,
       cacheMissType: 0
     }))
 
-    this.circuit.send(new RequestMultipleObjects({
-      objectData: uncached
-    }))
+    this.circuit.send(
+      new RequestMultipleObjects({
+        objectData: uncached
+      })
+    )
   }
 }
 

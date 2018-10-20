@@ -120,7 +120,7 @@ class Client extends EventEmitter {
         session: response.session_id
       })
 
-      await this.core.handshake(response.session_id, {
+      await this.core.handshake({
         id: response.circuit_code,
         address: response.sim_ip,
         port: response.sim_port

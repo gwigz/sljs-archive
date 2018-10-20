@@ -27,7 +27,10 @@ class Vector4 {
    * @param {number} position Position to read from
    * @returns {number[]}
    */
-  public static fromBuffer(buffer: Buffer, position: number = 0): Array<number> {
+  public static fromBuffer(
+    buffer: Buffer,
+    position: number = 0
+  ): Array<number> {
     return [
       buffer.readFloatLE(position),
       buffer.readFloatLE(position + 4),

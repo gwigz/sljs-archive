@@ -61,59 +61,69 @@ class AgentMovementComplete extends Delegate {
     // Pass our throttle data, generated above. This controls the rate of
     // various packets that we can safely handle without hitting the users
     // specified bandwidth limit.
-    this.circuit.send(new Packets.AgentThrottle({
-      throttle: {
-        genCounter: this.counter++,
-        throttles
-      }
-    }))
+    this.circuit.send(
+      new Packets.AgentThrottle({
+        throttle: {
+          genCounter: this.counter++,
+          throttles
+        }
+      })
+    )
 
     // This sends the users field of vision value, which in this case we're
     // just saying "hey, give me everything, even stuff behind me".
-    this.circuit.send(new Packets.AgentFOV({
-      fovBlock: {
-        genCounter: this.counter++,
-        // client.fov or camera.fov?
-        verticalAngle: (Math.PI * 2) - 0.05
-      }
-    }))
+    this.circuit.send(
+      new Packets.AgentFOV({
+        fovBlock: {
+          genCounter: this.counter++,
+          // client.fov or camera.fov?
+          verticalAngle: Math.PI * 2 - 0.05
+        }
+      })
+    )
 
     // This sends the height and width of what would usually calculated via. 3D
     // display/window size.
-    this.circuit.send(new Packets.AgentHeightWidth({
-      heightWidthBlock: {
-        genCounter: this.counter++,
-        height: 360,
-        width: 640
-      }
-    }))
+    this.circuit.send(
+      new Packets.AgentHeightWidth({
+        heightWidthBlock: {
+          genCounter: this.counter++,
+          height: 360,
+          width: 640
+        }
+      })
+    )
 
     // Toggle for always run, probably more likely to be used; but we'll set
     // that up once we have a "agent control manager" or something of the sorts.
-    this.circuit.send(new Packets.SetAlwaysRun({
-      agentData: {
-        alwaysRun: false
-      }
-    }))
+    this.circuit.send(
+      new Packets.SetAlwaysRun({
+        agentData: {
+          alwaysRun: false
+        }
+      })
+    )
 
     // TODO: Add toggle to enable/disable these packets, as they allow object
     // data to start being recieved, which we may or may not want.
-    this.circuit.send(new Packets.AgentUpdate({
-      agentData: {
-        bodyRotation: agent.rotation,
-        headRotation: [0.0, 0.0, 0.0, 0.0],
-        state: agent.state,
-        cameraCenter: agent.position,
-        cameraAtAxis: [0.0, 0.0, 0.0],
-        cameraLeftAxis: [0.0, 0.0, 0.0],
-        cameraUpAxis: [0.0, 0.0, 0.0],
-        // client or camera.distance or something?
-        far: 20,
-        controlFlags: 65536,
-        // for auto pilot: 0x02
-        flags: 0
-      }
-    }))
+    this.circuit.send(
+      new Packets.AgentUpdate({
+        agentData: {
+          bodyRotation: agent.rotation,
+          headRotation: [0.0, 0.0, 0.0, 0.0],
+          state: agent.state,
+          cameraCenter: agent.position,
+          cameraAtAxis: [0.0, 0.0, 0.0],
+          cameraLeftAxis: [0.0, 0.0, 0.0],
+          cameraUpAxis: [0.0, 0.0, 0.0],
+          // client or camera.distance or something?
+          far: 20,
+          controlFlags: 65536,
+          // for auto pilot: 0x02
+          flags: 0
+        }
+      })
+    )
   }
 }
 

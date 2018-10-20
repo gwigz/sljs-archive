@@ -54,21 +54,22 @@ class Quaternion {
     const quaternion = [
       type.fromBuffer(buffer, position),
       type.fromBuffer(buffer, position + type.size),
-      type.fromBuffer(buffer, position + (type.size * 2)),
-      normalized ? 0.0 : type.fromBuffer(buffer, position + (type.size * 3))
+      type.fromBuffer(buffer, position + type.size * 2),
+      normalized ? 0.0 : type.fromBuffer(buffer, position + type.size * 3)
     ]
 
     if (normalized) {
-      const sum = 1
-        - (quaternion[0] * quaternion[0])
-        - (quaternion[1] * quaternion[1])
-        - (quaternion[2] * quaternion[2])
+      const sum =
+        1
+        - quaternion[0] * quaternion[0]
+        - quaternion[1] * quaternion[1]
+        - quaternion[2] * quaternion[2]
 
       quaternion[3] = sum > 0.0 ? Math.sqrt(sum) : 0.0
     }
 
     if (type.toFloat instanceof Function) {
-      return quaternion.map((value) => type.toFloat(value, lower, upper))
+      return quaternion.map(value => type.toFloat(value, lower, upper))
     }
 
     return quaternion

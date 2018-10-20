@@ -45,7 +45,7 @@ class Delegate {
    * @param {Long} handle Region handle
    * @returns {?Region}
    */
-  protected region(handle: Long): Region|null {
+  protected region(handle: Long): Region | null {
     // This is kinda ugly, I know.
     return this.client.regions.get(`${handle.getHighBits()}${handle.getLowBits()}`)
   }

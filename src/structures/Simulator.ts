@@ -1,10 +1,10 @@
 import { Client } from '..'
 
 interface ISimulatorOptions {
-  ip: string,
-  port: number,
-  circuit: number,
-  uri?: string,
+  ip: string
+  port: number
+  circuit: number
+  uri?: string
   channel?: string
 }
 

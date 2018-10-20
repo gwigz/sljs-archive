@@ -41,13 +41,13 @@ class PacketBuffer {
       }
     }
 
-    if (header[0] !== 0xFF) {
+    if (header[0] !== 0xff) {
       this.id = Number(`${header[0]}2`)
       this.frequency = 2
-    } else if (header[1] !== 0xFF) {
+    } else if (header[1] !== 0xff) {
       this.id = Number(`${header[1]}1`)
       this.frequency = 1
-    } else if (header[2] !== 0xFF) {
+    } else if (header[2] !== 0xff) {
       this.id = Number(`${(header[2] << 8) + header[3]}0`)
       this.frequency = 0
     } else {
@@ -84,7 +84,12 @@ class PacketBuffer {
   }
 
   get sequence(): number {
-    return (this.buffer[1] << 24) | (this.buffer[2] << 16) | (this.buffer[3] << 8) | this.buffer[4]
+    return (
+      (this.buffer[1] << 24) |
+      (this.buffer[2] << 16) |
+      (this.buffer[3] << 8) |
+      this.buffer[4]
+    )
   }
 
   get acks(): boolean {

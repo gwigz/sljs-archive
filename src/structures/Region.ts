@@ -28,9 +28,9 @@ class Region {
     Object.defineProperty(this, 'client', { value: client })
 
     this.handle = data.handle
-    this.agents = new Collection
-    this.objects = new Entities
-    this.parcels = new Collection
+    this.agents = new Collection()
+    this.objects = new Entities()
+    this.parcels = new Collection()
   }
 }
 

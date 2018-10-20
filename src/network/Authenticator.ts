@@ -25,7 +25,7 @@ class Authenticator {
   public login(
     username: string,
     password: string,
-    start: string = 'last'
+    start: 'first' | 'last' | string = 'last'
   ): Promise<any> {
     const platforms = {
       darwin: 'Mac',
@@ -43,6 +43,7 @@ class Authenticator {
       'inventory-root',
       'inventory-skeleton',
       'buddy-list',
+      'login-flags',
       'adult_compliant'
     ]
 
@@ -58,10 +59,10 @@ class Authenticator {
       channel: this.channel,
       version: this.version,
       platform: system.platform,
-      mac: system.network[0].mac,
+      mac: system.network[0].mac, // TODO: do this better
       id0: system.id0,
-      agree_to_tos: true,
-      read_critical: true,
+      agree_to_tos: true, // TODO: handle this clientside
+      read_critical: true, // TODO: handle this clientside
       viewer_digest: this.digest,
       options: options
     }
@@ -69,7 +70,7 @@ class Authenticator {
     const client = XMLRPC.createSecureClient({
       url: Constants.Endpoints.LOGIN_URL,
       headers: { 'User-Agent': this.agent },
-      rejectUnauthorized: false
+      rejectUnauthorized: false // TODO: bundle cert
     })
 
     return new Promise((resolve) => {

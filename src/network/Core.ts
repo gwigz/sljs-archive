@@ -42,7 +42,7 @@ class Core {
      * Collection of recently, and currently in use Circuit instances.
      * @type {Collection}
      */
-    this.circuits = new Collection
+    this.circuits = new Collection()
 
     /**
      * Currently active circuit.
@@ -89,10 +89,9 @@ class Core {
   /**
    * Connects the client to a given circuit code.
    *
-   * @param {string} session Session ID
-   * @returns {Promise}
+   * @param {data} ICircuitOptions
    */
-  public handshake(session, data: ICircuitOptions): void {
+  public handshake(data: ICircuitOptions): void {
     const circuit = new Circuit(this, data)
 
     this.status = Constants.Status.CONNECTING
@@ -102,7 +101,10 @@ class Core {
       this.circuit = circuit
     }
 
-    this.client.emit(Constants.Events.DEBUG, 'Handshake recieved, creating circuit...')
+    this.client.emit(
+      Constants.Events.DEBUG,
+      'Handshake recieved, creating circuit...'
+    )
 
     return circuit.handshake()
   }
@@ -122,7 +124,7 @@ class Core {
    * Disconnects the client from the current circuit.
    */
   public disconnect(): void {
-    this.circuit.send(new LogoutRequest)
+    this.circuit.send(new LogoutRequest())
   }
 }
 

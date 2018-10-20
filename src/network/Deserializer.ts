@@ -21,8 +21,11 @@ class Deserializer {
     return PacketLookup.find(buffer.id)
   }
 
-  public convert(PacketConstructor: typeof Packet, buffer: PacketBuffer): Packet {
-    const packet: Packet = new PacketConstructor
+  public convert(
+    PacketConstructor: typeof Packet,
+    buffer: PacketBuffer
+  ): Packet {
+    const packet: Packet = new PacketConstructor()
 
     packet.index = buffer.sequence
     packet.reliable = buffer.reliable
