@@ -39,10 +39,6 @@ This list is in order of how I'd like to tackle various things, and yes, it's
 extremely long!
 
 - [x] Setup code validation
-- [ ] Setup project type hinting?
-- [ ] Add basic testing, maybe?
-  - [ ] Login, check status, check agent values, logout, check status
-  - [ ] Extend on this later, with basic request and response checks...
 - [ ] Add example script(s)
   - [ ] Maybe something that just handles login, logout and basic chat functions
 - [ ] Clean up documentation
@@ -93,17 +89,8 @@ extremely long!
   - [ ] System messages, such as simulator restarting warning
   - [ ] Teleport requests, sending accepting and declining
   - [ ] Teleport lures
-- [x] Remove debugging, as no `console.*` methods should be used in this module!
 - [ ] Add ability to teleport, handle currectly on force teleport and death
 - [ ] Add ability see nearby agents and positions
-- [ ] Track current region, plus various details TBC
-- [ ] Track current parcel, plus various details TBC
-- [ ] Create first alpha for text-based client, dubbed "Kalani"
-  - [x] Use [Electron](http://electron.atom.io) for the frontend
-  - [ ] Use [Squirrel](https://github.com/Squirrel) and [Nuts](https://github.com/GitbookIO/nuts) for sending future updates
-  - [ ] Later, add [webpack](https://webpack.github.io) or [rollup.js](http://rollupjs.org) support to both projects
-  - [ ] Setup hosting for use via. most browsers
-- [ ] Create alpha branch/tag, change version to `0.1.0`
 - [ ] Add ability to sit on objects by UUID
 - [ ] Add ability to play sounds and animations by UUID
 - [ ] Track currently playing animations and sounds
@@ -146,6 +133,5 @@ extremely long!
 - [ ] Look and selection parsing of nearby agents
 - [ ] Ability to send look and selection packets
   - [ ] Track what is currently selected
-- [ ] Add more things to this list!
 
-...and more, to come soon!
+...and more?
