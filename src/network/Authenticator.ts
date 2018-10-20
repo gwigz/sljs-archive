@@ -2,6 +2,7 @@ import Crypto from 'crypto'
 import OS from 'os'
 import XMLRPC from 'xmlrpc'
 
+import { UUID } from '../network/types'
 import { Constants } from '../utilities'
 
 class Authenticator {
@@ -19,7 +20,11 @@ class Authenticator {
     this.digest = Crypto.createHash('md5').update(JSON.stringify(this)).digest('hex')
   }
 
-  public login(username: string, password: string, start: string = 'last'): Promise<any> {
+  public login(
+    username: string,
+    password: string,
+    start: string = 'last'
+  ): Promise<any> {
     const platforms = {
       darwin: 'Mac',
       linux: 'Lin',
@@ -27,8 +32,8 @@ class Authenticator {
     }
 
     const system = {
-      filesystem: { id0: '00000000-0000-0000-0000-000000000000' },
-      network: OS.networkInterfaces().en0 || [{ mac: '00000000-0000-0000-0000-000000000000' }],
+      network: OS.networkInterfaces().en0 || [{ mac: UUID.zero }],
+      id0: UUID.zero,
       platform: platforms[OS.platform()] || 'Lin'
     }
 
@@ -39,16 +44,20 @@ class Authenticator {
       'adult_compliant'
     ]
 
+    const passwd = Crypto.createHash('md5')
+      .update(password.substr(0, 16))
+      .digest('hex')
+
     const parameters = {
       first: username.split(' ')[0],
       last: username.split(' ')[1] || 'Resident',
-      passwd: `$1$${Crypto.createHash('md5').update(password).digest('hex')}`,
+      passwd: '$1$' + passwd,
       start: start,
       channel: this.channel,
       version: this.version,
       platform: system.platform,
       mac: system.network[0].mac,
-      id0: system.filesystem.id0,
+      id0: system.id0,
       agree_to_tos: true,
       read_critical: true,
       viewer_digest: this.digest,
